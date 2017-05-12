@@ -7,6 +7,7 @@ import TeamCard from '../components/TeamCard';
 import Footer from '../components/Footer';
 import Title from '../components/Title';
 import TextRevealImageCard from '../components/TextRevealImageCard';
+import TextCard from '../components/TextCard';
 import Head from 'next/head'
 
 export default class extends React.Component {
@@ -95,6 +96,33 @@ export default class extends React.Component {
                 </div>
               </div>
             </div>
+          </div>
+          <div className="section valign-wrapper black-text white-background-flourish">
+           <div className="valign container">
+             <div className="row">
+               <div className="col s12">
+                 <ul className="tabs" style={{backgroundColor: 'transparent'}}>
+                  <li className="tab col s6"><a href="#">Announcements</a></li>
+                  <li className="tab col s6"><a className="active" href="#">Newest Additions</a></li>
+                </ul>
+               </div>
+             </div>
+
+             <div className="row">
+               <div className="col s12 m6 l4 xl3">
+                 <TextCard />
+               </div>
+               <div className="col s12 m6 l4 xl3">
+                 <TextCard />
+               </div>
+               <div className="col s12 m6 l4 xl3">
+                 <TextCard />
+               </div>
+               <div className="col s12 m6 l4 xl3">
+                 <TextCard />
+               </div>
+             </div>
+           </div>
           </div>
 
         </main>
