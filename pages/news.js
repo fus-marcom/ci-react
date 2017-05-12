@@ -8,6 +8,14 @@ import 'isomorphic-fetch'
 
 export default class extends React.Component {
 
+  static async getInitialProps () {
+    const apiUrl = 'https://test1.jesseweigel.com/demo/wp-json/wp/v2/';
+    const params = 'posts';
+    const res = await fetch(apiUrl + params)
+    const data = await res.json()
+    return { data }
+  }
+
   render () {
     return (
       <div style={{display: 'flex', flexDirection: 'column'}}>
@@ -27,7 +35,12 @@ export default class extends React.Component {
           <Title title="News" imgPath="/static/img/campus-11.jpg" posY="-44vh" />
           <div className="container">
             <div className="section">
-
+              {this.props.data.map(function(post, i) {
+                return <div className="row" key={i}>
+                  <h1>{post.title.rendered}</h1>
+                  <p className="flow-text" dangerouslySetInnerHTML={{__html: post.content.rendered}}></p>
+                </div>
+              })}
             </div>
           </div>
         </main>
