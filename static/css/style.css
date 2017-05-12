@@ -1,0 +1,541 @@
+.fus-yellow {
+  background-color: #ffc658; }
+
+.fus-light-blue {
+  background-color: #8e9fbc; }
+
+.fus-dark-blue {
+  background-color: #1f2a44; }
+
+.fus-green {
+  background-color: #21412a; }
+
+.fus-gold {
+  background-color: #998643; }
+
+.block-center {
+  display: block;
+  margin: 0 auto; }
+
+/* Make base font sizes larger*/
+@media only screen and (min-width: 0) {
+  html {
+    font-size: 16px; } }
+@media only screen and (min-width: 992px) {
+  html {
+    font-size: 16.5px; } }
+@media only screen and (min-width: 1200px) {
+  html {
+    font-size: 17px; } }
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Cinzel', serif; }
+
+.wide-container {
+  width: 90% !important; }
+
+.sub-heading {
+  display: block;
+  font-size: 26px; }
+
+.btn-inverted {
+  border: solid 2px #000;
+  background-color: transparent;
+  color: #000; }
+  .btn-inverted:hover, .btn-inverted:focus {
+    border: solid 2px #000;
+    background-color: #000;
+    color: #fff; }
+
+.btn-inverted-white {
+  border: solid 2px #fff;
+  background-color: transparent;
+  color: #fff; }
+  .btn-inverted-white:hover, .btn-inverted-white:focus {
+    border: solid 2px #fff;
+    background-color: #fff;
+    color: #000; }
+
+.tabs .tab a:hover, .tabs .tab a.active {
+  color: #8e1b21; }
+
+.tabs .indicator {
+  background-color: #000; }
+
+table.responsive-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  display: block;
+  position: relative;
+  /* sort out borders */ }
+  table.responsive-table td:empty:before {
+    content: '\00a0'; }
+  table.responsive-table th,
+  table.responsive-table td {
+    margin: 0;
+    vertical-align: top; }
+  table.responsive-table th {
+    text-align: left; }
+  table.responsive-table thead {
+    display: block;
+    float: left; }
+    table.responsive-table thead tr {
+      display: block;
+      padding: 0 10px 0 0; }
+      table.responsive-table thead tr th::before {
+        content: "\00a0"; }
+  table.responsive-table tbody {
+    display: block;
+    width: auto;
+    position: relative;
+    overflow-x: auto;
+    white-space: nowrap; }
+    table.responsive-table tbody tr {
+      display: inline-block;
+      vertical-align: top; }
+  table.responsive-table th {
+    display: block;
+    text-align: right; }
+  table.responsive-table td {
+    display: block;
+    min-height: 1.25em;
+    text-align: left; }
+  table.responsive-table tr {
+    padding: 0 10px; }
+  table.responsive-table thead {
+    border: 0;
+    border-right: 1px solid #d0d0d0; }
+
+.card-content {
+  color: rgba(0, 0, 0, 0.85); }
+
+.card-title {
+  color: #8e1b21; }
+
+body {
+  background-color: #fafafa;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+main {
+  flex: 1 0 auto;
+  min-height: 100vh; }
+
+header {
+  margin-bottom: -48px; }
+  @media screen and (max-width: 600px), screen and (max-height: 650px) {
+    header {
+      margin-bottom: 0; } }
+
+nav {
+  height: 83px;
+  background-color: transparent; }
+  @media screen and (max-width: 600px), screen and (max-height: 650px) {
+    nav {
+      margin-bottom: 0;
+      background-color: #000;
+      height: 98px;
+      background-image: url("../img/Monstrance-2000w.png");
+      background-size: 30vw;
+      background-repeat: no-repeat;
+      background-position-x: right;
+      background-position-y: 46%;
+      border-bottom: 4px solid #8e1b21; } }
+  nav .fus-branding {
+    position: absolute;
+    top: -20px;
+    left: 16px;
+    font-family: 'Cinzel', serif; }
+    @media screen and (max-width: 600px), screen and (max-height: 650px) {
+      nav .fus-branding {
+        top: -18px; } }
+  nav .page-title {
+    line-height: 64px;
+    font-size: 40px;
+    font-weight: 300; }
+  nav .button-collapse {
+    margin-left: 16px;
+    margin-top: 23px;
+    color: #fff;
+    padding: 8px; }
+  nav .brand-logo {
+    margin-left: 64px;
+    margin-top: 30px; }
+    @media screen and (max-width: 992px) {
+      nav .brand-logo {
+        margin-left: 0; } }
+    @media screen and (max-width: 600px), screen and (max-height: 650px) {
+      nav .brand-logo {
+        margin-top: 19px; } }
+    nav .brand-logo img {
+      height: 100px; }
+      @media screen and (max-width: 600px), screen and (max-height: 650px) {
+        nav .brand-logo img {
+          height: 70px; } }
+  nav .social {
+    height: 40px;
+    position: absolute;
+    right: 120px; }
+    nav .social a svg {
+      fill: #21412a;
+      width: 30px; }
+  nav .button {
+    position: fixed;
+    right: 16px;
+    top: 6px;
+    background: #21412a;
+    color: #fff;
+    height: 32px;
+    line-height: 32px;
+    padding: 0 16px;
+    font-weight: 500;
+    text-transform: uppercase; }
+    nav .button:hover {
+      background: #21412a; }
+  nav ul {
+    margin-right: 16px; }
+    nav ul li {
+      line-height: 48px;
+      height: 48px;
+      margin-top: 40px; }
+      nav ul li a {
+        color: #000;
+        line-height: 36px; }
+  nav .search-icon {
+    float: left; }
+    nav .search-icon svg {
+      cursor: pointer;
+      width: 27px;
+      fill: #21412a;
+      padding: 4px 8px;
+      box-sizing: content-box; }
+  nav #search-input {
+    float: left; }
+    nav #search-input input {
+      color: rgba(0, 0, 0, 0.54);
+      display: block;
+      font-size: 16px;
+      height: 30px;
+      transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      width: 0; }
+    nav #search-input svg {
+      display: none;
+      position: absolute;
+      top: 45px;
+      right: 18px; }
+  nav #search-input.open input {
+    width: 250px; }
+  nav #search-input.open svg {
+    display: block; }
+
+.interior {
+  margin-bottom: 0; }
+  .interior nav {
+    background-color: #000;
+    height: 102px;
+    background-image: url("../img/Monstrance-2000w.png");
+    background-size: 30vw;
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: 46%; }
+    @media screen and (max-width: 992px) {
+      .interior nav {
+        border-bottom: 4px solid #8e1b21; } }
+    .interior nav .fus-branding {
+      position: absolute;
+      top: -20px;
+      left: 16px;
+      font-family: 'Cinzel', serif; }
+      @media screen and (max-width: 600px), screen and (max-height: 650px) {
+        .interior nav .fus-branding {
+          top: -18px; } }
+    .interior nav .brand-logo {
+      margin-top: 24px; }
+      .interior nav .brand-logo img {
+        height: 70px; }
+
+.side-nav {
+  max-width: 85%;
+  z-index: 998; }
+  .side-nav .brand-logo {
+    margin-left: 0; }
+  .side-nav .logo {
+    height: 110px; }
+    .side-nav .logo a {
+      padding: 10px 10px 0px 10px;
+      width: 100%; }
+      .side-nav .logo a:hover {
+        background-color: #fff; }
+    .side-nav .logo img {
+      width: 100%;
+      height: auto; }
+  .side-nav .search {
+    margin: 0 8px; }
+    .side-nav .search input {
+      margin-left: 8px;
+      margin-right: 8px;
+      border: none;
+      outline: none;
+      box-shadow: none;
+      width: 100%;
+      display: block;
+      height: 45px; }
+      .side-nav .search input:focus {
+        border-bottom: none;
+        box-shadow: none; }
+  .side-nav .search-icon svg {
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 27px;
+    fill: #21412a; }
+  .side-nav li {
+    line-height: 48px;
+    margin-top: 0; }
+  .side-nav .collapsible-body li a {
+    padding: 0 23.5px 0 44px;
+    font-weight: 400; }
+
+#hero {
+  min-height: 80vh;
+  background-image: url("../img/Monstrance-2000w.png");
+  background-size: 80vw;
+  background-repeat: no-repeat;
+  background-position-x: 183%;
+  background-position-y: 36%;
+  background-color: #000;
+  margin-top: -74px;
+  padding-bottom: 0; }
+  @media screen and (max-width: 1200px) {
+    #hero {
+      background-image: url("../img/Monstrance-2000w.png");
+      background-position-y: 26%; } }
+  @media screen and (max-width: 600px), screen and (max-height: 650px) {
+    #hero {
+      display: none; } }
+  #hero .row {
+    margin-bottom: 0; }
+  #hero h1 {
+    font-family: 'Cinzel', serif; }
+
+.bottom-nav {
+  text-align: center;
+  background-color: #8e1b21;
+  padding: 0;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2); }
+  .bottom-nav ul {
+    display: inline-block;
+    margin: 8px 0; }
+    .bottom-nav ul li {
+      float: left;
+      padding: 4px 16px;
+      padding: 4px 16px 0px 16px;
+      line-height: 8px; }
+      .bottom-nav ul li a {
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 20px;
+        font-family: 'Cinzel', serif;
+        cursor: pointer; }
+
+@media screen and (max-width: 600px) {
+  .section .valign-wrapper {
+    flex-direction: column; } }
+
+@media screen and (max-width: 600px) {
+  .section .valign-wrapper .order-1 {
+    order: 1; } }
+
+@media screen and (max-width: 600px) {
+  .section .valign-wrapper .order-2 {
+    order: 2; } }
+
+#san-damiano {
+  background-image: url("../img/san-damiano.gif");
+  background-attachment: fixed;
+  background-size: 50vw;
+  background-repeat: no-repeat;
+  background-position-x: -12%;
+  background-position-y: 12%; }
+
+.white-background-flourish {
+  background-image: url("../img/motif1.png"), url("../img/motif1-reverse.png");
+  background-repeat: no-repeat;
+  background-position: -10% 50%, 111% 50%; }
+
+.red-background-flourish {
+  background-color: #a61f26;
+  background-image: url("../img/motif2.png"), url("../img/motif2-reverse.png");
+  background-repeat: repeat-y;
+  background-position: 0% 50%, 100% 50%; }
+
+.interior-page-title {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  min-height: 39vh; }
+  .interior-page-title h1 {
+    margin: 0 auto;
+    padding-bottom: 25px;
+    background: url("../img/squiggly1.png") no-repeat bottom center;
+    background-size: 132px;
+    font-size: 54px; }
+
+#about .interior-page-title {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("../img/campus-11.jpg"); }
+
+#courses .interior-page-title {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("../img/campus-6.jpg"); }
+
+#courses h2 {
+  font-size: 48px; }
+
+#courses h3 {
+  font-size: 32px; }
+
+#events .interior-page-title {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("../img/campus-7.jpg"); }
+
+#events h2 {
+  font-size: 48px; }
+
+#resources .interior-page-title {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("../img/campus-11.jpg");
+  background-position-y: -276px; }
+
+#resources .card-content svg {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  fill: #998643; }
+
+#resources .card-content span {
+  display: block;
+  color: rgba(0, 0, 0, 0.87); }
+
+#resources .card-content p {
+  color: rgba(0, 0, 0, 0.87); }
+
+#resources .card-content .resource-name {
+  color: #8e1b21;
+  font-size: 18px;
+  font-weight: 400; }
+
+#team .interior-page-title {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("../img/campus-3.jpg"); }
+
+#team .team-card-container {
+  width: 95% !important; }
+  #team .team-card-container .section .title-row {
+    cursor: pointer;
+    margin-bottom: 0; }
+    #team .team-card-container .section .title-row h2 {
+      font-size: 32px; }
+      #team .team-card-container .section .title-row h2 svg {
+        width: 35px;
+        height: 23px;
+        transition: transform .25s; }
+  #team .team-card-container .section .row:not(.title-row) {
+    display: none; }
+  #team .team-card-container .section.open .row {
+    display: block; }
+    #team .team-card-container .section.open .row svg {
+      transform: rotate(90deg); }
+
+.horizontal {
+  max-height: 100px;
+  cursor: pointer; }
+  .horizontal .card-content {
+    padding: 8px;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("../img/motif1-reverse.png");
+    background-repeat: no-repeat;
+    background-position: 250% 25%;
+    max-height: 100px; }
+    .horizontal .card-content span {
+      display: block; }
+    .horizontal .card-content .team-card-name {
+      font-size: 18px;
+      color: #8e1b21;
+      font-weight: 400; }
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 0;
+  margin-left: 8px;
+  width: 75px; }
+  .scroll-to-top i {
+    color: #fff;
+    font-size: 48px;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.25);
+    width: 48px;
+    transform: rotate(90deg); }
+
+.scroll-to-top.slide-out {
+  transform: translateY(200%);
+  transition: transform 500ms ease-in-out; }
+
+.scroll-to-top.slide-in {
+  transform: translateY(0);
+  transition: transform 500ms ease-in-out; }
+
+.preloader-wrapper.big {
+  margin: 50px auto;
+  display: block; }
+
+@media screen and (max-width: 992px) {
+  .material-tooltip {
+    visibility: hidden; } }
+
+.modal.bottom-sheet {
+  max-height: 80%; }
+
+.fixed-action-btn {
+  visibility: hidden; }
+
+.preloader-wrapper.big .spinner-blue {
+  border-color: #1f2a44; }
+
+.preloader-wrapper.big .spinner-yellow {
+  border-color: #8e9fbc; }
+
+.preloader-wrapper.big .spinner-red {
+  border-color: #21412a; }
+
+.preloader-wrapper.big .spinner-green {
+  border-color: #ffc658; }
+
+footer.page-footer {
+  margin-top: 0px;
+  padding-top: 20px;
+  background-color: #8e1b21; }
+
+footer.page-footer .row {
+  margin-bottom: 0px;
+  margin-top: 10px; }
+
+.footer-copyright a {
+  margin-right: 10px; }
+
+footer {
+  margin-top: 0px;
+  padding-top: 0px; }
+  footer .row {
+    margin-bottom: 0px;
+    margin-top: 10px; }
+  footer a {
+    color: #fff; }
+
+.social a svg {
+  fill: #fff;
+  width: 42px; }
+
+.footer-copyright a {
+  margin-right: 10px; }
