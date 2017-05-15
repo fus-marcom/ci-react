@@ -31,8 +31,8 @@ export default class extends React.Component {
         </Head>
         <Nav headerType="interior" />
         <main>
-        <StickyNav />
-        <Title title="Team" imgPath="/static/img/campus-7.jpg" posY="-44vh" />
+          <StickyNav />
+          <Title title="Team" imgPath="/static/img/campus-7.jpg" posY="-44vh" />
 
         </main>
         <Footer />
