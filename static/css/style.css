@@ -383,8 +383,8 @@ nav {
   .interior-page-title h1 {
     margin: 0 auto;
     padding-bottom: 25px;
-    background: url("../img/squiggly1.png") no-repeat bottom center;
-    background-size: 132px;
+    /*background: url("../img/squiggly1.png") no-repeat bottom center;*/
+    /*background-size: 132px;*/
     font-size: 54px; }
 
 #about .interior-page-title {
