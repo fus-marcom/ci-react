@@ -64,10 +64,10 @@ export default class extends React.Component {
           </div>
           <div className="section valign-wrapper black-text white-background-flourish">
             <div className="container wide-container">
-              <h2 className="light center" style={{marginBottom: '0px'}}>Programs at Franciscan University</h2>
+              <h2 className="light center" style={{marginBottom: '0px'}}>A Complete Catechetical Formation</h2>
               <div className="row valign-wrapper">
                 <div className="col s12 m6 valign order-2">
-                  <h3>A Complete Catechetical Formation</h3>
+                  <h3>Catechetics Program</h3>
                   <p className="flow-text">
                     The Catechetics Program at Franciscan University is the largest in the country, and one of the finest in the world.  We offer bachelor’s degrees in catechetics, online and on-campus master’s degrees in Catechetics and Evangelization (MACE), specializations in fields such as youth ministry and music ministry, diverse opportunities for field experience, and individual assistance with field placement.  Our students graduate with the tools necessary to go forth and proclaim the Good News of Jesus Christ in a way that is faithful to the Church and advances the Kingdom of God.
                   </p>
