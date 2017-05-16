@@ -30,7 +30,7 @@ export default class extends React.Component {
           <link href="/static/css/style.css" rel="stylesheet" />
         </Head>
         <Nav headerType="interior" />
-        <main>
+        <main id="about">
           <StickyNav />
           <Title title="About" imgPath="/static/img/campus-11.jpg" posY="-44vh" />
           <div className="section white-background-flourish">
