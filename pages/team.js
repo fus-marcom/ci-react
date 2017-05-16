@@ -1,6 +1,7 @@
 import React from 'react'
 import Nav from '../components/Nav';
 import StickyNav from '../components/StickyNav';
+import TeamCard from '../components/TeamCard';
 import Footer from '../components/Footer';
 import Title from '../components/Title';
 import Head from 'next/head'
@@ -30,10 +31,106 @@ export default class extends React.Component {
           <link href="/static/css/style.css" rel="stylesheet" />
         </Head>
         <Nav headerType="interior" />
-        <main>
+        <main id="team">
           <StickyNav />
           <Title title="Team" imgPath="/static/img/campus-7.jpg" posY="-44vh" />
+          <div className="container">
+            <div className="section">
+              <div className="row valign-wrapper">
+                <div className="col s12 valign">
+                  <p className="flow-text">
+                    Franciscan University of Steubenville houses the largest Catechetics Program in the United States, with more catechetics students and more catechetics faculty members than any other college or university.  Our world-class faculty of catechists and theologians have taught, presented, and worked in universities, schools, and parishes around the world.  More than solely academicians, our faculty are also practitioners, who bring decades of experience in youth ministry, catechetical leadership, and faith formation.  To facilitate offering assistance to dioceses, this section of our website lists the members of our catechetics faculty, along with a number of key collaborators in the Institute’s work, from within the University and in the field as professionals at all levels of ministry.  All of those listed here are proven and skilled at training others towards greater levels of excellence in the work of passing on the faith.  We welcome invitations to assist dioceses and other Catholic institutions in training and forming those who form others.  We greatly value those called to pass on the faith in local communities:  in school classrooms, in adult formation settings, in sacramental programs, in homes.  Our goal is to foster growth, build competence, and inspire confidence in those called to serve and teach their neighbors, families, and fellow parishioners.
+                  </p>
+                  <p className="flow-text">
+                    If you'd like to contact us to invite one or a team of our presenters or faculty, please email us at: CI@franciscan.edu
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="container team-card-container">
+            <div className="section black-text open">
+              <div className="row light flow-text title-row">
+                <div className="col s12">
+                  <h2 className="light">
+                    <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                      <path d="M0 0h24v24H0z" fill="none"/>
+                    </svg>Franciscan University Catechetics Faculty and Staff</h2>
+                </div>
+              </div>
+              <div className="row light">
+                <div className="col s12 l6">
+                  <TeamCard />
+                </div>
+                <div className="col s12 l6">
+                  <TeamCard />
+                </div>
+              </div>
+              <div className="row light">
+                <div className="col s12 l6">
+                  <TeamCard />
+                </div>
+                <div className="col s12 l6">
+                  <TeamCard />
+                </div>
+              </div>
+              <div className="row light">
+                <div className="col s12 l6">
+                  <TeamCard />
+                </div>
+                <div className="col s12 l6">
+                  <TeamCard />
+                </div>
+              </div>
+              <div className="row light">
+                <div className="col s12 l6">
+                  <TeamCard />
+                </div>
+                <div className="col s12 l6">
+                  <TeamCard />
+                </div>
+              </div>
+            </div>
 
+            <div className="section black-text">
+              <div className="row light flow-text title-row">
+                <div className="col s12">
+                  <h2 className="light"><svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                    <path d="M0 0h24v24H0z" fill="none"/>
+                  </svg>St. John Bosco Conference Track Managers and Online Workshop Presenters</h2>
+                </div>
+              </div>
+
+            </div>
+
+            <div className="section black-text">
+              <div className="row light flow-text title-row">
+                <div className="col s12">
+                  <h2 className="light"><svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                    <path d="M0 0h24v24H0z" fill="none"/>
+                  </svg>Catechetical Institute Staff</h2>
+                </div>
+              </div>
+
+            </div>
+
+            <div className="section black-text">
+
+              <div className="row light flow-text title-row">
+                <div className="col s12">
+                  <h2 className="light">
+                    <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                      <path d="M0 0h24v24H0z" fill="none"/>
+                    </svg>Catechetical Institute Mentors</h2>
+                </div>
+              </div>
+
+            </div>
+          </div>
         </main>
         <Footer />
 
