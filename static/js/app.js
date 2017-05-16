@@ -137,5 +137,26 @@ $('.title-row').click(function() {
 //Init tabs
 $('ul.tabs').tabs();
 
+  //Not sure if this looks good or not
+  // var $formationSection =  $('#banner'),
+  //   programPos = $($formationSection).offset().top,
+  //   programHeight = $($formationSection).height(),
+  //     scrollPos;
+  //
+  // $(window).scroll(function(){
+  //   scrollPos = $('body').scrollTop();
+  //   console.log(programPos);
+  //   console.log(scrollPos);
+  //
+  //   // TODO: find a way to make this transition smooth like on the devtips videos
+  //   if (scrollPos > programPos - programHeight) {
+  //
+  //     $('#san-damiano').css('background-attachment', 'inherit');
+  //   }
+  //
+  //   if (scrollPos < programPos - programHeight) {
+  //     $('#san-damiano').css('background-attachment', 'fixed');
+  //   }
+  // });
 
 });
