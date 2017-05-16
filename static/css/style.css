@@ -31,12 +31,24 @@
 h1, h2, h3, h4, h5 {
   font-family: 'Cinzel', serif; }
 
+iframe {
+  border: none;
+}
+
 .wide-container {
   width: 90% !important; }
 
 .sub-heading {
   display: block;
   font-size: 26px; }
+
+.btn, .btn-large {
+  background-color: #8e1b21;
+}
+
+.btn:hover, .btn-large:hover, .btn:focus, .btn-large:focus, .btn-floating:focus {
+  background-color: rgba(142, 27, 33, 0.91);
+}
 
 .btn-inverted {
   border: solid 2px #000;
