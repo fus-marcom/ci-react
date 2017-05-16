@@ -74,12 +74,12 @@ export default class extends React.Component {
                   <a href="https://www.cvent.com/events/st-john-bosco-conference-july-17-20-2017/registration-fd101066745c42f099a1fade8be9ed1c.aspx?fqp=true%C2%A0" title="Register for the St. John Bosco Conference" target="_blank"><button className="btn waves-effect waves-light">Learn More</button></a>
                 </div>
                 <div className="col s12 m6 order-1">
-                  <img className="responsive-img materialboxed" src="/static/img/port.jpg" srcSet="/static/img/port.jpg 300w, /static/img/port.jpg 600w, /static/img/port.jpg 800w, /static/img/port.jpg 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Speaking the Truth in Love Conference Flyer." title="Speaking the Truth in Love" />
+                  <img className="responsive-img materialboxed z-depth-1" src="/static/img/port.jpg" srcSet="/static/img/port.jpg 300w, /static/img/port.jpg 600w, /static/img/port.jpg 800w, /static/img/port.jpg 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Speaking the Truth in Love Conference Flyer." title="Speaking the Truth in Love" />
                 </div>
               </div>
               <div className="row valign-wrapper">
                 <div className="col s12 m6 order-1">
-                  <img className="responsive-img materialboxed" src="/static/img/fast-track.jpg" srcSet="/static/img/fast-track.jpg 300w, /static/img/fast-track.jpg 600w, /static/img/fast-track.jpg 800w, /static/img/fast-track.jpg 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Speaking the Truth in Love Conference Flyer." title="Speaking the Truth in Love" />
+                  <img className="responsive-img materialboxed z-depth-1" src="/static/img/fast-track.jpg" srcSet="/static/img/fast-track.jpg 300w, /static/img/fast-track.jpg 600w, /static/img/fast-track.jpg 800w, /static/img/fast-track.jpg 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Speaking the Truth in Love Conference Flyer." title="Speaking the Truth in Love" />
                 </div>
                 <div className="col s12 m6 valign order-2">
                   <h3>Franciscan Fast-track</h3>
@@ -108,7 +108,7 @@ export default class extends React.Component {
                 <div className="col s12 m6 valign order-2">
                   <h3>Priestly Vocational Formation</h3>
                   <p className="flow-text">
-                    CThe Priestly Discernment Program (PDP), part of the bachelor’s degree experience at the University, helps men to grow in holiness and listen for the “still, small voice” of a vocation to the priesthood or religious life.  The University is also seeking to develop an Institute for Priestly Renewal (IPR), a summer residency program for seminarians and priests that would reach out to assist diocesan bishops and religious superiors to provide a high-quality curriculum for clergy desiring superlative, efficient, and pragmatic formation for their leadership roles in the new evangelization.
+                    The Priestly Discernment Program (PDP), part of the bachelor’s degree experience at the University, helps men to grow in holiness and listen for the “still, small voice” of a vocation to the priesthood or religious life.  The University is also seeking to develop an Institute for Priestly Renewal (IPR), a summer residency program for seminarians and priests that would reach out to assist diocesan bishops and religious superiors to provide a high-quality curriculum for clergy desiring superlative, efficient, and pragmatic formation for their leadership roles in the new evangelization.
                   </p>
                   <a href="https://www.cvent.com/events/st-john-bosco-conference-july-17-20-2017/registration-fd101066745c42f099a1fade8be9ed1c.aspx?fqp=true%C2%A0" title="Register for the St. John Bosco Conference" target="_blank"><button className="btn waves-effect waves-light">Learn More</button></a>
                 </div>
