@@ -44,9 +44,9 @@ export default class extends React.Component {
 
               <div className="row valign-wrapper">
                 <div className="col s12 m6 order-1">
-                  <img className="responsive-img materialboxed" src="/static/img/st._john_bosco.jpeg" srcset="/static/img/st._john_bosco.jpeg 300w, /static/img/st._john_bosco.jpeg 600w, /static/img/st._john_bosco.jpeg 800w, /static/img/st._john_bosco.jpeg 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Crowd at an event." title="Event" />
+                  <img className="responsive-img materialboxed" src="/static/img/st._john_bosco.jpeg" srcSet="/static/img/st._john_bosco.jpeg 300w, /static/img/st._john_bosco.jpeg 600w, /static/img/st._john_bosco.jpeg 800w, /static/img/st._john_bosco.jpeg 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Crowd at an event." title="Event" />
                   <div className="video-container" style={{marginTop:'24px'}}>
-                    <iframe width="1092" height="665" src="https://www.youtube.com/embed/GZvZ8brOYQM" frameborder="0" allowfullscreen></iframe>
+                    <iframe width="1092" height="665" src="https://www.youtube.com/embed/GZvZ8brOYQM" frameBorder="0" allowFullScreen></iframe>
                   </div>
                 </div>
 
@@ -77,7 +77,7 @@ export default class extends React.Component {
                   <a href="https://steubenvilleconferences.com/wp-content/uploads/2016/11/FNL_2017_Conf_Media_inserts_11_Bosco2.pdf" title="St. John Bosco Conference Flyer PDF"><button className="btn waves-effect waves-light btn-inverted-white" style={{marginLeft: '8px'}}>Flyer</button></a>
                   </div>
                   <div className="col s12 m6 order-1">
-                    <img className="responsive-img materialboxed" src="/static/img/speaking-the-truth.png" srcset="/static/img/speaking-the-truth.png 300w, /static/img/speaking-the-truth.png 600w, /static/img/speaking-the-truth.png 800w, /static/img/speaking-the-truth.png 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Speaking the Truth in Love Conference Flyer." title="Speaking the Truth in Love" />
+                    <img className="responsive-img materialboxed" src="/static/img/speaking-the-truth.png" srcSet="/static/img/speaking-the-truth.png 300w, /static/img/speaking-the-truth.png 600w, /static/img/speaking-the-truth.png 800w, /static/img/speaking-the-truth.png 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Speaking the Truth in Love Conference Flyer." title="Speaking the Truth in Love" />
                   </div>
                 </div>
               </div>

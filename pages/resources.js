@@ -117,7 +117,7 @@ export default class extends React.Component {
           <div className="section valign-wrapper white-background-flourish">
             <div className="valign container">
               <div className="row">
-                <div col="s12">
+                <div className="col s12">
                   <ul className="tabs">
                     <li className="tab col s3"><a href="#">All</a></li>
                     <li className="tab col s3"><a className="active" href="#">Audio</a></li>
