@@ -53,7 +53,7 @@ export default class extends React.Component {
                   </p>
                 </div>
                 <div className="col s12 m6 order-1">
-                  <img className="responsive-img materialboxed" src="/static/img/father-malavolti.jpg" srcSet="img//static/img/father-malavolti.jpg 300w, /static/img/father-malavolti.jpg 600w, /static/img/father-malavolti.jpg 800w, /static/img/father-malavolti.jpg 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Diners eating at a restaurant." title="Restaurant" />
+                  <img className="responsive-img" src="/static/img/father-malavolti.jpg" srcSet="img//static/img/father-malavolti.jpg 300w, /static/img/father-malavolti.jpg 600w, /static/img/father-malavolti.jpg 800w, /static/img/father-malavolti.jpg 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Diners eating at a restaurant." title="Restaurant" />
                 </div>
               </div>
             </div>
@@ -62,7 +62,7 @@ export default class extends React.Component {
             <div className="container wide-container">
               <div className="row valign-wrapper">
                 <div className="col s12 m6 order-1">
-                  <img className="responsive-img materialboxed" src="/static/img/petroc-about.jpg" srcSet="/static/img/petroc-about.jpg 300w, /static/img/petroc-about.jpg 600w, /static/img/petroc-about.jpg 800w, /static/img/petroc-about.jpg 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Crowd at an event." title="Event" />
+                  <img className="responsive-img" src="/static/img/petroc-about.jpg" srcSet="/static/img/petroc-about.jpg 300w, /static/img/petroc-about.jpg 600w, /static/img/petroc-about.jpg 800w, /static/img/petroc-about.jpg 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Crowd at an event." title="Event" />
                 </div>
                 <div className="col s12 m6 valign order-2">
                   <p className="flow-text">
@@ -81,7 +81,7 @@ export default class extends React.Component {
                   </p>
                 </div>
                 <div className="col s12 m6 order-1">
-                  <img className="responsive-img materialboxed" src="/static/img/keimig-about.jpg" srcSet="/static/img/keimig-about.jpg 300w, /static/img/keimig-about.jpg 600w, /static/img/keimig-about.jpg 800w, /static/img/keimig-about.jpg 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Diners eating at a restaurant." title="Restaurant" />
+                  <img className="responsive-img" src="/static/img/keimig-about.jpg" srcSet="/static/img/keimig-about.jpg 300w, /static/img/keimig-about.jpg 600w, /static/img/keimig-about.jpg 800w, /static/img/keimig-about.jpg 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Diners eating at a restaurant." title="Restaurant" />
                 </div>
               </div>
             </div>
