@@ -470,6 +470,15 @@ nav {
     #team .team-card-container .section.open .row svg {
       transform: rotate(90deg); }
 
+/*#courses div.open>.col:not(h3) {
+  display: block;
+}
+
+#courses div.open>*:not(h3) {
+  display: block;
+}*/
+
+
 .horizontal {
   max-height: 100px;
   cursor: pointer; }
