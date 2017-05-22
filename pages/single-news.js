@@ -11,7 +11,7 @@ export default class extends React.Component {
 
   static async getInitialProps ({ query: { id } }) {
     const apiUrl = 'https://wp.catechetics.com/wp-json/wp/v2/';
-    const params = `posts?filter[name]=${'hello-world'}&fields=title,featured_media,better_featured_image,categories,tags,id,excerpt,content,acf,pure_taxonomies`;
+    const params = `posts?filter[name]=${id}&fields=title,featured_media,better_featured_image,categories,tags,id,excerpt,content,acf,pure_taxonomies`;
     const res = await fetch(apiUrl + params)
     const data = await res.json()
     return { data }
