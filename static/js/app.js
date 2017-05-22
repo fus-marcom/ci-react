@@ -142,26 +142,23 @@ $('.sub-section h3').click(function() {
 //Init tabs
 $('ul.tabs').tabs();
 
-  //Not sure if this looks good or not
-  // var $formationSection =  $('#banner'),
-  //   programPos = $($formationSection).offset().top,
-  //   programHeight = $($formationSection).height(),
-  //     scrollPos;
-  //
-  // $(window).scroll(function(){
-  //   scrollPos = $('body').scrollTop();
-  //   console.log(programPos);
-  //   console.log(scrollPos);
-  //
-  //   // TODO: find a way to make this transition smooth like on the devtips videos
-  //   if (scrollPos > programPos - programHeight) {
-  //
-  //     $('#san-damiano').css('background-attachment', 'inherit');
-  //   }
-  //
-  //   if (scrollPos < programPos - programHeight) {
-  //     $('#san-damiano').css('background-attachment', 'fixed');
-  //   }
-  // });
+//San Damiano Section Scroll Effect
+  var $formationSection =  $('#banner'),
+    programPos = $($formationSection).offset().top,
+    programHeight = $($formationSection).height(),
+      scrollPos;
+
+  $(window).scroll(function(){
+    scrollPos = $('body').scrollTop();
+  
+    if (scrollPos > programPos - programHeight) {
+      let posY = programPos - scrollPos - programHeight;
+      $('#san-damiano').css('background-position-y', `calc(${posY}px + 12%)`);
+    }
+
+    if (scrollPos < programPos - programHeight) {
+      $('#san-damiano').css('background-position-y', `12%`);
+    }
+  });
 
 });
