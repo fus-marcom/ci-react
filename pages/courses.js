@@ -51,7 +51,7 @@ export default class extends React.Component {
               <span className="sub-heading center">Online Learning at Your Convenience</span>
               <div className="row valign-wrapper">
                 <div className="col s12 m4 order-1">
-                  <img className="responsive-img materialboxed" style={{margin:'0 auto'}} src="/static/img/fah-img.jpg" srcSet="/static/img/fah-img.jpg 300w, /static/img/fah-img.jpg 600w, /static/img/fah-img.jpg 800w, /static/img/fah-img.jpg 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Speaking the Truth in Love Conference Flyer." title="Speaking the Truth in Love" />
+                  <img className="responsive-img" style={{margin:'0 auto'}} src="/static/img/fah-img.jpg" srcSet="/static/img/fah-img.jpg 300w, /static/img/fah-img.jpg 600w, /static/img/fah-img.jpg 800w, /static/img/fah-img.jpg 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Speaking the Truth in Love Conference Flyer." title="Speaking the Truth in Love" />
                   <a href="http://www.franciscanathome.com/" title="Franciscan at Home" target="_blank"><button className="btn waves-effect waves-light btn-inverted-white" style={{margin: '0 auto', marginTop: '16px', display: 'block'}}>Learn More</button></a>
                 </div>
                 <div className="col s12 m8 valign order-2">
@@ -75,7 +75,7 @@ export default class extends React.Component {
                     <a href="https://www.cvent.com/events/st-john-bosco-conference-july-17-20-2017/registration-fd101066745c42f099a1fade8be9ed1c.aspx?fqp=true%C2%A0" title="Register for the St. John Bosco Conference" target="_blank"><button className="btn waves-effect waves-light">Learn More</button></a>
                   </div>
                   <div className="col s12 m6 order-1">
-                    <img className="responsive-img materialboxed z-depth-1" src="/static/img/port.jpg" srcSet="/static/img/port.jpg 300w, /static/img/port.jpg 600w, /static/img/port.jpg 800w, /static/img/port.jpg 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Speaking the Truth in Love Conference Flyer." title="Speaking the Truth in Love" />
+                    <img className="responsive-img z-depth-1" src="/static/img/port.jpg" srcSet="/static/img/port.jpg 300w, /static/img/port.jpg 600w, /static/img/port.jpg 800w, /static/img/port.jpg 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Speaking the Truth in Love Conference Flyer." title="Speaking the Truth in Love" />
                   </div>
                 </div>
               </div>
@@ -96,7 +96,7 @@ export default class extends React.Component {
               <h3>Franciscan Fast-track</h3>
               <div className="row valign-wrapper">
                 <div className="col s12 m6 order-1">
-                  <img className="responsive-img materialboxed z-depth-1" src="/static/img/fast-track.jpg" srcSet="/static/img/fast-track.jpg 300w, /static/img/fast-track.jpg 600w, /static/img/fast-track.jpg 800w, /static/img/fast-track.jpg 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Speaking the Truth in Love Conference Flyer." title="Speaking the Truth in Love" />
+                  <img className="responsive-img z-depth-1" src="/static/img/fast-track.jpg" srcSet="/static/img/fast-track.jpg 300w, /static/img/fast-track.jpg 600w, /static/img/fast-track.jpg 800w, /static/img/fast-track.jpg 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Speaking the Truth in Love Conference Flyer." title="Speaking the Truth in Love" />
                 </div>
                 <div className="col s12 m6 valign order-2">
 
@@ -118,7 +118,7 @@ export default class extends React.Component {
                   <a href="https://www.cvent.com/events/st-john-bosco-conference-july-17-20-2017/registration-fd101066745c42f099a1fade8be9ed1c.aspx?fqp=true%C2%A0" title="Register for the St. John Bosco Conference" target="_blank"><button className="btn waves-effect waves-light">Learn More</button></a>
                 </div>
                 <div className="col s12 m6 order-1">
-                  <img className="responsive-img materialboxed" src="/static/img/degree.jpg" srcSet="/static/img/degree.jpg 300w, /static/img/degree.jpg 600w, /static/img/degree.jpg 800w, /static/img/degree.jpg 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Speaking the Truth in Love Conference Flyer." title="Speaking the Truth in Love" />
+                  <img className="responsive-img" src="/static/img/degree.jpg" srcSet="/static/img/degree.jpg 300w, /static/img/degree.jpg 600w, /static/img/degree.jpg 800w, /static/img/degree.jpg 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Speaking the Truth in Love Conference Flyer." title="Speaking the Truth in Love" />
                 </div>
               </div>
             </div>
@@ -126,7 +126,7 @@ export default class extends React.Component {
               <h3>Priestly Vocational Formation</h3>
               <div className="row valign-wrapper">
                 <div className="col s12 m6 order-1">
-                  <img className="responsive-img materialboxed" src="/static/img/pdp.jpg" srcSet="/static/img/pdp.jpg 300w, /static/img/pdp.jpg 600w, /static/img/pdp.jpg 800w, /static/img/pdp.jpg 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Speaking the Truth in Love Conference Flyer." title="Speaking the Truth in Love" />
+                  <img className="responsive-img" src="/static/img/pdp.jpg" srcSet="/static/img/pdp.jpg 300w, /static/img/pdp.jpg 600w, /static/img/pdp.jpg 800w, /static/img/pdp.jpg 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Speaking the Truth in Love Conference Flyer." title="Speaking the Truth in Love" />
                 </div>
                 <div className="col s12 m6 valign order-2">
 
