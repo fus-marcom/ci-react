@@ -66,7 +66,10 @@ export default class extends React.Component {
             <div className="container wide-container">
               <h2 className="light center" style={{marginBottom: '0px'}}>A Complete Catechetical Formation</h2>
               <div className="sub-section open">
-                <h3>Catechetics Program</h3>
+                <h3><svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                  <path d="M0 0h24v24H0z" fill="none"/>
+                </svg>Catechetics Program</h3>
                 <div className="row valign-wrapper">
                   <div className="col s12 m6 valign order-2">
                     <p className="flow-text">
@@ -91,9 +94,20 @@ export default class extends React.Component {
                   .sub-section.open .col {
                     display: block;
                   }
+
+                  .sub-section h3 {
+                    cursor: pointer;
+                  }
+
+                  .sub-section.open h3 svg {
+                    transform: rotate(90deg);
+                  }
               `}</style>
             <div className="sub-section">
-              <h3>Franciscan Fast-track</h3>
+              <h3><svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                <path d="M0 0h24v24H0z" fill="none"/>
+              </svg>Franciscan Fast-track</h3>
               <div className="row valign-wrapper">
                 <div className="col s12 m6 order-1">
                   <img className="responsive-img z-depth-1" src="/static/img/fast-track.jpg" srcSet="/static/img/fast-track.jpg 300w, /static/img/fast-track.jpg 600w, /static/img/fast-track.jpg 800w, /static/img/fast-track.jpg 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Speaking the Truth in Love Conference Flyer." title="Speaking the Truth in Love" />
@@ -108,7 +122,10 @@ export default class extends React.Component {
               </div>
             </div>
             <div className="sub-section">
-              <h3>Online Degree Programs</h3>
+              <h3><svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                <path d="M0 0h24v24H0z" fill="none"/>
+              </svg>Online Degree Programs</h3>
               <div className="row valign-wrapper">
                 <div className="col s12 m6 valign order-2">
 
@@ -123,7 +140,10 @@ export default class extends React.Component {
               </div>
             </div>
             <div className="sub-section">
-              <h3>Priestly Vocational Formation</h3>
+              <h3><svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                <path d="M0 0h24v24H0z" fill="none"/>
+              </svg>Priestly Vocational Formation</h3>
               <div className="row valign-wrapper">
                 <div className="col s12 m6 order-1">
                   <img className="responsive-img" src="/static/img/pdp.jpg" srcSet="/static/img/pdp.jpg 300w, /static/img/pdp.jpg 600w, /static/img/pdp.jpg 800w, /static/img/pdp.jpg 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Speaking the Truth in Love Conference Flyer." title="Speaking the Truth in Love" />

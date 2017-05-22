@@ -134,6 +134,11 @@ $('.title-row').click(function() {
   $(this).parent().toggleClass('open').fadeIn(100);
 });
 
+//Course Section Click Handler
+$('.sub-section h3').click(function() {
+  $(this).parent().toggleClass('open').fadeIn(100);
+});
+
 //Init tabs
 $('ul.tabs').tabs();
 
