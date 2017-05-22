@@ -150,13 +150,13 @@ $('ul.tabs').tabs();
 
   $(window).scroll(function(){
     scrollPos = $('body').scrollTop();
-  
-    if (scrollPos > programPos - programHeight) {
+
+    if (scrollPos > (programPos - programHeight)) {
       let posY = programPos - scrollPos - programHeight;
       $('#san-damiano').css('background-position-y', `calc(${posY}px + 12%)`);
     }
 
-    if (scrollPos < programPos - programHeight) {
+    if (scrollPos < (programPos - programHeight)) {
       $('#san-damiano').css('background-position-y', `12%`);
     }
   });
