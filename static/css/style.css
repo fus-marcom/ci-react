@@ -17,6 +17,12 @@
   display: block;
   margin: 0 auto; }
 
+/* Fix for Chrome bug */
+.hoverable:hover {
+  transition: box-shadow .25s;
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19), 0 0 0 0 rgba(0, 0, 0, 0);
+}
+
 /* Make base font sizes larger*/
 @media only screen and (min-width: 0) {
   html {
