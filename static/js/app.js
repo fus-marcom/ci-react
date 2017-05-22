@@ -1,5 +1,27 @@
 /* jshint esversion: 6 */
 
+function bgScrollEffect() {
+  //San Damiano Section Scroll Effect
+    var $formationSection =  $('#banner'),
+      programPos = $($formationSection).offset().top,
+      programHeight = $($formationSection).height(),
+        scrollPos;
+
+    $(window).scroll(function(){
+      scrollPos = $('body').scrollTop();
+
+      if (scrollPos > (programPos - programHeight)) {
+        let posY = programPos - scrollPos - programHeight;
+        $('#san-damiano').css('background-position-y', `calc(${posY}px + 12%)`);
+      }
+
+      if (scrollPos < (programPos - programHeight)) {
+        $('#san-damiano').css('background-position-y', `12%`);
+      }
+    });
+}
+
+
 $(function() {
 
   //Get current year and add to footer
@@ -142,23 +164,6 @@ $('.sub-section h3').click(function() {
 //Init tabs
 $('ul.tabs').tabs();
 
-//San Damiano Section Scroll Effect
-  var $formationSection =  $('#banner'),
-    programPos = $($formationSection).offset().top,
-    programHeight = $($formationSection).height(),
-      scrollPos;
-
-  $(window).scroll(function(){
-    scrollPos = $('body').scrollTop();
-
-    if (scrollPos > (programPos - programHeight)) {
-      let posY = programPos - scrollPos - programHeight;
-      $('#san-damiano').css('background-position-y', `calc(${posY}px + 12%)`);
-    }
-
-    if (scrollPos < (programPos - programHeight)) {
-      $('#san-damiano').css('background-position-y', `12%`);
-    }
-  });
+bgScrollEffect();
 
 });

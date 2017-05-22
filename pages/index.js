@@ -12,6 +12,10 @@ import Head from 'next/head'
 
 export default class extends React.Component {
 
+  componentDidMount() {
+    bgScrollEffect();
+  }
+
   render () {
     return (
       <div style={{display: 'flex', flexDirection: 'column'}}>
