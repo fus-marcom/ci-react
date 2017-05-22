@@ -9,7 +9,7 @@ import 'isomorphic-fetch'
 export default class extends React.Component {
 
   static async getInitialProps () {
-    const apiUrl = 'https://test1.jesseweigel.com/demo/wp-json/wp/v2/';
+    const apiUrl = 'https://wp.catechetics.com/wp-json/wp/v2/';
     const params = 'posts';
     const res = await fetch(apiUrl + params)
     const data = await res.json()
@@ -37,11 +37,44 @@ export default class extends React.Component {
             <div className="section">
               {this.props.data.map(function(post, i) {
                 return <div className="row" key={i}>
-                  <h1>{post.title.rendered}</h1>
-                  <p className="flow-text" dangerouslySetInnerHTML={{__html: post.content.rendered}}></p>
+                  <div className="col s12">
+                    <a href={`/news/${post.slug}`}><h2>{post.title.rendered}</h2></a>
+                    <div className="flow-text" dangerouslySetInnerHTML={{__html: post.content.rendered}}></div>
+                  </div>
                 </div>
               })}
             </div>
+          </div>
+          <div className="section" style={{backgroundColor: '#000'}}>
+            <div className="container">
+              <div className="row white-text">
+                <div className="col s12 m4">
+                  <h5>Categories</h5>
+                  <ul>
+                    <li>Category</li>
+                    <li>Category</li>
+                    <li>Category</li>
+                  </ul>
+                </div>
+                <div className="col s12 m4">
+                  <h5>Tags</h5>
+                  <ul>
+                    <li>Tag</li>
+                    <li>Tag</li>
+                    <li>Tag</li>
+                  </ul>
+                </div>
+                <div className="col s12 m4">
+                  <h5>Archives</h5>
+                    <ul>
+                      <li>May</li>
+                      <li>April</li>
+                      <li>March</li>
+                    </ul>
+                </div>
+              </div>
+            </div>
+
           </div>
         </main>
         <Footer />
