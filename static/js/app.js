@@ -5,10 +5,13 @@ function bgScrollEffect() {
     let $formationSection =  $('#banner'),
       programPos = $($formationSection).offset().top,
       programHeight = $($formationSection).height(),
+      windowWidth = $(window).width(),
         scrollPos;
+      //TODO: Add some timeouts so the resize and scroll functions don't run as often
     $(window).resize(function() {
       programPos = $($formationSection).offset().top;
       programHeight = $($formationSection).height();
+      windowWidth = $(window).width();
     });
 
     $(window).scroll(function(){
@@ -16,11 +19,11 @@ function bgScrollEffect() {
 
       if (scrollPos > (programPos - programHeight)) {
         let posY = programPos - scrollPos - programHeight;
-        $('#san-damiano').css('background-position-y', `calc(${posY}px + 12%)`);
+        $('#san-damiano').css('background-position-y', `calc(${posY}px + ${windowWidth > 1540 ? '-12%' : '12%'})`);
       }
 
       if (scrollPos < (programPos - programHeight)) {
-        $('#san-damiano').css('background-position-y', `12%`);
+        $('#san-damiano').css('background-position-y', `${windowWidth > 1540 ? '-12%' : '12%'}`);
       }
     });
 }
