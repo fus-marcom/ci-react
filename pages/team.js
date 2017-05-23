@@ -9,13 +9,17 @@ import 'isomorphic-fetch'
 
 export default class extends React.Component {
 
-//   static async getInitialProps () {
-//   const apiUrl = '';
-//   const params = '';
-//   const res = await fetch(apiUrl + params)
-//   const data = await res.json()
-//   return { data }
-// }
+  static async getInitialProps () {
+    const apiUrl = 'https://wp.catechetics.com/wp-json/wp/v2/';
+    const params = 'team-member?per_page=100&filter[order]=ASC&fields=title,slug,content,better_featured_image,acf';
+    const res = await fetch(apiUrl + params)
+    const data = await res.json()
+    return { data }
+  }
+
+  componentDidMount() {
+    teamCardClick();
+  }
 
   render () {
     return (
@@ -60,38 +64,15 @@ export default class extends React.Component {
                 </div>
               </div>
               <div className="row light">
-                <div className="col s12 l6">
-                  <TeamCard />
-                </div>
-                <div className="col s12 l6">
-                  <TeamCard />
-                </div>
+                {this.props.data.map(function(post, i) {
+                  if (post.acf.category[0] === 'fus-staff') {
+                    return <div className="col s12 l6" key={i}>
+                        <TeamCard name={post.acf.name} title={post.acf.title} org={post.acf.organization} cat={post.acf.category} imgUrl={post.better_featured_image !== null ? post.better_featured_image.source_url : ''} content={post.content.rendered} slug={post.slug} />
+                    </div>
+                  }
+                })}
               </div>
-              <div className="row light">
-                <div className="col s12 l6">
-                  <TeamCard />
-                </div>
-                <div className="col s12 l6">
-                  <TeamCard />
-                </div>
               </div>
-              <div className="row light">
-                <div className="col s12 l6">
-                  <TeamCard />
-                </div>
-                <div className="col s12 l6">
-                  <TeamCard />
-                </div>
-              </div>
-              <div className="row light">
-                <div className="col s12 l6">
-                  <TeamCard />
-                </div>
-                <div className="col s12 l6">
-                  <TeamCard />
-                </div>
-              </div>
-            </div>
 
             <div className="section black-text">
               <div className="row light flow-text title-row">
@@ -102,7 +83,15 @@ export default class extends React.Component {
                   </svg>St. John Bosco Conference Track Managers and Online Workshop Presenters</h2>
                 </div>
               </div>
-
+              <div className="row light">
+                {this.props.data.map(function(post, i) {
+                  if (post.acf.category[0] === 'conf-staff') {
+                    return <div className="col s12 l6" key={i}>
+                        <TeamCard name={post.acf.name} title={post.acf.title} org={post.acf.organization} cat={post.acf.category} imgUrl={post.better_featured_image !== null ? post.better_featured_image.source_url : ''} content={post.content.rendered} slug={post.slug} />
+                    </div>
+                  }
+                })}
+              </div>
             </div>
 
             <div className="section black-text">
@@ -114,7 +103,15 @@ export default class extends React.Component {
                   </svg>Catechetical Institute Staff</h2>
                 </div>
               </div>
-
+              <div className="row light">
+                {this.props.data.map(function(post, i) {
+                  if (post.acf.category[0] === 'ci-staff') {
+                    return <div className="col s12 l6" key={i}>
+                        <TeamCard name={post.acf.name} title={post.acf.title} org={post.acf.organization} cat={post.acf.category} imgUrl={post.better_featured_image !== null ? post.better_featured_image.source_url : ''} content={post.content.rendered} slug={post.slug} />
+                    </div>
+                  }
+                })}
+              </div>
             </div>
 
             <div className="section black-text">
@@ -128,7 +125,15 @@ export default class extends React.Component {
                     </svg>Catechetical Institute Mentors</h2>
                 </div>
               </div>
-
+              <div className="row light">
+                {this.props.data.map(function(post, i) {
+                  if (post.acf.category[0] === 'ci-mentors') {
+                    return <div className="col s12 l6" key={i}>
+                        <TeamCard name={post.acf.name} title={post.acf.title} org={post.acf.organization} cat={post.acf.category} imgUrl={post.better_featured_image !== null ? post.better_featured_image.source_url : ''} content={post.content.rendered} slug={post.slug} />
+                    </div>
+                  }
+                })}
+              </div>
             </div>
           </div>
         </main>

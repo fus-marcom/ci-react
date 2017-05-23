@@ -1,6 +1,22 @@
 /* jshint esversion: 6 */
 
 
+//Team Card click handler
+function teamCardClick() {
+  $('.team-card').not('.modal').click(function(){
+    console.log('click');
+    let thisCard = this;
+    let cardSlug = $(thisCard).attr('data-slug');
+    console.log(cardSlug);
+    $(`#${cardSlug}`).modal('open');
+    $('.team-card .modal-footer a').click(function() {
+      $(`#${cardSlug}`).modal('close');
+    });
+  });
+}
+
+
+
 function stickyNav() {
   // Track scroll position of .bottom-nav
   // When bottom-nav is at the top, change to position: fixed
