@@ -16,6 +16,10 @@ export default class extends React.Component {
 //   return { data }
 // }
 
+componentDidMount() {
+  hScroller();
+}
+
   render () {
     return (
       <div style={{display: 'flex', flexDirection: 'column'}}>
