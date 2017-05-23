@@ -1,5 +1,19 @@
 /* jshint esversion: 6 */
 
+//Scrolls the contents of event table on click.
+//TODO: Smoother scroll
+function hScroller() {
+  $('#scrollLeft').click(function() {
+    let scrollPos = $('tbody').scrollLeft();
+    $('tbody').scrollLeft(scrollPos - 300);
+  });
+
+  $('#scrollRight').click(function() {
+    let scrollPos = $('tbody').scrollLeft();
+    $('tbody').scrollLeft(scrollPos +300);
+  });
+}
+
 function bgScrollEffect() {
   //San Damiano Section Scroll Effect
     let $formationSection =  $('#banner'),
@@ -171,6 +185,12 @@ $('.sub-section h3').click(function() {
 //Init tabs
 $('ul.tabs').tabs();
 
-bgScrollEffect();
+//Init San Damiano section scroll effect
+if (document.getElementById('san-damiano')) {
+  bgScrollEffect();
+}
+
+//Init horizontal scroll buttons for event table
+hScroller();
 
 });
