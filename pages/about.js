@@ -88,7 +88,7 @@ export default class extends React.Component {
           </div>
           <div className="section white-background-flourish banner">
             <div className="container wide-container">
-              <div className="row valign-wrapper">
+              <div className="row">
                 <div className="col s12 m4">
                   <div className="card">
                     <div className="card-image">
