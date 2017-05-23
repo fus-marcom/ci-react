@@ -37,7 +37,7 @@ export default class extends React.Component {
             <div className="container wide-container">
               <h2 className="light center" style={{marginBottom: '0px'}}>St. John Bosco Conference</h2>
               <span className="sub-heading center">July 17-20, 2017</span>
-              <div className="center">
+              <div className="center" style={{marginBottom: '16px'}}>
                 <a href="https://www.cvent.com/events/st-john-bosco-conference-july-17-20-2017/registration-fd101066745c42f099a1fade8be9ed1c.aspx?fqp=true%C2%A0" title="Register for the St. John Bosco Conference" target="_blank"><button className="btn waves-effect waves-light">Register</button></a>
                 <a href="https://steubenvilleconferences.com/wp-content/uploads/2016/11/FNL_2017_Conf_Media_inserts_11_Bosco2.pdf" title="St. John Bosco Conference Flyer PDF"><button className="btn waves-effect waves-light" style={{marginLeft: '8px'}}>Flyer</button></a>
               </div>
@@ -64,7 +64,7 @@ export default class extends React.Component {
             <div className="container wide-container">
               <h2 className="light center" style={{marginBottom: '0px'}}>Speaking the Truth in Love Conference</h2>
               <span className="sub-heading center">October 13-15, 2017</span>
-              <div className="center">
+              <div className="center" style={{marginBottom: '16px'}}>
                 <a href="https://www.cvent.com/events/st-john-bosco-conference-july-17-20-2017/registration-fd101066745c42f099a1fade8be9ed1c.aspx?fqp=true%C2%A0" title="Register for the St. John Bosco Conference" target="_blank"><button className="btn waves-effect waves-light btn-inverted-white">Register</button></a>
                 <a href="https://steubenvilleconferences.com/wp-content/uploads/2016/11/FNL_2017_Conf_Media_inserts_11_Bosco2.pdf" title="St. John Bosco Conference Flyer PDF"><button className="btn waves-effect waves-light btn-inverted-white" style={{marginLeft: '8px'}}>Flyer</button></a>
               </div>

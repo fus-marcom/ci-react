@@ -2,6 +2,7 @@
 
 //Scrolls the contents of event table on click.
 //TODO: Smoother scroll
+//TODO: Make the scroll change by the width of the td
 function hScroller() {
   $('#scrollLeft').click(function() {
     let scrollPos = $('tbody').scrollLeft();

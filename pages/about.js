@@ -86,6 +86,53 @@ export default class extends React.Component {
               </div>
             </div>
           </div>
+          <div className="section white-background-flourish banner">
+            <div className="container wide-container">
+              <div className="row valign-wrapper">
+                <div className="col s12 m4">
+                  <div className="card">
+                    <div className="card-image">
+                      <img src="/static/img/fr-nathan.jpg" srcSet="/static/img/fr-nathan.jpg 300w, /static/img/fr-nathan.jpg 600w, /static/img/fr-nathan.jpg 800w, /static/img/fr-nathan.jpg 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Diners eating at a restaurant." title="Restaurant" />
+                    </div>
+                    <div className="card-content">
+                      <span className="caption caption-name card-title">Fr. Nathan Malavolti, TOR</span>
+                      <span className="caption caption-title">Vice President of Pastoral Care and Evangelization</span>
+                      <span className="caption caption-org">Franciscan University</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="col s12 m4">
+                  <div className="card">
+                    <div className="card-image">
+                      <img src="/static/img/petroc-about.jpg" srcSet="/static/img/petroc-about.jpg 300w, /static/img/petroc-about.jpg 600w, /static/img/petroc-about.jpg 800w, /static/img/petroc-about.jpg 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Diners eating at a restaurant." title="Restaurant" />
+                    </div>
+                    <div className="card-content">
+                      <span className="caption caption-name card-title">Petroc Willey, STL, PhD</span>
+                      <span className="caption caption-title">Director</span>
+                      <span className="caption caption-org">Catechetical Institute and Office of Catechetics</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="col s12 m4">
+                  <div className="card">
+                    <div className="card-image">
+                      <img src="/static/img/keimig-about.jpg" srcSet="/static/img/keimig-about.jpg 300w, /static/img/keimig-about.jpg 600w, /static/img/keimig-about.jpg 800w, /static/img/keimig-about.jpg 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Diners eating at a restaurant." title="Restaurant" />
+                    </div>
+                    <div className="card-content">
+                      <span className="caption caption-name card-title">William Keimig, MPM, MA</span>
+                      <span className="caption caption-title">Assistant Director</span>
+                      <span className="caption caption-org">Catechetical Institute</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <style jsx>{`
+              span.caption {
+                display: block;
+              }
+                `}</style>
 
           <div className="section valign-wrapper black-text white-background-flourish">
             <div className="valign container">
