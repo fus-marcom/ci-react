@@ -6,7 +6,7 @@ class Hero extends Component {
       <div className="section valign-wrapper" id="hero" style={{marginTop: '-83px'}}>
         <div className="row right valign white-text">
           <div className="col s12 m6">
-            <h1 style={{fontFamily: "'Allura', cursive", fontSize: '100px'}}>Forming those who form others.</h1>
+            <h1 style={{fontFamily: "'Allura', cursive", fontSize: '100px', paddingTop: '150px'}}>Forming those who form others.</h1>
           </div>
           <div className="col s12 m6">
 
