@@ -2,10 +2,14 @@
 
 function bgScrollEffect() {
   //San Damiano Section Scroll Effect
-    var $formationSection =  $('#banner'),
+    let $formationSection =  $('#banner'),
       programPos = $($formationSection).offset().top,
       programHeight = $($formationSection).height(),
         scrollPos;
+    $(window).resize(function() {
+      programPos = $($formationSection).offset().top;
+      programHeight = $($formationSection).height();
+    });
 
     $(window).scroll(function(){
       scrollPos = $('body').scrollTop();
