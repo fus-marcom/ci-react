@@ -44,10 +44,10 @@ export default class extends React.Component {
               <div className="row valign-wrapper">
                 <div className="col s12 valign">
                   <p className="flow-text">
-                    Scholar-practitioners, people who study the craft of catechesis, do the work in the field, and impart their knowledge to others, make the Catechetical Institute’s teams our greatest asset. The faculty of the Catechetics Program at Franciscan University—the largest and most respected in America—are joined by the speakers at the University’s annual St. John Bosco Conference, as well as an array of catechists working across the country who serve as Mentors, to support clergy, laity, and all those engaged in passing on the faith.
+                    The Catechetical Institute brings together the world-class faculty of Franciscan University’s Catechetics Program with key collaborators from all levels of ministry. These skilled professionals teach our Franciscan at Home online courses and speak at our St. John Bosco Conference, academic conferences, and other events around the country. Through the Catechetical Institute, they can also assist your diocese, parish, institution, or local community in achieving greater excellence in passing on the faith.
                   </p>
                   <p className="flow-text">
-                    If you'd like to contact us to invite one or a team of our presenters or faculty, please email us at: CI@franciscan.edu
+                    If you'd like to contact us to invite one or a team of our presenters or faculty, please email us at: <a href="mailto:CI@franciscan.edu">CI@franciscan.edu</a>.
                   </p>
                 </div>
               </div>
