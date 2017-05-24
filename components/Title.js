@@ -8,30 +8,88 @@ class Title extends Component {
 
   render() {
     return (
-      <section className="interior-page-title valign-wrapper" style={{backgroundImage: `url("${this.props.imgPath}")`, backgroundPositionY: `${this.props.posY}`, backgroundAttachment: 'fixed'}}>
+      <section className="interior-page-title valign-wrapper">
         <h1 className="center light valign">{this.props.title}</h1>
         <style jsx>{`
-          .interior-page-title {
-            background-size: cover;
+
+          h1 {
+            background-image: url(/static/img/squiggly1.png);
             background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-position: center;
-            background-image: url(/static/img/campus-11.jpg);
-            background-position-y: -44vh;
-            background-attachment: fixed;
-            min-height: 39vh;
+            background-position: 50% 69px;
+            margin: 0 auto;
+            font-size: 50px;
+            padding: 16px 0 19px 0;
+          }
+
+          @media screen and (max-width: 799px) {
+            h1 {
+              margin-bottom: -19px;
+              background-size: 90px;
+            }
+          }
+
+
+          @media screen and (min-width: 800px) {
+            .interior-page-title {
+              background-size: cover;
+              background-repeat: no-repeat;
+              background-position: center;
+              background-image: url(/static/img/campus-11.jpg);
+              min-height: 39vh;
+            }
+
+
+
+              h1 {
+                background-image: url(/static/img/squiggly1.png), linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
+                background-repeat: no-repeat;
+                background-position: 50% 85px, 50%;
+                border-radius: 50%;
+                margin: 0 auto;
+                font-size: 54px;
+                padding: 35px;
+              }
 
           }
-          h1 {
-            background-image: url(/static/img/squiggly1.png), linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
-            background-repeat: no-repeat;
-            background-position: 50% 85px, 50%;
-            border-radius: 50%;
-            margin: 0 auto;
-            font-size: 54px;
-            padding: 27px;
-          }
+
+
         `}</style>
+
+      <style jsx global>
+        {`
+
+            @media screen and (min-width: 800px) {
+              #about .interior-page-title {
+                background-image: url(/static/img/campus-11.jpg);
+              }
+
+              #courses .interior-page-title {
+                background-image: url(/static/img/campus-6.jpg);
+              }
+
+              #events .interior-page-title {
+                background-image: url(/static/img/campus-7.jpg);
+              }
+
+              #news .interior-page-title {
+                background-image: url(/static/img/campus-11.jpg);
+              }
+
+              #resources .interior-page-title {
+                background-image: url(/static/img/campus-11.jpg);
+                background-position-y: -276px;
+              }
+
+              #single-news .interior-page-title {
+                background-image: url(/static/img/campus-11.jpg);
+              }
+
+              #team .interior-page-title {
+                background-image: url(/static/img/campus-11.jpg);
+              }
+            }
+          `}
+      </style>
       </section>
     );
   }

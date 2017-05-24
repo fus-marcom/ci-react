@@ -420,40 +420,14 @@ nav {
   background-repeat: repeat-y;
   background-position: 0% 50%, 100% 50%; }
 
-.interior-page-title {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-  min-height: 39vh; }
-  .interior-page-title h1 {
-    margin: 0 auto;
-    padding-bottom: 25px;
-    /*background: url("../img/squiggly1.png") no-repeat bottom center;*/
-    /*background-size: 132px;*/
-    font-size: 54px; }
-
-#about .interior-page-title {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("../img/campus-11.jpg"); }
-
-#courses .interior-page-title {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("../img/campus-6.jpg"); }
-
 #courses h2 {
   font-size: 48px; }
 
 #courses h3 {
   font-size: 32px; }
 
-#events .interior-page-title {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("../img/campus-7.jpg"); }
-
 #events h2 {
   font-size: 48px; }
-
-#resources .interior-page-title {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("../img/campus-11.jpg");
-  background-position-y: -276px; }
 
 #resources .card-content svg {
   position: absolute;
@@ -472,9 +446,6 @@ nav {
   color: #8e1b21;
   font-size: 18px;
   font-weight: 400; }
-
-#team .interior-page-title {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("../img/campus-3.jpg"); }
 
 #team .team-card-container {
   width: 95% !important; }
