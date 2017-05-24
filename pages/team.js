@@ -18,6 +18,7 @@ export default class extends React.Component {
   }
 
   componentDidMount() {
+    initTeamCardSections();
     teamModalInit();
   }
 
