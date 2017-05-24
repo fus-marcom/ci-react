@@ -40,7 +40,7 @@ export default class extends React.Component {
               <div className="row light flow-text">
                 <div className="col s12">
                   <p className="flow-text">
-                    The Catechetical Institute is part of a larger vision at Franciscan University.  In the silver anniversary year of the Catechism of the Catholic Church, the Institute was launched as part of an all-embracing effort to place the University on a missionary footing.  This website draws together some elements in the University’s ministry of outreach.
+                    There are many avenues through which catechists can get formal training. Our principal training vehicle, Franciscan at Home, draws together the best of the Franciscan University Catechetics Program, the St. John Bosco Conference, and the latest in online education. There also are opportunities for homeschool families, online graduate studies, and more from Franciscan University of Steubenville.
                   </p>
                 </div>
               </div>

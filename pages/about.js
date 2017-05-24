@@ -39,7 +39,7 @@ export default class extends React.Component {
               <div className="row valign-wrapper">
                 <div className="col s12 valign">
                   <p className="flow-text">
-                    The Institute serves the key catechists in any situation -- this means priests, deacons, parents, those in lay ecclesial ministry.  And it serves these key catechists through formation workshops not only in already-defined areas of ministry training, but also in no-less critical areas for the work of successfully evangelizing and discipling souls:  team building, speaking skills, basic evangelization skills, mentoring, spiritual guidance, counseling, spiritual combat, deliverance, healing, vocational discernment, and so on.  Workshops on these and many other topics are offered by the Institute, designed not for niche professionals in each of these fields, but for parents, catechists, school teachers, parish clergy -- the people who first encounter souls who need understanding and gentle ministers, good advice, good listeners, and leaders who can authentically accompany others on the spiritual journey.
+                    The Catechetical Institute at Franciscan University exists to train and support the key catechists in any situation—priests, deacons, parents, or laity, whether professional or volunteer. Through conferences, online workshops, videos, audio, personal mentorship, and a wealth of resources produced by Franciscan University, all involved in the work of catechesis will find new ideas, new approaches, new techniques, and a new confidence to do the work of catechesis.
                   </p>
                 </div>
               </div>

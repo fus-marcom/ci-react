@@ -37,6 +37,12 @@
 h1, h2, h3, h4, h5 {
   font-family: 'Cinzel', serif; }
 
+@media screen and (max-width: 400px) {
+  h2 {
+    font-size: 48px;
+  }
+}
+
 iframe {
   border: none;
 }
@@ -183,7 +189,9 @@ nav {
     font-family: 'Cinzel', serif; }
     @media screen and (max-width: 600px), screen and (max-height: 650px) {
       nav .fus-branding {
-        top: -18px; } }
+        top: -18px;
+        left: 8px;
+        font-size: 14px;} }
   nav .page-title {
     line-height: 64px;
     font-size: 40px;
