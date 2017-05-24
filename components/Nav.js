@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
+import Link from 'next/link'
+
 class Nav extends Component {
+
+  componentDidMount() {
+    initSideNav();
+  }
 
   render() {
     return (
@@ -24,12 +30,12 @@ class Nav extends Component {
               <img src="/static/img/side-nav-logo.jpg" />
             </a>
           </li>
-          <li> <a href="/about.html">About</a> </li>
-          <li> <a href="/team.html">Team</a> </li>
-          <li> <a href="/courses.html">Courses</a> </li>
-          <li> <a href="/events.html">Events</a> </li>
-          <li> <a href="/resources.html">Resources</a> </li>
-          <li> <a href="/news.html">News</a> </li>
+          <li> <Link href="/about"><a>About</a></Link> </li>
+          <li> <Link href="/team"><a>Team</a></Link> </li>
+          <li> <Link href="/courses"><a>Courses</a></Link> </li>
+          <li> <Link href="/events"><a>Events</a></Link> </li>
+          <li> <Link href="/resources"><a>Resources</a></Link> </li>
+          <li> <Link href="/news"><a>News</a></Link> </li>
             </ul>
 
       </header>

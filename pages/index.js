@@ -14,6 +14,7 @@ export default class extends React.Component {
 
   componentDidMount() {
     bgScrollEffect();
+    initTabs();
   }
 
   render () {

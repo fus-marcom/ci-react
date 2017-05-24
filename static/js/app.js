@@ -1,5 +1,17 @@
 /* jshint esversion: 6 */
 
+function initSideNav() {
+  //Init side nav
+  $(".button-collapse").sideNav({
+    closeOnClick: true,
+    menuWidth: 300,
+  });
+}
+
+function initTabs() {
+  //Init tabs
+  $('ul.tabs').tabs();
+}
 
 //Team Card click handler
 function teamCardClick() {
@@ -110,6 +122,8 @@ function bgScrollEffect() {
 
 $(function() {
 
+  initSideNav();
+
   //Get current year and add to footer
   let dateToday = new Date();
   let currentYear = dateToday.getFullYear();
@@ -144,29 +158,7 @@ $(function() {
 
   $('.modal').modal();
 
- // Close side nav on tap for mobile but not wide screens
-  let windowsize = $(window).width();
-  let closeOnClickVal = false;
-   if (windowsize < 992) {
-     closeOnClickVal = true;
-   }
 
-  //Init side nav
-  $(".button-collapse").sideNav({
-    closeOnClick: closeOnClickVal,
-    menuWidth: 300,
-  });
-
-  // Show sideNav
-  $('.top-nav-links li').not('#top-nav-search').click(function () {
-    let indexNum = $(this).attr('indexNum');
-    $('.button-collapse').sideNav('show');
-    $('.collapsible').collapsible('open', indexNum);
-    $('#sidenav-overlay').click(function () {
-      //collapse all side nav items
-      $('.collapsible').collapsible('close', indexNum);
-    });
-  });
 
   $('.collapsible').collapsible();
 
