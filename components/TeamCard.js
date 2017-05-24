@@ -25,7 +25,7 @@ class TeamCard extends Component {
            </div>
          </div>
        </div>
-       <div id={this.props.slug} className="modal modal-fixed-footer" style={{cursor: 'auto'}}>
+       <div id={this.props.slug} className="modal" style={{cursor: 'auto'}}>
          <div className="modal-content">
            <h4 style={{color: 'rgba(0, 0, 0, 0.87)'}} dangerouslySetInnerHTML={{__html: this.props.name}}></h4>
            <span className="team-card-title" style={{display: 'block'}}>{this.props.title}</span>

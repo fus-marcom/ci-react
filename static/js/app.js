@@ -14,12 +14,13 @@ function initTabs() {
 }
 
 //Team Card click handler
-function teamCardClick() {
+function teamModalInit() {
+  $('.modal').modal();
   $('.team-card').not('.modal').click(function(){
     console.log('click');
     let thisCard = this;
     let cardSlug = $(thisCard).attr('data-slug');
-
+    console.log(cardSlug);
     $(`#${cardSlug}`).modal('open');
     //Modal close btn is buggy, fix later
     // $('.team-card .modal-footer a').click(function() {
@@ -156,7 +157,7 @@ $(function() {
 
   scrollToTop();
 
-  $('.modal').modal();
+
 
 
 
