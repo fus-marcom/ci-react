@@ -163,13 +163,19 @@ nav {
     nav {
       margin-bottom: 0;
       background-color: #000;
-      height: 98px;
+      height: 102px;
       background-image: url("../img/Monstrance-2000w.png");
       background-size: 30vw;
       background-repeat: no-repeat;
       background-position-x: right;
       background-position-y: 46%;
       border-bottom: 4px solid #8e1b21; } }
+
+      @media screen and (max-width: 450px) {
+        nav {
+          background-position-y: 16%;
+        }
+      }
   nav .fus-branding {
     position: absolute;
     top: -20px;
@@ -195,7 +201,7 @@ nav {
         margin-left: 0; } }
     @media screen and (max-width: 600px), screen and (max-height: 650px) {
       nav .brand-logo {
-        margin-top: 19px; } }
+        margin-top: 24px; } }
     nav .brand-logo img {
       height: 100px; }
       @media screen and (max-width: 600px), screen and (max-height: 650px) {
@@ -270,6 +276,11 @@ nav {
     @media screen and (max-width: 992px) {
       .interior nav {
         border-bottom: 4px solid #8e1b21; } }
+    @media screen and (max-width: 450px) {
+      .interior nav {
+        background-position-y: 16%;
+      }
+    }
     .interior nav .fus-branding {
       position: absolute;
       top: -20px;
