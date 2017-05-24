@@ -394,13 +394,12 @@ nav {
 @media screen and (min-width: 993px) {
   #san-damiano {
     background-image: url("../img/san-damiano.gif");
-    background-attachment: fixed;
-    background-size: 50vw;
+    background-size: 500px;
     background-repeat: no-repeat;
-    background-position-x: -12%;
-    background-position-y: 12%; }
+    background-position-x: 7%;
+    background-position-y: 33%;
+   }
 }
-
 
 .white-background-flourish {
   background-image: url("../img/motif1.png"), url("../img/motif1-reverse.png");

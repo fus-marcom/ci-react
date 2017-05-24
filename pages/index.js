@@ -50,7 +50,7 @@ export default class extends React.Component {
              </div>
            </div>
          </div>
-         <div className="section valign-wrapper white-text black" id="san-damiano">
+         <div className="section valign-wrapper white-text black" id="san-damiano" style={{padding: '0'}}>
            <div className="valign container">
              <div className="row light flow-text">
                <div className="col s12 l6">
