@@ -70,9 +70,9 @@ export default class extends React.Component {
          <div className="section valign-wrapper white-text black" id="san-damiano">
            <div className="valign container">
              <div className="row light flow-text">
-               <div className="col s12 m6">
+               <div className="col s12 l6">
                </div>
-               <div className="col s12 m6">
+               <div className="col s12 l6">
                  <h2 className="light">Mission</h2>
                  <p className="flow-text">
                    The Franciscan University Catechetical Institute serves Christ in His Church by forming those who form others. It supports clergy, parents, and all those responsible for the work of evangelization and catechesis through the provision of courses, conferences, advice, and resources. In fidelity to the primary sources of faith and the pastoral wisdom of the Church's magisterium, the Institute's expert faculty and experienced field mentors seek to be guided by the Holy Spirit as they make these riches available for all whom Christ is gathering into one by his love, making disciples of all nations.

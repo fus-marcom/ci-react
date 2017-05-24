@@ -380,13 +380,16 @@ nav {
   .section .valign-wrapper .order-2 {
     order: 2; } }
 
-#san-damiano {
-  background-image: url("../img/san-damiano.gif");
-  background-attachment: fixed;
-  background-size: 50vw;
-  background-repeat: no-repeat;
-  background-position-x: -12%;
-  background-position-y: 12%; }
+@media screen and (min-width: 993px) {
+  #san-damiano {
+    background-image: url("../img/san-damiano.gif");
+    background-attachment: fixed;
+    background-size: 50vw;
+    background-repeat: no-repeat;
+    background-position-x: -12%;
+    background-position-y: 12%; }
+}
+
 
 .white-background-flourish {
   background-image: url("../img/motif1.png"), url("../img/motif1-reverse.png");
