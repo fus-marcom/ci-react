@@ -1,5 +1,19 @@
 /* jshint esversion: 6 */
 
+function initCourseSections() {
+  //Course Section Click Handler
+  $('.sub-section h3').click(function() {
+    $(this).parent().toggleClass('open').fadeIn(100);
+  });
+}
+
+function initTeamCardSections() {
+  //Team Card Click Handler
+  $('.title-row').click(function() {
+    $(this).parent().toggleClass('open').fadeIn(100);
+  });
+}
+
 function initSideNav() {
   //Init side nav
   $(".button-collapse").sideNav({
@@ -184,25 +198,13 @@ $(function() {
    }
  });
 
-
-
-//Team Card Click Handler
-$('.title-row').click(function() {
-  $(this).parent().toggleClass('open').fadeIn(100);
-});
-
-//Course Section Click Handler
-$('.sub-section h3').click(function() {
-  $(this).parent().toggleClass('open').fadeIn(100);
-});
-
 //Init tabs
 $('ul.tabs').tabs();
 
 //Init San Damiano section scroll effect
-if (document.getElementById('san-damiano')) {
-  bgScrollEffect();
-}
+// if (document.getElementById('san-damiano')) {
+//   bgScrollEffect();
+// }
 
 //Init horizontal scroll buttons for event table
 hScroller();
