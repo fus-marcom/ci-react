@@ -55,7 +55,7 @@ export default class extends React.Component {
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
-        <script src="static/js/app.js"></script>
+        <script src="/static/js/app.js"></script>
 
       </div>
     )
