@@ -27,7 +27,7 @@ class Nav extends Component {
         <ul className="side-nav" id="mobile-demo" style={{width: '300px'}}>
           <li className="logo">
             <a id="logo-container" href="/" className="brand-logo">
-              <img src="/static/img/side-nav-logo.jpg" />
+              <img src="/static/img/ci-logo.png" />
             </a>
           </li>
           <li> <Link href="/about"><a>About</a></Link> </li>
@@ -37,7 +37,23 @@ class Nav extends Component {
           <li> <Link href="/resources"><a>Resources</a></Link> </li>
           <li> <Link href="/news"><a>News</a></Link> </li>
             </ul>
+            <style jsx>{`
+                .side-nav .logo {
+                  height: 100px;
+                  background-color: #000;
+                  border-bottom: 2px solid #8e1b21;
+                  text-align: center;
+                }
 
+                .side-nav .logo a:hover {
+                  background-color: #000;
+                }
+
+                .side-nav .logo img {
+                  width: auto;
+                  height: 80px;
+                }
+                  `}</style>
       </header>
     );
   }
