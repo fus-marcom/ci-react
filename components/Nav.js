@@ -14,7 +14,7 @@ class Nav extends Component {
           <nav className="main-nav search-nav">
             <div className="nav-wrapper">
               <a className="fus-branding" href="https://www.franciscan.edu" title="Franciscan University of Steubenville">Franciscan University of Steubenville</a>
-              <a href="/" className="brand-logo"><img src="/static/img/ci-logo.png"/></a>
+              <Link href="/"><a className="brand-logo"><img src="/static/img/ci-logo.png"/></a></Link>
               <a href="#" data-activates="mobile-demo" className="button-collapse">
                 <svg viewBox="0 0 24 24" fill="#fff" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
                   <path d="M0 0h24v24H0z" fill="none"></path>
@@ -26,9 +26,7 @@ class Nav extends Component {
         </div>
         <ul className="side-nav" id="mobile-demo" style={{width: '300px'}}>
           <li className="logo">
-            <a id="logo-container" href="/" className="brand-logo">
-              <img src="/static/img/ci-logo.png" />
-            </a>
+            <Link href="/"><a className="brand-logo"><img src="/static/img/ci-logo.png"/></a></Link>
           </li>
           <li> <Link href="/about"><a>About</a></Link> </li>
           <li> <Link href="/team"><a>Team</a></Link> </li>
