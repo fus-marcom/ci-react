@@ -7,11 +7,12 @@ function teamCardClick() {
     console.log('click');
     let thisCard = this;
     let cardSlug = $(thisCard).attr('data-slug');
-    console.log(cardSlug);
+
     $(`#${cardSlug}`).modal('open');
-    $('.team-card .modal-footer a').click(function() {
-      $(`#${cardSlug}`).modal('close');
-    });
+    //Modal close btn is buggy, fix later
+    // $('.team-card .modal-footer a').click(function() {
+    //   $(`#${cardSlug}`).modal('close');
+    // });
   });
 }
 
