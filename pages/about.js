@@ -91,7 +91,7 @@ export default class extends React.Component {
             <div className="container wide-container">
               <div className="row">
                 <div className="col s12 m4">
-                  <div className="card">
+                  <div className="card" style={{height: '419px', maxHeight: '419px'}}>
                     <div className="card-image">
                       <img src="/static/img/fr-nathan.jpg" srcSet="/static/img/fr-nathan.jpg 300w, /static/img/fr-nathan.jpg 600w, /static/img/fr-nathan.jpg 800w, /static/img/fr-nathan.jpg 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Diners eating at a restaurant." title="Restaurant" />
                     </div>
@@ -103,7 +103,7 @@ export default class extends React.Component {
                   </div>
                 </div>
                 <div className="col s12 m4">
-                  <div className="card">
+                  <div className="card" style={{height: '419px', maxHeight: '419px'}}>
                     <div className="card-image">
                       <img src="/static/img/petroc-about.jpg" srcSet="/static/img/petroc-about.jpg 300w, /static/img/petroc-about.jpg 600w, /static/img/petroc-about.jpg 800w, /static/img/petroc-about.jpg 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Diners eating at a restaurant." title="Restaurant" />
                     </div>
@@ -115,7 +115,7 @@ export default class extends React.Component {
                   </div>
                 </div>
                 <div className="col s12 m4">
-                  <div className="card">
+                  <div className="card" style={{height: '419px', maxHeight: '419px'}}>
                     <div className="card-image">
                       <img src="/static/img/keimig-about.jpg" srcSet="/static/img/keimig-about.jpg 300w, /static/img/keimig-about.jpg 600w, /static/img/keimig-about.jpg 800w, /static/img/keimig-about.jpg 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Diners eating at a restaurant." title="Restaurant" />
                     </div>
@@ -144,7 +144,7 @@ export default class extends React.Component {
                 <div className="col s6 m3">
                   <div className="card hoverable" style={{cursor: 'pointer'}}>
                     <div className="card-image">
-                      <a href="#" title="Steubenville Conferences" target="_blank">
+                      <a href="https://steubenvilleconferences.com/" title="Steubenville Conferences" target="_blank">
                         <img src="/static/img/fc-logo.jpg" />
                       </a>
                     </div>
@@ -153,7 +153,7 @@ export default class extends React.Component {
                 <div className="col s6 m3">
                   <div className="card hoverable" style={{cursor: 'pointer'}}>
                     <div className="card-image">
-                      <a href="#" title="Language and Catechetical Institute" target="_blank">
+                      <a href="https://lciaustria.org/" title="Language and Catechetical Institute" target="_blank">
                         <img src="/static/img/lci-logo.png" />
                       </a>
                     </div>
@@ -162,7 +162,7 @@ export default class extends React.Component {
                 <div className="col s6 m3">
                   <div className="card hoverable" style={{cursor: 'pointer'}}>
                     <div className="card-image">
-                      <a href="#" title="Life Teen" target="_blank">
+                      <a href="http://lifeteen.com/" title="Life Teen" target="_blank">
                         <img src="/static/img/lt-logo.jpg" />
                       </a>
                     </div>
@@ -171,7 +171,7 @@ export default class extends React.Component {
                 <div className="col s6 m3">
                   <div className="card hoverable" style={{cursor: 'pointer'}}>
                     <div className="card-image">
-                      <a href="#" title="St. Paul Center for Biblical Theology" target="_blank">
+                      <a href="https://stpaulcenter.com/" title="St. Paul Center for Biblical Theology" target="_blank">
                         <img src="/static/img/spc-logo.png" />
                       </a>
                     </div>
@@ -182,7 +182,7 @@ export default class extends React.Component {
                 <div className="col s6 m3">
                   <div className="card hoverable" style={{cursor: 'pointer'}}>
                     <div className="card-image">
-                      <a href="#" title="Inscape" target="_blank">
+                      <a href="https://www.inscapevocations.com/" title="Inscape" target="_blank">
                         <img src="/static/img/inscape-logo.png" />
                       </a>
                     </div>
@@ -191,7 +191,7 @@ export default class extends React.Component {
                 <div className="col s6 m3">
                   <div className="card hoverable" style={{cursor: 'pointer'}}>
                     <div className="card-image">
-                      <a href="#" title="Our Sunday Visitor" target="_blank">
+                      <a href="https://homeschoolconnectionsonline.com/" title="Our Sunday Visitor" target="_blank">
                         <img src="/static/img/osv-logo.png" />
                       </a>
                     </div>
@@ -200,7 +200,7 @@ export default class extends React.Component {
                 <div className="col s6 m3">
                   <div className="card hoverable" style={{cursor: 'pointer'}}>
                     <div className="card-image">
-                      <a href="#" title="Homeschool Connections" target="_blank">
+                      <a href="https://acmrcia.org/" title="Homeschool Connections" target="_blank">
                         <img src="/static/img/hsc-logo.png" />
                       </a>
                     </div>
