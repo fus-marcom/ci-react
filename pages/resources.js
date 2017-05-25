@@ -53,7 +53,7 @@ export default class extends React.Component {
           </div>
           <div className="section banner valign-wrapper red-background-flourish" id="banner">
 
-            <div className="valign container">
+            <div className="valign container container-wide">
               <div className="row center white-text ">
                 <h2 className="light flourish-white">Featured Resources</h2>
                 <p className="flow-text">
@@ -67,7 +67,7 @@ export default class extends React.Component {
                 {this.props.data.map(function(post, i) {
                   if (post.acf.featured) {
                     for (let f = 0; f < 4; f++) {
-                      return <div className="col s12 m6 l4 xl3" key={i}>
+                      return <div className="col s12 m12 l6 xl3" key={i}>
                           <ResourceCard title={post.title.rendered} type={post.acf.type} content={post.acf.description} url={post.acf.url} price={post.acf.price} />
                       </div>
                     }
@@ -77,7 +77,7 @@ export default class extends React.Component {
             </div>
           </div>
           <div className="section valign-wrapper white-background-flourish">
-            <div className="valign container">
+            <div className="valign container container-wide">
               <div className="row">
                 <div className="col s12">
                   <ul className="tabs">
@@ -90,7 +90,7 @@ export default class extends React.Component {
               </div>
               <div className="row" id="all">
                 {this.props.data.map(function(post, i) {
-                  return <div className="col s12 m6 l4 xl3" key={i}>
+                  return <div className="col s12 m12 l6 xl3" key={i}>
                       <ResourceCard title={post.title.rendered} type={post.acf.type} content={post.acf.description} url={post.acf.url} price={post.acf.price} />
                   </div>
                 })}
@@ -98,7 +98,7 @@ export default class extends React.Component {
               <div className="row" id="audio">
                 {this.props.data.map(function(post, i) {
                   if (post.acf.type === 'audio') {
-                      return <div className="col s12 m6 l4 xl3" key={i}>
+                      return <div className="col s12 m12 l6 xl3" key={i}>
                           <ResourceCard title={post.title.rendered} type={post.acf.type} content={post.acf.description} url={post.acf.url} price={post.acf.price} />
                       </div>
                   }
@@ -107,7 +107,7 @@ export default class extends React.Component {
               <div className="row" id="text">
                 {this.props.data.map(function(post, i) {
                   if (post.acf.type === 'text') {
-                      return <div className="col s12 m6 l4 xl3" key={i}>
+                      return <div className="col s12 m12 l6 xl3" key={i}>
                           <ResourceCard title={post.title.rendered} type={post.acf.type} content={post.acf.description} url={post.acf.url} price={post.acf.price} />
                       </div>
                   }
@@ -116,7 +116,7 @@ export default class extends React.Component {
               <div className="row" id="video">
                 {this.props.data.map(function(post, i) {
                   if (post.acf.type === 'video') {
-                      return <div className="col s12 m6 l4 xl3" key={i}>
+                      return <div className="col s12 m12 l6 xl3" key={i}>
                           <ResourceCard title={post.title.rendered} type={post.acf.type} content={post.acf.description} url={post.acf.url} price={post.acf.price} />
                       </div>
                   }
@@ -125,6 +125,15 @@ export default class extends React.Component {
 
             </div>
           </div>
+
+          <style jsx>{`
+            @media only screen and (min-width: 993px) {
+              .container-wide {
+                width: 85%;
+                max-width: 2000px;
+              }
+                `}
+          </style>
         </main>
         <Footer />
 

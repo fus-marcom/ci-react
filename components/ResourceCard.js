@@ -19,6 +19,17 @@ class ResourceCard extends Component {
             <p className="resource-description" dangerouslySetInnerHTML={{__html: this.props.content}}></p>
           </div>
         </a>
+        <style jsx>{`
+            @media screen and (min-width: 993px) {
+              .card {
+                height: 300px;
+                max-height: 300px;
+                overflow-x: scroll;
+              }
+            }
+
+              `}
+        </style>
       </div>
     );
   }
