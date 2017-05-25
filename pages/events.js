@@ -10,7 +10,7 @@ export default class extends React.Component {
 
   static async getInitialProps () {
     const apiUrl = 'https://wp.catechetics.com/wp-json/wp/v2/';
-    const params = 'nearby-event?per_page=100&fields=title,acf';
+    const params = 'nearby-event?per_page=100&filter[date]=DESC&fields=title,acf';
     const res = await fetch(apiUrl + params)
     const data = await res.json()
     return { data }

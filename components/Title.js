@@ -42,7 +42,7 @@ class Title extends Component {
 
 
               h1 {
-                background-image: url(/static/img/squiggly1.png), linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
+                background-image: url(/static/img/squiggly1.png), linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75));
                 background-repeat: no-repeat;
                 background-position: 50% 85px, 50%;
                 border-radius: 50%;
