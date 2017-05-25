@@ -177,11 +177,6 @@ nav {
       background-position-y: 46%;
       border-bottom: 4px solid #8e1b21; } }
 
-      @media screen and (max-width: 450px) {
-        nav {
-          background-position-y: 16%;
-        }
-      }
   nav .fus-branding {
     position: absolute;
     top: -20px;
