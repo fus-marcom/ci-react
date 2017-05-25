@@ -61,33 +61,33 @@ class Title extends Component {
 
             @media screen and (min-width: 800px) {
               #about .interior-page-title {
-                background-image: url(/static/img/campus-11.jpg);
+                background-image: url(/static/img/new/about-title.jpg);
               }
 
               #courses .interior-page-title {
-                background-image: url(/static/img/campus-6.jpg);
+                background-image: url(/static/img/new/courses-title.jpg);
               }
 
               #events .interior-page-title {
-                background-image: url(/static/img/campus-7.jpg);
+                background-image: url(/static/img/new/events-title.jpg);
                 background-position-y: 0;
               }
 
               #news .interior-page-title {
-                background-image: url(/static/img/campus-11.jpg);
+                background-image: url(/static/img/new/campus-11.jpg);
               }
 
               #resources .interior-page-title {
-                background-image: url(/static/img/campus-11.jpg);
+                background-image: url(/static/img/new/resources-title.jpg);
                 background-position-y: 97%;
               }
 
               #single-news .interior-page-title {
-                background-image: url(/static/img/campus-11.jpg);
+                background-image: url(/static/img/new/campus-11.jpg);
               }
 
               #team .interior-page-title {
-                background-image: url(/static/img/campus-11.jpg);
+                background-image: url(/static/img/new/team-title.jpg);
               }
             }
           `}

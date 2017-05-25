@@ -163,7 +163,7 @@ componentDidMount() {
                 <path d="M0 0h24v24H0z" fill="none"/>
               </svg>Catechist (CT) Track</h3>
               <div className="row valign-wrapper">
-                <div className="col s12 m6 valign order-2">
+                <div className="col s12">
                   <p className="flow-text">
                     Directed to any person engaged in teaching ministries at any level, this three-part
 
@@ -185,9 +185,6 @@ componentDidMount() {
 
                     of diocesan certification.
                   </p>
-                </div>
-                <div className="col s12 m6 order-1">
-                  <img className="responsive-img" src="/static/img/degree.jpg" srcSet="/static/img/degree.jpg 300w, /static/img/degree.jpg 600w, /static/img/degree.jpg 800w, /static/img/degree.jpg 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Speaking the Truth in Love Conference Flyer." title="Speaking the Truth in Love" />
                 </div>
               </div>
             </div>
@@ -520,7 +517,7 @@ componentDidMount() {
                     <a href="https://www.franciscan.edu/Catechetics/" title="Franciscan University Catechetics Program" target="_blank"><button className="btn waves-effect waves-light">Learn More</button></a>
                   </div>
                   <div className="col s12 m6 order-1">
-                    <img className="responsive-img z-depth-1" src="/static/img/port.jpg" srcSet="/static/img/port.jpg 300w, /static/img/port.jpg 600w, /static/img/port.jpg 800w, /static/img/port.jpg 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Speaking the Truth in Love Conference Flyer." title="Speaking the Truth in Love" />
+                    <img className="responsive-img z-depth-1" src="/static/img/new/port-fall.jpg" alt="Speaking the Truth in Love Conference Flyer." title="Speaking the Truth in Love" />
                   </div>
                 </div>
               </div>
@@ -532,7 +529,7 @@ componentDidMount() {
               </svg>Franciscan Fast-track</h3>
               <div className="row valign-wrapper">
                 <div className="col s12 m6 order-1">
-                  <img className="responsive-img z-depth-1" src="/static/img/fast-track.jpg" srcSet="/static/img/fast-track.jpg 300w, /static/img/fast-track.jpg 600w, /static/img/fast-track.jpg 800w, /static/img/fast-track.jpg 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Speaking the Truth in Love Conference Flyer." title="Speaking the Truth in Love" />
+                  <img className="responsive-img z-depth-1" src="/static/img/new/fast-track.jpg" alt="Student studying." title="Franciscan Fast Track" />
                 </div>
                 <div className="col s12 m6 valign order-2">
 
@@ -557,7 +554,7 @@ componentDidMount() {
                   <a href="https://www.franciscan.edu/admissions/online/" title="Franciscan University Online Programs" target="_blank"><button className="btn waves-effect waves-light">Learn More</button></a>
                 </div>
                 <div className="col s12 m6 order-1">
-                  <img className="responsive-img" src="/static/img/degree.jpg" srcSet="/static/img/degree.jpg 300w, /static/img/degree.jpg 600w, /static/img/degree.jpg 800w, /static/img/degree.jpg 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Speaking the Truth in Love Conference Flyer." title="Speaking the Truth in Love" />
+                  <img className="responsive-img" src="/static/img/new/online-degree.jpg" alt="Working at a computer." title="Online Degree" />
                 </div>
               </div>
             </div>

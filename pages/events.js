@@ -101,8 +101,8 @@ componentDidMount() {
             <div className="section valign-wrapper black-text white-background-flourish">
               <div className="valign container wide-container">
                 <h2 className="light center" style={{marginBottom: '0px'}}>Find a Nearby Event</h2>
-                <div className="row light flow-text">
-                  <table className="highlight responsive-table">
+                <div className="row light">
+                  <table className="highlight responsive-table" style={{fontSize: '24px'}}>
                     <thead>
                       <tr>
                         <th>Date</th>
@@ -138,22 +138,27 @@ componentDidMount() {
                       <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
                       <path d="M0 0h24v24H0z" fill="none"/>
                     </svg>
-                    <style jsx>{`
-                        .scroller {
-                          margin-bottom: -28px;
-                        }
 
-                        .scroller svg {
-                          width: 65px;
-                          height: 60px;
-                          cursor: pointer;
-                      `}
-
-                    </style>
                   </div>
                 </div>
               </div>
             </div>
+            <style jsx>{`
+                .responsive-table td {
+                  min-height: 66px;
+                }
+                  
+                .scroller {
+                  margin-bottom: -28px;
+                }
+
+                .scroller svg {
+                  width: 65px;
+                  height: 60px;
+                  cursor: pointer;
+              `}
+
+            </style>
         </main>
         <Footer />
 

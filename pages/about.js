@@ -48,7 +48,7 @@ export default class extends React.Component {
           <div className="section red-background-flourish white-text">
             <div className="container wide-container">
               <div className="row valign-wrapper">
-                <div className="col s12 m6 valign order-2">
+                <div className="col s12">
                   <p className="flow-text">
                     Officially launched in 2016, the Franciscan University Catechetical Institute seeks to serve Christ and his Church by forming those Catholics entrusted with the formation of others.  This includes priests, deacons, and parents, as well as lay ecclesial ministers, teachers, religious, and parish catechists.
                   </p>
@@ -58,9 +58,6 @@ export default class extends React.Component {
                   <p className="flow-text">
                     To this end, our expert faculty and experienced lay mentors work in close partnerships with both dioceses and catechists, offering individualized formation tools designed to meet a variety of catechetical needs.
                   </p>
-                </div>
-                <div className="col s12 m6 order-1">
-                  <img className="responsive-img" src="/static/img/father-malavolti.jpg" srcSet="img//static/img/father-malavolti.jpg 300w, /static/img/father-malavolti.jpg 600w, /static/img/father-malavolti.jpg 800w, /static/img/father-malavolti.jpg 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Diners eating at a restaurant." title="Restaurant" />
                 </div>
               </div>
             </div>
@@ -74,7 +71,7 @@ export default class extends React.Component {
               </div>
               <div className="row valign-wrapper">
                 <div className="col s12 m6 order-1">
-                  <img className="responsive-img" src="/static/img/petroc-about.jpg" srcSet="/static/img/petroc-about.jpg 300w, /static/img/petroc-about.jpg 600w, /static/img/petroc-about.jpg 800w, /static/img/petroc-about.jpg 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Crowd at an event." title="Event" />
+                  <img className="responsive-img" src="/static/img/new/online-learning.jpg" alt="A woman sitting at a table working on a computer." title="Online Learning" />
                 </div>
                 <div className="col s12 m6 valign order-2">
                   <p className="flow-text">
