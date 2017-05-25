@@ -42,7 +42,7 @@ export default class extends React.Component {
            <div className="valign container">
              <div className="row">
                <div className="col s12 center">
-                 <h2 className="light center">Mission</h2>
+                 <h2 className="light center"><img src="/static/img/squiggly2-reverse.png" style={{marginBottom: '10px', width: '63px', marginRight: '8px'}}/>Mission<img src="/static/img/squiggly2.png" style={{marginBottom: '10px', width: '63px', marginRight: '8px'}} /></h2>
                  <p className="flow-text">
                    The Franciscan University Catechetical Institute forms Catholics who form others in the faith. Through courses, conferences, advice, and resources, the institute supports clergy, parents, and all those responsible for the work of catechesis and evangelization, as they carry out Christ’s command to make disciples of all nations.
                  </p>
@@ -63,21 +63,6 @@ export default class extends React.Component {
                </div>
              </div>
            </div>
-           <style jsx>{`
-
-              #san-damiano {
-                min-height: 708px;
-              }
-
-               blockquote {
-                 font-size: 130%;
-               }
-
-               @media and screen (max-width: 1088px) {
-                 background-position-x: 3%;
-                 background-size: 481px;
-               }
-            `}</style>
           </div>
           <div className="section banner valign-wrapper red-background-flourish" id="banner">
             <div className="valign container">
@@ -143,7 +128,28 @@ There are many avenues through which catechists can get formal training. Our pri
              </div>
            </div>
           </div>
+          <style jsx>{`
+              @media screen and (max-width: 500px) {
+                h2 img {
+                    display: none;
+                }
+              }
 
+             #san-damiano {
+               min-height: 708px;
+             }
+
+              blockquote {
+                font-size: 130%;
+              }
+
+              @media screen and (max-width: 1088px) {
+                #san-damiano {
+                  background-position-x: 3%;
+                  background-size: 481px;
+                }
+              }
+           `}</style>
         </main>
         <Footer />
 
