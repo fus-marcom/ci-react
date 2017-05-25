@@ -103,7 +103,7 @@ There are many avenues through which catechists can get formal training. Our pri
               </div>
             </div>
           </div>
-          <div className="section valign-wrapper black-text white-background-flourish">
+          <div className="section valign-wrapper black-text white-background-flourish" id="news">
            <div className="valign container">
              <div className="row">
                <div className="col s12">

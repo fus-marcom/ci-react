@@ -8,13 +8,13 @@ import 'isomorphic-fetch'
 
 export default class extends React.Component {
 
-//   static async getInitialProps () {
-//   const apiUrl = '';
-//   const params = '';
-//   const res = await fetch(apiUrl + params)
-//   const data = await res.json()
-//   return { data }
-// }
+  static async getInitialProps () {
+    const apiUrl = 'https://wp.catechetics.com/wp-json/wp/v2/';
+    const params = 'nearby-event?per_page=100&fields=title,acf';
+    const res = await fetch(apiUrl + params)
+    const data = await res.json()
+    return { data }
+  }
 
 componentDidMount() {
   hScroller();
@@ -101,34 +101,22 @@ componentDidMount() {
                         <th>Location</th>
                         <th>Event Email</th>
                         <th>Presenter Email</th>
+                        <th>Link</th>
                       </tr>
                     </thead>
 
                     <tbody>
-                      <tr>
-                        <td>8/20/2017</td>
-                        <td>Tom Crowe</td>
-                        <td>Social Media Sainthood</td>
-                        <td>Steubenville, OH</td>
-                        <td>email@franciscan.edu</td>
-                        <td>email@franciscan.edu</td>
-                      </tr>
-                      <tr>
-                        <td>10/29/2017</td>
-                        <td>Brian Sizemore</td>
-                        <td>Philosophy of Photography</td>
-                        <td>Steubenville, OH</td>
-                        <td>email@franciscan.edu</td>
-                        <td>email@franciscan.edu</td>
-                      </tr>
-                      <tr>
-                        <td>10/29/2017</td>
-                        <td>Brian Sizemore</td>
-                        <td>Philosophy of Photography</td>
-                        <td>Steubenville, OH</td>
-                        <td>email@franciscan.edu</td>
-                        <td>email@franciscan.edu</td>
-                      </tr>
+                      {this.props.data.map(function(post, i) {
+                        return <tr>
+                          <td>{post.acf.displayed_date}</td>
+                          <td>{post.acf.presenter}</td>
+                          <td dangerouslySetInnerHTML={{__html: post.title.rendered}}></td>
+                          <td>{post.acf.location}</td>
+                          <td><a href={`mailto:${post.acf.event_email}`}>{post.acf.event_email}</a></td>
+                          <td><a href={`mailto:${post.acf.presenter_email}`}>{post.acf.presenter_email}</a></td>
+                          <td><a href={post.acf.link}>{post.acf.link ? 'More Info' : ''}</a></td>
+                        </tr>
+                      })}
                     </tbody>
                   </table>
                   <div className="col s12 center scroller">
