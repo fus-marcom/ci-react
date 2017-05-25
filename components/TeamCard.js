@@ -15,7 +15,7 @@ class TeamCard extends Component {
       <div className="card horizontal hoverable team-card" data-slug={this.props.slug}>
        <div className="card-image" dangerouslySetInnerHTML={{__html: cardImg}} >
        </div>
-       <div className="card-stacked" style={{overflowX: 'scroll', whiteSpace: 'nowrap'}}>
+       <div className="card-stacked" style={{overflowX: 'none', whiteSpace: 'nowrap'}}>
          <div className="card-content">
            <span className="team-card-name">{this.props.name}</span>
            <span className="team-card-title">{this.props.title}</span>

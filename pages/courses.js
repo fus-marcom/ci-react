@@ -57,7 +57,7 @@ componentDidMount() {
               <div className="row valign-wrapper">
                 <div className="col s12 m4 order-1 center">
                   <img className="responsive-img" style={{margin:'0 auto', width: '400px'}} src="/static/img/fah-img.jpg" alt="Speaking the Truth in Love Conference Flyer." title="Speaking the Truth in Love" />
-                  <a href="http://www.franciscanathome.com/" title="Franciscan at Home" target="_blank"><button className="btn waves-effect waves-light btn-inverted-white" style={{margin: '0 auto', marginTop: '16px', display: 'block'}}>Learn More</button></a>
+                  <a href="http://en.calameo.com/read/00005685416f121522341" title="Franciscan at Home" target="_blank"><button className="btn waves-effect waves-light btn-inverted-white" style={{margin: '0 auto', marginTop: '16px', display: 'block'}}>Learn More</button></a>
                 </div>
                 <div className="col s12 m8 valign order-2">
                   <p className="flow-text">
@@ -81,7 +81,7 @@ componentDidMount() {
                   </p>
                 </div>
               </div>
-              <div className="sub-section open">
+              {/*}<div className="sub-section open">
                 <h3><svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
                   <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
                   <path d="M0 0h24v24H0z" fill="none"/>
@@ -102,8 +102,8 @@ componentDidMount() {
                     </p>
                   </div>
                 </div>
-              </div>
-            <div className="sub-section">
+              </div> */}
+            <div className="sub-section open">
               <h3><svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
                 <path d="M0 0h24v24H0z" fill="none"/>
@@ -517,7 +517,7 @@ componentDidMount() {
                     <p className="flow-text">
                       The Catechetics Program at Franciscan University is the largest in the country, and one of the finest in the world.  We offer bachelor’s degrees in catechetics, online and on-campus master’s degrees in Catechetics and Evangelization (MACE), specializations in fields such as youth ministry and music ministry, diverse opportunities for field experience, and individual assistance with field placement.  Our students graduate with the tools necessary to go forth and proclaim the Good News of Jesus Christ in a way that is faithful to the Church and advances the Kingdom of God.
                     </p>
-                    <a href="https://www.cvent.com/events/st-john-bosco-conference-july-17-20-2017/registration-fd101066745c42f099a1fade8be9ed1c.aspx?fqp=true%C2%A0" title="Register for the St. John Bosco Conference" target="_blank"><button className="btn waves-effect waves-light">Learn More</button></a>
+                    <a href="https://www.franciscan.edu/Catechetics/" title="Franciscan University Catechetics Program" target="_blank"><button className="btn waves-effect waves-light">Learn More</button></a>
                   </div>
                   <div className="col s12 m6 order-1">
                     <img className="responsive-img z-depth-1" src="/static/img/port.jpg" srcSet="/static/img/port.jpg 300w, /static/img/port.jpg 600w, /static/img/port.jpg 800w, /static/img/port.jpg 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Speaking the Truth in Love Conference Flyer." title="Speaking the Truth in Love" />
@@ -539,7 +539,7 @@ componentDidMount() {
                   <p className="flow-text">
                     Courses for high school and homeschool students available for all subjects from math to science, from literature to language, from theology to philosophy, and so much more.  Franciscan University is committed to making available the best Catholic instructors at the most affordable price for the family budget, aimed at an educational formation that explicitly serves the new evangelization.
                   </p>
-                  <a href="https://www.cvent.com/events/st-john-bosco-conference-july-17-20-2017/registration-fd101066745c42f099a1fade8be9ed1c.aspx?fqp=true%C2%A0" title="Register for the St. John Bosco Conference" target="_blank"><button className="btn waves-effect waves-light">Learn More</button></a>
+                  <a href="https://www.franciscan.edu/fasttrack/" title="Franciscan University Fast Track" target="_blank"><button className="btn waves-effect waves-light">Learn More</button></a>
                 </div>
               </div>
             </div>
@@ -554,7 +554,7 @@ componentDidMount() {
                   <p className="flow-text">
                     Whether you are right out of high school, right in the middle of your life, or right about ready to try a new direction or a next step, Franciscan University has programs that meet you where God has you.  Franciscan offers online associate’s and master’s degrees in theology, philosophy, education, and catechetics.  On campus, we also offer a full spread of over forty undergraduate majors, and seven master’s programs. Our graduates are prepared to “cast out into the deep” and bring the light of Christ to the ends of the earth.
                   </p>
-                  <a href="https://www.cvent.com/events/st-john-bosco-conference-july-17-20-2017/registration-fd101066745c42f099a1fade8be9ed1c.aspx?fqp=true%C2%A0" title="Register for the St. John Bosco Conference" target="_blank"><button className="btn waves-effect waves-light">Learn More</button></a>
+                  <a href="https://www.franciscan.edu/admissions/online/" title="Franciscan University Online Programs" target="_blank"><button className="btn waves-effect waves-light">Learn More</button></a>
                 </div>
                 <div className="col s12 m6 order-1">
                   <img className="responsive-img" src="/static/img/degree.jpg" srcSet="/static/img/degree.jpg 300w, /static/img/degree.jpg 600w, /static/img/degree.jpg 800w, /static/img/degree.jpg 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Speaking the Truth in Love Conference Flyer." title="Speaking the Truth in Love" />
@@ -572,7 +572,7 @@ componentDidMount() {
                   <p className="flow-text">
                     The Priestly Discernment Program (PDP), part of the bachelor’s degree experience at the University, helps men to grow in holiness and listen for the “still, small voice” of a vocation to the priesthood or religious life.  The University is also seeking to develop an Institute for Priestly Renewal (IPR), a summer residency program for seminarians and priests that would reach out to assist diocesan bishops and religious superiors to provide a high-quality curriculum for clergy desiring superlative, efficient, and pragmatic formation for their leadership roles in the new evangelization.
                   </p>
-                  <a href="https://www.cvent.com/events/st-john-bosco-conference-july-17-20-2017/registration-fd101066745c42f099a1fade8be9ed1c.aspx?fqp=true%C2%A0" title="Register for the St. John Bosco Conference" target="_blank"><button className="btn waves-effect waves-light">Learn More</button></a>
+                  <a href="https://www.franciscan.edu/pdp/" title="Priestly Discernment Program" target="_blank"><button className="btn waves-effect waves-light">Learn More</button></a>
                 </div>
               </div>
             </div>
