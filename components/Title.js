@@ -35,6 +35,7 @@ class Title extends Component {
               background-repeat: no-repeat;
               background-position: center;
               background-image: url(/static/img/campus-11.jpg);
+              background-position-y: 97%;
               min-height: 39vh;
             }
 
@@ -77,7 +78,7 @@ class Title extends Component {
 
               #resources .interior-page-title {
                 background-image: url(/static/img/campus-11.jpg);
-                background-position-y: -276px;
+                background-position-y: 97%;
               }
 
               #single-news .interior-page-title {
