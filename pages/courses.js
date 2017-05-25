@@ -55,8 +55,8 @@ componentDidMount() {
               <h2 className="light center" style={{marginBottom: '0px'}}>Franciscan at Home</h2>
               <span className="sub-heading center">Online Learning at Your Convenience</span>
               <div className="row valign-wrapper">
-                <div className="col s12 m4 order-1">
-                  <img className="responsive-img" style={{margin:'0 auto'}} src="/static/img/fah-img.jpg" srcSet="/static/img/fah-img.jpg 300w, /static/img/fah-img.jpg 600w, /static/img/fah-img.jpg 800w, /static/img/fah-img.jpg 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Speaking the Truth in Love Conference Flyer." title="Speaking the Truth in Love" />
+                <div className="col s12 m4 order-1 center">
+                  <img className="responsive-img" style={{margin:'0 auto', width: '400px'}} src="/static/img/fah-img.jpg" alt="Speaking the Truth in Love Conference Flyer." title="Speaking the Truth in Love" />
                   <a href="http://www.franciscanathome.com/" title="Franciscan at Home" target="_blank"><button className="btn waves-effect waves-light btn-inverted-white" style={{margin: '0 auto', marginTop: '16px', display: 'block'}}>Learn More</button></a>
                 </div>
                 <div className="col s12 m8 valign order-2">
@@ -87,7 +87,7 @@ componentDidMount() {
                   <path d="M0 0h24v24H0z" fill="none"/>
                 </svg>Priestly Renewal (PR) Track</h3>
                 <div className="row valign-wrapper">
-                  <div className="col s12 m6 valign order-2">
+                  <div className="col s12">
                     <p className="flow-text">
                       Franciscan University has recently created an Institute for Priestly Renewal (IPR) that assists diocesan bishops and religious superiors as they work to form their priests and seminarians for leadership roles in the new evangelization. The courses and resources available through the IPR seek to provide seminarians and priests with deeper formation for missionary outreach. They also aim to help them create a parish culture of discipleship and outward-oriented evangelization. In partnership with the IPR, the Catechetical Institute helps seminarians and priests understand authentically Catholic approaches to outreach and inculturation, as well as communicate the kerygma effectively with strong follow-up.
                     </p>
@@ -101,9 +101,6 @@ componentDidMount() {
                       preamble or follow-up to a summer experience, or simply as enrichment for clergy.
                     </p>
                   </div>
-                  <div className="col s12 m6 order-1">
-                    <img className="responsive-img z-depth-1" src="/static/img/port.jpg" srcSet="/static/img/port.jpg 300w, /static/img/port.jpg 600w, /static/img/port.jpg 800w, /static/img/port.jpg 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Speaking the Truth in Love Conference Flyer." title="Speaking the Truth in Love" />
-                  </div>
                 </div>
               </div>
             <div className="sub-section">
@@ -112,16 +109,12 @@ componentDidMount() {
                 <path d="M0 0h24v24H0z" fill="none"/>
               </svg>Ministry of Parenting (MP) Track</h3>
               <div className="row valign-wrapper">
-                <div className="col s12 m6 order-1">
-                  <img className="responsive-img z-depth-1" src="/static/img/fast-track.jpg" srcSet="/static/img/fast-track.jpg 300w, /static/img/fast-track.jpg 600w, /static/img/fast-track.jpg 800w, /static/img/fast-track.jpg 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Speaking the Truth in Love Conference Flyer." title="Speaking the Truth in Love" />
-                </div>
-                <div className="col s12 m6 valign order-2">
-
+                <div className="col s12">
                   <p className="flow-text">
                     In his landmark document on family life, Familiaris Consortio, Pope St. John Paul II
                     stated:
                   </p>
-                  <blockquote>
+                  <blockquote className="flow-text" style={{borderLeft: '5px solid #000'}}>
                     “The sacrament of marriage gives to the educational role the dignity and
 
                     vocation of being really and truly a ‘ministry’ of the Church at the service of
@@ -204,10 +197,7 @@ componentDidMount() {
                 <path d="M0 0h24v24H0z" fill="none"/>
               </svg>Parish Catechetical Leader (PCL) Track</h3>
               <div className="row valign-wrapper">
-                <div className="col s12 m6 order-1">
-                  <img className="responsive-img" src="/static/img/pdp.jpg" srcSet="/static/img/pdp.jpg 300w, /static/img/pdp.jpg 600w, /static/img/pdp.jpg 800w, /static/img/pdp.jpg 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Speaking the Truth in Love Conference Flyer." title="Speaking the Truth in Love" />
-                </div>
-                <div className="col s12 m6 valign order-2">
+                <div className="col s12">
                   <p className="flow-text">
                     This all-encompassing three-part series of workshops addresses the spiritual,
 
@@ -238,10 +228,7 @@ componentDidMount() {
                 <path d="M0 0h24v24H0z" fill="none"/>
               </svg>Catechumenal Ministry (RCIA) Track</h3>
               <div className="row valign-wrapper">
-                <div className="col s12 m6 order-1">
-                  <img className="responsive-img" src="/static/img/pdp.jpg" srcSet="/static/img/pdp.jpg 300w, /static/img/pdp.jpg 600w, /static/img/pdp.jpg 800w, /static/img/pdp.jpg 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Speaking the Truth in Love Conference Flyer." title="Speaking the Truth in Love" />
-                </div>
-                <div className="col s12 m6 valign order-2">
+                <div className="col s12">
                   <p className="flow-text">
                     In cooperation with the Association for Catechumenal Ministry (ACM), this wide-
 
@@ -279,10 +266,7 @@ componentDidMount() {
                 <path d="M0 0h24v24H0z" fill="none"/>
               </svg>Catholic Schools (CS) Track</h3>
               <div className="row valign-wrapper">
-                <div className="col s12 m6 order-1">
-                  <img className="responsive-img" src="/static/img/pdp.jpg" srcSet="/static/img/pdp.jpg 300w, /static/img/pdp.jpg 600w, /static/img/pdp.jpg 800w, /static/img/pdp.jpg 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Speaking the Truth in Love Conference Flyer." title="Speaking the Truth in Love" />
-                </div>
-                <div className="col s12 m6 valign order-2">
+                <div className="col s12">
                   <p className="flow-text">
                     This series of workshops is aimed at assisting elementary teachers, high school
 
@@ -324,10 +308,7 @@ componentDidMount() {
                 <path d="M0 0h24v24H0z" fill="none"/>
               </svg>Culture of Life (CL) Track</h3>
               <div className="row valign-wrapper">
-                <div className="col s12 m6 order-1">
-                  <img className="responsive-img" src="/static/img/pdp.jpg" srcSet="/static/img/pdp.jpg 300w, /static/img/pdp.jpg 600w, /static/img/pdp.jpg 800w, /static/img/pdp.jpg 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Speaking the Truth in Love Conference Flyer." title="Speaking the Truth in Love" />
-                </div>
-                <div className="col s12 m6 valign order-2">
+                <div className="col s12">
                   <p className="flow-text">
                     The purpose of this three-part series of workshops is to help those working in
 
@@ -363,10 +344,7 @@ componentDidMount() {
                 <path d="M0 0h24v24H0z" fill="none"/>
               </svg>Pastoral Accompaniment (PA) Track</h3>
               <div className="row valign-wrapper">
-                <div className="col s12 m6 order-1">
-                  <img className="responsive-img" src="/static/img/pdp.jpg" srcSet="/static/img/pdp.jpg 300w, /static/img/pdp.jpg 600w, /static/img/pdp.jpg 800w, /static/img/pdp.jpg 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Speaking the Truth in Love Conference Flyer." title="Speaking the Truth in Love" />
-                </div>
-                <div className="col s12 m6 valign order-2">
+                <div className="col s12">
                   <p className="flow-text">
                     The primary audience of this three-part series of workshops is those working in any
 
@@ -404,10 +382,7 @@ componentDidMount() {
                 <path d="M0 0h24v24H0z" fill="none"/>
               </svg>Youth Ministry (YM) Track</h3>
               <div className="row valign-wrapper">
-                <div className="col s12 m6 order-1">
-                  <img className="responsive-img" src="/static/img/pdp.jpg" srcSet="/static/img/pdp.jpg 300w, /static/img/pdp.jpg 600w, /static/img/pdp.jpg 800w, /static/img/pdp.jpg 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Speaking the Truth in Love Conference Flyer." title="Speaking the Truth in Love" />
-                </div>
-                <div className="col s12 m6 valign order-2">
+                <div className="col s12">
                   <p className="flow-text">
                     This track, designed in cooperation with Life Teen, offers an efficient and in-depth
 
@@ -434,10 +409,7 @@ componentDidMount() {
                 <path d="M0 0h24v24H0z" fill="none"/>
               </svg>Campus Ministry (CM) Track</h3>
               <div className="row valign-wrapper">
-                <div className="col s12 m6 order-1">
-                  <img className="responsive-img" src="/static/img/pdp.jpg" srcSet="/static/img/pdp.jpg 300w, /static/img/pdp.jpg 600w, /static/img/pdp.jpg 800w, /static/img/pdp.jpg 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Speaking the Truth in Love Conference Flyer." title="Speaking the Truth in Love" />
-                </div>
-                <div className="col s12 m6 valign order-2">
+                <div className="col s12">
                   <p className="flow-text">
                     Campus ministry at today’s colleges and universities has become an immensely
 
@@ -470,10 +442,7 @@ componentDidMount() {
                 <path d="M0 0h24v24H0z" fill="none"/>
               </svg>First Proclamation (FP) Track</h3>
               <div className="row valign-wrapper">
-                <div className="col s12 m6 order-1">
-                  <img className="responsive-img" src="/static/img/pdp.jpg" srcSet="/static/img/pdp.jpg 300w, /static/img/pdp.jpg 600w, /static/img/pdp.jpg 800w, /static/img/pdp.jpg 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Speaking the Truth in Love Conference Flyer." title="Speaking the Truth in Love" />
-                </div>
-                <div className="col s12 m6 valign order-2">
+                <div className="col s12">
                   <p className="flow-text">
                     This track is intended for any individual—clergy or lay, active in ministry or
 
@@ -506,10 +475,7 @@ componentDidMount() {
                 <path d="M0 0h24v24H0z" fill="none"/>
               </svg>Music Ministry (MM) Track</h3>
               <div className="row valign-wrapper">
-                <div className="col s12 m6 order-1">
-                  <img className="responsive-img" src="/static/img/pdp.jpg" srcSet="/static/img/pdp.jpg 300w, /static/img/pdp.jpg 600w, /static/img/pdp.jpg 800w, /static/img/pdp.jpg 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Speaking the Truth in Love Conference Flyer." title="Speaking the Truth in Love" />
-                </div>
-                <div className="col s12 m6 valign order-2">
+                <div className="col s12">
                   <p className="flow-text">
                     The influence of music in most people’s lives is profound. The Church’s long
 
@@ -601,10 +567,7 @@ componentDidMount() {
                 <path d="M0 0h24v24H0z" fill="none"/>
               </svg>Priestly Vocational Formation</h3>
               <div className="row valign-wrapper">
-                <div className="col s12 m6 order-1">
-                  <img className="responsive-img" src="/static/img/pdp.jpg" srcSet="/static/img/pdp.jpg 300w, /static/img/pdp.jpg 600w, /static/img/pdp.jpg 800w, /static/img/pdp.jpg 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Speaking the Truth in Love Conference Flyer." title="Speaking the Truth in Love" />
-                </div>
-                <div className="col s12 m6 valign order-2">
+                <div className="col s12">
 
                   <p className="flow-text">
                     The Priestly Discernment Program (PDP), part of the bachelor’s degree experience at the University, helps men to grow in holiness and listen for the “still, small voice” of a vocation to the priesthood or religious life.  The University is also seeking to develop an Institute for Priestly Renewal (IPR), a summer residency program for seminarians and priests that would reach out to assist diocesan bishops and religious superiors to provide a high-quality curriculum for clergy desiring superlative, efficient, and pragmatic formation for their leadership roles in the new evangelization.
