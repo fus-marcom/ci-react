@@ -100,30 +100,24 @@ There are many avenues through which catechists can get formal training. Our pri
              </div>
              <div className="row" id="announcements">
                <div className="col s12 m6 l4 xl3">
-                 <TextCard />
+                 <TextCard title="New Website!" content="This website has just launched—going live on May 25, 2017—so that Franciscan University's new Catechetical Institute can more greatly serve the Church!" url="" />
                </div>
                <div className="col s12 m6 l4 xl3">
-                 <TextCard />
+                 <TextCard title="Catechist Formation" content='"Our first collection of 50 workshops—those of our Catechist Formation Track—will be posted on “Franciscan At Home” on July 15. See what you can expect right here.' url="http://en.calameo.com/read/00005685416f121522341?page=7" />
                </div>
                <div className="col s12 m6 l4 xl3">
-                 <TextCard />
+                 <TextCard title="Bosco Conference" content='The annual “St. John Bosco Conference for Evangelization and Catechesis” will take place July 17-20, 2017.  Come join us in the sunny height of summertime!"' url="/events" />
                </div>
                <div className="col s12 m6 l4 xl3">
-                 <TextCard />
+                 <TextCard title="Catechism Conference" content='“Speaking the Truth in Love,” an international catechetical conference celebrating 25 years of the Catechism will be held October 13-15, 2017. Join us!"' url="/events" />
                </div>
              </div>
              <div className="row" id="news-tab">
                <div className="col s12 m6 l4 xl3">
-                 <TextCard />
+                 <TextCard title="Resources Available" content="You will find an ever-increasing array of materials—audio, video, and print—on our Formation Resources page." url="/resources" />
                </div>
                <div className="col s12 m6 l4 xl3">
-                 <TextCard />
-               </div>
-               <div className="col s12 m6 l4 xl3">
-                 <TextCard />
-               </div>
-               <div className="col s12 m6 l4 xl3">
-                 <TextCard />
+                 <TextCard title="Catechetical Review" content="Take a look at the latest issue of our long-running magazine, The Catechetical Review." url="https://review.catechetics.com/" />
                </div>
              </div>
            </div>
