@@ -42,7 +42,7 @@ export default class extends React.Component {
            <div className="valign container">
              <div className="row">
                <div className="col s12 center">
-                 <h2 className="light center"><img src="/static/img/squiggly2-reverse.png" style={{marginBottom: '10px', width: '63px', marginRight: '8px'}}/>Mission<img src="/static/img/squiggly2.png" style={{marginBottom: '10px', width: '63px', marginRight: '8px'}} /></h2>
+                 <h2 className="light center"><img src="/static/img/squiggly2-reverse.png" style={{marginBottom: '10px', width: '63px', marginRight: '8px'}}/>Mission<img src="/static/img/squiggly2.png" style={{marginBottom: '10px', width: '63px', marginLeft: '8px'}} /></h2>
                  <p className="flow-text">
                    The Franciscan University Catechetical Institute forms Catholics who form others in the faith. Through courses, conferences, advice, and resources, the institute supports clergy, parents, and all those responsible for the work of catechesis and evangelization, as they carry out Christ’s command to make disciples of all nations.
                  </p>
@@ -67,7 +67,7 @@ export default class extends React.Component {
           <div className="section banner valign-wrapper red-background-flourish" id="banner">
             <div className="valign container">
               <div className="row center">
-                <h2 className="light flourish-white white-text">Formation</h2>
+                <h2 className="light flourish-white white-text"><img src="/static/img/squiggly3-reverse.png" style={{marginBottom: '10px', width: '63px', marginRight: '8px'}}/>Formation<img src="/static/img/squiggly3.png" style={{marginBottom: '10px', width: '63px', marginLeft: '8px'}} /></h2>
               </div>
               <div className="row light">
                 <div className="col s12 m6">

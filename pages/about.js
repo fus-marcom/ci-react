@@ -50,7 +50,13 @@ export default class extends React.Component {
               <div className="row valign-wrapper">
                 <div className="col s12 m6 valign order-2">
                   <p className="flow-text">
-                    Franciscan University’s priority in founding the Catechetical Institute is specifically to serve diocesan bishops, and assist them in forming those who can form others in the Catholic faith, from priests to parents to paid catechists to generous volunteers.  Our work as an Institute is to encourage in the field a deep confidence in the Church’s way of effective catechetical formation, by offering a substantive, richly diverse, and engaging supporting role to help the local work happen well.  All of the Catechetical Institute’s online formation is designed to support and enhance the formation that is being undertaken locally and personally, in parishes, families, schools and communities.  Franciscan University is guided by a vision that sees catechetical formation as an act of trust in people.  The Institute’s approach is based on person-to-person engagement over extended periods of formation, using carefully-designed online workshops.
+                    Officially launched in 2016, the Franciscan University Catechetical Institute seeks to serve Christ and his Church by forming those Catholics entrusted with the formation of others.  This includes priests, deacons, and parents, as well as lay ecclesial ministers, teachers, religious, and parish catechists.
+                  </p>
+                  <p className="flow-text">
+                    Through conferences, online courses, personal support, and new catechetical resources, we make the riches of the Catholic faith more available and accessible to clergy and lay catechists alike.
+                  </p>
+                  <p className="flow-text">
+                    To this end, our expert faculty and experienced lay mentors work in close partnerships with both dioceses and catechists, offering individualized formation tools designed to meet a variety of catechetical needs.
                   </p>
                 </div>
                 <div className="col s12 m6 order-1">
@@ -61,28 +67,43 @@ export default class extends React.Component {
           </div>
           <div className="section white-background-flourish">
             <div className="container wide-container">
+              <div className="row center">
+                <div className="col s12">
+                  <h2>An Online Hub for Local Learning</h2>
+                </div>
+              </div>
               <div className="row valign-wrapper">
                 <div className="col s12 m6 order-1">
                   <img className="responsive-img" src="/static/img/petroc-about.jpg" srcSet="/static/img/petroc-about.jpg 300w, /static/img/petroc-about.jpg 600w, /static/img/petroc-about.jpg 800w, /static/img/petroc-about.jpg 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Crowd at an event." title="Event" />
                 </div>
                 <div className="col s12 m6 valign order-2">
                   <p className="flow-text">
-                    The Institute serves the key catechists in any situation -- this means priests, deacons, parents, those in lay ecclesial ministry.  And it serves these key catechists through formation workshops not only in already-defined areas of ministry training, but also in no-less critical areas for the work of successfully evangelizing and discipling souls:  team building, speaking skills, basic evangelization skills, mentoring, spiritual guidance, counseling, spiritual combat, deliverance, healing, vocational discernment, and so on.  Workshops on these and many other topics are offered by the Institute, designed not for niche professionals in each of these fields, but for parents, catechists, school teachers, parish clergy -- the people who first encounter souls who need understanding and gentle ministers, good advice, good listeners, and leaders who can authentically accompany others on the spiritual journey.
+                    The cornerstone of the institute’s work is our online library of video-based catechetical workshops. Designed to complement and supplement diocesan formation and continuing education programs already in place, the Catechetical Institute’s online programming makes the best of Franciscan University available to dioceses everywhere.
+                  </p>
+                  <p className="flow-text">
+                    It accomplishes this by offering:
+                    <ul className="disc-list flow-text">
+                      <li>catechist formation tools that are wide in their reach, designed to help all those Catholics responsible for helping others, not just catechists.</li>
+                      <li>a broad range of workshops, making use of Franciscan’s many experts in fields outside of catechetics and theology: counseling, education, life sciences, communication, and more. </li>
+                      <li>a degree of formation that goes deep, exploring topics you won’t find in other </li>
+                      <li>online formation programs, including basic evangelization skills, mentoring, spiritual guidance, team building, and many others.</li>
+                    </ul>
+                  </p>
+                  <p className="flow-text">
+                    In the emerging field of online formation, Franciscan University’s Catechetical Institute stands apart.
                   </p>
                 </div>
               </div>
             </div>
           </div>
-          <div className="section red-background-flourish banner white-text">
+          <div className="section banner white-text" style={{backgroundColor: '#000', marginBottom: '50px'}}>
             <div className="container wide-container">
               <div className="row valign-wrapper">
                 <div className="col s12 m6 valign order-2">
-                  <p className="flow-text">
-                    We welcome you to explore our website, which provides access to these formation workshops, as well as a rich array of catechetical resources in all forms of media, information about outstanding events and conference opportunities, and an introduction to the many skilled leaders, presenters, staff, and mentors that work together to bring you Franciscan University's best effort to serve the Church in the new evangelization.
-                  </p>
-                </div>
-                <div className="col s12 m6 order-1">
-                  <img className="responsive-img" src="/static/img/keimig-about.jpg" srcSet="/static/img/keimig-about.jpg 300w, /static/img/keimig-about.jpg 600w, /static/img/keimig-about.jpg 800w, /static/img/keimig-about.jpg 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Diners eating at a restaurant." title="Restaurant" />
+                  <blockquote className="flow-text" style={{borderLeft: '5px solid #a61f26'}}>
+                    “Being a Christian is not the result of an ethical choice or a lofty idea, but the encounter with an event, a person, which gives life a new horizon and a decisive direction.”
+	                   —Pope Benedict XVI, <span style={{fontStyle: 'italic'}}>Deus Caritas Est</span>, No. 1
+                  </blockquote>
                 </div>
               </div>
             </div>
@@ -129,12 +150,6 @@ export default class extends React.Component {
               </div>
             </div>
           </div>
-          <style jsx>{`
-              span.caption {
-                display: block;
-              }
-                `}</style>
-
           <div className="section valign-wrapper black-text white-background-flourish">
             <div className="valign container">
               <div className="row center">
@@ -218,6 +233,17 @@ export default class extends React.Component {
                               </div>
                             </div>
                           </div>
+                          <style jsx>{`
+                              span.caption {
+                                display: block;
+                              }
+
+                              main div ul.disc-list li{
+                                list-style-type: disc !important;
+                                margin-left: 35px !important;
+                              }
+
+                                `}</style>
         </main>
         <Footer />
 
