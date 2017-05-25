@@ -16,7 +16,7 @@ class StickyNav extends Component {
           <li><Link prefetch href="/courses" title="Courses"><a>Courses</a></Link></li>
           <li><Link prefetch href="/events" title="Events"><a>Events</a></Link></li>
           <li><Link prefetch href="/resources" title="Resources"><a>Resources</a></Link></li>
-          <li><Link prefetch href="/news" title="News"><a>News</a></Link></li>
+          <li><a href="/#news" title="News">News</a></li>
         </ul>
       </div>
     );

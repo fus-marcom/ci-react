@@ -33,7 +33,7 @@ class Nav extends Component {
           <li> <Link prefetch href="/courses"><a>Courses</a></Link> </li>
           <li> <Link prefetch href="/events"><a>Events</a></Link> </li>
           <li> <Link prefetch href="/resources"><a>Resources</a></Link> </li>
-          <li> <Link prefetch href="/news"><a>News</a></Link> </li>
+          <li><a href="/#news" title="News">News</a></li>
             </ul>
             <style jsx>{`
                 .side-nav .logo {

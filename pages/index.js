@@ -108,12 +108,26 @@ There are many avenues through which catechists can get formal training. Our pri
              <div className="row">
                <div className="col s12">
                  <ul className="tabs" style={{backgroundColor: 'transparent'}}>
-                  <li className="tab col s6"><a href="#">Announcements</a></li>
-                  <li className="tab col s6"><a className="active" href="#">Newest Additions</a></li>
+                  <li className="tab col s6"><a href="#announcements">Announcements</a></li>
+                  <li className="tab col s6"><a className="active" href="#news-tab">Newest Additions</a></li>
                 </ul>
                </div>
              </div>
-             <div className="row">
+             <div className="row" id="announcements">
+               <div className="col s12 m6 l4 xl3">
+                 <TextCard />
+               </div>
+               <div className="col s12 m6 l4 xl3">
+                 <TextCard />
+               </div>
+               <div className="col s12 m6 l4 xl3">
+                 <TextCard />
+               </div>
+               <div className="col s12 m6 l4 xl3">
+                 <TextCard />
+               </div>
+             </div>
+             <div className="row" id="news-tab">
                <div className="col s12 m6 l4 xl3">
                  <TextCard />
                </div>
