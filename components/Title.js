@@ -70,6 +70,7 @@ class Title extends Component {
 
               #events .interior-page-title {
                 background-image: url(/static/img/campus-7.jpg);
+                background-position-y: 0;
               }
 
               #news .interior-page-title {

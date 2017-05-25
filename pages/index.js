@@ -63,6 +63,21 @@ export default class extends React.Component {
                </div>
              </div>
            </div>
+           <style jsx>{`
+
+              #san-damiano {
+                min-height: 708px;
+              }
+
+               blockquote {
+                 font-size: 130%;
+               }
+
+               @media and screen (max-width: 1088px) {
+                 background-position-x: 3%;
+                 background-size: 481px;
+               }
+            `}</style>
           </div>
           <div className="section banner valign-wrapper red-background-flourish" id="banner">
             <div className="valign container">
