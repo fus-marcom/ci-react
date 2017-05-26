@@ -203,7 +203,7 @@ export default class extends React.Component {
                 <div className="col s6 m3">
                   <div className="card hoverable" style={{cursor: 'pointer'}}>
                     <div className="card-image">
-                      <a href="https://homeschoolconnectionsonline.com/" title="Our Sunday Visitor" target="_blank">
+                      <a href="https://www.osv.com/default.aspx" title="Our Sunday Visitor" target="_blank">
                         <img src="/static/img/osv-logo.png" />
                       </a>
                     </div>
@@ -212,7 +212,7 @@ export default class extends React.Component {
                 <div className="col s6 m3">
                   <div className="card hoverable" style={{cursor: 'pointer'}}>
                     <div className="card-image">
-                      <a href="https://acmrcia.org/" title="Homeschool Connections" target="_blank">
+                      <a href="https://homeschoolconnectionsonline.com/" title="Homeschool Connections" target="_blank">
                         <img src="/static/img/hsc-logo.png" />
                       </a>
                     </div>
@@ -221,7 +221,7 @@ export default class extends React.Component {
                 <div className="col s6 m3">
                   <div className="card hoverable" style={{cursor: 'pointer'}}>
                     <div className="card-image">
-                      <a href="#" title="The Association for Catechumenal Ministry" target="_blank">
+                      <a href="https://acmrcia.org/" title="The Association for Catechumenal Ministry" target="_blank">
                         <img src="/static/img/acm-logo.jpg" />
                                       </a>
                                     </div>
