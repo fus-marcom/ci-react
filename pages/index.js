@@ -58,7 +58,7 @@ export default class extends React.Component {
                <div className="col s12 l6">
                  <blockquote className="flow-text" style={{borderLeft: '5px solid #a61f26'}}>
                    “The definitive aim of catechesis is to put people not only in touch, but in communion and intimacy, with Jesus Christ: only he can lead us to the love of the Father in the Spirit and make us share in the life of the Holy Trinity.”
-                   <br />—Saint John Paul II, <span style={{fontStyle: 'italic'}}>Catechesi Tradendae</span>, No. 5
+                   <br />—St. John Paul II, <span style={{fontStyle: 'italic'}}>Catechesi Tradendae</span>, No. 5
                  </blockquote>
                </div>
              </div>
@@ -93,8 +93,8 @@ There are many avenues through which catechists can get formal training. Our pri
              <div className="row">
                <div className="col s12">
                  <ul className="tabs" style={{backgroundColor: 'transparent'}}>
-                  <li className="tab col s6"><a href="#announcements">Announcements</a></li>
-                  <li className="tab col s6"><a className="active" href="#news-tab">Newest Additions</a></li>
+                  <li className="tab col s6"><a href="#announcements" className="active">Announcements</a></li>
+                  <li className="tab col s6"><a href="#news-tab">Newest Additions</a></li>
                 </ul>
                </div>
              </div>
@@ -103,7 +103,7 @@ There are many avenues through which catechists can get formal training. Our pri
                  <TextCard title="New Website!" content="This website has just launched—going live on May 25, 2017—so that Franciscan University's new Catechetical Institute can more greatly serve the Church!" url="" />
                </div>
                <div className="col s12 m6 l4 xl3">
-                 <TextCard title="Catechist Formation" content='"Our first collection of 50 workshops—those of our Catechist Formation Track—will be posted on “Franciscan At Home” on July 15. See what you can expect right here.' url="http://en.calameo.com/read/00005685416f121522341?page=7" />
+                 <TextCard title="Catechist Formation" content='Our first collection of 50 workshops—those of our Catechist Formation Track—will be posted on “Franciscan At Home” on July 15. See what you can expect right here.' url="http://en.calameo.com/read/00005685416f121522341?page=7" />
                </div>
                <div className="col s12 m6 l4 xl3">
                  <TextCard title="Bosco Conference" content='The annual “St. John Bosco Conference for Evangelization and Catechesis” will take place July 17-20, 2017.  Come join us in the sunny height of summertime!"' url="/events" />

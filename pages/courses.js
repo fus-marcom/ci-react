@@ -74,7 +74,7 @@ componentDidMount() {
                 <div className="col s12">
                   <p className="flow-text">
                     The Catechetical Institute has developed 12 distinct ministry tracks to meet a variety of catechetical needs. These tracks,
-                    however, are merely options. Diocese are free to select any workshops from any track to add to any aspect of its existing
+                    however, are merely options. Dioceses are free to select any workshops from any track to add to any aspect of its existing
                     certification programs, continuing education requirements, or adult formation
                     outreach. Dioceses are also free to create their own track from the workshops
                     offered within various pre-designed tracks.
@@ -111,7 +111,7 @@ componentDidMount() {
               <div className="row valign-wrapper">
                 <div className="col s12">
                   <p className="flow-text">
-                    In his landmark document on family life, Familiaris Consortio, Pope St. John Paul II
+                    In his landmark document on family life, <span style={{fontStyle: 'italic'}}>Familiaris Consortio</span>, Pope St. John Paul II
                     stated:
                   </p>
                   <blockquote className="flow-text" style={{borderLeft: '5px solid #000'}}>
@@ -549,7 +549,7 @@ componentDidMount() {
                 <div className="col s12 m6 valign order-2">
 
                   <p className="flow-text">
-                    Whether you are right out of high school, right in the middle of your life, or right about ready to try a new direction or a next step, Franciscan University has programs that meet you where God has you.  Franciscan offers online associate’s and master’s degrees in theology, philosophy, education, and catechetics.  On campus, we also offer a full spread of over forty undergraduate majors, and seven master’s programs. Our graduates are prepared to “cast out into the deep” and bring the light of Christ to the ends of the earth.
+                    Whether you are right out of high school, right in the middle of your life, or right about ready to try a new direction or a next step, Franciscan University has programs that meet you where God has you.  Franciscan offers online associate’s and master’s degrees in theology, philosophy, education, and catechetics.  On campus, we also offer a full spread of 39 undergraduate majors, and seven master’s programs. Our graduates are prepared to “cast out into the deep” and bring the light of Christ to the ends of the earth.
                   </p>
                   <a href="https://www.franciscan.edu/admissions/online/" title="Franciscan University Online Programs" target="_blank"><button className="btn waves-effect waves-light">Learn More</button></a>
                 </div>
