@@ -71,7 +71,7 @@ export default class extends React.Component {
               </div>
               <div className="row valign-wrapper">
                 <div className="col s12 m6 order-1">
-                  <img className="responsive-img" src="/static/img/new/online-learning.jpg" alt="A woman sitting at a table working on a computer." title="Online Learning" />
+                  <img className="responsive-img" src="/static/img/online-learning-700w.jpg" alt="A woman sitting at a table working on a computer." title="Online Learning" />
                 </div>
                 <div className="col s12 m6 valign order-2">
                   <p className="flow-text">
@@ -195,7 +195,7 @@ export default class extends React.Component {
                   <div className="card hoverable" style={{cursor: 'pointer'}}>
                     <div className="card-image">
                       <a href="https://www.inscapevocations.com/" title="Inscape" target="_blank">
-                        <img src="/static/img/inscape-logo.png" />
+                        <img src="/static/img/inscape-logo.jpg" />
                       </a>
                     </div>
                   </div>

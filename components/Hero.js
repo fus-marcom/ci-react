@@ -12,6 +12,34 @@ class Hero extends Component {
 
           </div>
         </div>
+        <style jsx>{`
+          #hero {
+            min-height: 80vh;
+            background-image: url("/static/img/monstrance-2000w-op.jpg");
+            background-size: 80vw;
+            background-repeat: no-repeat;
+            background-position-x: 183%;
+            background-position-y: 36%;
+            background-color: #000;
+            margin-top: -74px;
+            padding-bottom: 0; }
+
+            @media screen and (max-width: 1200px) {
+              #hero {
+                background-image: url("/static/img/monstrance-2000w-op.jpg");
+                background-position-y: 26%; } }
+
+            @media screen and (max-width: 828px), screen and (max-height: 650px) {
+              #hero {
+                display: none; } }
+
+            #hero .row {
+              margin-bottom: 0; }
+
+            #hero h1 {
+              font-family: 'Cinzel', serif; }
+
+              `}</style>
       </div>
     );
   }

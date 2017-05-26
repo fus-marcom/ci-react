@@ -10,7 +10,7 @@ export default class extends React.Component {
 
   static async getInitialProps () {
     const apiUrl = 'https://wp.catechetics.com/wp-json/wp/v2/';
-    const params = 'nearby-event?per_page=100&filter[date]=DESC&fields=title,acf';
+    const params = 'nearby-event?per_page=100&filter[orderby]=date&filter[order]=ASC&fields=title,acf';
     const res = await fetch(apiUrl + params)
     const data = await res.json()
     return { data }
@@ -60,7 +60,7 @@ componentDidMount() {
 
               <div className="row valign-wrapper">
                 <div className="col s12 m6 order-1">
-                  <img className="responsive-img" src="/static/img/st._john_bosco.jpeg" srcSet="/static/img/st._john_bosco.jpeg 300w, /static/img/st._john_bosco.jpeg 600w, /static/img/st._john_bosco.jpeg 800w, /static/img/st._john_bosco.jpeg 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Crowd at an event." title="Event" />
+                  <img className="responsive-img" src="/static/img/st._john_bosco.jpg" alt="Picture of Saint John Bosco." title="Saint John Bosco" />
                   <div className="video-container" style={{marginTop:'24px'}}>
                     <iframe width="1092" height="665" src="https://www.youtube.com/embed/GZvZ8brOYQM" frameBorder="0" allowFullScreen></iframe>
                   </div>
@@ -92,7 +92,7 @@ componentDidMount() {
                   <a href="https://steubenvilleconferences.com/wp-content/uploads/2016/11/FNL_2017_Conf_Media_inserts_11_Bosco2.pdf" title="St. John Bosco Conference Flyer PDF"><button className="btn waves-effect waves-light btn-inverted-white" style={{marginLeft: '8px'}}>Flyer</button></a>
                   */}</div>
                   <div className="col s12 m6 order-1">
-                    <img className="responsive-img" src="/static/img/speaking-the-truth.png" srcSet="/static/img/speaking-the-truth.png 300w, /static/img/speaking-the-truth.png 600w, /static/img/speaking-the-truth.png 800w, /static/img/speaking-the-truth.png 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Speaking the Truth in Love Conference Flyer." title="Speaking the Truth in Love" />
+                    <img className="responsive-img" src="/static/img/speaking-the-truth-700w-op.jpg" alt="Speaking the Truth in Love Conference Flyer." title="Speaking the Truth in Love" />
                   </div>
                 </div>
               </div>
@@ -124,7 +124,7 @@ componentDidMount() {
                           <td>{post.acf.location}</td>
                           <td><a href={`mailto:${post.acf.event_email}`}>{post.acf.event_email}</a></td>
                           <td><a href={`mailto:${post.acf.presenter_email}`}>{post.acf.presenter_email}</a></td>
-                          <td><a href={post.acf.link}>{post.acf.link ? 'More Info' : ''}</a></td>
+                          <td><a href={post.acf.link} title={post.title.rendered} target="_blank">{post.acf.link ? 'More Info' : ''}</a></td>
                         </tr>
                       })}
                     </tbody>
