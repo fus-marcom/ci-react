@@ -16,7 +16,7 @@ class TextCard extends Component {
             @media screen and (min-width: 601px) {
               .card {
                 height: 500px;
-                max-height: 300px;
+                max-height: 356px;
               }
             }
               `}</style>
