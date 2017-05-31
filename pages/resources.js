@@ -7,6 +7,7 @@ import ResourceCard from '../components/ResourceCard';
 import Head from 'next/head'
 import 'isomorphic-fetch'
 import ReactGA from 'react-ga'
+import Masonry from 'react-masonry-component';
 
 export const initGA = () => {
   console.log('GA init')
@@ -101,11 +102,13 @@ export default class extends React.Component {
                 </div>
               </div>
               <div className="row" id="all">
-                {this.props.data.map(function(post, i) {
-                  return <div className="col s12 m12 l6 xl3" key={i}>
-                    <ResourceCard title={post.title.rendered} type={post.acf.type} content={post.acf.description} url={post.acf.url} price={post.acf.price} />
-                  </div>
-                })}
+                <Masonry>
+                  {this.props.data.map(function(post, i) {
+                    return <div className="col s12 m12 l6 xl3" key={i}>
+                      <ResourceCard title={post.title.rendered} type={post.acf.type} content={post.acf.description} url={post.acf.url} price={post.acf.price} />
+                    </div>
+                  })}
+                </Masonry>
               </div>
               <div className="row" id="audio">
                 {this.props.data.map(function(post, i) {
