@@ -37,7 +37,7 @@ componentDidMount () {
         <Head>
           <meta charset="utf-8" />
           <title>About | Catechetical Institute at Franciscan University</title>
-          <meta name="description" content="A static html template for Franciscan University websites." />
+          <meta name="description" content="The Catechetical Institute at Franciscan University exists to train and support the key catechists in any situation—priests, deacons, parents, or laity, whether professional or volunteer. Through conferences, online workshops, videos, audio, personal mentorship, and a wealth of resources produced by Franciscan University, all involved in the work of catechesis will find new ideas, new approaches, new techniques, and a new confidence to do the work of catechesis." />
           <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
           <link rel="shortcut icon" href="/static/favicon.ico" />
           <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet" />

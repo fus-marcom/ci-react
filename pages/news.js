@@ -37,7 +37,7 @@ export default class extends React.Component {
         <Head>
           <meta charset="utf-8" />
           <title>News | Catechetical Institute at Franciscan University</title>
-          <meta name="description" content="A static html template for Franciscan University websites." />
+          <meta name="description" content="The latest news and announcements from the Catechetical Institute at Franciscan University of Steubenville." />
           <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
           <link rel="shortcut icon" href="/static/favicon.ico" />
           <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet" />

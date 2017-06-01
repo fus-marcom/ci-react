@@ -56,8 +56,8 @@ class Title extends Component {
 
         `}</style>
 
-      <style jsx global>
-        {`
+        <style jsx global>
+          {`
 
             @media screen and (min-width: 800px) {
               #about .interior-page-title {
@@ -69,6 +69,11 @@ class Title extends Component {
               }
 
               #events .interior-page-title {
+                background-image: url(/static/img/new/events-title.jpg);
+                background-position-y: 0;
+              }
+
+              #single-event .interior-page-title {
                 background-image: url(/static/img/new/events-title.jpg);
                 background-position-y: 0;
               }

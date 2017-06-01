@@ -27,6 +27,15 @@ app.prepare()
     renderAndCache(req, res, '/')
   })
 
+  server.get('/events', (req, res) => {
+    renderAndCache(req, res, '/events')
+  })
+
+  server.get('/events/:id', (req, res) => {
+    const queryParams = { id: req.params.id }
+    renderAndCache(req, res, '/single-event', queryParams)
+  })
+
   server.get('/news', (req, res) => {
     renderAndCache(req, res, '/news')
   })
