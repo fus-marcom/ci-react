@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Link from 'next/link'
 
 class TextRevealImageCard extends Component {
 
@@ -15,6 +16,10 @@ class TextRevealImageCard extends Component {
           <p>
             {this.props.cardContent}
           </p>
+          <div class="card-action">
+            <Link prefetch href={this.props.url} title={this.props.cardTitle}>More</Link>
+
+          </div>
         </div>
         <style jsx>{`
           .overlay {
