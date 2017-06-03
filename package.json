@@ -6,7 +6,7 @@
   "dependencies": {
     "express": "^4.15.3",
     "lru-cache": "^4.0.2",
-    "next": "^2.3.1",
+    "next": "2.4.1",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-ga": "^2.2.0"
