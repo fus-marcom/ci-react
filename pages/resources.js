@@ -111,15 +111,18 @@ export default class extends React.Component {
                 </Masonry>
               </div>
               <div className="row" id="audio">
-                {this.props.data.map(function(post, i) {
-                  if (post.acf.type === 'audio') {
-                    return <div className="col s12 m12 l6 xl3" key={i}>
-                      <ResourceCard title={post.title.rendered} type={post.acf.type} content={post.acf.description} url={post.acf.url} price={post.acf.price} />
-                    </div>
-                  }
-                })}
-              </div>
-              <div className="row" id="text">
+                <Masonry>
+                  {this.props.data.map(function(post, i) {
+                    if (post.acf.type === 'audio') {
+                      return <div className="col s12 m12 l6 xl3" key={i}>
+                        <ResourceCard title={post.title.rendered} type={post.acf.type} content={post.acf.description} url={post.acf.url} price={post.acf.price} />
+                      </div>
+                    }
+                  })}
+                </Masonry>
+                </div>
+                <div className="row" id="text">
+
                 {this.props.data.map(function(post, i) {
                   if (post.acf.type === 'text') {
                     return <div className="col s12 m12 l6 xl3" key={i}>
@@ -129,6 +132,7 @@ export default class extends React.Component {
                 })}
               </div>
               <div className="row" id="video">
+
                 {this.props.data.map(function(post, i) {
                   if (post.acf.type === 'video') {
                     return <div className="col s12 m12 l6 xl3" key={i}>
