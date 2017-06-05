@@ -7,6 +7,7 @@ import ResourceCard from '../components/ResourceCard';
 import Head from 'next/head'
 import 'isomorphic-fetch'
 import ReactGA from 'react-ga'
+import Masonry from 'react-masonry-component';
 
 export const initGA = () => {
   console.log('GA init')
@@ -18,7 +19,9 @@ export const logPageView = () => {
 }
 
 export default class extends React.Component {
-
+  state = {
+    activeTab: 'all'
+  }
   static async getInitialProps () {
     const apiUrl = 'https://wp.catechetics.com/wp-json/wp/v2/';
     const params = 'resource?per_page=100&fields=title,acf';
@@ -31,19 +34,27 @@ export default class extends React.Component {
     initTabs();
     initGA()
     logPageView()
-    this.initMasonry()
-  }
-
-  initMasonry() {
-    const elem = document.querySelector('.masonry-container');
-    const msnry = new Masonry( elem, {
-      // options
-      itemSelector: '.col',
-      
-    });
   }
 
   render () {
+    const { activeTab } = this.state;
+    const tabs = {
+      'all': 'All',
+      'audio': 'Audio',
+      'text': 'Text',
+       'video' :'Video'
+     };
+    const massonryComp = (
+      <Masonry>
+        {this.props.data.filter(post => activeTab === 'all' || activeTab === post.acf.type).map( (post, i) => (
+           <div className="col s12 m12 l6 xl3" key={i}>
+            <ResourceCard title={post.title.rendered} type={post.acf.type} content={post.acf.description} url={post.acf.url} price={post.acf.price} />
+          </div>
+        ))
+        }
+      </Masonry>
+    );
+
     return (
       <div style={{display: 'flex', flexDirection: 'column'}}>
         <Head>
@@ -103,47 +114,29 @@ export default class extends React.Component {
               <div className="row">
                 <div className="col s12">
                   <ul className="tabs">
-                    <li className="tab col s3"><a href="#all" className="active">All</a></li>
-                    <li className="tab col s3"><a href="#audio">Audio</a></li>
-                    <li className="tab col s3"><a href="#text">Text</a></li>
-                    <li className="tab col s3"><a href="#video">Video</a></li>
+                    {Object.keys(tabs).map( tabKey => (
+                      <li className="tab col s3">
+                        <a
+                          key={tabKey}
+                          href={'#'+tabKey}
+                          className={tabKey===activeTab && 'active'}
+                          onClick={() => this.setState({ activeTab: tabKey})} >
+                          {tabs[tabKey]}
+                        </a>
+                      </li>
+                    ))}
                   </ul>
                 </div>
               </div>
-              <div className="row masonry-container" id="all">
-                  {this.props.data.map(function(post, i) {
-                    return <div className="col s12 m12 l6 xl3" key={i}>
-                      <ResourceCard title={post.title.rendered} type={post.acf.type} content={post.acf.description} url={post.acf.url} price={post.acf.price} />
-                    </div>
-                  })}
-              </div>
-              <div className="row masonry-container" id="audio">
-                {this.props.data.map(function(post, i) {
-                  if (post.acf.type === 'audio') {
-                    return <div className="col s12 m12 l6 xl3" key={i}>
-                      <ResourceCard title={post.title.rendered} type={post.acf.type} content={post.acf.description} url={post.acf.url} price={post.acf.price} />
-                    </div>
-                  }
-                })}
-              </div>
-              <div className="row masonry-container" id="text">
-                {this.props.data.map(function(post, i) {
-                  if (post.acf.type === 'text') {
-                    return <div className="col s12 m12 l6 xl3" key={i}>
-                      <ResourceCard title={post.title.rendered} type={post.acf.type} content={post.acf.description} url={post.acf.url} price={post.acf.price} />
-                    </div>
-                  }
-                })}
-              </div>
-              <div className="row masonry-container" id="video">
-                {this.props.data.map(function(post, i) {
-                  if (post.acf.type === 'video') {
-                    return <div className="col s12 m12 l6 xl3" key={i}>
-                      <ResourceCard title={post.title.rendered} type={post.acf.type} content={post.acf.description} url={post.acf.url} price={post.acf.price} />
-                    </div>
-                  }
-                })}
-              </div>
+
+              {/* For each tab, we generate a row */}
+              {Object.keys(tabs).map( tabKey => (
+                <div className="row" id={tabKey}>
+                   {/* We render masonry comp only if we are in current active tab key */}
+                  {activeTab === tabKey && massonryComp}
+                </div>
+              ))}
+
             </div>
           </div>
 
@@ -160,7 +153,6 @@ export default class extends React.Component {
 
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-        <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
         <script src="static/js/app.js"></script>
 
