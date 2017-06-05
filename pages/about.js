@@ -123,39 +123,47 @@ componentDidMount () {
           <div className="section white-background-flourish banner">
             <div className="container wide-container">
               <div className="row">
+                <div className="col s12 center">
+                  <h2>Institute Leadership</h2>
+                </div>
+              </div>
+              <div className="row">
                 <div className="col s12 m4">
-                  <div className="card" style={{height: '419px', maxHeight: '419px'}}>
+                  <div className="card leader-card">
                     <div className="card-image">
                       <img src="/static/img/fr-nathan.jpg" srcSet="/static/img/fr-nathan.jpg 300w, /static/img/fr-nathan.jpg 600w, /static/img/fr-nathan.jpg 800w, /static/img/fr-nathan.jpg 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Diners eating at a restaurant." title="Restaurant" />
                     </div>
                     <div className="card-content">
                       <span className="caption caption-name card-title">Fr. Nathan Malavolti, TOR</span>
-                      <span className="caption caption-title">Vice President of Pastoral Care and Evangelization</span>
-                      <span className="caption caption-org">Franciscan University</span>
+                      <span className="caption caption-title">Vice President</span>
+                      <span className="caption caption-dept">Pastoral Care and Evangelization</span>
+                      <span className="caption caption-org">Franciscan University of Steubenville</span>
                     </div>
                   </div>
                 </div>
                 <div className="col s12 m4">
-                  <div className="card" style={{height: '419px', maxHeight: '419px'}}>
+                  <div className="card leader-card">
                     <div className="card-image">
                       <img src="/static/img/petroc-about.jpg" srcSet="/static/img/petroc-about.jpg 300w, /static/img/petroc-about.jpg 600w, /static/img/petroc-about.jpg 800w, /static/img/petroc-about.jpg 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Diners eating at a restaurant." title="Restaurant" />
                     </div>
                     <div className="card-content">
                       <span className="caption caption-name card-title">Petroc Willey, STL, PhD</span>
                       <span className="caption caption-title">Director</span>
-                      <span className="caption caption-org">Catechetical Institute and Office of Catechetics</span>
+                      <span className="caption caption-dept">Catechetical Institute</span>
+                      <span className="caption caption-org">Office of Catechetics</span>
                     </div>
                   </div>
                 </div>
                 <div className="col s12 m4">
-                  <div className="card" style={{height: '419px', maxHeight: '419px'}}>
+                  <div className="card leader-card">
                     <div className="card-image">
                       <img src="/static/img/keimig-about.jpg" srcSet="/static/img/keimig-about.jpg 300w, /static/img/keimig-about.jpg 600w, /static/img/keimig-about.jpg 800w, /static/img/keimig-about.jpg 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Diners eating at a restaurant." title="Restaurant" />
                     </div>
                     <div className="card-content">
                       <span className="caption caption-name card-title">William Keimig, MPM, MA</span>
                       <span className="caption caption-title">Assistant Director</span>
-                      <span className="caption caption-org">Catechetical Institute</span>
+                      <span className="caption caption-dept">Catechetical Institute</span>
+                      <span className="caption caption-org">Franciscan University of Steubenville</span>
                     </div>
                   </div>
                 </div>
@@ -246,6 +254,10 @@ componentDidMount () {
                             </div>
                           </div>
                           <style jsx>{`
+                              .leader-card {
+                                min-height: 416px;
+                              }
+
                               span.caption {
                                 display: block;
                               }
