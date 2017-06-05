@@ -90,13 +90,13 @@ componentDidMount () {
                 </div>
                 <div className="col s12 m6 valign order-2">
                   <p className="flow-text">
-                    The cornerstone of the institute’s work is our online library of video-based catechetical workshops. Designed to complement and supplement diocesan formation and continuing education programs already in place, the Catechetical Institute’s online programming makes the best of Franciscan University available to dioceses everywhere.
+                    Designed to complement and supplement diocesan formation and continuing education programs already in place, the Catechetical Institute’s online programming makes the best of Franciscan University available to dioceses everywhere.
                   </p>
                   <p className="flow-text">
                     It accomplishes this by offering:
                     <ul className="disc-list flow-text">
                       <li>catechist formation tools that are wide in their reach, designed to help all those Catholics responsible for helping others, not just catechists.</li>
-                      <li>a broad range of workshops, making use of Franciscan’s many experts in fields outside of catechetics and theology: counseling, education, life sciences, communication, and more. </li>
+                      <li>a broad range of workshops, making use of experts not only in catechetics and theology, but also in counseling, education, life sciences, communication, and more. </li>
                       <li>a degree of formation that goes deep, exploring topics you won’t find in other </li>
                       <li>online formation programs, including basic evangelization skills, mentoring, spiritual guidance, team building, and many others.</li>
                     </ul>
