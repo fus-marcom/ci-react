@@ -55,7 +55,7 @@ export default class extends React.Component {
             <div className="valign container">
 
               <div className="row light flow-text">
-                <div className="col s12 center">
+                <div className="col s12">
                   <p className="flow-text">
                     Franciscan University has produced a prodigious amount of material over the years that can help you be a better catechist. Here you will find videos, audio clips, magazines, books, brochures, and other resources produced by University faculty, conference speakers, and an array of collaborators. We are pleased to make much of it available for free, with a handful of items requiring a subscription or purchase.
                   </p>
