@@ -67,7 +67,7 @@ componentDidMount() {
               <span className="sub-heading center">July 17-20, 2017</span>
               <div className="center" style={{marginBottom: '16px'}}>
                 <a href="https://www.cvent.com/events/st-john-bosco-conference-july-17-20-2017/registration-fd101066745c42f099a1fade8be9ed1c.aspx?fqp=true%C2%A0" title="Register for the St. John Bosco Conference" target="_blank"><button className="btn waves-effect waves-light">Register</button></a>
-                <a href="https://steubenvilleconferences.com/wp-content/uploads/2016/11/FNL_2017_Conf_Media_inserts_11_Bosco2.pdf" title="St. John Bosco Conference Flyer PDF"><button className="btn waves-effect waves-light" style={{marginLeft: '8px'}}>Flyer</button></a>
+                <a href="https://steubenvilleconferences.com/wp-content/uploads/2016/11/FNL_2017_Conf_Media_inserts_11_Bosco2.pdf" title="St. John Bosco Conference Flyer PDF" target="_blank"><button className="btn waves-effect waves-light" style={{marginLeft: '8px'}}>Flyer</button></a>
               </div>
 
               <div className="row valign-wrapper">
@@ -82,7 +82,7 @@ componentDidMount() {
                   <p className="flow-text">
                   Founded over 20 years ago, this amazing gathering has evolved to serve all aspects of the evangelizing and catechizing mission of the Church, with an annual array of relevant, inspiring, and practical workshops on parenting and priestly excellence, children, youth, and adult ministry, multicultural, ecumenical, and special needs service, and a host of tracks offering certification for school teachers and parish catechists, campus and youth ministers, catechetical leaders, RCIA teams, and much more. It is a place for people to share their favorite resources, discuss particular challenges facing their ministry, learn from and be mentored by some of the finest professionals in the field, and open themselves to the Holy Spirit through confession, adoration, and Mass. Many participants think of the conference as an annual re-charge of their spiritual batteries, and a true retreat for the soul. Come to the St. John Bosco Conference and be renewed in your hope as you spend four days being blessed by an amazing ministry team, dynamic presenters, and fellowship with those that share your passion for Christ and the Church!</p>
                   <a href="https://www.cvent.com/events/st-john-bosco-conference-july-17-20-2017/registration-fd101066745c42f099a1fade8be9ed1c.aspx?fqp=true%C2%A0" title="Register for the St. John Bosco Conference" target="_blank"><button className="btn waves-effect waves-light">Register</button></a>
-                  <a href="https://steubenvilleconferences.com/wp-content/uploads/2016/11/FNL_2017_Conf_Media_inserts_11_Bosco2.pdf" title="St. John Bosco Conference Flyer PDF"><button className="btn waves-effect waves-light" style={{marginLeft: '8px'}}>Flyer</button></a>
+                  <a href="https://steubenvilleconferences.com/wp-content/uploads/2016/11/FNL_2017_Conf_Media_inserts_11_Bosco2.pdf" title="St. John Bosco Conference Flyer PDF" target="_blank"><button className="btn waves-effect waves-light" style={{marginLeft: '8px'}}>Flyer</button></a>
                 </div>
               </div>
             </div>
@@ -93,7 +93,7 @@ componentDidMount() {
               <span className="sub-heading center">October 13-15, 2017</span>
               <div className="center" style={{marginBottom: '16px'}}>
                 <a href="https://www.eventbrite.com/e/speaking-the-truth-in-love-conference-tickets-34907493252?aff=CatecheticsSite" title="Register for the Speaking the Truth in Love Conference" target="_blank"><button className="btn waves-effect waves-light btn-inverted-white">Register</button></a>
-
+                <a href="http://www.calameo.com/read/00005685440b456a8cebf" title="Speaking the Truth in Love Conference Flyer PDF" target="_blank"><button className="btn waves-effect waves-light btn-inverted-white" style={{marginLeft: '8px'}}>Flyer</button></a>
               </div>
               <div className="row valign-wrapper">
                 <div className="col s12 m6 valign order-2">
@@ -101,6 +101,7 @@ componentDidMount() {
                     This unique conference is a Silver Jubilee celebration of the gift of the Catechism of the Catholic Church to the Church of our day, and will examine ways in which the Catechism is providing a creative reference point for catechetical, cultural and ecclesial renewal through its reclamation of the Christian heritage, its explanatory power and its compelling articulation of a civilization characterized by faith, hope and love.  Franciscan University is grateful for the assistance of the USCCB's Committee on Evangelization and Catechesis in making this conference possible.  Keynotes include, Cardinal Donald Wuerl, Archbishop of Washington, Archbishop Leonard Blair, Chair, Committee for Evangelization and Catechesis, USCCB, Dr. John Cavadini, Director of the Institute for Church Life at the University of Notre Dame, Dr. Scott Hahn, Father Michael Scanlan Chair of Biblical Theology and the New Evangelization, Franciscan University, Dr. Tracey Rowland, John Paul II Research Chair of Theology, University of Notre Dame, Sydney, and Dr. Petroc Willey, Director of the Catechetical Institute and the Office of Catechetics, Franciscan University.
                   </p>
                   <a href="https://www.eventbrite.com/e/speaking-the-truth-in-love-conference-tickets-34907493252?aff=CatecheticsSite" title="Register for the Speaking the Truth in Love Conference" target="_blank"><button className="btn waves-effect waves-light btn-inverted-white">Register</button></a>
+                  <a href="http://www.calameo.com/read/00005685440b456a8cebf" title="Speaking the Truth in Love Conference Flyer PDF" target="_blank"><button className="btn waves-effect waves-light btn-inverted-white" style={{marginLeft: '8px'}}>Flyer</button></a>
                 </div>
                 <div className="col s12 m6 order-1">
                   <img className="responsive-img" src="/static/img/speaking-the-truth-700w-op.jpg" alt="Speaking the Truth in Love Conference Flyer." title="Speaking the Truth in Love" />
