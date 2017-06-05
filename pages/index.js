@@ -155,6 +155,10 @@ export default class extends React.Component {
                   background-size: 481px;
                 }
               }
+
+              .tab a {
+                font-size: 18px;
+              }
            `}</style>
         </main>
         <Footer />

@@ -144,6 +144,10 @@ export default class extends React.Component {
                 width: 85%;
                 max-width: 2000px;
               }
+
+              .tab a {
+                font-size: 18px;
+              }
                 `}
           </style>
         </main>
