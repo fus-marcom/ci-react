@@ -52,8 +52,8 @@ export default class extends React.Component {
         <main id="team">
           <StickyNav />
           <Title title="Team" imgPath="/static/img/campus-7.jpg" posY="-44vh" />
-          <div className="container">
-            <div className="section">
+          <div className="section white-background-flourish">
+            <div className="container">
               <div className="row valign-wrapper">
                 <div className="col s12 valign">
                   <p className="flow-text">
