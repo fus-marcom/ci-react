@@ -115,7 +115,7 @@ export default class extends React.Component {
                 <div className="col s12">
                   <ul className="tabs">
                     {Object.keys(tabs).map( tabKey => (
-                      <li className="tab col s3">
+                      <li className="tab col s3" key={tabKey+'li'}>
                         <a
                           key={tabKey}
                           href={'#'+tabKey}
@@ -131,8 +131,8 @@ export default class extends React.Component {
 
               {/* For each tab, we generate a row */}
               {Object.keys(tabs).map( tabKey => (
-                <div className="row" id={tabKey}>
-                   {/* We render masonry comp only if we are in current active tab key */}
+                <div className="row" id={tabKey+'div'}>
+                  {/* We render masonry comp only if we are in current active tab key */}
                   {activeTab === tabKey && massonryComp}
                 </div>
               ))}
