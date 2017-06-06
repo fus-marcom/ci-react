@@ -11,6 +11,9 @@ class ResourceCard extends Component {
     return (
       <div className="card hoverable">
         <a href={this.props.url} target="_blank">
+          {this.props.img !== '' ? <div className="card-image">
+            <img src={this.props.img} />
+          </div> : ''}
           <div className="card-content">
             <span dangerouslySetInnerHTML={{__html: freeSVG}}></span>
 
