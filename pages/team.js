@@ -40,7 +40,7 @@ export default class extends React.Component {
         <Head>
           <meta charset="utf-8" />
           <title>Team | Catechetical Institute at Franciscan University</title>
-          <meta name="description" content="A static html template for Franciscan University websites." />
+          <meta name="description" content="The Catechetical Institute brings together the world-class faculty of Franciscan University’s Catechetics Program with key collaborators from all levels of ministry. These skilled professionals teach our Franciscan at Home online courses and speak at our St. John Bosco Conference, academic conferences, and other events around the country." />
           <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
           <link rel="shortcut icon" href="/static/favicon.ico" />
           <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet" />
@@ -52,8 +52,8 @@ export default class extends React.Component {
         <main id="team">
           <StickyNav />
           <Title title="Team" imgPath="/static/img/campus-7.jpg" posY="-44vh" />
-          <div className="container">
-            <div className="section">
+          <div className="section white-background-flourish">
+            <div className="container">
               <div className="row valign-wrapper">
                 <div className="col s12 valign">
                   <p className="flow-text">

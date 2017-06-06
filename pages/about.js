@@ -37,7 +37,7 @@ componentDidMount () {
         <Head>
           <meta charset="utf-8" />
           <title>About | Catechetical Institute at Franciscan University</title>
-          <meta name="description" content="A static html template for Franciscan University websites." />
+          <meta name="description" content="The Catechetical Institute at Franciscan University exists to train and support the key catechists in any situation—priests, deacons, parents, or laity, whether professional or volunteer. Through conferences, online workshops, videos, audio, personal mentorship, and a wealth of resources produced by Franciscan University, all involved in the work of catechesis will find new ideas, new approaches, new techniques, and a new confidence to do the work of catechesis." />
           <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
           <link rel="shortcut icon" href="/static/favicon.ico" />
           <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet" />
@@ -90,13 +90,13 @@ componentDidMount () {
                 </div>
                 <div className="col s12 m6 valign order-2">
                   <p className="flow-text">
-                    The cornerstone of the institute’s work is our online library of video-based catechetical workshops. Designed to complement and supplement diocesan formation and continuing education programs already in place, the Catechetical Institute’s online programming makes the best of Franciscan University available to dioceses everywhere.
+                    Designed to complement and supplement diocesan formation and continuing education programs already in place, the Catechetical Institute’s online programming makes the best of Franciscan University available to dioceses everywhere.
                   </p>
                   <p className="flow-text">
                     It accomplishes this by offering:
                     <ul className="disc-list flow-text">
                       <li>catechist formation tools that are wide in their reach, designed to help all those Catholics responsible for helping others, not just catechists.</li>
-                      <li>a broad range of workshops, making use of Franciscan’s many experts in fields outside of catechetics and theology: counseling, education, life sciences, communication, and more. </li>
+                      <li>a broad range of workshops, making use of experts not only in catechetics and theology, but also in counseling, education, life sciences, communication, and more. </li>
                       <li>a degree of formation that goes deep, exploring topics you won’t find in other </li>
                       <li>online formation programs, including basic evangelization skills, mentoring, spiritual guidance, team building, and many others.</li>
                     </ul>
@@ -123,39 +123,47 @@ componentDidMount () {
           <div className="section white-background-flourish banner">
             <div className="container wide-container">
               <div className="row">
+                <div className="col s12 center">
+                  <h2>Institute Leadership</h2>
+                </div>
+              </div>
+              <div className="row">
                 <div className="col s12 m4">
-                  <div className="card" style={{height: '419px', maxHeight: '419px'}}>
+                  <div className="card leader-card">
                     <div className="card-image">
                       <img src="/static/img/fr-nathan.jpg" srcSet="/static/img/fr-nathan.jpg 300w, /static/img/fr-nathan.jpg 600w, /static/img/fr-nathan.jpg 800w, /static/img/fr-nathan.jpg 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Diners eating at a restaurant." title="Restaurant" />
                     </div>
                     <div className="card-content">
                       <span className="caption caption-name card-title">Fr. Nathan Malavolti, TOR</span>
-                      <span className="caption caption-title">Vice President of Pastoral Care and Evangelization</span>
-                      <span className="caption caption-org">Franciscan University</span>
+                      <span className="caption caption-title">Vice President</span>
+                      <span className="caption caption-dept">Pastoral Care and Evangelization</span>
+                      <span className="caption caption-org">Franciscan University of Steubenville</span>
                     </div>
                   </div>
                 </div>
                 <div className="col s12 m4">
-                  <div className="card" style={{height: '419px', maxHeight: '419px'}}>
+                  <div className="card leader-card">
                     <div className="card-image">
                       <img src="/static/img/petroc-about.jpg" srcSet="/static/img/petroc-about.jpg 300w, /static/img/petroc-about.jpg 600w, /static/img/petroc-about.jpg 800w, /static/img/petroc-about.jpg 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Diners eating at a restaurant." title="Restaurant" />
                     </div>
                     <div className="card-content">
                       <span className="caption caption-name card-title">Petroc Willey, STL, PhD</span>
                       <span className="caption caption-title">Director</span>
-                      <span className="caption caption-org">Catechetical Institute and Office of Catechetics</span>
+                      <span className="caption caption-dept">Catechetical Institute</span>
+                      <span className="caption caption-org">Office of Catechetics</span>
                     </div>
                   </div>
                 </div>
                 <div className="col s12 m4">
-                  <div className="card" style={{height: '419px', maxHeight: '419px'}}>
+                  <div className="card leader-card">
                     <div className="card-image">
                       <img src="/static/img/keimig-about.jpg" srcSet="/static/img/keimig-about.jpg 300w, /static/img/keimig-about.jpg 600w, /static/img/keimig-about.jpg 800w, /static/img/keimig-about.jpg 1200w" sizes="(min-width: 600px) 50vw, 100vw" alt="Diners eating at a restaurant." title="Restaurant" />
                     </div>
                     <div className="card-content">
                       <span className="caption caption-name card-title">William Keimig, MPM, MA</span>
                       <span className="caption caption-title">Assistant Director</span>
-                      <span className="caption caption-org">Catechetical Institute</span>
+                      <span className="caption caption-dept">Catechetical Institute</span>
+                      <span className="caption caption-org">Franciscan University of Steubenville</span>
                     </div>
                   </div>
                 </div>
@@ -246,6 +254,10 @@ componentDidMount () {
                             </div>
                           </div>
                           <style jsx>{`
+                              .leader-card {
+                                min-height: 416px;
+                              }
+
                               span.caption {
                                 display: block;
                               }

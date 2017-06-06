@@ -60,7 +60,7 @@ export default class extends React.Component {
         <Head>
           <meta charset="utf-8" />
           <title>Resources | Catechetical Institute at Franciscan University</title>
-          <meta name="description" content="A static html template for Franciscan University websites." />
+          <meta name="description" content="Franciscan University has produced a prodigious amount of material over the years that can help you be a better catechist. Here you will find videos, audio clips, magazines, books, brochures, and other resources produced by University faculty, conference speakers, and an array of collaborators." />
           <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
           <link rel="shortcut icon" href="/static/favicon.ico" />
           <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet" />
@@ -76,7 +76,7 @@ export default class extends React.Component {
             <div className="valign container">
 
               <div className="row light flow-text">
-                <div className="col s12 center">
+                <div className="col s12">
                   <p className="flow-text">
                     Franciscan University has produced a prodigious amount of material over the years that can help you be a better catechist. Here you will find videos, audio clips, magazines, books, brochures, and other resources produced by University faculty, conference speakers, and an array of collaborators. We are pleased to make much of it available for free, with a handful of items requiring a subscription or purchase.
                   </p>
@@ -145,6 +145,10 @@ export default class extends React.Component {
               .container-wide {
                 width: 85%;
                 max-width: 2000px;
+              }
+
+              .tab a {
+                font-size: 18px;
               }
                 `}
           </style>
