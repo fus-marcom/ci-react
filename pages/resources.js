@@ -47,7 +47,7 @@ export default class extends React.Component {
     const massonryComp = (
       <Masonry>
         {this.props.data.filter(post => activeTab === 'all' || activeTab === post.acf.type).map( (post, i) => (
-           <div className="col s12 m12 l6 xl3" key={i}>
+          <div className="col s12 m6 l4 xl3" key={i}>
             <ResourceCard title={post.title.rendered} type={post.acf.type} content={post.acf.description} url={post.acf.url} price={post.acf.price} />
           </div>
         ))
@@ -100,7 +100,7 @@ export default class extends React.Component {
                 {this.props.data.map(function(post, i) {
                   if (post.acf.featured) {
                     for (let f = 0; f < 4; f++) {
-                      return <div className="col s12 m12 l6 xl3" key={i}>
+                      return <div className="col s12 m6 l6 xl3" key={i}>
                         <ResourceCard title={post.title.rendered} type={post.acf.type} content={post.acf.description} url={post.acf.url} price={post.acf.price} />
                       </div>
                     }
