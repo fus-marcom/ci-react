@@ -131,7 +131,7 @@ export default class extends React.Component {
 
               {/* For each tab, we generate a row */}
               {Object.keys(tabs).map( tabKey => (
-                <div className="row" id={tabKey+'div'}>
+                <div className="row" id={tabKey} key={tabKey}>
                   {/* We render masonry comp only if we are in current active tab key */}
                   {activeTab === tabKey && massonryComp}
                 </div>
