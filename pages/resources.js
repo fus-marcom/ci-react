@@ -20,7 +20,7 @@ export const logPageView = () => {
 
 export default class extends React.Component {
   state = {
-    activeTab: 'all'
+    activeTab: 'all' , data:[]
   }
   static async getInitialProps () {
     const apiUrl = 'https://wp.catechetics.com/wp-json/wp/v2/';
@@ -30,10 +30,39 @@ export default class extends React.Component {
     return { data }
   }
 
-  componentDidMount() {
+  componentDidMount = () => {
+    this.setState({data:﻿ this.props.data});
     initTabs();
     initGA()
     logPageView()
+  }
+
+  get(url) {
+  return fetch(url, {
+    method: 'get'
+    });
+  }
+
+  getJSON = (url) => {
+    return this.get(url).then(function(response) {
+      return response.json();
+    });
+  }
+
+  getSearchResults = () => {
+    /* Get input value
+        Make api call based on value
+        Render cards from api data
+     */
+     const searchTerm = document.getElementById('search').value;
+     console.log(searchTerm);
+
+     const apiUrl = 'https://wp.catechetics.com/wp-json/wp/v2/';
+     const params = `resource?search=${searchTerm}&per_page=100&fields=title,acf`;
+
+     this.getJSON(apiUrl + params)
+     .then(data =>﻿ this.setState({data}))
+
   }
 
   render () {
@@ -46,7 +75,7 @@ export default class extends React.Component {
      };
     const massonryComp = (
       <Masonry>
-        {this.props.data.filter(post => activeTab === 'all' || activeTab === post.acf.type).map( (post, i) => (
+        {this.state.data.filter(post => activeTab === 'all' || activeTab === post.acf.type).map( (post, i) => (
           <div className="col s12 m6 l4 xl3" key={i}>
             <ResourceCard title={post.title.rendered} type={post.acf.type} content={post.acf.description} url={post.acf.url} price={post.acf.price} />
           </div>
@@ -111,6 +140,12 @@ export default class extends React.Component {
           </div>
           <div className="section valign-wrapper white-background-flourish">
             <div className="valign container container-wide">
+              <div className="row">
+                <div className="input-field col s6">
+                  <input id="search" type="text" onKeyUp={this.getSearchResults} />
+                  <label htmlFor="search">Search</label>
+                </div>
+              </div>
               <div className="row">
                 <div className="col s12">
                   <ul className="tabs">
