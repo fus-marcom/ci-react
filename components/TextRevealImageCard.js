@@ -17,7 +17,7 @@ class TextRevealImageCard extends Component {
             {this.props.cardContent}
           </p>
           <div class="card-action">
-            <Link prefetch href={this.props.url} title={this.props.cardTitle}>More</Link>
+            <Link prefetch href={this.props.url} title={this.props.cardTitle}><a>More</a></Link>
 
           </div>
         </div>
