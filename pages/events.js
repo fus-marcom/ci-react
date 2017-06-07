@@ -129,7 +129,7 @@ componentDidMount() {
 
                   <tbody>
                     {this.props.data.map(function(post, i) {
-                      return <tr>
+                      return <tr key={i}>
                         <td>{post.acf.displayed_date}</td>
                         <td>{post.acf.presenter}</td>
                         <td dangerouslySetInnerHTML={{__html: post.title.rendered}}></td>
