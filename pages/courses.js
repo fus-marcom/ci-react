@@ -1,9 +1,7 @@
 import React from 'react'
-import Nav from '../components/Nav';
+import Layout from '../components/Layout';
 import StickyNav from '../components/StickyNav';
-import Footer from '../components/Footer';
 import Title from '../components/Title';
-import Head from 'next/head'
 import 'isomorphic-fetch'
 import { logPageView } from '../utils/analytics'
 
@@ -24,19 +22,9 @@ componentDidMount() {
 
   render () {
     return (
-      <div style={{display: 'flex', flexDirection: 'column'}}>
-        <Head>
-          <meta charset="utf-8" />
-          <title>Courses | Catechetical Institute at Franciscan University</title>
-          <meta name="description" content="There are many avenues through which catechists can get formal training. Our principal training vehicle, Franciscan at Home, draws together the best of the Franciscan University Catechetics Program, the St. John Bosco Conference, and the latest in online education. There also are opportunities for homeschool families, online graduate studies, and more from Franciscan University of Steubenville." />
-          <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-          <link rel="shortcut icon" href="/static/favicon.ico" />
-          <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet" />
-          <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-          <link href="/static/css/materialize.css" rel="stylesheet" />
-          <link href="/static/css/style.css" rel="stylesheet" />
-        </Head>
-        <Nav headerType="interior" />
+      <Layout headerType="interior"
+        title="Courses | Catechetical Institute at Franciscan University"
+        description="There are many avenues through which catechists can get formal training. Our principal training vehicle, Franciscan at Home, draws together the best of the Franciscan University Catechetics Program, the St. John Bosco Conference, and the latest in online education. There also are opportunities for homeschool families, online graduate studies, and more from Franciscan University of Steubenville.">
         <main id="courses">
           <StickyNav />
           <Title title="Courses" imgPath="/static/img/campus-6.jpg" posY="-44vh" />
@@ -600,14 +588,7 @@ componentDidMount() {
               }
           `}</style>
           </main>
-        <Footer />
-
-
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
-        <script src="static/js/app.js"></script>
-
-      </div>
+      </Layout>
     )
   }
 }

@@ -1,10 +1,8 @@
 import React from 'react'
-import Nav from '../components/Nav';
+import Layout from '../components/Layout';
 import StickyNav from '../components/StickyNav';
-import Footer from '../components/Footer';
 import Title from '../components/Title';
 import ResourceCard from '../components/ResourceCard';
-import Head from 'next/head'
 import 'isomorphic-fetch'
 import { logPageView } from '../utils/analytics'
 import Masonry from 'react-masonry-component';
@@ -46,19 +44,9 @@ export default class extends React.Component {
     );
 
     return (
-      <div style={{display: 'flex', flexDirection: 'column'}}>
-        <Head>
-          <meta charset="utf-8" />
-          <title>Resources | Catechetical Institute at Franciscan University</title>
-          <meta name="description" content="Franciscan University has produced a prodigious amount of material over the years that can help you be a better catechist. Here you will find videos, audio clips, magazines, books, brochures, and other resources produced by University faculty, conference speakers, and an array of collaborators." />
-          <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-          <link rel="shortcut icon" href="/static/favicon.ico" />
-          <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet" />
-          <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-          <link href="/static/css/materialize.css" rel="stylesheet" />
-          <link href="/static/css/style.css" rel="stylesheet" />
-        </Head>
-        <Nav headerType="interior" />
+      <Layout headerType="interior"
+        title="Resources | Catechetical Institute at Franciscan University"
+        description="Franciscan University has produced a prodigious amount of material over the years that can help you be a better catechist. Here you will find videos, audio clips, magazines, books, brochures, and other resources produced by University faculty, conference speakers, and an array of collaborators.">
         <main id="resources">
           <StickyNav />
           <Title title="Resources" imgPath="/static/img/campus-11.jpg" posY="-44vh" />
@@ -143,14 +131,7 @@ export default class extends React.Component {
                 `}
           </style>
         </main>
-        <Footer />
-
-
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
-        <script src="static/js/app.js"></script>
-
-      </div>
+      </Layout>
     )
   }
 }

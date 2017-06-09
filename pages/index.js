@@ -1,14 +1,12 @@
 import React from 'react'
-import Nav from '../components/Nav';
+import Layout from '../components/Layout';
 import Hero from '../components/Hero';
 import StickyNav from '../components/StickyNav';
 import Section from '../components/Section';
 import TeamCard from '../components/TeamCard';
-import Footer from '../components/Footer';
 import Title from '../components/Title';
 import TextRevealImageCard from '../components/TextRevealImageCard';
 import TextCard from '../components/TextCard';
-import Head from 'next/head'
 import { logPageView } from '../utils/analytics'
 
 export default class extends React.Component {
@@ -21,22 +19,9 @@ export default class extends React.Component {
 
   render () {
     return (
-      <div style={{display: 'flex', flexDirection: 'column'}}>
-        <Head>
-          <meta charset="utf-8" />
-          <title>Catechetical Institute - Franciscan University</title>
-          <meta name="description" content="The Franciscan University Catechetical Institute forms Catholics who form others in the faith. Through courses, conferences, advice, and resources, the institute supports clergy, parents, and all those responsible for the work of catechesis and evangelization, as they carry out Christ’s command to make disciples of all nations." />
-          <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-          <link rel="shortcut icon" href="/static/favicon.ico" />
-          <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet" />
-          <link href="https://fonts.googleapis.com/css?family=Tangerine" rel="stylesheet" />
-          <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-          <link href="https://fonts.googleapis.com/css?family=Allura" rel="stylesheet" />
-          <link href="/static/css/materialize.css" rel="stylesheet" />
-          <link href="/static/css/style.css" rel="stylesheet" />
-
-        </Head>
-        <Nav />
+      <Layout
+        title="Catechetical Institute - Franciscan University"
+        description="The Franciscan University Catechetical Institute forms Catholics who form others in the faith. Through courses, conferences, advice, and resources, the institute supports clergy, parents, and all those responsible for the work of catechesis and evangelization, as they carry out Christ’s command to make disciples of all nations.">
         <main>
           <Hero />
           <StickyNav />
@@ -73,8 +58,7 @@ export default class extends React.Component {
               </div>
               <div className="row light">
                 <div className="col s12 m6">
-                  <TextRevealImageCard cardTitle="Courses" cardImg="/static/img/st._john_bosco.jpg" cardContent="
-                    There are many avenues through which catechists can get formal training. Our principal training vehicle, Franciscan at Home, draws together the best of the Franciscan University Catechetics Program, the St. John Bosco Conference, and the latest in online education. There also are opportunities for homeschool families, online graduate studies, and more from Franciscan University of Steubenville." url="/courses" />
+                  <TextRevealImageCard cardTitle="Courses" cardImg="/static/img/st._john_bosco.jpg" cardContent="There are many avenues through which catechists can get formal training. Our principal training vehicle, Franciscan at Home, draws together the best of the Franciscan University Catechetics Program, the St. John Bosco Conference, and the latest in online education. There also are opportunities for homeschool families, online graduate studies, and more from Franciscan University of Steubenville." url="/courses" />
                 </div>
                 <div className="col s12 m6">
                   <TextRevealImageCard cardTitle="Resources" cardImg="/static/img/resources.jpg" cardContent="Franciscan University has produced a prodigious amount of material over the years that can help you be a better catechist. Here you will find videos, audio clips, magazines, books, brochures, and other resources produced by University faculty, conference speakers, and an array of collaborators. We are pleased to make much of it available for free, with a handful of items requiring a subscription or purchase." url="/resources" />
@@ -151,14 +135,7 @@ export default class extends React.Component {
               }
            `}</style>
         </main>
-        <Footer />
-
-
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
-        <script src="static/js/app.js"></script>
-
-      </div>
+      </Layout>
     )
   }
 }

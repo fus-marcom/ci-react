@@ -1,10 +1,8 @@
 import React from 'react'
-import Nav from '../components/Nav';
+import Layout from '../components/Layout';
 import StickyNav from '../components/StickyNav';
 import TeamCard from '../components/TeamCard';
-import Footer from '../components/Footer';
 import Title from '../components/Title';
-import Head from 'next/head'
 import 'isomorphic-fetch'
 import { logPageView } from '../utils/analytics'
 
@@ -26,19 +24,9 @@ export default class extends React.Component {
 
   render () {
     return (
-      <div style={{display: 'flex', flexDirection: 'column'}}>
-        <Head>
-          <meta charset="utf-8" />
-          <title>Team | Catechetical Institute at Franciscan University</title>
-          <meta name="description" content="The Catechetical Institute brings together the world-class faculty of Franciscan University’s Catechetics Program with key collaborators from all levels of ministry. These skilled professionals teach our Franciscan at Home online courses and speak at our St. John Bosco Conference, academic conferences, and other events around the country." />
-          <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-          <link rel="shortcut icon" href="/static/favicon.ico" />
-          <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet" />
-          <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-          <link href="/static/css/materialize.css" rel="stylesheet" />
-          <link href="/static/css/style.css" rel="stylesheet" />
-        </Head>
-        <Nav headerType="interior" />
+      <Layout headerType="interior"
+        title="Team | Catechetical Institute at Franciscan University"
+        description="The Catechetical Institute brings together the world-class faculty of Franciscan University’s Catechetics Program with key collaborators from all levels of ministry. These skilled professionals teach our Franciscan at Home online courses and speak at our St. John Bosco Conference, academic conferences, and other events around the country.">
         <main id="team">
           <StickyNav />
           <Title title="Team" imgPath="/static/img/campus-7.jpg" posY="-44vh" />
@@ -141,14 +129,7 @@ export default class extends React.Component {
             </div>
           </div>
         </main>
-        <Footer />
-
-
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
-        <script src="static/js/app.js"></script>
-
-      </div>
+      </Layout>
     )
   }
 }

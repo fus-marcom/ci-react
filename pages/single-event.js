@@ -1,10 +1,8 @@
 import React from 'react'
-import Nav from '../components/Nav';
+import Layout from '../components/Layout';
 import StickyNav from '../components/StickyNav';
-import Footer from '../components/Footer';
 import Title from '../components/Title';
 import Error404 from '../components/Error404';
-import Head from 'next/head'
 import 'isomorphic-fetch'
 import { logPageView } from '../utils/analytics'
 
@@ -38,19 +36,9 @@ export default class extends React.Component {
 
   render () {
     return (
-      <div style={{display: 'flex', flexDirection: 'column'}}>
-        <Head>
-          <meta charset="utf-8" />
-          <title dangerouslySetInnerHTML={{__html : this.titleTag()}}></title>
-          <meta name="description" content={{__html : this.descriptionTag()}} />
-          <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-          <link rel="shortcut icon" href="/static/favicon.ico" />
-          <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet" />
-          <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-          <link href="/static/css/materialize.css" rel="stylesheet" />
-          <link href="/static/css/style.css" rel="stylesheet" />
-        </Head>
-        <Nav headerType="interior" />
+      <Layout headerType="interior"
+        title={{this.titleTag()}}
+        description={{this.descriptionTag()}}>
         {this.props.data.length === 0 ? <Error404 /> : <main id="single-event"><StickyNav />
 
           <h1 className="center light valign" style={{fontSize: '50px'}}>{this.props.data[0].title.rendered}</h1>
@@ -84,13 +72,7 @@ export default class extends React.Component {
             }
           `}</style>
           </main> }
-        <Footer />
-
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
-        <script src="/static/js/app.js"></script>
-
-      </div>
+      </Layout>
     )
   }
 }

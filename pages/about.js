@@ -1,9 +1,7 @@
 import React from 'react'
-import Nav from '../components/Nav';
+import Layout from '../components/Layout';
 import StickyNav from '../components/StickyNav';
-import Footer from '../components/Footer';
 import Title from '../components/Title';
-import Head from 'next/head'
 import 'isomorphic-fetch'
 import { logPageView } from '../utils/analytics'
 
@@ -23,19 +21,9 @@ componentDidMount () {
 
   render () {
     return (
-      <div style={{display: 'flex', flexDirection: 'column'}}>
-        <Head>
-          <meta charset="utf-8" />
-          <title>About | Catechetical Institute at Franciscan University</title>
-          <meta name="description" content="The Catechetical Institute at Franciscan University exists to train and support the key catechists in any situation—priests, deacons, parents, or laity, whether professional or volunteer. Through conferences, online workshops, videos, audio, personal mentorship, and a wealth of resources produced by Franciscan University, all involved in the work of catechesis will find new ideas, new approaches, new techniques, and a new confidence to do the work of catechesis." />
-          <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-          <link rel="shortcut icon" href="/static/favicon.ico" />
-          <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet" />
-          <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-          <link href="/static/css/materialize.css" rel="stylesheet" />
-          <link href="/static/css/style.css" rel="stylesheet" />
-        </Head>
-        <Nav headerType="interior" />
+      <Layout headerType="interior"
+        title="About | Catechetical Institute at Franciscan University"
+        description="The Catechetical Institute at Franciscan University exists to train and support the key catechists in any situation—priests, deacons, parents, or laity, whether professional or volunteer. Through conferences, online workshops, videos, audio, personal mentorship, and a wealth of resources produced by Franciscan University, all involved in the work of catechesis will find new ideas, new approaches, new techniques, and a new confidence to do the work of catechesis.">
         <main id="about">
           <StickyNav />
           <Title title="About" imgPath="/static/img/campus-11.jpg" posY="-44vh" />
@@ -82,7 +70,7 @@ componentDidMount () {
                   <p className="flow-text">
                     Designed to complement and supplement diocesan formation and continuing education programs already in place, the Catechetical Institute’s online programming makes the best of Franciscan University available to dioceses everywhere.
                   </p>
-                  <p className="flow-text">
+                  <div className="flow-text">
                     It accomplishes this by offering:
                     <ul className="disc-list flow-text">
                       <li>catechist formation tools that are wide in their reach, designed to help all those Catholics responsible for helping others, not just catechists.</li>
@@ -90,7 +78,7 @@ componentDidMount () {
                       <li>a degree of formation that goes deep, exploring topics you won’t find in other </li>
                       <li>online formation programs, including basic evangelization skills, mentoring, spiritual guidance, team building, and many others.</li>
                     </ul>
-                  </p>
+                  </div>
                   <p className="flow-text">
                     In the emerging field of online formation, Franciscan University’s Catechetical Institute stands apart.
                   </p>
@@ -259,14 +247,7 @@ componentDidMount () {
 
                                 `}</style>
         </main>
-        <Footer />
-
-
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
-        <script src="static/js/app.js"></script>
-
-      </div>
+      </Layout>
     )
   }
 }
