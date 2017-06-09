@@ -5,6 +5,7 @@ export const initGA = () => {
   ReactGA.initialize('UA-5819863-21')
 }
 export const logPageView = () => {
+  console.log(`Logging pageview for ${window.location.pathname}`)
   ReactGA.set({ page: window.location.pathname })
   ReactGA.pageview(window.location.pathname)
 }
