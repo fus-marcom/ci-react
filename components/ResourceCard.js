@@ -11,7 +11,7 @@ class ResourceCard extends Component {
     return (
       <div className="card hoverable">
         <a href={this.props.url} target="_blank">
-          {this.props.img !== '' ? <div className="card-image">
+          {this.props.img !== '' && this.props.imgWidth > 599 ? <div className="card-image">
             <img src={this.props.img} />
           </div> : ''}
           <div className="card-content">
