@@ -37,8 +37,8 @@ export default class extends React.Component {
   render () {
     return (
       <Layout headerType="interior"
-        title={{this.titleTag()}}
-        description={{this.descriptionTag()}}>
+        title={this.titleTag()}
+        description={this.descriptionTag()}>
           {this.props.data.length === 0 ? <Error404 /> : <main className="single-post"><StickyNav />
             {this.props.data[0].better_featured_image !== null && this.props.data[0].better_featured_image.media_details.sizes.hasOwnProperty('large') ? <Title title={this.props.data[0].title.rendered} imgPath={this.props.data[0].better_featured_image.media_details.sizes.large.source_url} posY="-44vh" /> : <Title title={this.props.data[0].title.rendered} imgPath="/static/img/campus-7.jpg" posY="-44vh" />
             }

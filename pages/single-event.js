@@ -37,8 +37,8 @@ export default class extends React.Component {
   render () {
     return (
       <Layout headerType="interior"
-        title={{this.titleTag()}}
-        description={{this.descriptionTag()}}>
+        title={this.titleTag()}
+        description={this.descriptionTag()}>
         {this.props.data.length === 0 ? <Error404 /> : <main id="single-event"><StickyNav />
 
           <h1 className="center light valign" style={{fontSize: '50px'}}>{this.props.data[0].title.rendered}</h1>
