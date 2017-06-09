@@ -6,17 +6,8 @@ import Title from '../components/Title';
 import ResourceCard from '../components/ResourceCard';
 import Head from 'next/head'
 import 'isomorphic-fetch'
-import ReactGA from 'react-ga'
+import { logPageView } from '../utils/analytics'
 import Masonry from 'react-masonry-component';
-
-export const initGA = () => {
-  console.log('GA init')
-  ReactGA.initialize('UA-5819863-21')
-}
-export const logPageView = () => {
-  ReactGA.set({ page: window.location.pathname })
-  ReactGA.pageview(window.location.pathname)
-}
 
 export default class extends React.Component {
   state = {
@@ -32,7 +23,6 @@ export default class extends React.Component {
 
   componentDidMount() {
     initTabs();
-    initGA()
     logPageView()
   }
 

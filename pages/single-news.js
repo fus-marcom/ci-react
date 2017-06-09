@@ -6,16 +6,7 @@ import Title from '../components/Title';
 import Error404 from '../components/Error404';
 import Head from 'next/head'
 import 'isomorphic-fetch'
-import ReactGA from 'react-ga'
-
-export const initGA = () => {
-  console.log('GA init')
-  ReactGA.initialize('UA-5819863-21')
-}
-export const logPageView = () => {
-  ReactGA.set({ page: window.location.pathname })
-  ReactGA.pageview(window.location.pathname)
-}
+import { logPageView } from '../utils/analytics'
 
 export default class extends React.Component {
 
@@ -28,7 +19,6 @@ export default class extends React.Component {
   }
 
   componentDidMount () {
-    initGA()
     logPageView()
   }
 
