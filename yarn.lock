@@ -2238,9 +2238,9 @@ negotiator@0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.1.tgz#2b327184e8992101177b28563fb5e7102acd0ca9"
 
-next@2.4.1:
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/next/-/next-2.4.1.tgz#ab1e62fecd946cce5f41f4adc972478f474f3e5d"
+next@^2.4.3:
+  version "2.4.3"
+  resolved "https://registry.yarnpkg.com/next/-/next-2.4.3.tgz#8d84a3a4552e584a1d7930817f3408de494e974c"
   dependencies:
     ansi-html "0.0.7"
     babel-core "6.24.0"
@@ -2292,6 +2292,7 @@ next@2.4.1:
     webpack-dev-middleware "1.10.2"
     webpack-hot-middleware "2.18.0"
     write-file-webpack-plugin "4.0.2"
+    xss-filters "1.2.7"
 
 node-fetch@^1.0.1:
   version "1.6.3"
@@ -3434,6 +3435,10 @@ write-file-webpack-plugin@4.0.2:
     lodash "^4.5.1"
     mkdirp "^0.5.1"
     moment "^2.11.2"
+
+xss-filters@1.2.7:
+  version "1.2.7"
+  resolved "https://registry.yarnpkg.com/xss-filters/-/xss-filters-1.2.7.tgz#59fa1de201f36f2f3470dcac5f58ccc2830b0a9a"
 
 xtend@^4.0.0:
   version "4.0.1"
