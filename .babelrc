@@ -1,0 +1,9 @@
+{
+    "presets": [
+        "next/babel",
+        "stage-0"
+    ],
+    "plugins": [
+        "react-html-attrs"
+    ]  
+}

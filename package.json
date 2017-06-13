@@ -4,9 +4,12 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "babel-plugin-react-html-attrs": "^2.0.0",
+    "babel-preset-stage-0": "^6.24.1",
     "express": "^4.15.3",
     "lru-cache": "^4.0.2",
     "next": "^2.4.3",
+    "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-ga": "^2.2.0",
