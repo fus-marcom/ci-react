@@ -12,9 +12,24 @@
     "react-ga": "^2.2.0",
     "react-masonry-component": "^5.0.5"
   },
+  "devDependencies": {
+    "husky": "^0.13.4",
+    "lint-staged": "^3.6.1",
+    "prettier": "^1.4.4",
+    "standard": "^10.0.2"
+  },
   "scripts": {
     "dev": "node server.js",
     "build": "next build && git rev-parse HEAD > .next/BUILD_ID",
-    "start": "NODE_ENV=production node server.js"
+    "start": "NODE_ENV=production node server.js",
+    "lint": "prettier 'utils/**/*.js' 'static/js/**/*.js' 'components/**/*.js' 'pages/**/*.js' '*.js' --write --single-quote --no-semi && standard --fix",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write --single-quote --no-semi",
+      "standard --fix",
+      "git add"
+    ]
   }
 }
