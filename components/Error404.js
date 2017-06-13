@@ -1,23 +1,23 @@
-import React, { Component } from 'react';
-import StickyNav from '../components/StickyNav';
-import Title from '../components/Title';
+import React, { Component } from 'react'
+import StickyNav from '../components/StickyNav'
 
 class Error404 extends Component {
-
-  render() {
+  render () {
     return (
       <main>
         <StickyNav />
-        <div className="container">
-          <div className="section">
-            <div className="row">
-              <h4>No content exists at this address. Please try another page.</h4>
+        <div className='container'>
+          <div className='section'>
+            <div className='row'>
+              <h4>
+                No content exists at this address. Please try another page.
+              </h4>
             </div>
           </div>
         </div>
       </main>
-    );
+    )
   }
 }
 
-export default Error404;
+export default Error404

@@ -16,6 +16,7 @@
     "react-masonry-component": "^5.0.5"
   },
   "devDependencies": {
+    "babel-eslint": "^7.2.3",
     "husky": "^0.13.4",
     "lint-staged": "^3.6.1",
     "prettier": "^1.4.4",
@@ -34,5 +35,12 @@
       "standard --fix",
       "git add"
     ]
+  },
+  "standard": {
+    "globals": [
+      "fetch",
+      "$"
+    ],
+    "parser": "babel-eslint"
   }
 }
