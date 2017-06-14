@@ -50,7 +50,7 @@ export default class extends React.Component {
     console.log(searchTerm)
 
     const apiUrl = 'https://wp.catechetics.com/wp-json/wp/v2/'
-    const params = `resource?search=${searchTerm}&per_page=100&fields=title,acf`
+    const params = `resource?search=${searchTerm}&per_page=100&fields=title,acf,better_featured_image`
 
     this.getJSON(apiUrl + params).then(data => this.setState({ data }))
   }
@@ -65,7 +65,7 @@ export default class extends React.Component {
     }
     const massonryComp = (
       <Masonry>
-        {this.props.data
+        {this.state.data
           .filter(post => activeTab === 'all' || activeTab === post.acf.type)
           .map((post, i) =>
             <div className='col s12 m6 l4 xl3' key={i}>
@@ -186,8 +186,9 @@ export default class extends React.Component {
                 <div className='input-field col s12 m6 offset-m6'>
                   <input
                     id='search'
-                    type='text'
+                    type='search'
                     onKeyUp={this.getSearchResults}
+                    style={{ width: '100%', paddingLeft: '4px' }}
                   />
                   <label htmlFor='search'>Search</label>
                   <svg
@@ -242,6 +243,13 @@ export default class extends React.Component {
                   font-size: 18px;
                 }
               }
+
+              .input-field input[type=search]:focus {
+                background-color: transparent;
+                box-shadow: none;
+                color: color: rgba(68, 68, 68, 0.57);
+              }
+
               .input-field svg {
                 position: absolute;
                 right: 16px;
