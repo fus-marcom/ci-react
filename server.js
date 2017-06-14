@@ -6,10 +6,10 @@ const LRUCache = require('lru-cache')
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dir: '.', dev })
 const handle = app.getRequestHandler()
-let cacheTime = 1000 * 60 * 60; //1 hour
+let cacheTime = 1000 * 60 * 60 // 1 hour
 
 if (dev) {
-  cacheTime = 100;
+  cacheTime = 100
 }
 
 // This is where we cache our rendered HTML pages
@@ -18,8 +18,7 @@ const ssrCache = new LRUCache({
   maxAge: cacheTime
 })
 
-app.prepare()
-.then(() => {
+app.prepare().then(() => {
   const server = express()
 
   // Use the `renderAndCache` utility defined below to serve pages
@@ -54,17 +53,16 @@ app.prepare()
   })
 
   if (dev) {
-    server.listen(3000, (err) => {
+    server.listen(3000, err => {
       if (err) throw err
       console.log('> Ready on http://localhost:3000')
     })
   } else {
-    server.listen(8080, (err) => {
+    server.listen(8080, err => {
       if (err) throw err
       console.log('> Ready on http://localhost:8080')
     })
   }
-
 })
 
 /*
@@ -86,15 +84,16 @@ function renderAndCache (req, res, pagePath, queryParams) {
   }
 
   // If not let's render the page into HTML
-  app.renderToHTML(req, res, pagePath, queryParams)
-    .then((html) => {
+  app
+    .renderToHTML(req, res, pagePath, queryParams)
+    .then(html => {
       // Let's cache this page
       console.log(`CACHE MISS: ${key}`)
       ssrCache.set(key, html)
 
       res.send(html)
     })
-    .catch((err) => {
+    .catch(err => {
       app.renderError(err, req, res, pagePath, queryParams)
     })
 }

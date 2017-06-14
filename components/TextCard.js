@@ -1,28 +1,30 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 class TextCard extends Component {
-
-  render() {
+  render () {
     return (
-      <div className="card hoverable">
-        <a href={this.props.url === '' ? '#' : this.props.url} title={this.props.title}>
-          <div className="card-content">
-            <span className="card-title">{this.props.title}</span>
-            <p className="resource-description">{this.props.content}</p>
+      <div className='card hoverable'>
+        <a
+          href={this.props.url === '' ? '#' : this.props.url}
+          title={this.props.title}
+        >
+          <div className='card-content'>
+            <span className='card-title'>{this.props.title}</span>
+            <p className='resource-description'>{this.props.content}</p>
           </div>
         </a>
 
         <style jsx>{`
-            @media screen and (min-width: 601px) {
-              .card {
-                height: 500px;
-                max-height: 356px;
-              }
+          @media screen and (min-width: 601px) {
+            .card {
+              height: 500px;
+              max-height: 356px;
             }
-              `}</style>
+          }
+        `}</style>
       </div>
-    );
+    )
   }
 }
 
-export default TextCard;
+export default TextCard
