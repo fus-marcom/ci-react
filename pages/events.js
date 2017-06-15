@@ -11,7 +11,9 @@ export default class extends React.Component {
     data: [],
     dateAsc: null,
     dateDesc: null,
-    dateIsAsc: true
+    dateIsAsc: true,
+    userLat: null,
+    userLong: null
   }
   static async getInitialProps () {
     const apiUrl = 'https://wp.catechetics.com/wp-json/wp/v2/'
@@ -22,17 +24,37 @@ export default class extends React.Component {
     return { data }
   }
 
-  componentDidMount () {
+  componentDidMount = () => {
     this.setState({ data: this.props.data })
     hScroller()
     logPageView()
     this.getLocation()
   }
 
-  getLocation () {
-    navigator.geolocation.getCurrentPosition(function (position) {
-      console.log(position.coords.latitude, position.coords.longitude)
+  getLocation = () => {
+    navigator.geolocation.getCurrentPosition(position => {
+      this.setState({
+        userLat: position.coords.latitude,
+        userLong: position.coords.longitude
+      })
+      this.compareLocation()
     })
+  }
+
+  compareLocation = () => {
+    const newData = this.state.data.map(event => {
+      const eventCloned = { ...event }
+      if (eventCloned.acf.hasOwnProperty('location_map')) {
+        eventCloned.distanceToEvent =
+          this.state.userLat -
+          eventCloned.acf.location_map.lat +
+          (this.state.userLong - eventCloned.acf.location_map.lng)
+      }
+      return eventCloned
+    })
+    // Make sure to set a distanceToEvent value for events that do not have lat and lon. Set to Infinity
+    // .sort((a,b) => a.distanceToEvent - b.distanceToEvent)
+    this.setState({ data: newData })
   }
 
   get (url) {
