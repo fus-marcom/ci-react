@@ -7,6 +7,12 @@ import 'isomorphic-fetch'
 import { logPageView } from '../utils/analytics'
 
 export default class extends React.Component {
+  state = {
+    data: [],
+    dateAsc: null,
+    dateDesc: null,
+    dateIsAsc: true
+  }
   static async getInitialProps () {
     const apiUrl = 'https://wp.catechetics.com/wp-json/wp/v2/'
     const params =
@@ -17,6 +23,7 @@ export default class extends React.Component {
   }
 
   componentDidMount () {
+    this.setState({ data: this.props.data })
     hScroller()
     logPageView()
     this.getLocation()
@@ -26,6 +33,34 @@ export default class extends React.Component {
     navigator.geolocation.getCurrentPosition(function (position) {
       console.log(position.coords.latitude, position.coords.longitude)
     })
+  }
+
+  get (url) {
+    return fetch(url, {
+      method: 'get'
+    })
+  }
+
+  getJSON = url => {
+    return this.get(url).then(function (response) {
+      return response.json()
+    })
+  }
+
+  sortDate = () => {
+    if (this.state.dateIsAsc) {
+      if (this.state.dateDesc === null) {
+        const apiUrl = 'https://wp.catechetics.com/wp-json/wp/v2/'
+        const params = `nearby-event?per_page=100&filter[orderby]=date&filter[order]=DESC&fields=title,acf`
+        this.setState({ dateAsc: this.state.data })
+        this.getJSON(apiUrl + params).then(data => this.setState({ data }))
+      } else {
+        this.setState({ data: this.state.dateDesc })
+      }
+    } else {
+      this.setState({ dateDesc: this.state.data, data: this.state.dateAsc })
+    }
+    this.setState({ dateIsAsc: !this.state.dateIsAsc })
   }
 
   render () {
@@ -258,7 +293,7 @@ export default class extends React.Component {
                 >
                   <thead>
                     <tr>
-                      <th>Date</th>
+                      <th onClick={this.sortDate}>Date</th>
                       <th>Presenter</th>
                       <th>Event/Title</th>
                       <th>Location</th>
@@ -269,7 +304,7 @@ export default class extends React.Component {
                   </thead>
 
                   <tbody>
-                    {this.props.data.map(function (post, i) {
+                    {this.state.data.map(function (post, i) {
                       return (
                         <tr key={i}>
                           <td>{post.acf.displayed_date}</td>
