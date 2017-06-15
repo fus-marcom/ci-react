@@ -5,9 +5,18 @@ import Hero from '../components/Hero'
 import StickyNav from '../components/StickyNav'
 import TextRevealImageCard from '../components/TextRevealImageCard'
 import TextCard from '../components/TextCard'
+import 'isomorphic-fetch'
 import { logPageView } from '../utils/analytics'
 
 export default class extends React.Component {
+  static async getInitialProps () {
+    const apiUrl = 'https://wp.catechetics.com/wp-json/wp/v2/'
+    const params = 'pages?slug=home-black-banner&fields=acf,type,slug'
+    const res = await fetch(apiUrl + params)
+    const data = await res.json()
+    return { data }
+  }
+
   componentDidMount () {
     initTabs()
     logPageView()
@@ -70,16 +79,10 @@ export default class extends React.Component {
                   <blockquote
                     className='flow-text'
                     style={{ borderLeft: '5px solid #a61f26' }}
-                  >
-                    “The definitive aim of catechesis is to put people not only
-                    in touch, but in communion and intimacy, with Jesus Christ:
-                    only he can lead us to the love of the Father in the Spirit
-                    and make us share in the life of the Holy Trinity.”
-                    <br />—St. John Paul II,{' '}
-                    <span style={{ fontStyle: 'italic' }}>
-                      Catechesi Tradendae
-                    </span>, No. 5
-                  </blockquote>
+                    dangerouslySetInnerHTML={{
+                      __html: this.props.data[0].acf.quote
+                    }}
+                  />
                 </div>
               </div>
             </div>
