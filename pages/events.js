@@ -42,18 +42,20 @@ export default class extends React.Component {
   }
 
   compareLocation = () => {
-    const newData = this.state.data.map(event => {
-      const eventCloned = { ...event }
-      if (eventCloned.acf.hasOwnProperty('location_map')) {
-        eventCloned.distanceToEvent =
-          this.state.userLat -
-          eventCloned.acf.location_map.lat +
-          (this.state.userLong - eventCloned.acf.location_map.lng)
-      }
-      return eventCloned
-    })
-    // Make sure to set a distanceToEvent value for events that do not have lat and lon. Set to Infinity
-    // .sort((a,b) => a.distanceToEvent - b.distanceToEvent)
+    const newData = this.state.data
+      .map(event => {
+        const eventCloned = { ...event }
+        eventCloned.distanceToEvent = eventCloned.acf.hasOwnProperty(
+          'location_map'
+        )
+          ? this.state.userLat -
+              eventCloned.acf.location_map.lat +
+              (this.state.userLong - eventCloned.acf.location_map.lng)
+          : Infinity
+        return eventCloned
+      })
+      // Make sure to set a distanceToEvent value for events that do not have lat and lon. Set to Infinity
+      .sort((a, b) => a.distanceToEvent - b.distanceToEvent)
     this.setState({ data: newData })
   }
 
