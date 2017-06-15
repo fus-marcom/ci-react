@@ -19,6 +19,13 @@ export default class extends React.Component {
   componentDidMount () {
     hScroller()
     logPageView()
+    this.getLocation()
+  }
+
+  getLocation () {
+    navigator.geolocation.getCurrentPosition(function (position) {
+      console.log(position.coords.latitude, position.coords.longitude)
+    })
   }
 
   render () {
