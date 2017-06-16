@@ -5,6 +5,7 @@ import StickyNav from '../components/StickyNav'
 import Title from '../components/Title'
 import 'isomorphic-fetch'
 import { logPageView } from '../utils/analytics'
+import { getJSON } from '../utils/fetch'
 
 export default class extends React.Component {
   state = {
@@ -59,25 +60,13 @@ export default class extends React.Component {
     this.setState({ data: newData })
   }
 
-  get (url) {
-    return fetch(url, {
-      method: 'get'
-    })
-  }
-
-  getJSON = url => {
-    return this.get(url).then(function (response) {
-      return response.json()
-    })
-  }
-
   sortDate = () => {
     if (this.state.dateIsAsc) {
       if (this.state.dateDesc === null) {
         const apiUrl = 'https://wp.catechetics.com/wp-json/wp/v2/'
         const params = `nearby-event?per_page=100&filter[orderby]=date&filter[order]=DESC&fields=title,acf`
         this.setState({ dateAsc: this.state.data })
-        this.getJSON(apiUrl + params).then(data => this.setState({ data }))
+        getJSON(apiUrl + params).then(data => this.setState({ data }))
       } else {
         this.setState({ data: this.state.dateDesc })
       }
