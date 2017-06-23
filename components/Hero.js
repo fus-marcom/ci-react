@@ -7,6 +7,10 @@ class Hero extends Component {
         id='hero'
         style={{ marginTop: '-83px' }}
       >
+        <link
+          href='https://fonts.googleapis.com/css?family=Allura'
+          rel='stylesheet'
+        />
         <div className='row right valign white-text'>
           <div className='col s12 m6'>
             <h1
