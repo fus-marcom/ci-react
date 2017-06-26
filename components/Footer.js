@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ReactGA from 'react-ga'
+import OutLink from '../components/OutLink'
 
 class Footer extends Component {
   currentYear () {
@@ -65,14 +65,13 @@ class Footer extends Component {
               <ul>
                 {/*  <li><a href="http://www.franciscanathome.com/" title="Franciscan at Home" target="_blank">Franciscan at Home</a></li> */}
                 <li>
-                  <ReactGA.OutboundLink
-                    eventLabel='toMainSite'
+                  <OutLink
+                    label='toMainSite'
                     to='https://www.franciscan.edu/'
                     title='Franciscan University of Steubenville'
-                    target='_blank'
                   >
                     Franciscan University
-                  </ReactGA.OutboundLink>
+                  </OutLink>
                 </li>
                 <li>
                   <a
