@@ -17,6 +17,7 @@ class Nav extends Component {
                 className='fus-branding'
                 href='https://www.franciscan.edu'
                 title='Franciscan University of Steubenville'
+                target='_blank'
               >
                 Franciscan University of Steubenville
               </a>

@@ -4,7 +4,6 @@ import Layout from '../components/Layout'
 import StickyNav from '../components/StickyNav'
 import Title from '../components/Title'
 import 'isomorphic-fetch'
-import Link from 'next/link'
 import { logPageView } from '../utils/analytics'
 
 export default class extends React.Component {
@@ -210,14 +209,13 @@ export default class extends React.Component {
                     This unique conference is a Silver Jubilee celebration of
                     the gift of the Catechism of the Catholic Church to the
                     Church of our day...{' '}
-                    <Link
-                      prefetch
+
+                    <a
                       href='/events/speaking-the-truth-in-love-conference'
+                      style={{ color: '#fff', fontWeight: '500' }}
                     >
-                      <a style={{ color: '#fff', fontWeight: '500' }}>
-                        read more.
-                      </a>
-                    </Link>{' '}
+                      read more.
+                    </a>
                   </p>
                   <a
                     href='https://www.eventbrite.com/e/speaking-the-truth-in-love-conference-tickets-34907493252?aff=CatecheticsSite'
