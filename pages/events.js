@@ -40,7 +40,7 @@ export default class extends React.Component {
               <div className='row'>
                 <div className='col s12'>
                   <p className='flow-text'>
-                    The annual St. John Bosco Conference for Catechists and
+                    The annual St John Bosco Conference for Catechists and
                     Religious Educators at Franciscan University is our premier
                     event, bringing catechetical experts from all over to share
                     their expertise through general sessions and specialized
