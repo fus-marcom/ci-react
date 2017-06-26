@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import ReactGA from 'react-ga'
+
 class Footer extends Component {
   currentYear () {
     let dateToday = new Date()
@@ -63,13 +65,14 @@ class Footer extends Component {
               <ul>
                 {/*  <li><a href="http://www.franciscanathome.com/" title="Franciscan at Home" target="_blank">Franciscan at Home</a></li> */}
                 <li>
-                  <a
-                    href='https://www.franciscan.edu/'
+                  <ReactGA.OutboundLink
+                    eventLabel='toMainSite'
+                    to='https://www.franciscan.edu/'
                     title='Franciscan University of Steubenville'
                     target='_blank'
                   >
                     Franciscan University
-                  </a>
+                  </ReactGA.OutboundLink>
                 </li>
                 <li>
                   <a
