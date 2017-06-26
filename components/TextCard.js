@@ -7,6 +7,7 @@ class TextCard extends Component {
         <a
           href={this.props.url === '' ? '#' : this.props.url}
           title={this.props.title}
+          target='_blank'
         >
           <div className='card-content'>
             <span className='card-title'>{this.props.title}</span>
