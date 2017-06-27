@@ -66,7 +66,7 @@ class Footer extends Component {
                 {/*  <li><a href="http://www.franciscanathome.com/" title="Franciscan at Home" target="_blank">Franciscan at Home</a></li> */}
                 <li>
                   <OutLink
-                    label='toMainSite'
+                    label='toMainSiteFooterLink'
                     to='https://www.franciscan.edu/'
                     title='Franciscan University of Steubenville'
                   >

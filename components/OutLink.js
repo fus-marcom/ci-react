@@ -1,3 +1,4 @@
+/* Adapted from https://github.com/react-ga/react-ga/issues/118 */
 import React, { Component } from 'react'
 import ReactGA from 'react-ga'
 

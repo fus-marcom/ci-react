@@ -5,6 +5,7 @@ import StickyNav from '../components/StickyNav'
 import Title from '../components/Title'
 import 'isomorphic-fetch'
 import { logPageView } from '../utils/analytics'
+import OutLink from '../components/OutLink'
 
 export default class extends React.Component {
   //   static async getInitialProps () {
@@ -775,15 +776,15 @@ export default class extends React.Component {
                       a way that is faithful to the Church and advances the
                       Kingdom of God.
                     </p>
-                    <a
-                      href='https://www.franciscan.edu/Catechetics/'
+                    <OutLink
+                      to='https://www.franciscan.edu/Catechetics/'
                       title='Franciscan University Catechetics Program'
-                      target='_blank'
+                      label='toCatProgramFromCourses'
                     >
                       <button className='btn waves-effect waves-light'>
                         Learn More
                       </button>
-                    </a>
+                    </OutLink>
                   </div>
                   <div className='col s12 m6 order-1'>
                     <img
@@ -829,15 +830,15 @@ export default class extends React.Component {
                       the family budget, aimed at an educational formation that
                       explicitly serves the new evangelization.
                     </p>
-                    <a
-                      href='https://www.franciscan.edu/fasttrack/'
+                    <OutLink
+                      to='https://www.franciscan.edu/fasttrack/'
                       title='Franciscan University Fast Track'
-                      target='_blank'
+                      label='toFastTrackFromCourses'
                     >
                       <button className='btn waves-effect waves-light'>
                         Learn More
                       </button>
-                    </a>
+                    </OutLink>
                   </div>
                 </div>
               </div>
@@ -869,15 +870,15 @@ export default class extends React.Component {
                       prepared to “cast out into the deep” and bring the light
                       of Christ to the ends of the earth.
                     </p>
-                    <a
-                      href='https://www.franciscan.edu/admissions/online/'
+                    <OutLink
+                      to='https://www.franciscan.edu/admissions/online/'
                       title='Franciscan University Online Programs'
-                      target='_blank'
+                      label='toOnlineFromCourses'
                     >
                       <button className='btn waves-effect waves-light'>
                         Learn More
                       </button>
-                    </a>
+                    </OutLink>
                   </div>
                   <div className='col s12 m6 order-1'>
                     <img
@@ -918,15 +919,15 @@ export default class extends React.Component {
                       efficient, and pragmatic formation for their leadership
                       roles in the new evangelization.
                     </p>
-                    <a
-                      href='https://www.franciscan.edu/pdp/'
+                    <OutLink
+                      to='https://www.franciscan.edu/pdp/'
                       title='Priestly Discernment Program'
-                      target='_blank'
+                      label='toPDPFromCourses'
                     >
                       <button className='btn waves-effect waves-light'>
                         Learn More
                       </button>
-                    </a>
+                    </OutLink>
                   </div>
                 </div>
               </div>
