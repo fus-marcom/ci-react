@@ -230,9 +230,14 @@ export default class extends React.Component {
               </div>
             </div>
           </div>
-          <div className='section banner'>
+          <div
+            className='section banner'
+            id='question'
+            style={{ backgroundColor: '#000', color: '#fff' }}
+          >
             <div className='container'>
               <div className='row'>
+                <h3>Ask a Question</h3>
                 <div className='col s12'>
                   <div className='row'>
                     <div class='input-field col s12'>
@@ -243,7 +248,7 @@ export default class extends React.Component {
                   <div class='row'>
                     <div class='input-field col s12'>
                       <textarea id='textarea1' class='materialize-textarea' />
-                      <label for='textarea1'>Textarea</label>
+                      <label for='textarea1'>Question</label>
                     </div>
                   </div>
                 </div>
@@ -270,6 +275,10 @@ export default class extends React.Component {
             }
             .tab a {
               font-size: 18px;
+            }
+            #question textarea.materialize-textarea:focus:not([readonly]) {
+              border-bottom: 1px solid #fff;
+              box-shadow: 0 1px 0 0 #fff;
             }
           `}</style>
         </main>
