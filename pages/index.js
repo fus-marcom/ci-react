@@ -9,13 +9,13 @@ import 'isomorphic-fetch'
 import { logPageView } from '../utils/analytics'
 
 export default class extends React.Component {
-  static async getInitialProps () {
-    const apiUrl = 'https://wp.catechetics.com/wp-json/wp/v2/'
-    const params = 'pages?slug=home-black-banner&fields=acf,type,slug'
-    const res = await fetch(apiUrl + params)
-    const data = await res.json()
-    return { data }
-  }
+  // static async getInitialProps () {
+  //   const apiUrl = 'https://wp.catechetics.com/wp-json/wp/v2/'
+  //   const params = 'pages?slug=home-black-banner&fields=acf,type,slug'
+  //   const res = await fetch(apiUrl + params)
+  //   const data = await res.json()
+  //   return { data }
+  // }
 
   componentDidMount () {
     initTabs()
@@ -37,24 +37,30 @@ export default class extends React.Component {
           >
             <div className='valign container'>
               <div className='row'>
-                <div className='col s12 center'>
-                  <h2 className='light center'>
-                    <img
-                      src='/static/img/squiggly2-reverse.png'
-                      style={{
-                        marginBottom: '10px',
-                        width: '63px',
-                        marginRight: '8px'
-                      }}
-                    />Mission<img
-                      src='/static/img/squiggly2.png'
-                      style={{
-                        marginBottom: '10px',
-                        width: '63px',
-                        marginLeft: '8px'
-                      }}
-                    />
-                  </h2>
+                <div className='col s12 l4'>
+                  <h4>Franciscan at Home</h4>
+                  <p className='flow-text'>
+                    The Franciscan University Catechetical Institute forms
+                    Catholics who form others in the faith. Through courses,
+                    conferences, advice, and resources, the institute supports
+                    clergy, parents, and all those responsible for the work of
+                    catechesis and evangelization, as they carry out Christ’s
+                    command to make disciples of all nations.
+                  </p>
+                </div>
+                <div className='col s12 l4'>
+                  <h4>Awesome Video</h4>
+                  <p className='flow-text'>
+                    The Franciscan University Catechetical Institute forms
+                    Catholics who form others in the faith. Through courses,
+                    conferences, advice, and resources, the institute supports
+                    clergy, parents, and all those responsible for the work of
+                    catechesis and evangelization, as they carry out Christ’s
+                    command to make disciples of all nations.
+                  </p>
+                </div>
+                <div className='col s12 l4'>
+                  <h4>Catechetical Review</h4>
                   <p className='flow-text'>
                     The Franciscan University Catechetical Institute forms
                     Catholics who form others in the faith. Through courses,
@@ -79,10 +85,15 @@ export default class extends React.Component {
                   <blockquote
                     className='flow-text'
                     style={{ borderLeft: '5px solid #a61f26' }}
-                    dangerouslySetInnerHTML={{
-                      __html: this.props.data[0].acf.quote
-                    }}
-                  />
+                  >
+                    <h3>Mission</h3>
+                    The Franciscan University Catechetical Institute forms
+                    Catholics who form others in the faith. Through courses,
+                    conferences, advice, and resources, the institute supports
+                    clergy, parents, and all those responsible for the work of
+                    catechesis and evangelization, as they carry out Christ’s
+                    command to make disciples of all nations.
+                  </blockquote>
                 </div>
               </div>
             </div>
@@ -215,6 +226,26 @@ export default class extends React.Component {
                     content='Take a look at the latest issue of our long-running magazine, The Catechetical Review.'
                     url='https://review.catechetics.com/'
                   />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className='section banner'>
+            <div className='container'>
+              <div className='row'>
+                <div className='col s12'>
+                  <div className='row'>
+                    <div class='input-field col s12'>
+                      <input id='email' type='email' class='validate' />
+                      <label for='email'>Email</label>
+                    </div>
+                  </div>
+                  <div class='row'>
+                    <div class='input-field col s12'>
+                      <textarea id='textarea1' class='materialize-textarea' />
+                      <label for='textarea1'>Textarea</label>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
