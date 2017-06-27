@@ -37,7 +37,25 @@ export default class extends React.Component {
           >
             <div className='valign container'>
               <div className='row'>
-                <div className='col s12 l4'>
+                <div className='col s12'>
+                  <h4>Awesome Video</h4>
+                  <div className='video-container'>
+                    <iframe
+                      width='560'
+                      height='315'
+                      src='https://www.youtube.com/embed/FcNrvD3QEkw'
+                      frameborder='0'
+                      allowfullscreen
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className='section red-background-flourish white-text'>
+            <div className='container'>
+              <div className='row'>
+                <div className='col s12 l6'>
                   <h4>Franciscan at Home</h4>
                   <p className='flow-text'>
                     The Franciscan University Catechetical Institute forms
@@ -48,18 +66,7 @@ export default class extends React.Component {
                     command to make disciples of all nations.
                   </p>
                 </div>
-                <div className='col s12 l4'>
-                  <h4>Awesome Video</h4>
-                  <p className='flow-text'>
-                    The Franciscan University Catechetical Institute forms
-                    Catholics who form others in the faith. Through courses,
-                    conferences, advice, and resources, the institute supports
-                    clergy, parents, and all those responsible for the work of
-                    catechesis and evangelization, as they carry out Christ’s
-                    command to make disciples of all nations.
-                  </p>
-                </div>
-                <div className='col s12 l4'>
+                <div className='col s12 l6'>
                   <h4>Catechetical Review</h4>
                   <p className='flow-text'>
                     The Franciscan University Catechetical Institute forms
@@ -275,10 +282,6 @@ export default class extends React.Component {
             }
             .tab a {
               font-size: 18px;
-            }
-            #question textarea.materialize-textarea:focus:not([readonly]) {
-              border-bottom: 1px solid #fff;
-              box-shadow: 0 1px 0 0 #fff;
             }
           `}</style>
         </main>
