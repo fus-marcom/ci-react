@@ -32,24 +32,29 @@ export default class extends React.Component {
           <Hero />
           <StickyNav />
           <div
-            className='section valign-wrapper black-text white-background-flourish'
-            style={{ padding: '60px 0' }}
+            className='section'
+            style={{ padding: '0', backgroundColor: '#a61f26' }}
           >
-            <div className='valign container'>
-              <div className='row'>
-                <div className='col s12'>
-                  <h4>Awesome Video</h4>
-                  <div className='video-container'>
-                    <iframe
-                      width='560'
-                      height='315'
-                      src='https://www.youtube.com/embed/FcNrvD3QEkw'
-                      frameborder='0'
-                      allowfullscreen
-                    />
-                  </div>
-                </div>
-              </div>
+            <div
+              style={{
+                position: 'relative',
+                height: '0',
+                overflow: 'hidden',
+                paddingBottom: '56.25%'
+              }}
+            >
+              <iframe
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  position: 'absolute',
+                  top: '0',
+                  left: '0'
+                }}
+                src='https://www.youtube.com/embed/FcNrvD3QEkw?controls=0&showinfo=0&rel=0&loop=1'
+                frameborder='0'
+                allowfullscreen
+              />
             </div>
           </div>
           <div className='section red-background-flourish white-text'>
