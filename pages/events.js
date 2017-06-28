@@ -19,7 +19,7 @@ export default class extends React.Component {
   static async getInitialProps () {
     const apiUrl = 'https://wp.catechetics.com/wp-json/wp/v2/'
     const params =
-      'nearby-event?per_page=100&filter[orderby]=date&filter[order]=ASC&fields=title,acf'
+      'nearby-event?per_page=100&filter[orderby]=acf.date&filter[order]=ASC&fields=title,acf'
     const res = await fetch(apiUrl + params)
     const data = await res.json()
     return { data }
@@ -29,7 +29,6 @@ export default class extends React.Component {
     this.setState({ data: this.props.data })
     hScroller()
     logPageView()
-    this.getLocation()
   }
 
   getLocation = () => {
@@ -64,7 +63,7 @@ export default class extends React.Component {
     if (this.state.dateIsAsc) {
       if (this.state.dateDesc === null) {
         const apiUrl = 'https://wp.catechetics.com/wp-json/wp/v2/'
-        const params = `nearby-event?per_page=100&filter[orderby]=date&filter[order]=DESC&fields=title,acf`
+        const params = `nearby-event?per_page=100&filter[orderby]=acf.date&filter[order]=DESC&fields=title,acf`
         this.setState({ dateAsc: this.state.data })
         getJSON(apiUrl + params).then(data => this.setState({ data }))
       } else {
@@ -76,7 +75,19 @@ export default class extends React.Component {
     this.setState({ dateIsAsc: !this.state.dateIsAsc })
   }
 
+  makeTwoDigits (n) {
+    return n.toString().length <= 1 ? '0' + n : n
+  }
+
   render () {
+    const date = new Date()
+    const dateToday = parseInt(
+      '' +
+        date.getFullYear() +
+        this.makeTwoDigits(date.getMonth() + 1) +
+        this.makeTwoDigits(date.getDate())
+    )
+
     return (
       <Layout
         headerType='interior'
@@ -309,7 +320,7 @@ export default class extends React.Component {
                       <th onClick={this.sortDate}>Date</th>
                       <th>Presenter</th>
                       <th>Event/Title</th>
-                      <th>Location</th>
+                      <th onClick={this.getLocation}>Location</th>
                       <th>Event Email</th>
                       <th>Presenter Email</th>
                       <th>Link</th>
@@ -317,39 +328,41 @@ export default class extends React.Component {
                   </thead>
 
                   <tbody>
-                    {this.state.data.map(function (post, i) {
-                      return (
-                        <tr key={i}>
-                          <td>{post.acf.displayed_date}</td>
-                          <td>{post.acf.presenter}</td>
-                          <td
-                            dangerouslySetInnerHTML={{
-                              __html: post.title.rendered
-                            }}
-                          />
-                          <td>{post.acf.location}</td>
-                          <td>
-                            <a href={`mailto:${post.acf.event_email}`}>
-                              {post.acf.event_email}
-                            </a>
-                          </td>
-                          <td>
-                            <a href={`mailto:${post.acf.presenter_email}`}>
-                              {post.acf.presenter_email}
-                            </a>
-                          </td>
-                          <td>
-                            <a
-                              href={post.acf.link}
-                              title={post.title.rendered}
-                              target='_blank'
-                            >
-                              {post.acf.link ? 'More Info' : ''}
-                            </a>
-                          </td>
-                        </tr>
-                      )
-                    })}
+                    {this.state.data
+                      .filter(post => post.acf.date >= dateToday)
+                      .map(function (post, i) {
+                        return (
+                          <tr key={i}>
+                            <td>{post.acf.displayed_date}</td>
+                            <td>{post.acf.presenter}</td>
+                            <td
+                              dangerouslySetInnerHTML={{
+                                __html: post.title.rendered
+                              }}
+                            />
+                            <td>{post.acf.location}</td>
+                            <td>
+                              <a href={`mailto:${post.acf.event_email}`}>
+                                {post.acf.event_email}
+                              </a>
+                            </td>
+                            <td>
+                              <a href={`mailto:${post.acf.presenter_email}`}>
+                                {post.acf.presenter_email}
+                              </a>
+                            </td>
+                            <td>
+                              <a
+                                href={post.acf.link}
+                                title={post.title.rendered}
+                                target='_blank'
+                              >
+                                {post.acf.link ? 'More Info' : ''}
+                              </a>
+                            </td>
+                          </tr>
+                        )
+                      })}
                   </tbody>
                 </table>
                 <div className='col s12 center scroller'>
