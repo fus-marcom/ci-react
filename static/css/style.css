@@ -570,3 +570,11 @@ input:not([type]):focus:not([readonly]) + label, input[type=text]:focus:not([rea
 #single-event h3 {
   font-size: 40px;
 }
+
+#single-event .row ul {
+  padding-left: 30px;
+}
+
+#single-event .row ul li {
+  list-style-type: disc;
+}
