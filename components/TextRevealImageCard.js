@@ -40,7 +40,10 @@ class TextRevealImageCard extends Component {
           }
           .card-title {
             font-family: 'Cinzel', serif;
-            padding-bottom: 16px;
+            padding-bottom: 0;
+          }
+          .card-reveal p {
+            margin: 8px 0;
           }
         `}</style>
       </div>
