@@ -16,6 +16,7 @@ export default class extends React.Component {
     userLat: null,
     userLong: null
   }
+
   static async getInitialProps () {
     const apiUrl = 'https://wp.catechetics.com/wp-json/wp/v2/'
     const params =
@@ -26,9 +27,24 @@ export default class extends React.Component {
   }
 
   componentDidMount = () => {
-    this.setState({ data: this.props.data })
+    this.setState({
+      data: this.props.data.filter(
+        post => post.acf.date >= this.getTodaysDate()
+      )
+    })
     hScroller()
     logPageView()
+  }
+
+  getTodaysDate = () => {
+    const date = new Date()
+    const dateToday = parseInt(
+      '' +
+        date.getFullYear() +
+        this.makeTwoDigits(date.getMonth() + 1) +
+        this.makeTwoDigits(date.getDate())
+    )
+    return dateToday
   }
 
   getLocation = () => {
@@ -80,14 +96,6 @@ export default class extends React.Component {
   }
 
   render () {
-    const date = new Date()
-    const dateToday = parseInt(
-      '' +
-        date.getFullYear() +
-        this.makeTwoDigits(date.getMonth() + 1) +
-        this.makeTwoDigits(date.getDate())
-    )
-
     return (
       <Layout
         headerType='interior'
@@ -328,41 +336,39 @@ export default class extends React.Component {
                   </thead>
 
                   <tbody>
-                    {this.state.data
-                      .filter(post => post.acf.date >= dateToday)
-                      .map(function (post, i) {
-                        return (
-                          <tr key={i}>
-                            <td>{post.acf.displayed_date}</td>
-                            <td>{post.acf.presenter}</td>
-                            <td
-                              dangerouslySetInnerHTML={{
-                                __html: post.title.rendered
-                              }}
-                            />
-                            <td>{post.acf.location}</td>
-                            <td>
-                              <a href={`mailto:${post.acf.event_email}`}>
-                                {post.acf.event_email}
-                              </a>
-                            </td>
-                            <td>
-                              <a href={`mailto:${post.acf.presenter_email}`}>
-                                {post.acf.presenter_email}
-                              </a>
-                            </td>
-                            <td>
-                              <a
-                                href={post.acf.link}
-                                title={post.title.rendered}
-                                target='_blank'
-                              >
-                                {post.acf.link ? 'More Info' : ''}
-                              </a>
-                            </td>
-                          </tr>
-                        )
-                      })}
+                    {this.state.data.map(function (post, i) {
+                      return (
+                        <tr key={i}>
+                          <td>{post.acf.displayed_date}</td>
+                          <td>{post.acf.presenter}</td>
+                          <td
+                            dangerouslySetInnerHTML={{
+                              __html: post.title.rendered
+                            }}
+                          />
+                          <td>{post.acf.location}</td>
+                          <td>
+                            <a href={`mailto:${post.acf.event_email}`}>
+                              {post.acf.event_email}
+                            </a>
+                          </td>
+                          <td>
+                            <a href={`mailto:${post.acf.presenter_email}`}>
+                              {post.acf.presenter_email}
+                            </a>
+                          </td>
+                          <td>
+                            <a
+                              href={post.acf.link}
+                              title={post.title.rendered}
+                              target='_blank'
+                            >
+                              {post.acf.link ? 'More Info' : ''}
+                            </a>
+                          </td>
+                        </tr>
+                      )
+                    })}
                   </tbody>
                 </table>
                 <div className='col s12 center scroller'>
