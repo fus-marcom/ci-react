@@ -114,7 +114,7 @@ export default class extends React.Component {
               <div className='row'>
                 <div className='col s12'>
                   <p className='flow-text'>
-                    The annual St. John Bosco Conference for Catechists and
+                    The annual St John Bosco Conference for Catechists and
                     Religious Educators at Franciscan University is our premier
                     event, bringing catechetical experts from all over to share
                     their expertise through general sessions and specialized
@@ -256,28 +256,40 @@ export default class extends React.Component {
               </div>
               <div className='row valign-wrapper'>
                 <div className='col s12 m6 valign order-2'>
+                  <h4>
+                    Celebrating the Silver Jubilee of the Catechism of the
+                    Catholic Church
+                  </h4>
+                  <p className='flow-text'>
+                    Join our renowned speakers as we explore the capacity of the
+                    Catechism to assist in the renewal of Christian catechesis,
+                    education, and culture.
+                  </p>
+                  <h5>Early Bird Discount</h5>
+                  <p className='flow-text'>
+                    If you register before <strong>August 15, 2017</strong>, you
+                    will get a <strong>17 percent discount </strong>on your
+                    registration fee!
+                  </p>
+                  <h5>Featured Conference Speakers:</h5>
+                  <ul className='flow-text'>
+                    <li>Cardinal Donald Wuerl</li>
+                    <li>Archbishop Leonard Blair</li>
+                    <li>Dr. Scott Hahn</li>
+                    <li>Dr. John Cavadini</li>
+                    <li>Dr. Tracey Rowland</li>
+                  </ul>
                   <p className='flow-text'>
                     This unique conference is a Silver Jubilee celebration of
                     the gift of the Catechism of the Catholic Church to the
-                    Church of our day, and will examine ways in which the
-                    Catechism is providing a creative reference point for
-                    catechetical, cultural and ecclesial renewal through its
-                    reclamation of the Christian heritage, its explanatory power
-                    and its compelling articulation of a civilization
-                    characterized by faith, hope and love. Franciscan University
-                    is grateful for the assistance of the USCCB's Committee on
-                    Evangelization and Catechesis in making this conference
-                    possible. Keynotes include, Cardinal Donald Wuerl,
-                    Archbishop of Washington, Archbishop Leonard Blair, Chair,
-                    Committee for Evangelization and Catechesis, USCCB, Dr. John
-                    Cavadini, Director of the Institute for Church Life at the
-                    University of Notre Dame, Dr. Scott Hahn, Father Michael
-                    Scanlan Chair of Biblical Theology and the New
-                    Evangelization, Franciscan University, Dr. Tracey Rowland,
-                    John Paul II Research Chair of Theology, University of Notre
-                    Dame, Sydney, and Dr. Petroc Willey, Director of the
-                    Catechetical Institute and the Office of Catechetics,
-                    Franciscan University.
+                    Church of our day...{' '}
+
+                    <a
+                      href='/events/speaking-the-truth-in-love-conference'
+                      style={{ color: '#fff', fontWeight: '500' }}
+                    >
+                      read more.
+                    </a>
                   </p>
                   <a
                     href='https://www.eventbrite.com/e/speaking-the-truth-in-love-conference-tickets-34907493252?aff=CatecheticsSite'

@@ -5,6 +5,7 @@ import StickyNav from '../components/StickyNav'
 import Title from '../components/Title'
 import 'isomorphic-fetch'
 import { logPageView } from '../utils/analytics'
+import OutLink from '../components/OutLink'
 
 export default class extends React.Component {
   //   static async getInitialProps () {
@@ -128,29 +129,45 @@ export default class extends React.Component {
                   </p>
                 </div>
               </div>
-              {/* }<div className="sub-section open">
-                <h3><svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
-                  <path d="M0 0h24v24H0z" fill="none"/>
-                </svg>Priestly Renewal (PR) Track</h3>
-                <div className="row valign-wrapper">
-                  <div className="col s12">
-                    <p className="flow-text">
-                      Franciscan University has recently created an Institute for Priestly Renewal (IPR) that assists diocesan bishops and religious superiors as they work to form their priests and seminarians for leadership roles in the new evangelization. The courses and resources available through the IPR seek to provide seminarians and priests with deeper formation for missionary outreach. They also aim to help them create a parish culture of discipleship and outward-oriented evangelization. In partnership with the IPR, the Catechetical Institute helps seminarians and priests understand authentically Catholic approaches to outreach and inculturation, as well as communicate the kerygma effectively with strong follow-up.
-                    </p>
-                    <p className="flow-text">
-                      By using a summertime on-campus format, the design of the IPR closely accords with the timeframes and structure used by the Institute for Priestly Formation (IPF) of Omaha, Nebraska. The formation IPR offers is not redundant with IPF’s goals, but instead complements its outstanding work in spiritual formation, spiritual direction, and the interior life of clergy. The format used by Franciscan’s IPR draws from the catechumenal model (the three-fold liturgical, catechetical, pastoral pattern), and depends upon expertise from many directions within and outside of the Franciscan University family. The most critical human component of this structure is its dependence on priestly mentorship. It is a “like-to-like” learning model, relying on bringing in priests in the field with reputations for excellence in areas the IPR addresses.
-
-                    </p>
-                    <p className="flow-text">
-                      To support the IPR’s summertime on-campus work, the Catechetical Institute offers
-                      online workshops that may be used in whatever way a bishop deems best as
-                      preamble or follow-up to a summer experience, or simply as enrichment for clergy.
+              <div className='sub-section'>
+                <h3>
+                  <svg
+                    fill='#000000'
+                    height='24'
+                    viewBox='0 0 24 24'
+                    width='24'
+                    xmlns='http://www.w3.org/2000/svg'
+                  >
+                    <path d='M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z' />
+                    <path d='M0 0h24v24H0z' fill='none' />
+                  </svg>Priestly Renewal (PR) Track
+                </h3>
+                <div className='row valign-wrapper'>
+                  <div className='col s12'>
+                    <p className='flow-text'>
+                      In reaching out to assist diocesan bishops and religious
+                      superiors, Franciscan University aims to provide a
+                      high-quality series of workshops for seminarians and
+                      priests desiring superlative, efficient, and pragmatic
+                      formation for their leadership roles in the new
+                      evangelization. We have developed means to help
+                      seminarians and priests explore authentically Catholic
+                      approaches to outreach, inculturation, and communicating
+                      the kerygma effectively with strong follow-up. The
+                      workshops available through this track provide seminarians
+                      and priests with deeper formation for missionary outreach
+                      and increase their ability to attune parish life to be
+                      truly outward-oriented centers of evangelization and
+                      discipleship. Undergirding this formation is the basic
+                      assumption that every man in Holy Orders is worth deep
+                      investment to foster excellence in that vocation, and that
+                      God’s grace and His Spirit can bring much from our poverty
+                      and weakness.
                     </p>
                   </div>
                 </div>
-              </div> */}
-              <div className='sub-section open'>
+              </div>
+              <div className='sub-section'>
                 <h3>
                   <svg
                     fill='#000000'
@@ -759,15 +776,15 @@ export default class extends React.Component {
                       a way that is faithful to the Church and advances the
                       Kingdom of God.
                     </p>
-                    <a
-                      href='https://www.franciscan.edu/Catechetics/'
+                    <OutLink
+                      to='https://www.franciscan.edu/Catechetics/'
                       title='Franciscan University Catechetics Program'
-                      target='_blank'
+                      label='toCatProgramFromCourses'
                     >
                       <button className='btn waves-effect waves-light'>
                         Learn More
                       </button>
-                    </a>
+                    </OutLink>
                   </div>
                   <div className='col s12 m6 order-1'>
                     <img
@@ -813,15 +830,15 @@ export default class extends React.Component {
                       the family budget, aimed at an educational formation that
                       explicitly serves the new evangelization.
                     </p>
-                    <a
-                      href='https://www.franciscan.edu/fasttrack/'
+                    <OutLink
+                      to='https://www.franciscan.edu/fasttrack/'
                       title='Franciscan University Fast Track'
-                      target='_blank'
+                      label='toFastTrackFromCourses'
                     >
                       <button className='btn waves-effect waves-light'>
                         Learn More
                       </button>
-                    </a>
+                    </OutLink>
                   </div>
                 </div>
               </div>
@@ -853,15 +870,15 @@ export default class extends React.Component {
                       prepared to “cast out into the deep” and bring the light
                       of Christ to the ends of the earth.
                     </p>
-                    <a
-                      href='https://www.franciscan.edu/admissions/online/'
+                    <OutLink
+                      to='https://www.franciscan.edu/admissions/online/'
                       title='Franciscan University Online Programs'
-                      target='_blank'
+                      label='toOnlineFromCourses'
                     >
                       <button className='btn waves-effect waves-light'>
                         Learn More
                       </button>
-                    </a>
+                    </OutLink>
                   </div>
                   <div className='col s12 m6 order-1'>
                     <img
@@ -902,15 +919,15 @@ export default class extends React.Component {
                       efficient, and pragmatic formation for their leadership
                       roles in the new evangelization.
                     </p>
-                    <a
-                      href='https://www.franciscan.edu/pdp/'
+                    <OutLink
+                      to='https://www.franciscan.edu/pdp/'
                       title='Priestly Discernment Program'
-                      target='_blank'
+                      label='toPDPFromCourses'
                     >
                       <button className='btn waves-effect waves-light'>
                         Learn More
                       </button>
-                    </a>
+                    </OutLink>
                   </div>
                 </div>
               </div>

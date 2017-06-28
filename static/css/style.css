@@ -562,3 +562,19 @@ input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]),
 input:not([type]):focus:not([readonly]) + label, input[type=text]:focus:not([readonly]) + label, input[type=password]:focus:not([readonly]) + label, input[type=email]:focus:not([readonly]) + label, input[type=url]:focus:not([readonly]) + label, input[type=time]:focus:not([readonly]) + label, input[type=date]:focus:not([readonly]) + label, input[type=datetime]:focus:not([readonly]) + label, input[type=datetime-local]:focus:not([readonly]) + label, input[type=tel]:focus:not([readonly]) + label, input[type=number]:focus:not([readonly]) + label, input[type=search]:focus:not([readonly]) + label, textarea.materialize-textarea:focus:not([readonly]) + label {
   color: #998643;
 }
+
+
+#single-event h2 {
+  font-size: 44px;
+}
+#single-event h3 {
+  font-size: 40px;
+}
+
+#single-event .row ul {
+  padding-left: 30px;
+}
+
+#single-event .row ul li {
+  list-style-type: disc;
+}

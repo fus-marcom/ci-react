@@ -131,14 +131,7 @@ export default class extends React.Component {
                 </div>
               </div>
             </div>
-            <style jsx>{`
-                h2 {
-                  font-size: 44px;
-                }
-                h3 {
-                  font-size: 40px;
-                }
-              `}</style>
+
           </main>}
         <Footer />
 

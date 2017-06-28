@@ -1,6 +1,7 @@
 /* global initSideNav */
 import React, { Component } from 'react'
 import Link from 'next/link'
+import OutLink from '../components/OutLink'
 
 class Nav extends Component {
   componentDidMount () {
@@ -13,13 +14,14 @@ class Nav extends Component {
         <div>
           <nav className='main-nav search-nav'>
             <div className='nav-wrapper'>
-              <a
+              <OutLink
                 className='fus-branding'
-                href='https://www.franciscan.edu'
+                label='toMainSiteBrandingLink'
+                to='https://www.franciscan.edu'
                 title='Franciscan University of Steubenville'
               >
                 Franciscan University of Steubenville
-              </a>
+              </OutLink>
               <Link prefetch href='/'>
                 <a className='brand-logo'>
                   <img src='/static/img/ci-logo.png' />
