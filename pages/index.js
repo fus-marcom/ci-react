@@ -289,6 +289,19 @@ export default class extends React.Component {
                       <label for='textarea1'>Question</label>
                     </div>
                   </div>
+                  <div class='row'>
+                    <div class='col s12'>
+                      <button
+                        className='btn waves-effect waves-light btn-inverted-white'
+                        style={{
+                          marginTop: '16px',
+                          display: 'block'
+                        }}
+                      >
+                        Submit
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
