@@ -6,6 +6,7 @@ import Title from '../components/Title'
 import ResourceCard from '../components/ResourceCard'
 import 'isomorphic-fetch'
 import { logPageView } from '../utils/analytics'
+import { getJSON } from '../utils/fetch'
 import Masonry from 'react-masonry-component'
 
 export default class extends React.Component {
@@ -29,18 +30,6 @@ export default class extends React.Component {
     logPageView()
   }
 
-  get (url) {
-    return fetch(url, {
-      method: 'get'
-    })
-  }
-
-  getJSON = url => {
-    return this.get(url).then(function (response) {
-      return response.json()
-    })
-  }
-
   getSearchResults = () => {
     /* Get input value
         Make api call based on value
@@ -52,7 +41,7 @@ export default class extends React.Component {
     const apiUrl = 'https://wp.catechetics.com/wp-json/wp/v2/'
     const params = `resource?search=${searchTerm}&per_page=100&fields=title,acf,better_featured_image`
 
-    this.getJSON(apiUrl + params).then(data => this.setState({ data }))
+    getJSON(apiUrl + params).then(data => this.setState({ data }))
   }
 
   render () {

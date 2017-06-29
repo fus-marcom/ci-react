@@ -5,20 +5,94 @@ import StickyNav from '../components/StickyNav'
 import Title from '../components/Title'
 import 'isomorphic-fetch'
 import { logPageView } from '../utils/analytics'
+import { getJSON } from '../utils/fetch'
 
 export default class extends React.Component {
+  state = {
+    data: [],
+    dateAsc: null,
+    dateDesc: null,
+    dateIsAsc: true,
+    userLat: null,
+    userLong: null
+  }
+
   static async getInitialProps () {
     const apiUrl = 'https://wp.catechetics.com/wp-json/wp/v2/'
     const params =
-      'nearby-event?per_page=100&filter[orderby]=date&filter[order]=ASC&fields=title,acf'
+      'nearby-event?per_page=100&filter[orderby]=acf.date&filter[order]=ASC&fields=title,acf'
     const res = await fetch(apiUrl + params)
     const data = await res.json()
     return { data }
   }
 
-  componentDidMount () {
+  componentDidMount = () => {
+    this.setState({
+      data: this.props.data.filter(
+        post => post.acf.date >= this.getTodaysDate()
+      )
+    })
     hScroller()
     logPageView()
+  }
+
+  getTodaysDate = () => {
+    const date = new Date()
+    const dateToday = parseInt(
+      '' +
+        date.getFullYear() +
+        this.makeTwoDigits(date.getMonth() + 1) +
+        this.makeTwoDigits(date.getDate())
+    )
+    return dateToday
+  }
+
+  getLocation = () => {
+    navigator.geolocation.getCurrentPosition(position => {
+      this.setState({
+        userLat: position.coords.latitude,
+        userLong: position.coords.longitude
+      })
+      this.compareLocation()
+    })
+  }
+
+  compareLocation = () => {
+    const newData = this.state.data
+      .map(event => {
+        const eventCloned = { ...event }
+        eventCloned.distanceToEvent = eventCloned.acf.hasOwnProperty(
+          'location_map'
+        )
+          ? this.state.userLat -
+              eventCloned.acf.location_map.lat +
+              (this.state.userLong - eventCloned.acf.location_map.lng)
+          : Infinity
+        return eventCloned
+      })
+      // Make sure to set a distanceToEvent value for events that do not have lat and lon. Set to Infinity
+      .sort((a, b) => a.distanceToEvent - b.distanceToEvent)
+    this.setState({ data: newData })
+  }
+
+  sortDate = () => {
+    if (this.state.dateIsAsc) {
+      if (this.state.dateDesc === null) {
+        const apiUrl = 'https://wp.catechetics.com/wp-json/wp/v2/'
+        const params = `nearby-event?per_page=100&filter[orderby]=acf.date&filter[order]=DESC&fields=title,acf`
+        this.setState({ dateAsc: this.state.data })
+        getJSON(apiUrl + params).then(data => this.setState({ data }))
+      } else {
+        this.setState({ data: this.state.dateDesc })
+      }
+    } else {
+      this.setState({ dateDesc: this.state.data, data: this.state.dateAsc })
+    }
+    this.setState({ dateIsAsc: !this.state.dateIsAsc })
+  }
+
+  makeTwoDigits (n) {
+    return n.toString().length <= 1 ? '0' + n : n
   }
 
   render () {
@@ -263,10 +337,10 @@ export default class extends React.Component {
                 >
                   <thead>
                     <tr>
-                      <th>Date</th>
+                      <th onClick={this.sortDate}>Date</th>
                       <th>Presenter</th>
                       <th>Event/Title</th>
-                      <th>Location</th>
+                      <th onClick={this.getLocation}>Location</th>
                       <th>Event Email</th>
                       <th>Presenter Email</th>
                       <th>Link</th>
@@ -274,7 +348,7 @@ export default class extends React.Component {
                   </thead>
 
                   <tbody>
-                    {this.props.data.map(function (post, i) {
+                    {this.state.data.map(function (post, i) {
                       return (
                         <tr key={i}>
                           <td>{post.acf.displayed_date}</td>

@@ -210,10 +210,10 @@ export default class extends React.Component {
                       </span>
                       <span className='caption caption-title'>Director</span>
                       <span className='caption caption-dept'>
-                        Catechetical Institute
+                        Catechetical Institute, Office of Catechetics
                       </span>
                       <span className='caption caption-org'>
-                        Office of Catechetics
+                        Franciscan University of Steubenville
                       </span>
                     </div>
                   </div>
@@ -365,7 +365,7 @@ export default class extends React.Component {
           </div>
           <style jsx>{`
             .leader-card {
-              min-height: 416px;
+              min-height: 432px;
             }
             span.caption {
               display: block;

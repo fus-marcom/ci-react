@@ -583,3 +583,11 @@ input:not([type]):focus:not([readonly]) + label, input[type=text]:focus:not([rea
 #question .input-field label {
   color: rgba(255, 255, 255, 0.67);
 }
+
+#single-event .row ul {
+  padding-left: 30px;
+}
+
+#single-event .row ul li {
+  list-style-type: disc;
+}

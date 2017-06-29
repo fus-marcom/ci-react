@@ -239,14 +239,14 @@ export default class extends React.Component {
                   <TextCard
                     title='Bosco Conference'
                     content='The annual “St. John Bosco Conference for Evangelization and Catechesis” will take place July 17-20, 2017.  Come join us in the sunny height of summertime!&quot;'
-                    url='/events'
+                    url='/events/st-john-bosco-conference'
                   />
                 </div>
                 <div className='col s12 m6 l4 xl3'>
                   <TextCard
                     title='Catechism Conference'
                     content='“Speaking the Truth in Love,” an international catechetical conference celebrating 25 years of the Catechism will be held October 13-15, 2017. Join us!&quot;'
-                    url='/events'
+                    url='/events/speaking-the-truth-in-love-conference'
                   />
                 </div>
               </div>
