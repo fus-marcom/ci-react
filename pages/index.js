@@ -51,7 +51,7 @@ export default class extends React.Component {
                   top: '0',
                   left: '0'
                 }}
-                src='https://www.youtube.com/embed/FcNrvD3QEkw?controls=0&showinfo=0&rel=0&loop=1'
+                src='https://www.youtube.com/embed/RQzw0RPpVVs?controls=0&showinfo=0&rel=0&loop=1'
                 frameborder='0'
                 allowfullscreen
               />
@@ -63,24 +63,50 @@ export default class extends React.Component {
                 <div className='col s12 l6'>
                   <h4>Franciscan at Home</h4>
                   <p className='flow-text'>
-                    The Franciscan University Catechetical Institute forms
-                    Catholics who form others in the faith. Through courses,
-                    conferences, advice, and resources, the institute supports
-                    clergy, parents, and all those responsible for the work of
-                    catechesis and evangelization, as they carry out Christ’s
-                    command to make disciples of all nations.
+                    Online learning at your convenience with a rich and varied
+                    corpus of many hundreds of workshops spread across a variety
+                    of ministry areas, which can accessed by individuals, or
+                    used in any way a diocese wishes.
                   </p>
+                  <a
+                    href='http://en.calameo.com/read/00005685416f121522341'
+                    title='Franciscan at Home'
+                    target='_blank'
+                  >
+                    <button
+                      className='btn waves-effect waves-light btn-inverted-white'
+                      style={{
+                        marginTop: '16px',
+                        display: 'block'
+                      }}
+                    >
+                      Learn More
+                    </button>
+                  </a>
                 </div>
                 <div className='col s12 l6'>
                   <h4>Catechetical Review</h4>
                   <p className='flow-text'>
-                    The Franciscan University Catechetical Institute forms
-                    Catholics who form others in the faith. Through courses,
-                    conferences, advice, and resources, the institute supports
-                    clergy, parents, and all those responsible for the work of
-                    catechesis and evangelization, as they carry out Christ’s
-                    command to make disciples of all nations.
+                    An international quarterly catechetical journal primarily
+                    written for Directors of Religious Education, catechetical
+                    leaders, religious educators, youth ministers, RCIA
+                    coordinators and anyone involved in faith formation.
                   </p>
+                  <a
+                    href='https://review.catechetics.com/'
+                    title='Catechetical Review'
+                    target='_blank'
+                  >
+                    <button
+                      className='btn waves-effect waves-light btn-inverted-white'
+                      style={{
+                        marginTop: '16px',
+                        display: 'block'
+                      }}
+                    >
+                      Learn More
+                    </button>
+                  </a>
                 </div>
               </div>
             </div>
