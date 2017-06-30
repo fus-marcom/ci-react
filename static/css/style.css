@@ -179,18 +179,16 @@ nav {
 
   nav .fus-branding {
     position: absolute;
-    top: -20px;
+    top: -16px;
     left: 16px;
-    font-family: 'Cinzel', serif; }
+    font-family: 'Cinzel', serif;
+    font-size: 20px;}
     @media screen and (max-width: 828px), screen and (max-height: 650px) {
       nav .fus-branding {
         top: -18px;
         left: 8px;
         font-size: 14px;} }
-  nav .page-title {
-    line-height: 64px;
-    font-size: 40px;
-    font-weight: 300; }
+
   nav .button-collapse {
     margin-left: 16px;
     margin-top: 23px;
@@ -206,65 +204,10 @@ nav {
       nav .brand-logo {
         margin-top: 24px; } }
     nav .brand-logo img {
-      height: 100px; }
+      height: 130px; }
       @media screen and (max-width: 828px), screen and (max-height: 650px) {
         nav .brand-logo img {
           height: 70px; } }
-  nav .social {
-    height: 40px;
-    position: absolute;
-    right: 120px; }
-    nav .social a svg {
-      fill: #21412a;
-      width: 30px; }
-  nav .button {
-    position: fixed;
-    right: 16px;
-    top: 6px;
-    background: #21412a;
-    color: #fff;
-    height: 32px;
-    line-height: 32px;
-    padding: 0 16px;
-    font-weight: 500;
-    text-transform: uppercase; }
-    nav .button:hover {
-      background: #21412a; }
-  nav ul {
-    margin-right: 16px; }
-    nav ul li {
-      line-height: 48px;
-      height: 48px;
-      margin-top: 40px; }
-      nav ul li a {
-        color: #000;
-        line-height: 36px; }
-  nav .search-icon {
-    float: left; }
-    nav .search-icon svg {
-      cursor: pointer;
-      width: 27px;
-      fill: #21412a;
-      padding: 4px 8px;
-      box-sizing: content-box; }
-  nav #search-input {
-    float: left; }
-    nav #search-input input {
-      color: rgba(0, 0, 0, 0.54);
-      display: block;
-      font-size: 16px;
-      height: 30px;
-      transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-      width: 0; }
-    nav #search-input svg {
-      display: none;
-      position: absolute;
-      top: 45px;
-      right: 18px; }
-  nav #search-input.open input {
-    width: 250px; }
-  nav #search-input.open svg {
-    display: block; }
 
 .interior {
   margin-bottom: 0; }
@@ -571,23 +514,10 @@ input:not([type]):focus:not([readonly]) + label, input[type=text]:focus:not([rea
   font-size: 40px;
 }
 
-#question input[type=email]:focus:not([readonly]), #question textarea.materialize-textarea:focus:not([readonly]) {
-  border-bottom: 1px solid #fff;
-  box-shadow: 0 1px 0 0 #fff;
-}
-
-#question input[type=email]:focus:not([readonly]) + label, #question textarea.materialize-textarea:focus:not([readonly]) + label {
-  color: #fff;
-}
-
-#question .input-field label {
-  color: rgba(255, 255, 255, 0.67);
-}
-
-#single-event .row ul {
+#single-event ul {
   padding-left: 30px;
 }
 
-#single-event .row ul li {
+ul li {
   list-style-type: disc;
 }

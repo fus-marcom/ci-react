@@ -16,7 +16,7 @@ class Hero extends Component {
             <h1
               style={{
                 fontFamily: "'Allura', cursive",
-                fontSize: '100px',
+                fontSize: '85px',
                 paddingTop: '150px'
               }}
             >
@@ -27,11 +27,11 @@ class Hero extends Component {
         </div>
         <style jsx>{`
           #hero {
-            min-height: 80vh;
-            background-image: url("/static/img/monstrance-2000w-op.jpg");
-            background-size: 80vw;
+            min-height: 68vh;
+            background-image: url(/static/img/monstrance-2000w-op.jpg);
+            background-size: 74vw;
             background-repeat: no-repeat;
-            background-position-x: 183%;
+            background-position-x: 157%;
             background-position-y: 36%;
             background-color: #000;
             margin-top: -74px;
