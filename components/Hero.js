@@ -16,8 +16,9 @@ class Hero extends Component {
             <h1
               style={{
                 fontFamily: "'Allura', cursive",
-                fontSize: '85px',
-                paddingTop: '150px'
+                fontSize: '81px',
+                paddingTop: '180px',
+                lineHeight: '.9'
               }}
             >
               Forming those who form others.
