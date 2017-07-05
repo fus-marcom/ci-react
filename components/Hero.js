@@ -3,7 +3,7 @@ class Hero extends Component {
   render () {
     return (
       <div
-        className='section valign-wrapper'
+        className='section valign-wrapper hide-on-med-and-down'
         id='hero'
         style={{ marginTop: '-83px' }}
       >
