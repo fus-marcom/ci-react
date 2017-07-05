@@ -268,44 +268,6 @@ export default class extends React.Component {
               </div>
             </div>
           </div>
-          <div
-            className='section banner'
-            id='question'
-            style={{ backgroundColor: '#000', color: '#fff' }}
-          >
-            <div className='container'>
-              <div className='row'>
-                <h3>Ask a Question</h3>
-                <div className='col s12'>
-                  <div className='row'>
-                    <div class='input-field col s12'>
-                      <input id='email' type='email' class='validate' />
-                      <label for='email'>Email</label>
-                    </div>
-                  </div>
-                  <div class='row'>
-                    <div class='input-field col s12'>
-                      <textarea id='textarea1' class='materialize-textarea' />
-                      <label for='textarea1'>Question</label>
-                    </div>
-                  </div>
-                  <div class='row'>
-                    <div class='col s12'>
-                      <button
-                        className='btn waves-effect waves-light btn-inverted-white'
-                        style={{
-                          marginTop: '16px',
-                          display: 'block'
-                        }}
-                      >
-                        Submit
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
           <style jsx>{`
             @media screen and (max-width: 500px) {
               h2 img {
