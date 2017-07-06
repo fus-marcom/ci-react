@@ -14,14 +14,14 @@ export default class extends React.Component {
     activeTab: 'all',
     data: [],
     price: 'paid',
-    category: 'all',
+    category: 2,
     type: 'all'
   }
 
   static async getInitialProps () {
     const apiUrl = 'https://wp.catechetics.com/wp-json/wp/v2/'
     const params =
-      'resource?per_page=100&fields=title,acf,better_featured_image'
+      'resource?per_page=100&fields=title,acf,better_featured_image,date,resource-category'
     const res = await fetch(apiUrl + params)
     const data = await res.json()
     return { data }
@@ -39,8 +39,6 @@ export default class extends React.Component {
         Render cards from api data
      */
     const searchTerm = document.getElementById('search').value
-    console.log(searchTerm)
-
     const apiUrl = 'https://wp.catechetics.com/wp-json/wp/v2/'
     const params = `resource?search=${searchTerm}&per_page=100&fields=title,acf,better_featured_image`
 
@@ -49,6 +47,18 @@ export default class extends React.Component {
 
   pricePicker = () => {
     this.setState({ price: 'free' })
+  }
+
+  filterByCategory = post => {
+    if (this.state.category === 0) {
+      return true
+    } else if (post['resource-category'] !== undefined) {
+      return post['resource-category'].some(
+        category => category === this.state.category
+      )
+    } else {
+      return false
+    }
   }
 
   render () {
@@ -64,6 +74,7 @@ export default class extends React.Component {
         {this.state.data
           .filter(post => activeTab === 'all' || activeTab === post.acf.type)
           .filter(post => post.acf.price === this.state.price)
+          .filter(this.filterByCategory)
           .map((post, i) =>
             <div className='col s12 m6 l4 xl3' key={i}>
               <ResourceCard
