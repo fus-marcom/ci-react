@@ -7,7 +7,6 @@ import ResourceCard from '../components/ResourceCard'
 import 'isomorphic-fetch'
 import { logPageView } from '../utils/analytics'
 import { getJSON } from '../utils/fetch'
-import Masonry from 'react-masonry-component'
 
 export default class extends React.Component {
   state = {
@@ -96,35 +95,6 @@ export default class extends React.Component {
       text: 'Text',
       video: 'Video'
     }
-    const massonryComp = (
-      <Masonry>
-        {this.state.data
-          .filter(post => activeTab === 'all' || activeTab === post.acf.type)
-          .filter(this.priceFilter)
-          .filter(this.filterByCategory)
-          .map((post, i) =>
-            <div className='col s12 m6 l4 xl3' key={i}>
-              <ResourceCard
-                title={post.title.rendered}
-                type={post.acf.type}
-                content={post.acf.description}
-                url={post.acf.url}
-                price={post.acf.price}
-                img={
-                  post.better_featured_image !== null
-                    ? post.better_featured_image.source_url
-                    : ''
-                }
-                imgWidth={
-                  post.better_featured_image !== null
-                    ? post.better_featured_image.media_details.width
-                    : '1'
-                }
-              />
-            </div>
-          )}
-      </Masonry>
-    )
 
     return (
       <Layout
@@ -293,8 +263,80 @@ export default class extends React.Component {
               {/* For each tab, we generate a row */}
               {Object.keys(tabs).map(tabKey =>
                 <div className='row' id={tabKey} key={tabKey}>
-                  {/* We render masonry comp only if we are in current active tab key */}
-                  {activeTab === tabKey && massonryComp}
+                  {this.state.data.map(post =>
+                    <div
+                      class='valign-wrapper col s12 resource-row'
+                      style={{
+                        borderBottom: '1px solid rgba(0, 0, 0, 0.54)',
+                        padding: '16px'
+                      }}
+                    >
+                      <div class='col s12 m3'>
+                        <img
+                          src={
+                            post.better_featured_image !== null
+                              ? post.better_featured_image
+                              : ''
+                          }
+                          style={{ maxHeight: '200px' }}
+                        />
+
+                      </div>
+                      <div class='col s12 m9 valign'>
+                        <h4 style={{ marginBottom: '4px', marginTop: '0px' }}>
+                          <a
+                            href={post.acf.url}
+                            title={post.title.rendered}
+                            style={{ color: '#8e1b21' }}
+                          >
+                            {post.title.rendered}
+                          </a>
+                        </h4>
+                        <span
+                          class='author'
+                          style={{
+                            color: '#998643',
+                            display: 'block',
+                            fontSize: '20px'
+                          }}
+                        >
+                          Author:{' '}
+                          {post.acf.hasOwnProperty('author')
+                            ? post.acf.author
+                            : ''}
+                        </span>
+                        <span
+                          class='type'
+                          style={{
+                            color: '#998643',
+                            fontSize: '20px',
+                            display: 'block'
+                          }}
+                        >
+                          {post.acf.type}
+                        </span>
+                        <span
+                          class='read-more'
+                          style={{
+                            color: '#8e1b21',
+                            cursor: 'pointer',
+                            marginTop: '16px',
+                            display: 'block'
+                          }}
+                        >
+                          Read More
+                        </span>
+                        <p
+                          class='description'
+                          style={{ display: 'none' }}
+                          dangerouslySetInnerHTML={{
+                            __html: post.acf.description
+                          }}
+                        />
+                      </div>
+                    </div>
+                  )}
+
                 </div>
               )}
 
@@ -330,6 +372,10 @@ export default class extends React.Component {
               [type="checkbox"]:checked + label:before {
                 border-right: 2px solid #998643;
                 border-bottom: 2px solid #998643;
+              }
+
+              .resource-row:first-of-type {
+                border-top: 1px solid rgba(0, 0, 0, 0.54);
               }
             `}
           </style>
