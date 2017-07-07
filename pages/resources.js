@@ -15,7 +15,8 @@ export default class extends React.Component {
     data: [],
     price: 'all',
     category: 0,
-    type: 'all'
+    type: 'all',
+    categories: []
   }
 
   static async getInitialProps () {
@@ -31,6 +32,13 @@ export default class extends React.Component {
     this.setState({ data: this.props.data })
     initTabs()
     logPageView()
+    this.getCategories()
+  }
+
+  getCategories = () => {
+    const apiUrl = 'https://wp.catechetics.com/wp-json/wp/v2/'
+    const params = `resource-category`
+    getJSON(apiUrl + params).then(categories => this.setState({ categories }))
   }
 
   getSearchResults = () => {
@@ -215,9 +223,14 @@ export default class extends React.Component {
                     <option value='' disabled selected>
                       Choose your option
                     </option>
-                    <option value='1'>Option 1</option>
-                    <option value='2'>Option 2</option>
-                    <option value='3'>Option 3</option>
+                    <option value='0'>All</option>
+                    {this.state.categories !== ''
+                      ? this.state.categories.map(category =>
+                        <option value={category.id} key={category.id}>
+                          {category.name}
+                        </option>
+                        )
+                      : ''}
                   </select>
                   <label>Materialize Select</label>
                 </div>

@@ -8,6 +8,10 @@ function initCourseSections() {
   })
 }
 
+function initSelect() {
+  $('select').material_select()
+}
+
 function initTeamCardSections() {
   // Team Card Click Handler
   $('.title-row').click(function() {
