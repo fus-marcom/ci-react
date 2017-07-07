@@ -13,8 +13,8 @@ export default class extends React.Component {
   state = {
     activeTab: 'all',
     data: [],
-    price: 'paid',
-    category: 2,
+    price: 'all',
+    category: 0,
     type: 'all'
   }
 
@@ -45,8 +45,27 @@ export default class extends React.Component {
     getJSON(apiUrl + params).then(data => this.setState({ data }))
   }
 
-  pricePicker = () => {
-    this.setState({ price: 'free' })
+  pricePicker = e => {
+    const freeVal = document.getElementById('free').checked
+    const paidVal = document.getElementById('paid').checked
+
+    if ((freeVal && paidVal) || (!freeVal && !paidVal)) {
+      this.setState({ price: 'all' })
+    } else if (freeVal) {
+      this.setState({ price: 'free' })
+    } else {
+      this.setState({ price: 'paid' })
+    }
+  }
+
+  priceFilter = post => {
+    if (this.state.price === 'all') {
+      return true
+    } else if (post.acf.price === this.state.price) {
+      return true
+    } else {
+      return false
+    }
   }
 
   filterByCategory = post => {
@@ -73,7 +92,7 @@ export default class extends React.Component {
       <Masonry>
         {this.state.data
           .filter(post => activeTab === 'all' || activeTab === post.acf.type)
-          .filter(post => post.acf.price === this.state.price)
+          .filter(this.priceFilter)
           .filter(this.filterByCategory)
           .map((post, i) =>
             <div className='col s12 m6 l4 xl3' key={i}>
@@ -191,17 +210,36 @@ export default class extends React.Component {
           >
             <div className='container container-wide'>
               <div className='row'>
-                <div class='col s12 m2 offset-m4'>
-                  <div class='switch'>
-                    <label>
-                      Free
-                      <input type='checkbox' onClick={this.pricePicker} />
-                      <span class='lever' />
-                      Paid
-                    </label>
-                  </div>
+                <div class='input-field col s12 m4'>
+                  <select>
+                    <option value='' disabled selected>
+                      Choose your option
+                    </option>
+                    <option value='1'>Option 1</option>
+                    <option value='2'>Option 2</option>
+                    <option value='3'>Option 3</option>
+                  </select>
+                  <label>Materialize Select</label>
                 </div>
-                <div className='input-field col s12 m6 offset-m6'>
+                <div class='col s12 m2'>
+                  <p>
+                    <input
+                      type='checkbox'
+                      id='free'
+                      onChange={this.pricePicker}
+                    />
+                    <label for='free'>Free</label>
+                  </p>
+                  <p>
+                    <input
+                      type='checkbox'
+                      id='paid'
+                      onChange={this.pricePicker}
+                    />
+                    <label for='paid'>Paid</label>
+                  </p>
+                </div>
+                <div className='input-field col s12 m6'>
                   <input
                     id='search'
                     type='search'
@@ -274,6 +312,11 @@ export default class extends React.Component {
                 top: 15px;
                 width: 30px;
                 height: auto;
+              }
+
+              [type="checkbox"]:checked + label:before {
+                border-right: 2px solid #998643;
+                border-bottom: 2px solid #998643;
               }
             `}
           </style>
