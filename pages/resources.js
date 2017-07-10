@@ -3,7 +3,6 @@ import React from 'react'
 import Layout from '../components/Layout'
 import StickyNav from '../components/StickyNav'
 import Title from '../components/Title'
-import ResourceCard from '../components/ResourceCard'
 import 'isomorphic-fetch'
 import { logPageView } from '../utils/analytics'
 import { getJSON } from '../utils/fetch'
@@ -129,69 +128,18 @@ export default class extends React.Component {
             </div>
           </div>
           <div
-            className='section banner valign-wrapper red-background-flourish'
-            id='banner'
-          >
-
-            <div className='valign container container-wide'>
-              <div className='row center white-text '>
-                <h2 className='light flourish-white'>Featured Resources</h2>
-                <p className='flow-text'>
-                  Resources marked with{' '}
-                  <svg
-                    fill='#fff'
-                    height='24'
-                    viewBox='0 0 24 24'
-                    width='24'
-                    xmlns='http://www.w3.org/2000/svg'
-                  >
-                    <path d='M0 0h24v24H0z' fill='none' />
-                    <path d='M12 17c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm6-9h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6h1.9c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm0 12H6V10h12v10z' />
-                  </svg>{' '}
-                  are offered at no charge.
-                </p>
-              </div>
-              <div className='row'>
-                {this.props.data.map(function (post, i) {
-                  if (post.acf.featured) {
-                    for (let f = 0; f < 4; f++) {
-                      return (
-                        <div className='col s12 m6 l6 xl3' key={i}>
-                          <ResourceCard
-                            title={post.title.rendered}
-                            type={post.acf.type}
-                            content={post.acf.description}
-                            url={post.acf.url}
-                            price={post.acf.price}
-                            img={
-                              post.better_featured_image !== null
-                                ? post.better_featured_image.source_url
-                                : ''
-                            }
-                            imgWidth={
-                              post.better_featured_image !== null
-                                ? post.better_featured_image.media_details.width
-                                : '1'
-                            }
-                          />
-                        </div>
-                      )
-                    }
-                  }
-                })}
-              </div>
-            </div>
-          </div>
-          <div
-            className='section white-background-flourish'
-            style={{ minHeight: '500px' }}
+            className='section banner white-text'
+            style={{ backgroundColor: '#000', padding: '0' }}
           >
             <div className='container container-wide'>
               <div className='row'>
-                <div class='input-field col s12 m4'>
+                <div
+                  class='input-field col s12 m4'
+                  style={{ paddingRight: '16px' }}
+                >
                   <select>
                     <option value='' disabled selected>
-                      Choose your option
+                      Choose a category
                     </option>
                     <option value='0'>All</option>
                     {this.state.categories !== ''
@@ -202,9 +150,8 @@ export default class extends React.Component {
                         )
                       : ''}
                   </select>
-                  <label>Materialize Select</label>
                 </div>
-                <div class='col s12 m2'>
+                <div class='col s12 m2' style={{ textAlign: 'center' }}>
                   <p>
                     <input
                       type='checkbox'
@@ -241,6 +188,14 @@ export default class extends React.Component {
                   </svg>
                 </div>
               </div>
+            </div>
+          </div>
+          <div
+            className='section white-background-flourish'
+            style={{ minHeight: '500px' }}
+          >
+            <div className='container container-wide'>
+
               <div className='row'>
                 <div className='col s12'>
                   <ul className='tabs'>
@@ -354,13 +309,11 @@ export default class extends React.Component {
                   font-size: 18px;
                 }
               }
-
               .input-field input[type=search]:focus {
                 background-color: transparent;
                 box-shadow: none;
-                color: color: rgba(68, 68, 68, 0.57);
+                color: #fff;
               }
-
               .input-field svg {
                 position: absolute;
                 right: 16px;
@@ -368,12 +321,10 @@ export default class extends React.Component {
                 width: 30px;
                 height: auto;
               }
-
               [type="checkbox"]:checked + label:before {
-                border-right: 2px solid #998643;
-                border-bottom: 2px solid #998643;
+                border-right: 2px solid #a61f26;
+                border-bottom: 2px solid #a61f26;
               }
-
               .resource-row:first-of-type {
                 border-top: 1px solid rgba(0, 0, 0, 0.54);
               }
