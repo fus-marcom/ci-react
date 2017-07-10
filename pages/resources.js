@@ -3,6 +3,7 @@ import React from 'react'
 import Layout from '../components/Layout'
 import StickyNav from '../components/StickyNav'
 import Title from '../components/Title'
+import ResourceRow from '../components/ResourceRow'
 import 'isomorphic-fetch'
 import { logPageView } from '../utils/analytics'
 import { getJSON } from '../utils/fetch'
@@ -219,77 +220,21 @@ export default class extends React.Component {
               {Object.keys(tabs).map(tabKey =>
                 <div className='row' id={tabKey} key={tabKey}>
                   {this.state.data.map(post =>
-                    <div
-                      class='valign-wrapper col s12 resource-row'
-                      style={{
-                        borderBottom: '1px solid rgba(0, 0, 0, 0.54)',
-                        padding: '16px'
-                      }}
-                    >
-                      <div class='col s12 m3'>
-                        <img
-                          src={
-                            post.better_featured_image !== null
-                              ? post.better_featured_image
-                              : ''
-                          }
-                          style={{ maxHeight: '200px' }}
-                        />
-
-                      </div>
-                      <div class='col s12 m9 valign'>
-                        <h4 style={{ marginBottom: '4px', marginTop: '0px' }}>
-                          <a
-                            href={post.acf.url}
-                            title={post.title.rendered}
-                            style={{ color: '#8e1b21' }}
-                          >
-                            {post.title.rendered}
-                          </a>
-                        </h4>
-                        <span
-                          class='author'
-                          style={{
-                            color: '#998643',
-                            display: 'block',
-                            fontSize: '20px'
-                          }}
-                        >
-                          Author:{' '}
-                          {post.acf.hasOwnProperty('author')
-                            ? post.acf.author
-                            : ''}
-                        </span>
-                        <span
-                          class='type'
-                          style={{
-                            color: '#998643',
-                            fontSize: '20px',
-                            display: 'block'
-                          }}
-                        >
-                          {post.acf.type}
-                        </span>
-                        <span
-                          class='read-more'
-                          style={{
-                            color: '#8e1b21',
-                            cursor: 'pointer',
-                            marginTop: '16px',
-                            display: 'block'
-                          }}
-                        >
-                          Read More
-                        </span>
-                        <p
-                          class='description'
-                          style={{ display: 'none' }}
-                          dangerouslySetInnerHTML={{
-                            __html: post.acf.description
-                          }}
-                        />
-                      </div>
-                    </div>
+                    <ResourceRow
+                      title={post.title.rendered}
+                      type={post.acf.type}
+                      author={
+                        post.acf.hasOwnProperty('author') ? post.acf.author : ''
+                      }
+                      content={post.acf.description}
+                      url={post.acf.url}
+                      price={post.acf.price}
+                      img={
+                        post.better_featured_image !== null
+                          ? post.better_featured_image.source_url
+                          : ''
+                      }
+                    />
                   )}
 
                 </div>
