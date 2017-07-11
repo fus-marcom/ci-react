@@ -57,85 +57,6 @@ export default class extends React.Component {
               />
             </div>
           </div>
-          <div className='section red-background-flourish white-text'>
-            <div className='container'>
-              <div className='row'>
-                <div className='col s12 l6'>
-                  <h4>Franciscan at Home</h4>
-                  <p className='flow-text'>
-                    Online learning at your convenience with a rich and varied
-                    corpus of many hundreds of workshops spread across a variety
-                    of ministry areas, which can accessed by individuals, or
-                    used in any way a diocese wishes.
-                  </p>
-                  <a
-                    href='http://en.calameo.com/read/00005685416f121522341'
-                    title='Franciscan at Home'
-                    target='_blank'
-                  >
-                    <button
-                      className='btn waves-effect waves-light btn-inverted-white'
-                      style={{
-                        marginTop: '16px',
-                        display: 'block'
-                      }}
-                    >
-                      Learn More
-                    </button>
-                  </a>
-                </div>
-                <div className='col s12 l6'>
-                  <h4>Catechetical Review</h4>
-                  <p className='flow-text'>
-                    An international quarterly catechetical journal primarily
-                    written for Directors of Religious Education, catechetical
-                    leaders, religious educators, youth ministers, RCIA
-                    coordinators and anyone involved in faith formation.
-                  </p>
-                  <a
-                    href='https://review.catechetics.com/'
-                    title='Catechetical Review'
-                    target='_blank'
-                  >
-                    <button
-                      className='btn waves-effect waves-light btn-inverted-white'
-                      style={{
-                        marginTop: '16px',
-                        display: 'block'
-                      }}
-                    >
-                      Learn More
-                    </button>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            className='section valign-wrapper white-text black'
-            id='san-damiano'
-            style={{ padding: '0' }}
-          >
-            <div className='valign container'>
-              <div className='row light flow-text'>
-                <div className='col s12 l6' />
-                <div className='col s12 l6'>
-                  <blockquote
-                    className='flow-text'
-                    style={{ borderLeft: '5px solid #a61f26' }}
-                  >
-                    <h3>Mission</h3>
-                    The Franciscan University Catechetical Institute forms
-                    Catholics who form others in the faith. Through courses,
-                    conferences, advice, and resources, the institute supports
-                    clergy, parents, and all those responsible for the work of
-                    catechesis and evangelization, as they carry out Christ’s
-                    command to make disciples of all nations.
-                  </blockquote>
-                </div>
-              </div>
-            </div>
-          </div>
           <div
             className='section banner valign-wrapper red-background-flourish'
             id='banner'
@@ -198,6 +119,32 @@ export default class extends React.Component {
               </div>
             </div>
           </div>
+          <div
+            className='section valign-wrapper white-text black'
+            id='san-damiano'
+            style={{ padding: '0' }}
+          >
+            <div className='valign container'>
+              <div className='row light flow-text'>
+                <div className='col s12 l6' />
+                <div className='col s12 l6'>
+                  <blockquote
+                    className='flow-text'
+                    style={{ borderLeft: '5px solid #a61f26' }}
+                  >
+                    <h3>Mission</h3>
+                    The Franciscan University Catechetical Institute forms
+                    Catholics who form others in the faith. Through courses,
+                    conferences, advice, and resources, the institute supports
+                    clergy, parents, and all those responsible for the work of
+                    catechesis and evangelization, as they carry out Christ’s
+                    command to make disciples of all nations.
+                  </blockquote>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div
             className='section valign-wrapper black-text white-background-flourish'
             id='news'
