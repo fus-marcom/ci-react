@@ -28,7 +28,8 @@ class Hero extends Component {
         </div>
         <style jsx>{`
           #hero {
-            min-height: 68vh;
+            height: 68vh;
+            max-height: 500px;
             background-image: url(/static/img/monstrance-2000w-op.jpg);
             background-size: 74vw;
             background-repeat: no-repeat;
@@ -37,6 +38,13 @@ class Hero extends Component {
             background-color: #000;
             margin-top: -74px;
             padding-bottom: 0;
+          }
+          @media screen and (min-width: 2000px) {
+            #hero {
+              background-size: 60vw;
+              background-position-y: 39%;
+              background-position-x: 128%;
+            }
           }
           @media screen and (max-width: 1200px) {
             #hero {
