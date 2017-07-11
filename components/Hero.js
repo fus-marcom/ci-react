@@ -16,8 +16,6 @@ class Hero extends Component {
             <h1
               style={{
                 fontFamily: "'Allura', cursive",
-                fontSize: '81px',
-                paddingTop: '180px',
                 lineHeight: '.9'
               }}
             >
@@ -52,6 +50,16 @@ class Hero extends Component {
               background-position-y: 26%;
             }
           }
+          #hero h1 {
+            padding-top: 180px;
+            font-size: 81px;
+          }
+          @media screen and (max-height: 650px) {
+            #hero h1 {
+              padding-top: 163px;
+              font-size: 55px;
+            }
+          }
           @media screen and (max-width: 828px), screen and (max-height: 500px) {
             #hero {
               display: none;
@@ -59,9 +67,6 @@ class Hero extends Component {
           }
           #hero .row {
             margin-bottom: 0;
-          }
-          #hero h1 {
-            font-family: 'Cinzel', serif;
           }
         `}</style>
       </div>

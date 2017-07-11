@@ -156,16 +156,10 @@ main {
   flex: 1 0 auto;
   min-height: 100vh; }
 
-header {
-  margin-bottom: -48px; }
-  @media screen and (max-width: 600px), screen and (max-height: 500px) {
-    header {
-      margin-bottom: 0; } }
-
 nav {
   height: 83px;
   background-color: transparent; }
-  @media screen and (max-width: 828px), screen and (max-height: 500px) {
+  @media screen and (max-width: 992px), screen and (max-height: 500px) {
     nav {
       margin-bottom: 0;
       background-color: #000;
@@ -181,14 +175,17 @@ nav {
     position: absolute;
     top: -16px;
     left: 16px;
-<<<<<<< HEAD
     font-family: 'Cinzel', serif;
     font-size: 20px;}
-    @media screen and (max-width: 828px), screen and (max-height: 500px) {
+    @media screen and (max-width: 992px), screen and (max-height: 500px) {
       nav .fus-branding {
         top: -18px;
         left: 8px;
         font-size: 14px;} }
+    @media screen and (max-width: 600px) {
+      .fus-branding {
+        display: none;
+      }}
 
   nav .button-collapse {
     margin-left: 16px;
@@ -201,14 +198,12 @@ nav {
     @media screen and (max-width: 992px) {
       nav .brand-logo {
         margin-left: 0; } }
-    @media screen and (max-width: 828px), screen and (max-height: 500px) {
+    @media screen and (max-width: 992px), screen and (max-height: 500px) {
       nav .brand-logo {
         margin-top: 24px; } }
     nav .brand-logo img {
       height: 130px; }
-      @media screen and (max-width: 828px), screen and (max-height: 500px) {
-        nav .brand-logo img {
-          height: 70px; } }
+
 
 .interior {
   margin-bottom: 0; }
