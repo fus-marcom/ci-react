@@ -248,23 +248,29 @@ export default class extends React.Component {
               {/* For each tab, we generate a row */}
               {Object.keys(tabs).map(tabKey =>
                 <div className='row' id={tabKey} key={tabKey}>
-                  {this.state.data.map(post =>
-                    <ResourceRow
-                      title={post.title.rendered}
-                      type={post.acf.type}
-                      author={
-                        post.acf.hasOwnProperty('author') ? post.acf.author : ''
-                      }
-                      content={post.acf.description}
-                      url={post.acf.url}
-                      price={post.acf.price}
-                      img={
-                        post.better_featured_image !== null
-                          ? post.better_featured_image.source_url
-                          : ''
-                      }
-                    />
-                  )}
+                  {this.state.data
+                    .filter(
+                      post => activeTab === 'all' || activeTab === post.acf.type
+                    )
+                    .map(post =>
+                      <ResourceRow
+                        title={post.title.rendered}
+                        type={post.acf.type}
+                        author={
+                          post.acf.hasOwnProperty('author')
+                            ? post.acf.author
+                            : ''
+                        }
+                        content={post.acf.description}
+                        url={post.acf.url}
+                        price={post.acf.price}
+                        img={
+                          post.better_featured_image !== null
+                            ? post.better_featured_image.source_url
+                            : ''
+                        }
+                      />
+                    )}
 
                 </div>
               )}
