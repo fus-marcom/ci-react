@@ -9,6 +9,7 @@ import Layout from '../components/Layout'
 import StickyNav from '../components/StickyNav'
 import Title from '../components/Title'
 import ResourceRow from '../components/ResourceRow'
+import MaterialSelect from '../components/MaterialSelect'
 
 export default class extends React.Component {
   state = {
@@ -164,19 +165,7 @@ export default class extends React.Component {
                   class='input-field col s12 m4'
                   style={{ paddingRight: '16px' }}
                 >
-                  <select>
-                    <option value='' disabled selected>
-                      Choose a category
-                    </option>
-                    <option value='0'>All</option>
-                    {this.state.categories !== ''
-                      ? this.state.categories.map(category =>
-                        <option value={category.id} key={category.id}>
-                          {category.name}
-                        </option>
-                        )
-                      : ''}
-                  </select>
+                  <MaterialSelect categories={this.state.categories} />
                 </div>
                 <div class='col s12 m2' style={{ textAlign: 'center' }}>
                   <p>

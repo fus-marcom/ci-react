@@ -567,7 +567,6 @@ input:not([type]):focus:not([readonly]) + label, input[type=text]:focus:not([rea
   color: #fff;
 }
 
-
 #single-event h2 {
   font-size: 44px;
 }
@@ -581,4 +580,8 @@ input:not([type]):focus:not([readonly]) + label, input[type=text]:focus:not([rea
 
 #single-event .row ul li {
   list-style-type: disc;
+}
+
+.dropdown-content li > span {
+  color: #a61f26;
 }
