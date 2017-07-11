@@ -1,13 +1,15 @@
 /* global initTabs */
+import 'isomorphic-fetch'
 import React from 'react'
+import Masonry from 'react-masonry-component'
+import debounce from 'lodash.debounce'
+
+import { logPageView } from '../utils/analytics'
+import { getJSON } from '../utils/fetch'
 import Layout from '../components/Layout'
 import StickyNav from '../components/StickyNav'
 import Title from '../components/Title'
 import ResourceCard from '../components/ResourceCard'
-import 'isomorphic-fetch'
-import { logPageView } from '../utils/analytics'
-import { getJSON } from '../utils/fetch'
-import Masonry from 'react-masonry-component'
 
 export default class extends React.Component {
   state = {
@@ -31,25 +33,39 @@ export default class extends React.Component {
   }
 
   /**
-   * Get input value
-   * Make api call based on value
+   * Make api call based on searchTerm
    * Render cards from api data
    */
-  getSearchResults = () => {
-    const searchTerm = document.getElementById('search').value
+  fetchSearchTerm = searchTerm => {
     console.log(searchTerm)
-
     const apiUrl = 'https://wp.catechetics.com/wp-json/wp/v2/'
     const params = `resource?search=${searchTerm}&per_page=100&fields=title,acf,better_featured_image`
-
     getJSON(apiUrl + params).then(data => this.setState({ data }))
   }
-  
-  formGetResults = (e) => {
-    e.preventDefault();
-    // form inputs can be accesed directly if they have names
-    e.target.search.blur()
-    this.getSearchResults()
+
+  // Get a new function that is debounced when called
+  debouncedSearch = debounce(this.fetchSearchTerm, 700)
+
+  /**
+   * Called onSubmit event
+   */
+  formGetResults = e => {
+    e.preventDefault()
+    const { search } = e.target
+    // unfocusing input makes soft keyboard to close
+    window.outerWidth < 1024 && search.blur()
+    // cancel any pending search
+    this.debouncedSearch.cancel()
+    this.fetchSearchTerm(search.value)
+  }
+
+  /**
+   * Called onChange event
+   */
+  getSearchResults = e => {
+    var { value } = e.target
+    if (value.length < 3) return
+    this.debouncedSearch(value)
   }
 
   render () {
@@ -183,9 +199,9 @@ export default class extends React.Component {
                 <div className='input-field col s12 m6 offset-m6'>
                   <form onSubmit={this.formGetResults}>
                     <input
-                      name='search'
                       id='search'
-                      onKeyUp={this.getSearchResults}
+                      name='search'
+                      onChange={this.getSearchResults}
                       type='search'
                       style={{ width: '100%', paddingLeft: '4px' }}
                     />
