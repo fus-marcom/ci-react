@@ -1,13 +1,15 @@
 /* global initTabs */
+import 'isomorphic-fetch'
 import React from 'react'
+import Masonry from 'react-masonry-component'
+import debounce from 'lodash.debounce'
+
+import { logPageView } from '../utils/analytics'
+import { getJSON } from '../utils/fetch'
 import Layout from '../components/Layout'
 import StickyNav from '../components/StickyNav'
 import Title from '../components/Title'
 import ResourceCard from '../components/ResourceCard'
-import 'isomorphic-fetch'
-import { logPageView } from '../utils/analytics'
-import { getJSON } from '../utils/fetch'
-import Masonry from 'react-masonry-component'
 
 export default class extends React.Component {
   state = {
@@ -30,18 +32,40 @@ export default class extends React.Component {
     logPageView()
   }
 
-  getSearchResults = () => {
-    /* Get input value
-        Make api call based on value
-        Render cards from api data
-     */
-    const searchTerm = document.getElementById('search').value
+  /**
+   * Make api call based on searchTerm
+   * Render cards from api data
+   */
+  fetchSearchTerm = searchTerm => {
     console.log(searchTerm)
-
     const apiUrl = 'https://wp.catechetics.com/wp-json/wp/v2/'
     const params = `resource?search=${searchTerm}&per_page=100&fields=title,acf,better_featured_image`
-
     getJSON(apiUrl + params).then(data => this.setState({ data }))
+  }
+
+  // Get a new function that is debounced when called
+  debouncedSearch = debounce(this.fetchSearchTerm, 700)
+
+  /**
+   * Called onSubmit event
+   */
+  formGetResults = e => {
+    e.preventDefault()
+    const { search } = e.target
+    // unfocusing input makes soft keyboard to close
+    window.outerWidth < 1024 && search.blur()
+    // cancel any pending search
+    this.debouncedSearch.cancel()
+    this.fetchSearchTerm(search.value)
+  }
+
+  /**
+   * Called onChange event
+   */
+  getSearchResults = e => {
+    var { value } = e.target
+    if (value.length < 3) return
+    this.debouncedSearch(value)
   }
 
   render () {
@@ -173,22 +197,25 @@ export default class extends React.Component {
             <div className='container container-wide'>
               <div className='row'>
                 <div className='input-field col s12 m6 offset-m6'>
-                  <input
-                    id='search'
-                    type='search'
-                    onKeyUp={this.getSearchResults}
-                    style={{ width: '100%', paddingLeft: '4px' }}
-                  />
-                  <label htmlFor='search'>Search</label>
-                  <svg
-                    fill='rgba(0, 0, 0, 0.57)'
-                    height='24'
-                    viewBox='0 0 24 24'
-                    width='24'
-                  >
-                    <path d='M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z' />
-                    <path d='M0 0h24v24H0z' fill='none' />
-                  </svg>
+                  <form onSubmit={this.formGetResults}>
+                    <input
+                      id='search'
+                      name='search'
+                      onChange={this.getSearchResults}
+                      type='search'
+                      style={{ width: '100%', paddingLeft: '4px' }}
+                    />
+                    <label htmlFor='search'>Search</label>
+                    <svg
+                      fill='rgba(0, 0, 0, 0.57)'
+                      height='24'
+                      viewBox='0 0 24 24'
+                      width='24'
+                    >
+                      <path d='M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z' />
+                      <path d='M0 0h24v24H0z' fill='none' />
+                    </svg>
+                  </form>
                 </div>
               </div>
               <div className='row'>

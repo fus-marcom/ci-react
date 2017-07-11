@@ -65,7 +65,7 @@ function stickyNav() {
   // Init scrolling
   // inPageNav();
 
-  // var scrollIntervalID = setInterval(stickIt, 10)
+  var scrollIntervalID = setInterval(stickIt, 10)
 
   function stickIt() {
     var orgElementPos = $('.original').offset()

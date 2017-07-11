@@ -2,6 +2,7 @@ import React from 'react'
 import Layout from '../components/Layout'
 import StickyNav from '../components/StickyNav'
 import Title from '../components/Title'
+import Blog from '../components/Blog'
 import 'isomorphic-fetch'
 import { logPageView } from '../utils/analytics'
 
@@ -36,19 +37,13 @@ export default class extends React.Component {
             <div className='section'>
               {this.props.data.map(function (post, i) {
                 return (
-                  <div className='row' key={i}>
-                    <div className='col s12'>
-                      <a href={`/news/${post.slug}`}>
-                        <h2>{post.title.rendered}</h2>
-                      </a>
-                      <div
-                        className='flow-text'
-                        dangerouslySetInnerHTML={{
-                          __html: post.content.rendered
-                        }}
-                      />
-                    </div>
-                  </div>
+                  <Blog
+                    slug={post.slug}
+                    title={post.title.rendered}
+                    content={post.content.rendered}
+                    date={new Date(post.date)}
+                    key={i}
+                  />
                 )
               })}
             </div>
