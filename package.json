@@ -8,15 +8,19 @@
     "babel-preset-stage-0": "^6.24.1",
     "express": "^4.15.3",
     "lru-cache": "^4.0.2",
-    "next": "^2.4.3",
+    "next": "^2.4.7",
+    "preact": "^8.2.0",
+    "preact-compat": "^3.16.0",
     "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-ga": "^2.2.0",
-    "react-masonry-component": "^5.0.5"
+    "react-masonry-component": "^5.0.5",
+    "webpack-bundle-analyzer": "^2.8.2"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
+    "cross-env": "^5.0.1",
     "husky": "^0.13.4",
     "lint-staged": "^3.6.1",
     "prettier": "^1.4.4",
@@ -27,7 +31,8 @@
     "build": "next build && git rev-parse HEAD > .next/BUILD_ID",
     "start": "NODE_ENV=production node server.js",
     "lint": "prettier 'utils/**/*.js' 'static/js/**/*.js' 'components/**/*.js' 'pages/**/*.js' '*.js' --write --single-quote --no-semi && standard --fix",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "analyze": "cross-env ANALYZE=1 next build"
   },
   "lint-staged": {
     "*.js": [
