@@ -1,14 +1,12 @@
-/* global initSelect */
 import React, { Component } from 'react'
 class MaterialSelect extends Component {
-  componentDidUpdate () {
-    initSelect()
-  }
-
   render () {
     return (
-      <select>
-        <option value='' disabled selected>
+      <select
+        onChange={e => this.props.setCategory(e.target.value)}
+        style={{ display: 'block' }}
+      >
+        <option value='' disabled>
           Choose a category
         </option>
         <option value='0'>All</option>

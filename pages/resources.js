@@ -114,6 +114,11 @@ export default class extends React.Component {
     }
   }
 
+  setCategory = catNum => {
+    console.log(catNum)
+    this.setState({ category: catNum })
+  }
+
   render () {
     const { activeTab } = this.state
     const tabs = {
@@ -161,11 +166,13 @@ export default class extends React.Component {
           >
             <div className='container container-wide'>
               <div className='row'>
-                <div
-                  class='input-field col s12 m4'
-                  style={{ paddingRight: '16px' }}
-                >
-                  <MaterialSelect categories={this.state.categories} />
+                <div class='col s12 m4' style={{ paddingRight: '16px' }}>
+                  <MaterialSelect
+                    categories={this.state.categories}
+                    setCategory={catNum => {
+                      this.setCategory(catNum)
+                    }}
+                  />
                 </div>
                 <div class='col s12 m2' style={{ textAlign: 'center' }}>
                   <p>
@@ -238,6 +245,7 @@ export default class extends React.Component {
               {Object.keys(tabs).map(tabKey =>
                 <div className='row' id={tabKey} key={tabKey}>
                   {this.state.data
+                    .filter(post => this.filterByCategory(post))
                     .filter(
                       post => activeTab === 'all' || activeTab === post.acf.type
                     )
