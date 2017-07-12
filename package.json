@@ -13,8 +13,7 @@
     "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "react-ga": "^2.2.0",
-    "react-masonry-component": "^5.0.5"
+    "react-ga": "^2.2.0"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
