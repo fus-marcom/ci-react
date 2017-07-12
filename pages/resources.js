@@ -116,7 +116,7 @@ export default class extends React.Component {
 
   setCategory = catNum => {
     console.log(catNum)
-    this.setState({ category: catNum })
+    this.setState({ category: parseInt(catNum) })
   }
 
   render () {
