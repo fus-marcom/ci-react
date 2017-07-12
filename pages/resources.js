@@ -245,6 +245,7 @@ export default class extends React.Component {
               {Object.keys(tabs).map(tabKey =>
                 <div className='row' id={tabKey} key={tabKey}>
                   {this.state.data
+                    .filter(post => this.priceFilter(post))
                     .filter(post => this.filterByCategory(post))
                     .filter(
                       post => activeTab === 'all' || activeTab === post.acf.type
