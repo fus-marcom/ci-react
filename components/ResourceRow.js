@@ -51,13 +51,26 @@ class ResourceRow extends Component {
                 Author: {this.props.author}
             </span>}
           {this.state.displayContent
-            ? <p
-              class='description'
-              style={{ display: this.props.display }}
-              dangerouslySetInnerHTML={{
-                __html: this.props.content
-              }}
-              />
+            ? <div>
+              <p
+                class='description'
+                dangerouslySetInnerHTML={{
+                  __html: this.props.content
+                }}
+                />
+              <span
+                class='read-more'
+                style={{
+                  color: '#8e1b21',
+                  cursor: 'pointer',
+                  marginTop: '16px',
+                  display: 'block'
+                }}
+                onClick={() => this.setState({ displayContent: false })}
+                >
+                  Hide
+                </span>
+            </div>
             : <span
               class='read-more'
               style={{
@@ -66,6 +79,7 @@ class ResourceRow extends Component {
                 marginTop: '16px',
                 display: 'block'
               }}
+              onClick={() => this.setState({ displayContent: true })}
               >
                 Read More
               </span>}
