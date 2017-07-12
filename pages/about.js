@@ -248,6 +248,36 @@ export default class extends React.Component {
               </div>
             </div>
           </div>
+          <div className='section pdf-links red-background-flourish white-text'>
+            <div className='container wide-container'>
+              <div className='row center' style={{ marginBottom: '0' }}>
+                <h2
+                  className='light flourish-white'
+                  style={{ marginBottom: '0' }}
+                >
+                  Information
+                </h2>
+              </div>
+              <div className='row valign-wrapper center'>
+                <div className='col s12 m6'>
+                  <ul>
+                    <li><a href='#'>PDF Page</a></li>
+                    <li><a href='#'>PDF Page</a></li>
+                    <li><a href='#'>PDF Page</a></li>
+                    <li><a href='#'>PDF Page</a></li>
+                  </ul>
+                </div>
+                <div className='col s12 m6'>
+                  <ul>
+                    <li><a href='#'>PDF Page</a></li>
+                    <li><a href='#'>PDF Page</a></li>
+                    <li><a href='#'>PDF Page</a></li>
+                    <li><a href='#'>PDF Page</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
           <div className='section valign-wrapper black-text white-background-flourish'>
             <div className='valign container'>
               <div className='row center'>
@@ -373,6 +403,11 @@ export default class extends React.Component {
             main div ul.disc-list li {
               list-style-type: disc !important;
               margin-left: 35px !important;
+            }
+            .pdf-links ul li a {
+              color: #fff;
+              font-size: 22px;
+              padding: 8px;
             }
           `}</style>
         </main>
