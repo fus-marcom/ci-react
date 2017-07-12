@@ -22,7 +22,7 @@ export default class Layout extends Component {
         <Footer />
         <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js' />
         <script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js' />
-        <script src='static/js/app.js' />
+        <script src='../static/js/app.js' />
       </div>
     )
   }
