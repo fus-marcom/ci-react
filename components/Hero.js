@@ -3,7 +3,7 @@ class Hero extends Component {
   render () {
     return (
       <div
-        className='section valign-wrapper'
+        className='section valign-wrapper hide-on-med-and-down'
         id='hero'
         style={{ marginTop: '-83px' }}
       >
@@ -16,8 +16,7 @@ class Hero extends Component {
             <h1
               style={{
                 fontFamily: "'Allura', cursive",
-                fontSize: '100px',
-                paddingTop: '150px'
+                lineHeight: '.9'
               }}
             >
               Forming those who form others.
@@ -27,20 +26,38 @@ class Hero extends Component {
         </div>
         <style jsx>{`
           #hero {
-            min-height: 80vh;
-            background-image: url("/static/img/monstrance-2000w-op.jpg");
-            background-size: 80vw;
+            height: 68vh;
+            max-height: 500px;
+            background-image: url(/static/img/monstrance-2000w-op.jpg);
+            background-size: 74vw;
             background-repeat: no-repeat;
-            background-position-x: 183%;
+            background-position-x: 157%;
             background-position-y: 36%;
             background-color: #000;
             margin-top: -74px;
             padding-bottom: 0;
           }
+          @media screen and (min-width: 2000px) {
+            #hero {
+              background-size: 60vw;
+              background-position-y: 39%;
+              background-position-x: 128%;
+            }
+          }
           @media screen and (max-width: 1200px) {
             #hero {
               background-image: url("/static/img/monstrance-2000w-op.jpg");
               background-position-y: 26%;
+            }
+          }
+          #hero h1 {
+            padding-top: 180px;
+            font-size: 81px;
+          }
+          @media screen and (max-height: 650px) {
+            #hero h1 {
+              padding-top: 163px;
+              font-size: 55px;
             }
           }
           @media screen and (max-width: 828px), screen and (max-height: 500px) {
@@ -50,9 +67,6 @@ class Hero extends Component {
           }
           #hero .row {
             margin-bottom: 0;
-          }
-          #hero h1 {
-            font-family: 'Cinzel', serif;
           }
         `}</style>
       </div>
