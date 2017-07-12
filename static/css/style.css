@@ -585,3 +585,17 @@ input:not([type]):focus:not([readonly]) + label, input[type=text]:focus:not([rea
 .dropdown-content li > span {
   color: #a61f26;
 }
+
+.select-wrapper::before {
+  content: " \25bc ";
+  color: #fff;
+  position: relative;
+  right: 2px;
+  top: 29px;
+  bottom: 0;
+  height: 10px;
+  margin: auto 0;
+  font-size: 10px;
+  line-height: 10px;
+  float: right;
+}
