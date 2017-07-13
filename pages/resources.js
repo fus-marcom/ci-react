@@ -318,7 +318,7 @@ export default class extends React.Component {
                   0 0,
                   100% 0,
                   from(rgb(245, 245, 245)),
-                  color-stop(0.5, rgb(46, 52, 64)),
+                  color-stop(0.5, rgba(0, 0, 0, 0.05)),
                   to(rgb(245, 245, 245))
                 );
               }
