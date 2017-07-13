@@ -8,7 +8,7 @@ import { logPageView } from '../utils/analytics'
 export default class extends React.Component {
   static async getInitialProps () {
     const apiUrl = 'https://wp.catechetics.com/wp-json/wp/v2/'
-    const params = 'multiple-post-type?&type[]=pdf-page&type[]=page'
+    const params = 'multiple-post-type?per_page=100&type[]=pdf-page&type[]=page'
     const res = await fetch(apiUrl + params)
     const data = await res.json()
     return { data }
@@ -35,47 +35,34 @@ export default class extends React.Component {
           <div className='section white-background-flourish'>
             <div className='container'>
               <div className='row valign-wrapper'>
-                <div className='col s12 valign'>
-                  <p className='flow-text'>
-                    The Catechetical Institute at Franciscan University exists
-                    to train and support the key catechists in any
-                    situation—priests, deacons, parents, or laity, whether
-                    professional or volunteer. Through conferences, online
-                    workshops, videos, audio, personal mentorship, and a wealth
-                    of resources produced by Franciscan University, all involved
-                    in the work of catechesis will find new ideas, new
-                    approaches, new techniques, and a new confidence to do the
-                    work of catechesis.
-                  </p>
-                </div>
+                {this.props.data
+                  .filter(post => post.slug === 'about-intro')
+                  .map(post =>
+                    <div
+                      className='col s12 valign flow-text'
+                      dangerouslySetInnerHTML={{
+                        __html: post.content.rendered
+                      }}
+                    />
+                  )}
+
               </div>
             </div>
           </div>
           <div className='section red-background-flourish white-text'>
             <div className='container wide-container'>
               <div className='row valign-wrapper'>
-                <div className='col s12'>
-                  <p className='flow-text'>
-                    Officially launched in 2016, the Franciscan University
-                    Catechetical Institute seeks to serve Christ and his Church
-                    by forming those Catholics entrusted with the formation of
-                    others. This includes priests, deacons, and parents, as well
-                    as lay ecclesial ministers, teachers, religious, and parish
-                    catechists.
-                  </p>
-                  <p className='flow-text'>
-                    Through conferences, online courses, personal support, and
-                    new catechetical resources, we make the riches of the
-                    Catholic faith more available and accessible to clergy and
-                    lay catechists alike.
-                  </p>
-                  <p className='flow-text'>
-                    To this end, our expert faculty and experienced lay mentors
-                    work in close partnerships with both dioceses and
-                    catechists, offering individualized formation tools designed
-                    to meet a variety of catechetical needs.
-                  </p>
-                </div>
+                {this.props.data
+                  .filter(post => post.slug === 'about-section-2')
+                  .map(post =>
+                    <div
+                      className='col s12 flow-text'
+                      dangerouslySetInnerHTML={{
+                        __html: post.content.rendered
+                      }}
+                    />
+                  )}
+
               </div>
             </div>
           </div>
@@ -95,43 +82,17 @@ export default class extends React.Component {
                     title='Online Learning'
                   />
                 </div>
-                <div className='col s12 m6 valign order-2'>
-                  <p className='flow-text'>
-                    Designed to complement and supplement diocesan formation and
-                    continuing education programs already in place, the
-                    Catechetical Institute’s online programming makes the best
-                    of Franciscan University available to dioceses everywhere.
-                  </p>
-                  <div className='flow-text'>
-                    It accomplishes this by offering:
-                    <ul className='disc-list flow-text'>
-                      <li>
-                        catechist formation tools that are wide in their reach,
-                        designed to help all those Catholics responsible for
-                        helping others, not just catechists.
-                      </li>
-                      <li>
-                        a broad range of workshops, making use of experts not
-                        only in catechetics and theology, but also in
-                        counseling, education, life sciences, communication, and
-                        more.{' '}
-                      </li>
-                      <li>
-                        a degree of formation that goes deep, exploring topics
-                        you won’t find in other{' '}
-                      </li>
-                      <li>
-                        online formation programs, including basic
-                        evangelization skills, mentoring, spiritual guidance,
-                        team building, and many others.
-                      </li>
-                    </ul>
-                  </div>
-                  <p className='flow-text'>
-                    In the emerging field of online formation, Franciscan
-                    University’s Catechetical Institute stands apart.
-                  </p>
-                </div>
+                {this.props.data
+                  .filter(post => post.slug === 'about-section-3')
+                  .map(post =>
+                    <div
+                      className='col s12 m6 valign order-2 flow-text'
+                      dangerouslySetInnerHTML={{
+                        __html: post.content.rendered
+                      }}
+                    />
+                  )}
+
               </div>
             </div>
           </div>
@@ -142,18 +103,19 @@ export default class extends React.Component {
             <div className='container wide-container'>
               <div className='row valign-wrapper'>
                 <div className='col s12 m6 valign order-2'>
-                  <blockquote
-                    className='flow-text'
-                    style={{ borderLeft: '5px solid #a61f26' }}
-                  >
-                    “Being a Christian is not the result of an ethical choice or
-                    a lofty idea, but the encounter with an event, a person,
-                    which gives life a new horizon and a decisive direction.”
-                    —Pope Benedict XVI,{' '}
-                    <span style={{ fontStyle: 'italic' }}>
-                      Deus Caritas Est
-                    </span>, No. 1
-                  </blockquote>
+                  {this.props.data
+                    .filter(post => post.slug === 'about-quote-banner')
+                    .map(post =>
+                      <div
+                        blockquote
+                        className='flow-text'
+                        style={{ borderLeft: '5px solid #a61f26' }}
+                        dangerouslySetInnerHTML={{
+                          __html: post.content.rendered
+                        }}
+                      />
+                    )}
+
                 </div>
               </div>
             </div>
