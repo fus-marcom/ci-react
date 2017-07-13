@@ -10,8 +10,18 @@ class TextCard extends Component {
           target='_blank'
         >
           <div className='card-content'>
-            <span className='card-title'>{this.props.title}</span>
-            <p className='resource-description'>{this.props.content}</p>
+            <span
+              className='card-title'
+              dangerouslySetInnerHTML={{
+                __html: this.props.title
+              }}
+            />
+            <p
+              className='resource-description'
+              dangerouslySetInnerHTML={{
+                __html: this.props.content
+              }}
+            />
           </div>
         </a>
 

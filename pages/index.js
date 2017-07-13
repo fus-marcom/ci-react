@@ -9,13 +9,13 @@ import 'isomorphic-fetch'
 import { logPageView } from '../utils/analytics'
 
 export default class extends React.Component {
-  // static async getInitialProps () {
-  //   const apiUrl = 'https://wp.catechetics.com/wp-json/wp/v2/'
-  //   const params = 'pages?slug=home-black-banner&fields=acf,type,slug'
-  //   const res = await fetch(apiUrl + params)
-  //   const data = await res.json()
-  //   return { data }
-  // }
+  static async getInitialProps () {
+    const apiUrl = 'https://wp.catechetics.com/wp-json/wp/v2/'
+    const params = 'multiple-post-type?per_page=100&type[]=post&type[]=page'
+    const res = await fetch(apiUrl + params)
+    const data = await res.json()
+    return { data }
+  }
 
   componentDidMount () {
     initTabs()
@@ -128,18 +128,19 @@ export default class extends React.Component {
               <div className='row light flow-text'>
                 <div className='col s12 l6' />
                 <div className='col s12 l6'>
-                  <blockquote
-                    className='flow-text'
-                    style={{ borderLeft: '5px solid #a61f26' }}
-                  >
-                    <h3>Mission</h3>
-                    The Franciscan University Catechetical Institute forms
-                    Catholics who form others in the faith. Through courses,
-                    conferences, advice, and resources, the institute supports
-                    clergy, parents, and all those responsible for the work of
-                    catechesis and evangelization, as they carry out Christ’s
-                    command to make disciples of all nations.
-                  </blockquote>
+                  {this.props.data
+                    .filter(post => post.slug === 'home-black-banner')
+                    .map(post =>
+                      <blockquote
+                        className='flow-text'
+                        style={{ borderLeft: '5px solid #a61f26' }}
+                        dangerouslySetInnerHTML={{
+                          __html: post.content.rendered
+                        }}
+                        key={post.id}
+                      />
+                    )}
+
                 </div>
               </div>
             </div>
@@ -168,50 +169,34 @@ export default class extends React.Component {
                 </div>
               </div>
               <div className='row' id='announcements'>
-                <div className='col s12 m6 l4 xl3'>
-                  <TextCard
-                    title='New Website!'
-                    content="This website has just launched—going live on May 25, 2017—so that Franciscan University's new Catechetical Institute can more greatly serve the Church!"
-                    url=''
-                  />
-                </div>
-                <div className='col s12 m6 l4 xl3'>
-                  <TextCard
-                    title='Catechist Formation'
-                    content='Our first collection of 50 workshops—those of our Catechist Formation Track—will be posted on “Franciscan At Home” on July 15. See what you can expect right here.'
-                    url='http://en.calameo.com/read/00005685416f121522341?page=7'
-                  />
-                </div>
-                <div className='col s12 m6 l4 xl3'>
-                  <TextCard
-                    title='Bosco Conference'
-                    content='The annual “St. John Bosco Conference for Evangelization and Catechesis” will take place July 17-20, 2017.  Come join us in the sunny height of summertime!'
-                    url='/events/st-john-bosco-conference'
-                  />
-                </div>
-                <div className='col s12 m6 l4 xl3'>
-                  <TextCard
-                    title='Catechism Conference'
-                    content='“Speaking the Truth in Love,” an international catechetical conference celebrating 25 years of the Catechism will be held October 13-15, 2017. Join us!'
-                    url='/events/speaking-the-truth-in-love-conference'
-                  />
-                </div>
+                {this.props.data
+                  .filter(post => post.type === 'post')
+                  .filter(post => post.acf.type === 'announcement')
+                  .map(post =>
+                    <div className='col s12 m6 l4 xl3' key={post.id}>
+                      <TextCard
+                        title={post.title.rendered}
+                        content={post.acf.excerpt}
+                        url={`/news/${post.slug}`}
+                      />
+                    </div>
+                  )}
+
               </div>
               <div className='row' id='news-tab'>
-                <div className='col s12 m6 l4 xl3'>
-                  <TextCard
-                    title='Resources Available'
-                    content='You will find an ever-increasing array of materials—audio, video, and print—on our Formation Resources page.'
-                    url='/resources'
-                  />
-                </div>
-                <div className='col s12 m6 l4 xl3'>
-                  <TextCard
-                    title='Catechetical Review'
-                    content='Take a look at the latest issue of our long-running magazine, The Catechetical Review.'
-                    url='https://review.catechetics.com/'
-                  />
-                </div>
+                {this.props.data
+                  .filter(post => post.type === 'post')
+                  .filter(post => post.acf.type === 'news')
+                  .map(post =>
+                    <div className='col s12 m6 l4 xl3' key={post.id}>
+                      <TextCard
+                        title={post.title.rendered}
+                        content={post.acf.excerpt}
+                        url={`/news/${post.slug}`}
+                      />
+                    </div>
+                  )}
+
               </div>
             </div>
           </div>

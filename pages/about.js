@@ -106,8 +106,7 @@ export default class extends React.Component {
                   {this.props.data
                     .filter(post => post.slug === 'about-quote-banner')
                     .map(post =>
-                      <div
-                        blockquote
+                      <blockquote
                         className='flow-text'
                         style={{ borderLeft: '5px solid #a61f26' }}
                         dangerouslySetInnerHTML={{
