@@ -250,24 +250,26 @@ export default class extends React.Component {
                     .filter(
                       post => activeTab === 'all' || activeTab === post.acf.type
                     )
-                    .map(post =>
-                      <ResourceRow
-                        title={post.title.rendered}
-                        type={post.acf.type}
-                        author={
-                          post.acf.hasOwnProperty('author')
-                            ? post.acf.author
-                            : ''
-                        }
-                        content={post.acf.description}
-                        url={post.acf.url}
-                        price={post.acf.price}
-                        img={
-                          post.better_featured_image !== null
-                            ? post.better_featured_image.source_url
-                            : ''
-                        }
-                      />
+                    .map((post, idx) =>
+                      <div key={idx}>
+                        <ResourceRow
+                          title={post.title.rendered}
+                          type={post.acf.type}
+                          author={
+                            post.acf.hasOwnProperty('author')
+                              ? post.acf.author
+                              : ''
+                          }
+                          content={post.acf.description}
+                          url={post.acf.url}
+                          price={post.acf.price}
+                          img={
+                            post.better_featured_image !== null
+                              ? post.better_featured_image.source_url
+                              : ''
+                          }
+                        />
+                      </div>
                     )}
 
                 </div>
