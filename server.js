@@ -44,6 +44,11 @@ app.prepare().then(() => {
     renderAndCache(req, res, '/single-news', queryParams)
   })
 
+  server.get('/i/:id', (req, res) => {
+    const queryParams = { id: req.params.id }
+    renderAndCache(req, res, '/pdf-page', queryParams)
+  })
+
   server.get('/search/*', (req, res) => {
     renderAndCache(req, res, '/search')
   })

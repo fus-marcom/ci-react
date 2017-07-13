@@ -9,13 +9,13 @@ import 'isomorphic-fetch'
 import { logPageView } from '../utils/analytics'
 
 export default class extends React.Component {
-  static async getInitialProps () {
-    const apiUrl = 'https://wp.catechetics.com/wp-json/wp/v2/'
-    const params = 'pages?slug=home-black-banner&fields=acf,type,slug'
-    const res = await fetch(apiUrl + params)
-    const data = await res.json()
-    return { data }
-  }
+  // static async getInitialProps () {
+  //   const apiUrl = 'https://wp.catechetics.com/wp-json/wp/v2/'
+  //   const params = 'pages?slug=home-black-banner&fields=acf,type,slug'
+  //   const res = await fetch(apiUrl + params)
+  //   const data = await res.json()
+  //   return { data }
+  // }
 
   componentDidMount () {
     initTabs()
@@ -32,59 +32,29 @@ export default class extends React.Component {
           <Hero />
           <StickyNav />
           <div
-            className='section valign-wrapper black-text white-background-flourish'
-            style={{ padding: '60px 0' }}
+            className='section'
+            style={{ padding: '0', backgroundColor: '#a61f26' }}
           >
-            <div className='valign container'>
-              <div className='row'>
-                <div className='col s12 center'>
-                  <h2 className='light center'>
-                    <img
-                      src='/static/img/squiggly2-reverse.png'
-                      style={{
-                        marginBottom: '10px',
-                        width: '63px',
-                        marginRight: '8px'
-                      }}
-                    />Mission<img
-                      src='/static/img/squiggly2.png'
-                      style={{
-                        marginBottom: '10px',
-                        width: '63px',
-                        marginLeft: '8px'
-                      }}
-                    />
-                  </h2>
-                  <p className='flow-text'>
-                    The Franciscan University Catechetical Institute forms
-                    Catholics who form others in the faith. Through courses,
-                    conferences, advice, and resources, the institute supports
-                    clergy, parents, and all those responsible for the work of
-                    catechesis and evangelization, as they carry out Christ’s
-                    command to make disciples of all nations.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            className='section valign-wrapper white-text black'
-            id='san-damiano'
-            style={{ padding: '0' }}
-          >
-            <div className='valign container'>
-              <div className='row light flow-text'>
-                <div className='col s12 l6' />
-                <div className='col s12 l6'>
-                  <blockquote
-                    className='flow-text'
-                    style={{ borderLeft: '5px solid #a61f26' }}
-                    dangerouslySetInnerHTML={{
-                      __html: this.props.data[0].acf.quote
-                    }}
-                  />
-                </div>
-              </div>
+            <div
+              style={{
+                position: 'relative',
+                height: '0',
+                overflow: 'hidden',
+                paddingBottom: '56.25%'
+              }}
+            >
+              <iframe
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  position: 'absolute',
+                  top: '0',
+                  left: '0'
+                }}
+                src='https://www.youtube.com/embed/MfHhqMMQVBQ?controls=0&showinfo=0&rel=0&loop=1'
+                frameborder='0'
+                allowfullscreen
+              />
             </div>
           </div>
           <div
@@ -149,6 +119,32 @@ export default class extends React.Component {
               </div>
             </div>
           </div>
+          <div
+            className='section valign-wrapper white-text black'
+            id='san-damiano'
+            style={{ padding: '0' }}
+          >
+            <div className='valign container'>
+              <div className='row light flow-text'>
+                <div className='col s12 l6' />
+                <div className='col s12 l6'>
+                  <blockquote
+                    className='flow-text'
+                    style={{ borderLeft: '5px solid #a61f26' }}
+                  >
+                    <h3>Mission</h3>
+                    The Franciscan University Catechetical Institute forms
+                    Catholics who form others in the faith. Through courses,
+                    conferences, advice, and resources, the institute supports
+                    clergy, parents, and all those responsible for the work of
+                    catechesis and evangelization, as they carry out Christ’s
+                    command to make disciples of all nations.
+                  </blockquote>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div
             className='section valign-wrapper black-text white-background-flourish'
             id='news'

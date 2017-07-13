@@ -72,10 +72,12 @@ class Nav extends Component {
           <li><a href='/#news' title='News'>News</a></li>
         </ul>
         <style jsx>{`
-          @media screen and (max-width: 600px) {
-            .fus-branding {
-              display: none;
+          @media screen and (max-width: 992px) {
+            nav {
+              height: 110px;
             }
+          }
+          @media screen and (max-width: 600px) {
             nav {
               height: 92px;
             }
@@ -84,6 +86,12 @@ class Nav extends Component {
             }
             nav .button-collapse {
               margin-top: 14px;
+            }
+          }
+          @media screen and (max-width: 992px), screen and (max-height: 500px) {
+            nav .brand-logo img {
+              height: 70px;
+              margin-top: 0;
             }
           }
           .side-nav .logo {

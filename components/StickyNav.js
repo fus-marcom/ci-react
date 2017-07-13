@@ -28,6 +28,29 @@ class StickyNav extends Component {
           </li>
           <li><a href='/#news' title='News'>News</a></li>
         </ul>
+        <style jsx>
+          {`
+            ul li {
+              float: left;
+              line-height: 8px;
+              padding: 6px 0 0 0;
+            }
+            ul li a {
+              color: #fff;
+              text-transform: uppercase;
+              font-size: 22px;
+              font-family: 'Cinzel', serif;
+              cursor: pointer;
+              padding: 6px 12px 7px 12px;
+              line-height: 19px;
+              transition: .3s ease-in-out;
+              font-weight: 600;
+            }
+            .bottom-nav ul li a:hover {
+              background-color: hsla(357, 68%, 28%, 1);
+            }
+          `}
+        </style>
       </div>
     )
   }
