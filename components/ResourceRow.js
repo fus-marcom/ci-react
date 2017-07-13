@@ -4,7 +4,6 @@ const ResourceRow = props =>
   <div
     class='valign-wrapper col s12 resource-row'
     style={{
-      borderBottom: '1px solid rgba(0, 0, 0, 0.54)',
       padding: '16px'
     }}
   >
@@ -68,13 +67,6 @@ const ResourceRow = props =>
       <img src={props.img} style={{ maxHeight: '200px' }} />
 
     </div>
-    <style jsx>
-      {`
-        .resource-row:first-of-type {
-          border-top: 1px solid rgba(0, 0, 0, 0.54);
-        }
-      `}
-    </style>
   </div>
 
 export default ResourceRow
