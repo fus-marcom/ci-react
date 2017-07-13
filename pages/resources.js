@@ -269,6 +269,7 @@ export default class extends React.Component {
                               : ''
                           }
                         />
+                        {idx + 1 !== this.state.data.length && <hr />}
                       </div>
                     )}
 
