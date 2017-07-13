@@ -538,3 +538,7 @@ ul li {
   line-height: 10px;
   float: right;
 }
+
+[type="checkbox"] + label:before, [type="checkbox"]:not(.filled-in) + label:after {
+  border: 2px solid #fff;
+}

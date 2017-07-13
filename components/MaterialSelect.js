@@ -28,7 +28,7 @@ class MaterialSelect extends Component {
               -moz-appearance: none;
               background: none;
               border: none;
-              border-bottom: 1px solid #9e9e9e;
+              border-bottom: 1px solid #fff;
               font-weight: 400;
               position: relative;
               z-index: 2;
