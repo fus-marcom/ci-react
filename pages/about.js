@@ -6,13 +6,13 @@ import 'isomorphic-fetch'
 import { logPageView } from '../utils/analytics'
 
 export default class extends React.Component {
-  //   static async getInitialProps () {
-  //   const apiUrl = '';
-  //   const params = '';
-  //   const res = await fetch(apiUrl + params)
-  //   const data = await res.json()
-  //   return { data }
-  // }
+  static async getInitialProps () {
+    const apiUrl = 'https://wp.catechetics.com/wp-json/wp/v2/'
+    const params = 'multiple-post-type?&type[]=pdf-page&type[]=page'
+    const res = await fetch(apiUrl + params)
+    const data = await res.json()
+    return { data }
+  }
 
   componentDidMount () {
     logPageView()
@@ -261,18 +261,37 @@ export default class extends React.Component {
               <div className='row valign-wrapper center'>
                 <div className='col s12 m6'>
                   <ul>
-                    <li><a href='#'>PDF Page</a></li>
-                    <li><a href='#'>PDF Page</a></li>
-                    <li><a href='#'>PDF Page</a></li>
-                    <li><a href='#'>PDF Page</a></li>
+                    {this.props.data
+                      .filter(post => post.type === 'pdf-page')
+                      .filter((post, i) => i % 2 === 0)
+                      .map(post =>
+                        <li key={post.id}>
+                          <a
+                            href={`/i/${post.slug}`}
+                            dangerouslySetInnerHTML={{
+                              __html: post.title.rendered
+                            }}
+                          />
+                        </li>
+                      )}
+
                   </ul>
                 </div>
                 <div className='col s12 m6'>
                   <ul>
-                    <li><a href='#'>PDF Page</a></li>
-                    <li><a href='#'>PDF Page</a></li>
-                    <li><a href='#'>PDF Page</a></li>
-                    <li><a href='#'>PDF Page</a></li>
+                    {this.props.data
+                      .filter(post => post.type === 'pdf-page')
+                      .filter((post, i) => i % 2 === 1)
+                      .map(post =>
+                        <li key={post.id}>
+                          <a
+                            href={`/i/${post.slug}`}
+                            dangerouslySetInnerHTML={{
+                              __html: post.title.rendered
+                            }}
+                          />
+                        </li>
+                      )}
                   </ul>
                 </div>
               </div>
