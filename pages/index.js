@@ -52,8 +52,8 @@ export default class extends React.Component {
                   left: '0'
                 }}
                 src='https://www.youtube.com/embed/MfHhqMMQVBQ?controls=0&showinfo=0&rel=0&loop=1'
-                frameborder='0'
-                allowfullscreen
+                frameBorder='0'
+                allowFullScreen
               />
             </div>
           </div>
