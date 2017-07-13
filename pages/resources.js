@@ -269,7 +269,8 @@ export default class extends React.Component {
                               : ''
                           }
                         />
-                        {idx + 1 !== this.state.data.length && <hr />}
+                        {idx + 1 !== this.state.data.length &&
+                          <hr className='resource-divider' />}
                       </div>
                     )}
 
@@ -308,6 +309,18 @@ export default class extends React.Component {
               }
               .resource-row:first-of-type {
                 border-top: 1px solid rgba(0, 0, 0, 0.54);
+              }
+              .resource-divider {
+                height: 1px;
+                border: 1px solid transparent;
+                background: -webkit-gradient(
+                  linear,
+                  0 0,
+                  100% 0,
+                  from(rgb(245, 245, 245)),
+                  color-stop(0.5, rgb(46, 52, 64)),
+                  to(rgb(245, 245, 245))
+                );
               }
             `}
           </style>
