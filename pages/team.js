@@ -11,7 +11,7 @@ export default class extends React.Component {
   static async getInitialProps () {
     const apiUrl = 'https://wp.catechetics.com/wp-json/wp/v2/'
     const params =
-      'team-member?per_page=100&filter[order]=ASC&fields=title,slug,content,better_featured_image,acf'
+      'multiple-post-type?per_page=100&filter[order]=ASC&type[]=team-member&type[]=page'
     const res = await fetch(apiUrl + params)
     const data = await res.json()
     return { data }
@@ -76,27 +76,27 @@ export default class extends React.Component {
                 </div>
               </div>
               <div className='row light'>
-                {this.props.data.map(function (post, i) {
-                  if (post.acf.category[0] === 'fus-staff') {
-                    return (
-                      <div className='col s12 l6' key={i}>
-                        <TeamCard
-                          name={post.acf.name}
-                          title={post.acf.title}
-                          org={post.acf.organization}
-                          cat={post.acf.category}
-                          imgUrl={
-                            post.better_featured_image !== null
-                              ? post.better_featured_image.source_url
-                              : ''
-                          }
-                          content={post.content.rendered}
-                          slug={post.slug}
-                        />
-                      </div>
-                    )
-                  }
-                })}
+                {this.props.data
+                  .filter(post => post.type === 'team-member')
+                  .filter(post => post.acf.category[0] === 'fus-staff')
+                  .map(post =>
+                    <div className='col s12 l6' key={post.id}>
+                      <TeamCard
+                        name={post.acf.name}
+                        title={post.acf.title}
+                        org={post.acf.organization}
+                        cat={post.acf.category}
+                        imgUrl={
+                          post.better_featured_image !== null
+                            ? post.better_featured_image.source_url
+                            : ''
+                        }
+                        content={post.content.rendered}
+                        slug={post.slug}
+                      />
+                    </div>
+                  )}
+
               </div>
             </div>
 
@@ -119,27 +119,26 @@ export default class extends React.Component {
                 </div>
               </div>
               <div className='row light'>
-                {this.props.data.map(function (post, i) {
-                  if (post.acf.category[0] === 'conf-staff') {
-                    return (
-                      <div className='col s12 l6' key={i}>
-                        <TeamCard
-                          name={post.acf.name}
-                          title={post.acf.title}
-                          org={post.acf.organization}
-                          cat={post.acf.category}
-                          imgUrl={
-                            post.better_featured_image !== null
-                              ? post.better_featured_image.source_url
-                              : ''
-                          }
-                          content={post.content.rendered}
-                          slug={post.slug}
-                        />
-                      </div>
-                    )
-                  }
-                })}
+                {this.props.data
+                  .filter(post => post.type === 'team-member')
+                  .filter(post => post.acf.category[0] === 'conf-staff')
+                  .map(post =>
+                    <div className='col s12 l6' key={post.id}>
+                      <TeamCard
+                        name={post.acf.name}
+                        title={post.acf.title}
+                        org={post.acf.organization}
+                        cat={post.acf.category}
+                        imgUrl={
+                          post.better_featured_image !== null
+                            ? post.better_featured_image.source_url
+                            : ''
+                        }
+                        content={post.content.rendered}
+                        slug={post.slug}
+                      />
+                    </div>
+                  )}
               </div>
             </div>
 
@@ -161,27 +160,27 @@ export default class extends React.Component {
                 </div>
               </div>
               <div className='row light'>
-                {this.props.data.map(function (post, i) {
-                  if (post.acf.category[0] === 'ci-staff') {
-                    return (
-                      <div className='col s12 l6' key={i}>
-                        <TeamCard
-                          name={post.acf.name}
-                          title={post.acf.title}
-                          org={post.acf.organization}
-                          cat={post.acf.category}
-                          imgUrl={
-                            post.better_featured_image !== null
-                              ? post.better_featured_image.source_url
-                              : ''
-                          }
-                          content={post.content.rendered}
-                          slug={post.slug}
-                        />
-                      </div>
-                    )
-                  }
-                })}
+                {this.props.data
+                  .filter(post => post.type === 'team-member')
+                  .filter(post => post.acf.category[0] === 'ci-staff')
+                  .map(post =>
+                    <div className='col s12 l6' key={post.id}>
+                      <TeamCard
+                        name={post.acf.name}
+                        title={post.acf.title}
+                        org={post.acf.organization}
+                        cat={post.acf.category}
+                        imgUrl={
+                          post.better_featured_image !== null
+                            ? post.better_featured_image.source_url
+                            : ''
+                        }
+                        content={post.content.rendered}
+                        slug={post.slug}
+                      />
+                    </div>
+                  )}
+
               </div>
             </div>
 
@@ -204,27 +203,27 @@ export default class extends React.Component {
                 </div>
               </div>
               <div className='row light'>
-                {this.props.data.map(function (post, i) {
-                  if (post.acf.category[0] === 'ci-mentors') {
-                    return (
-                      <div className='col s12 l6' key={i}>
-                        <TeamCard
-                          name={post.acf.name}
-                          title={post.acf.title}
-                          org={post.acf.organization}
-                          cat={post.acf.category}
-                          imgUrl={
-                            post.better_featured_image !== null
-                              ? post.better_featured_image.source_url
-                              : ''
-                          }
-                          content={post.content.rendered}
-                          slug={post.slug}
-                        />
-                      </div>
-                    )
-                  }
-                })}
+                {this.props.data
+                  .filter(post => post.type === 'team-member')
+                  .filter(post => post.acf.category[0] === 'ci-mentors')
+                  .map(post =>
+                    <div className='col s12 l6' key={post.id}>
+                      <TeamCard
+                        name={post.acf.name}
+                        title={post.acf.title}
+                        org={post.acf.organization}
+                        cat={post.acf.category}
+                        imgUrl={
+                          post.better_featured_image !== null
+                            ? post.better_featured_image.source_url
+                            : ''
+                        }
+                        content={post.content.rendered}
+                        slug={post.slug}
+                      />
+                    </div>
+                  )}
+
               </div>
             </div>
           </div>
