@@ -6,6 +6,8 @@ class ExpandingSection extends Component {
     displayContent: false
   }
 
+  isEven = () => this.props.index % 2 === 0
+
   render () {
     return (
       <div className='sub-section' key={this.props.key}>
@@ -36,32 +38,67 @@ class ExpandingSection extends Component {
             </h3>
 
             {this.state.displayContent
-                ? <div className='row valign-wrapper'>
-                  <div className='col s12 flow-text valign order-2'>
+                ? this.isEven()
+                  ? <div className='row valign-wrapper'>
+                    <div className='col s12 flow-text valign order-2'>
 
-                    <span
-                      dangerouslySetInnerHTML={{ __html: this.props.content }}
-                      />
-                    <OutLink
-                      to={this.props.url}
-                      title={this.props.title}
-                      label={`linkTo${this.props.url}`}
-                      >
-                      <button className='btn waves-effect waves-light'>
-                          Learn More
-                        </button>
-                    </OutLink>
+                      <span
+                        dangerouslySetInnerHTML={{
+                          __html: this.props.content
+                        }}
+                        />
+                      {this.props.url &&
+                      <OutLink
+                        to={this.props.url}
+                        title={this.props.title}
+                        label={`linkTo${this.props.url}`}
+                          >
+                        <button className='btn waves-effect waves-light'>
+                              Learn More
+                            </button>
+                      </OutLink>}
+
+                    </div>
+                    <div className='col s12 m6 order-1'>
+                      <img
+                        className='responsive-img z-depth-1'
+                        src={this.props.img}
+                        alt={this.props.imgAlt}
+                        title={this.props.imgTitle}
+                        />
+                    </div>
+                  </div>
+                  : <div className='row valign-wrapper'>
+                    <div className='col s12 m6 order-1'>
+                      <img
+                        className='responsive-img z-depth-1'
+                        src={this.props.img}
+                        alt={this.props.imgAlt}
+                        title={this.props.imgTitle}
+                        />
+                    </div>
+
+                    <div className='col s12 flow-text valign order-2'>
+
+                      <span
+                        dangerouslySetInnerHTML={{
+                          __html: this.props.content
+                        }}
+                        />
+                      {this.props.url !== ''
+                          ? <OutLink
+                            to={this.props.url}
+                            title={this.props.title}
+                            label={`linkTo${this.props.url}`}
+                            >
+                            <button className='btn waves-effect waves-light'>
+                                Learn More
+                              </button>
+                          </OutLink>
+                          : ''}
+                    </div>
 
                   </div>
-                  <div className='col s12 m6 order-1'>
-                    <img
-                      className='responsive-img z-depth-1'
-                      src={this.props.img}
-                      alt={this.props.imgAlt}
-                      title={this.props.imgTitle}
-                      />
-                  </div>
-                </div>
                 : ''}
 
           </div>
@@ -91,11 +128,24 @@ class ExpandingSection extends Component {
             </h3>
             <div className='row valign-wrapper'>
               {this.state.displayContent
-                  ? <div
-                    className='col s12 flow-text'
-                    dangerouslySetInnerHTML={{ __html: this.props.content }}
-                    />
+                  ? <div className='col s12 flow-text'>
+                    <span
+                      dangerouslySetInnerHTML={{ __html: this.props.content }}
+                      />
+                    {this.props.url !== ''
+                        ? <OutLink
+                          to={this.props.url}
+                          title={this.props.title}
+                          label={`linkTo${this.props.url}`}
+                          >
+                          <button className='btn waves-effect waves-light'>
+                              Learn More
+                            </button>
+                        </OutLink>
+                        : ''}
+                  </div>
                   : ''}
+
             </div>
 
           </div>}
