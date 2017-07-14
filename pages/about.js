@@ -39,6 +39,7 @@ export default class extends React.Component {
                   .filter(post => post.slug === 'about-intro')
                   .map(post =>
                     <div
+                      key={post.id}
                       className='col s12 valign flow-text'
                       dangerouslySetInnerHTML={{
                         __html: post.content.rendered
