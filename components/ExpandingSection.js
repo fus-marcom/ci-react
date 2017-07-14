@@ -1,9 +1,16 @@
 import React, { Component } from 'react'
 import OutLink from '../components/OutLink'
+import ClickHeading from '../components/ClickHeading'
 
 class ExpandingSection extends Component {
   state = {
     displayContent: false
+  }
+
+  clickHandler = () => {
+    this.setState({
+      displayContent: !this.state.displayContent
+    })
   }
 
   isEven = () => this.props.index % 2 === 0
@@ -13,29 +20,11 @@ class ExpandingSection extends Component {
       <div className='sub-section' key={this.props.key}>
         {this.props.img !== ''
           ? <div>
-            <h3
-              onClick={() =>
-                  this.setState({
-                    displayContent: !this.state.displayContent
-                  })}
-              >
-              <svg
-                fill='#000000'
-                height='24'
-                viewBox='0 0 24 24'
-                width='24'
-                xmlns='http://www.w3.org/2000/svg'
-                style={{
-                  transform: `rotate(${this.state.displayContent
-                      ? '90'
-                      : '0'}deg)`
-                }}
-                >
-                <path d='M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z' />
-                <path d='M0 0h24v24H0z' fill='none' />
-              </svg>
-              <span dangerouslySetInnerHTML={{ __html: this.props.title }} />
-            </h3>
+            <ClickHeading
+              clickHandler={this.clickHandler}
+              displayContent={this.state.displayContent}
+              title={this.props.title}
+              />
 
             {this.state.displayContent
                 ? this.isEven()
@@ -103,29 +92,11 @@ class ExpandingSection extends Component {
 
           </div>
           : <div>
-            <h3
-              onClick={() =>
-                  this.setState({
-                    displayContent: !this.state.displayContent
-                  })}
-              >
-              <svg
-                fill='#000000'
-                height='24'
-                viewBox='0 0 24 24'
-                width='24'
-                xmlns='http://www.w3.org/2000/svg'
-                style={{
-                  transform: `rotate(${this.state.displayContent
-                      ? '90'
-                      : '0'}deg)`
-                }}
-                >
-                <path d='M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z' />
-                <path d='M0 0h24v24H0z' fill='none' />
-              </svg>
-              <span dangerouslySetInnerHTML={{ __html: this.props.title }} />
-            </h3>
+            <ClickHeading
+              clickHandler={this.clickHandler}
+              displayContent={this.state.displayContent}
+              title={this.props.title}
+              />
             <div className='row valign-wrapper'>
               {this.state.displayContent
                   ? <div className='col s12 flow-text'>
