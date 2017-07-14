@@ -36,24 +36,16 @@ export default class extends React.Component {
           <div className='section white-background-flourish'>
             <div className='container'>
               <div className='row valign-wrapper'>
-                <div className='col s12 valign'>
-                  <p className='flow-text'>
-                    The Catechetical Institute brings together the world-class
-                    faculty of Franciscan University’s Catechetics Program with
-                    key collaborators from all levels of ministry. These skilled
-                    professionals teach our Franciscan at Home online courses
-                    and speak at our St. John Bosco Conference, academic
-                    conferences, and other events around the country. Through
-                    the Catechetical Institute, they can also assist your
-                    diocese, parish, institution, or local community in
-                    achieving greater excellence in passing on the faith.
-                  </p>
-                  <p className='flow-text'>
-                    To invite one or a team of our presenters or faculty, please
-                    email us at:{' '}
-                    <a href='mailto:CI@franciscan.edu'>CI@franciscan.edu</a>.
-                  </p>
-                </div>
+                {this.props.data
+                  .filter(post => post.slug === 'team-intro')
+                  .map(post =>
+                    <div
+                      className='col s12 valign flow-text'
+                      dangerouslySetInnerHTML={{
+                        __html: post.content.rendered
+                      }}
+                    />
+                  )}
               </div>
             </div>
           </div>
