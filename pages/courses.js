@@ -80,11 +80,11 @@ export default class extends React.Component {
                   className='btn waves-effect waves-light btn-inverted-white'
                   style={{
                     margin: '0 auto',
-
+                    lineHeight: '34px',
                     display: 'block'
                   }}
                 >
-                  Begin
+                  Come Explore
                 </button>
               </a>
               <div className='row valign-wrapper'>
