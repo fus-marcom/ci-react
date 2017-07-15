@@ -331,10 +331,7 @@ export default class extends React.Component {
                 Find a Nearby Event
               </h2>
               <div className='row light'>
-                <table
-                  className='highlight responsive-table'
-                  style={{ fontSize: '24px' }}
-                >
+                <table className='highlight responsive-table'>
                   <thead>
                     <tr>
                       <th onClick={this.sortDate}>Date</th>
@@ -359,12 +356,12 @@ export default class extends React.Component {
                             }}
                           />
                           <td>{post.acf.location}</td>
-                          <td>
+                          <td class='event-email-td'>
                             <a href={`mailto:${post.acf.event_email}`}>
                               {post.acf.event_email}
                             </a>
                           </td>
-                          <td>
+                          <td class='presenter-email-td'>
                             <a href={`mailto:${post.acf.presenter_email}`}>
                               {post.acf.presenter_email}
                             </a>
@@ -414,7 +411,24 @@ export default class extends React.Component {
           </div>
           <style jsx>
             {`
-                .responsive-table td {
+              .responsive-table {
+                font-size: 24px;
+              }
+
+              @media screen and (max-width: 600px) {
+                .responsive-table {
+                  font-size: 18px;
+                }
+
+                .responsive-table thead {
+                  max-width: 103px;
+                }
+
+                .responsive-table .event-email-td, .responsive-table .presenter-email-td {
+                  min-height: 84px;
+                }
+              }
+                .responsive-table td, .responsive-table th {
                   min-height: 66px;
                 }
 
