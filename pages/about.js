@@ -14,7 +14,7 @@ export default class extends React.Component {
     return { data }
   }
 
-  componentDidMount () {
+  componentDidMount = () => {
     logPageView()
   }
 
@@ -210,55 +210,59 @@ export default class extends React.Component {
               </div>
             </div>
           </div>
-          <div className='section pdf-links red-background-flourish white-text'>
-            <div className='container wide-container'>
-              <div className='row center' style={{ marginBottom: '0' }}>
-                <h2
-                  className='light flourish-white'
-                  style={{ marginBottom: '0' }}
-                >
-                  Information
-                </h2>
-              </div>
-              <div className='row valign-wrapper center'>
-                <div className='col s12 m6'>
-                  <ul>
-                    {this.props.data
-                      .filter(post => post.type === 'pdf-page')
-                      .filter((post, i) => i % 2 === 0)
-                      .map(post =>
-                        <li key={post.id}>
-                          <a
-                            href={`/i/${post.slug}`}
-                            dangerouslySetInnerHTML={{
-                              __html: post.title.rendered
-                            }}
-                          />
-                        </li>
-                      )}
 
-                  </ul>
+          {this.props.data.some(post => post.type === 'pdf-page')
+            ? <div className='section pdf-links red-background-flourish white-text'>
+              <div className='container wide-container'>
+                <div className='row center' style={{ marginBottom: '0' }}>
+                  <h2
+                    className='light flourish-white'
+                    style={{ marginBottom: '0' }}
+                    >
+                      Information
+                    </h2>
                 </div>
-                <div className='col s12 m6'>
-                  <ul>
-                    {this.props.data
-                      .filter(post => post.type === 'pdf-page')
-                      .filter((post, i) => i % 2 === 1)
-                      .map(post =>
-                        <li key={post.id}>
-                          <a
-                            href={`/i/${post.slug}`}
-                            dangerouslySetInnerHTML={{
-                              __html: post.title.rendered
-                            }}
-                          />
-                        </li>
-                      )}
-                  </ul>
+                <div className='row valign-wrapper center'>
+                  <div className='col s12 m6'>
+                    <ul>
+                      {this.props.data
+                          .filter(post => post.type === 'pdf-page')
+                          .filter((post, i) => i % 2 === 0)
+                          .map(post =>
+                            <li key={post.id}>
+                              <a
+                                href={`/i/${post.slug}`}
+                                dangerouslySetInnerHTML={{
+                                  __html: post.title.rendered
+                                }}
+                              />
+                            </li>
+                          )}
+
+                    </ul>
+                  </div>
+                  <div className='col s12 m6'>
+                    <ul>
+                      {this.props.data
+                          .filter(post => post.type === 'pdf-page')
+                          .filter((post, i) => i % 2 === 1)
+                          .map(post =>
+                            <li key={post.id}>
+                              <a
+                                href={`/i/${post.slug}`}
+                                dangerouslySetInnerHTML={{
+                                  __html: post.title.rendered
+                                }}
+                              />
+                            </li>
+                          )}
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+            : ''}
+
           <div className='section valign-wrapper black-text white-background-flourish'>
             <div className='valign container'>
               <div className='row center'>
