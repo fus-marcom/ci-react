@@ -88,10 +88,11 @@ iframe {
 }
 
 .tabs .tab a:hover, .tabs .tab a.active {
-  color: #8e1b21; }
+  font-weight: 500; }
 
 .tabs .indicator {
-  background-color: #000; }
+  background-color: #998643;
+  height: 3px;}
 
 table.responsive-table {
   width: 100%;

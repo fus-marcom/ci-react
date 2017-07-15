@@ -6,8 +6,9 @@ class MaterialSelect extends Component {
         <select
           onChange={e => this.props.setCategory(e.target.value)}
           style={{ display: 'block' }}
+          value={this.props.category}
         >
-          <option value='0'>
+          <option value='15'>
             Choose a category
           </option>
           <option value='0'>All</option>

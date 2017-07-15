@@ -16,7 +16,7 @@ export default class extends React.Component {
     activeTab: 'all',
     data: [],
     price: 'all',
-    category: 0,
+    category: 15,
     type: 'all',
     categories: []
   }
@@ -48,7 +48,6 @@ export default class extends React.Component {
    * Render cards from api data
    */
   fetchSearchTerm = searchTerm => {
-    console.log(searchTerm)
     const apiUrl = 'https://wp.catechetics.com/wp-json/wp/v2/'
     const params = `resource?search=${searchTerm}&per_page=100&fields=title,acf,better_featured_image`
     getJSON(apiUrl + params).then(data => this.setState({ data }))
@@ -115,7 +114,6 @@ export default class extends React.Component {
   }
 
   setCategory = catNum => {
-    console.log(catNum)
     this.setState({ category: parseInt(catNum) })
   }
 
@@ -162,7 +160,7 @@ export default class extends React.Component {
           </div>
           <div
             className='section banner white-text red-background-flourish'
-            style={{ padding: '8px 0' }}
+            style={{ padding: '8px 0 0 0' }}
           >
             <div className='container container-wide'>
               <div className='row'>
@@ -172,6 +170,7 @@ export default class extends React.Component {
                     setCategory={catNum => {
                       this.setCategory(catNum)
                     }}
+                    category={this.state.category}
                   />
                 </div>
                 <div class='col s12 m2' style={{ textAlign: 'center' }}>
@@ -209,17 +208,12 @@ export default class extends React.Component {
                   </form>
                 </div>
               </div>
-            </div>
-          </div>
-          <div
-            className='section white-background-flourish'
-            style={{ minHeight: '500px' }}
-          >
-            <div className='container container-wide'>
-
-              <div className='row'>
+              <div className='row' style={{ marginBottom: '0' }}>
                 <div className='col s12'>
-                  <ul className='tabs'>
+                  <ul
+                    className='tabs'
+                    style={{ backgroundColor: 'transparent' }}
+                  >
                     {Object.keys(tabs).map(tabKey =>
                       <li className='tab col s3' key={tabKey + 'li'}>
                         <a
@@ -227,14 +221,32 @@ export default class extends React.Component {
                           href={'#' + tabKey}
                           className={tabKey === activeTab && 'active'}
                           onClick={() => this.setState({ activeTab: tabKey })}
+                          style={{ color: '#fff' }}
                         >
                           {tabs[tabKey]}
                         </a>
                       </li>
                     )}
                   </ul>
+
                 </div>
               </div>
+            </div>
+          </div>
+          <div
+            className='section white-background-flourish'
+            style={{ minHeight: '500px' }}
+          >
+            <div className='container container-wide'>
+              {this.state.category === 15
+                ? <div className='row' style={{ marginBottom: '0' }}>
+                  <div className='col s12'>
+
+                    <h4>Featured Resources</h4>
+
+                  </div>
+                </div>
+                : ''}
 
               {/* For each tab, we generate a row */}
               {Object.keys(tabs).map(tabKey =>
@@ -271,6 +283,18 @@ export default class extends React.Component {
 
                 </div>
               )}
+              {this.state.category === 15
+                ? <div class='row'>
+                  <div class='col s12'>
+                    <span
+                      onClick={() => this.setState({ category: 0 })}
+                      style={{ color: '#8e1b21', cursor: 'pointer' }}
+                      >
+                        View All Resources
+                      </span>
+                  </div>
+                </div>
+                : ''}
 
             </div>
           </div>
