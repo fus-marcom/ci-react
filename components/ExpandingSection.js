@@ -47,7 +47,7 @@ class ExpandingSection extends Component {
     const moreClasses = !hasImage ? 'valign order-2' : '' // text only section gets these
 
     return (
-      <div className='sub-section' key={this.props.key}>
+      <div className='sub-section'>
         <ClickHeading
           clickHandler={this.clickHandler}
           displayContent={this.state.displayContent}
