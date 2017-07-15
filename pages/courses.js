@@ -77,9 +77,8 @@ export default class extends React.Component {
                 target='_blank'
               >
                 <button
-                  className='btn waves-effect waves-light btn-inverted-white'
+                  className='btn waves-effect waves-light btn-inverted-white lms-btn'
                   style={{
-                    margin: '0 auto',
                     lineHeight: '34px',
                     display: 'block'
                   }}
@@ -960,6 +959,14 @@ export default class extends React.Component {
             </div>
           </div>
           <style jsx>{`
+            .lms-btn {
+              margin: 0 auto;
+            }
+            @media screen and (max-width: 600px) {
+              .lms-btn {
+                margin-bottom: 16px;
+              }
+            }
             .sub-section p {
               margin-top: 0;
             }

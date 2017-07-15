@@ -266,7 +266,14 @@ export default class extends React.Component {
           <div className='section valign-wrapper black-text white-background-flourish'>
             <div className='valign container'>
               <div className='row center'>
-                <h2 className='light flourish-white'>Collaborators</h2>
+                <div class='col s12'>
+                  <h2
+                    className='light flourish-white'
+                    style={{ fontSize: '38px' }}
+                  >
+                    Collaborators
+                  </h2>
+                </div>
               </div>
               <div className='row light flow-text'>
                 <div className='col s6 m3'>
