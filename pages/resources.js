@@ -173,7 +173,7 @@ export default class extends React.Component {
                     category={this.state.category}
                   />
                 </div>
-                <div class='col s12 m2' style={{ textAlign: 'center' }}>
+                <div class='col s12 m2 center price-col'>
                   <p>
                     <input
                       type='checkbox'
@@ -191,7 +191,7 @@ export default class extends React.Component {
                     <label for='paid'>Paid</label>
                   </p>
                 </div>
-                <div className='input-field col s12 m6'>
+                <div className='input-field col s12 m6 search-col'>
                   <form onSubmit={this.formGetResults}>
                     <input
                       id='search'
@@ -328,6 +328,15 @@ export default class extends React.Component {
               [type="checkbox"]:checked + label:before {
                 border-right: 2px solid #998643;
                 border-bottom: 2px solid #998643;
+              }
+              @media screen and (max-width: 600px) {
+                .price-col {
+                  margin-top: 24px;
+                  text-align: left;
+                }
+                .search-col {
+                  margin-top: 8px;
+                }
               }
               .resource-divider {
                 height: 1px;
