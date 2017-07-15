@@ -13,11 +13,13 @@ class MaterialSelect extends Component {
           </option>
           <option value='0'>All</option>
           {this.props.categories !== ''
-            ? this.props.categories.map(category =>
-              <option value={category.id} key={category.id}>
-                {category.name}
-              </option>
-              )
+            ? this.props.categories
+                .filter(category => category.count >= 1)
+                .map(category =>
+                  <option value={category.id} key={category.id}>
+                    {category.name}
+                  </option>
+                )
             : ''}
 
         </select>
