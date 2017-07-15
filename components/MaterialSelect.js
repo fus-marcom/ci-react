@@ -51,6 +51,10 @@ class MaterialSelect extends Component {
               font-size: 16px;
               display: inline-block;
             }
+            option {
+              color: #000;
+              background-color: #fff;
+            }
           `}
         </style>
       </div>
