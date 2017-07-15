@@ -24,7 +24,9 @@ class ResourceRow extends Component {
               textTransform: 'uppercase'
             }}
           >
-            {this.props.type}
+            {`${this.props.type} ${this.props.price === 'free'
+              ? '(free)'
+              : ''}`}
           </span>
           <h4 style={{ marginBottom: '4px', marginTop: '0px' }}>
             <a
