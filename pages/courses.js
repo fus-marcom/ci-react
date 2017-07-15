@@ -56,12 +56,37 @@ export default class extends React.Component {
           </div>
           <div className='section red-background-flourish white-text'>
             <div className='container wide-container'>
-              <h2 className='light center' style={{ marginBottom: '0px' }}>
-                Franciscan at Home
-              </h2>
+              <a
+                href='https://franciscanathome.com/'
+                title='Franciscan at Home'
+                target='_blank'
+              >
+                <h2
+                  className='light center white-text'
+                  style={{ marginBottom: '0px' }}
+                >
+                  Franciscan at Home
+                </h2>
+              </a>
               <span className='sub-heading center'>
                 Online Learning at Your Convenience
               </span>
+              <a
+                href='https://franciscanathome.com/'
+                title='Franciscan at Home'
+                target='_blank'
+              >
+                <button
+                  className='btn waves-effect waves-light btn-inverted-white'
+                  style={{
+                    margin: '0 auto',
+                    lineHeight: '34px',
+                    display: 'block'
+                  }}
+                >
+                  Come Explore
+                </button>
+              </a>
               <div className='row valign-wrapper'>
                 <div className='col s12 m4 order-1 center'>
                   <img
