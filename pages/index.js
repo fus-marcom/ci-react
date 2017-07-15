@@ -43,18 +43,8 @@ export default class extends React.Component {
                 paddingBottom: '56.25%'
               }}
             >
-              <iframe
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  position: 'absolute',
-                  top: '0',
-                  left: '0'
-                }}
-                src='https://www.youtube.com/embed/MfHhqMMQVBQ?controls=0&showinfo=0&rel=0&loop=1'
-                frameBorder='0'
-                allowFullScreen
-              />
+
+              <script src='//content.jwplatform.com/players/7PVky4jv-A9Xg4ve3.js' />
             </div>
           </div>
           <div
