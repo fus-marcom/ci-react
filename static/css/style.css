@@ -87,6 +87,14 @@ iframe {
   border-radius: 2px;
 }
 
+#news .tabs .tab a:hover, #news .tabs .tab a.active {
+  color: #8e1b21;
+  font-weight: 400;}
+
+#news .tabs .indicator {
+  background-color: #998643;
+  height: 2px;}
+
 .tabs .tab a:hover, .tabs .tab a.active {
   font-weight: 500; }
 
