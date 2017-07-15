@@ -177,7 +177,11 @@ export default class extends React.Component {
                       <TextCard
                         title={post.title.rendered}
                         content={post.acf.excerpt}
-                        url={`/news/${post.slug}`}
+                        url={
+                          post.acf.hasOwnProperty('url')
+                            ? post.acf.url
+                            : `/news/${post.slug}`
+                        }
                       />
                     </div>
                   )}
@@ -192,7 +196,11 @@ export default class extends React.Component {
                       <TextCard
                         title={post.title.rendered}
                         content={post.acf.excerpt}
-                        url={`/news/${post.slug}`}
+                        url={
+                          post.acf.hasOwnProperty('url')
+                            ? post.acf.url
+                            : `/news/${post.slug}`
+                        }
                       />
                     </div>
                   )}
