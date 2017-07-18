@@ -24,14 +24,16 @@ export default class extends React.Component {
   static async getInitialProps () {
     const apiUrl = 'https://wp.catechetics.com/wp-json/wp/v2/'
     const params =
-      'resource?per_page=100&fields=title,acf,better_featured_image,date,resource-category'
+      'multiple-post-type?per_page=100&type[]=resource&fields=title,acf,better_featured_image,date,resource-category,type,content,slug&type[]=page'
     const res = await fetch(apiUrl + params)
     const data = await res.json()
     return { data }
   }
 
   componentDidMount = () => {
-    this.setState({ data: this.props.data })
+    this.setState({
+      data: this.props.data.filter(post => post.type === 'resource')
+    })
     initTabs()
     logPageView()
     this.getCategories()
@@ -143,18 +145,17 @@ export default class extends React.Component {
             <div className='valign container'>
 
               <div className='row light flow-text'>
-                <div className='col s12'>
-                  <p className='flow-text'>
-                    Franciscan University has produced a prodigious amount of
-                    material over the years that can help you be a better
-                    catechist. Here you will find videos, audio clips,
-                    magazines, books, brochures, and other resources produced by
-                    University faculty, conference speakers, and an array of
-                    collaborators. We are pleased to make much of it available
-                    for free, with a handful of items requiring a subscription
-                    or purchase.
-                  </p>
-                </div>
+                {this.props.data
+                  .filter(post => post.slug === 'resources-intro')
+                  .map(post =>
+                    <div
+                      className='col s12 flow-text'
+                      dangerouslySetInnerHTML={{
+                        __html: post.content.rendered
+                      }}
+                      key={post.id}
+                    />
+                  )}
               </div>
             </div>
           </div>

@@ -20,7 +20,7 @@ export default class extends React.Component {
   static async getInitialProps () {
     const apiUrl = 'https://wp.catechetics.com/wp-json/wp/v2/'
     const params =
-      'nearby-event?per_page=100&filter[orderby]=acf.date&filter[order]=ASC&fields=title,acf'
+      'multiple-post-type?per_page=100&type[]=nearby-event&filter[orderby]=acf.date&filter[order]=ASC&fields=title,acf,slug,content,type&type[]=page'
     const res = await fetch(apiUrl + params)
     const data = await res.json()
     return { data }
@@ -28,9 +28,9 @@ export default class extends React.Component {
 
   componentDidMount = () => {
     this.setState({
-      data: this.props.data.filter(
-        post => post.acf.date >= this.getTodaysDate()
-      )
+      data: this.props.data
+        .filter(post => post.type === 'nearby-event')
+        .filter(post => post.acf.date >= this.getTodaysDate())
     })
     hScroller()
     logPageView()
@@ -112,16 +112,19 @@ export default class extends React.Component {
           <div className='section white-background-flourish'>
             <div className='container'>
               <div className='row'>
-                <div className='col s12'>
-                  <p className='flow-text'>
-                    The annual St John Bosco Conference for Catechists and
-                    Religious Educators at Franciscan University is our premier
-                    event, bringing catechetical experts from all over to share
-                    their expertise through general sessions and specialized
-                    tracks. We also host on-campus academic conferences on
-                    catechetical topics, and speak all over.
-                  </p>
-                </div>
+
+                {this.props.data
+                  .filter(post => post.slug === 'events-intro')
+                  .map(post =>
+                    <div
+                      className='col s12 flow-text'
+                      dangerouslySetInnerHTML={{
+                        __html: post.content.rendered
+                      }}
+                      key={post.id}
+                    />
+                  )}
+
               </div>
             </div>
           </div>
