@@ -3,6 +3,7 @@ import React from 'react'
 import Layout from '../components/Layout'
 import StickyNav from '../components/StickyNav'
 import Title from '../components/Title'
+import EventSection from '../components/EventSection'
 import 'isomorphic-fetch'
 import { logPageView } from '../utils/analytics'
 import { getJSON } from '../utils/fetch'
@@ -20,7 +21,7 @@ export default class extends React.Component {
   static async getInitialProps () {
     const apiUrl = 'https://wp.catechetics.com/wp-json/wp/v2/'
     const params =
-      'multiple-post-type?per_page=100&type[]=nearby-event&filter[orderby]=acf.date&filter[order]=ASC&fields=title,acf,slug,content,type&type[]=page'
+      'multiple-post-type?per_page=100&type[]=nearby-event&filter[orderby]=acf.date&filter[order]=ASC&fields=title,acf,slug,content,type,better_featured_image&type[]=page,&type[]=major-event'
     const res = await fetch(apiUrl + params)
     const data = await res.json()
     return { data }
@@ -117,17 +118,39 @@ export default class extends React.Component {
                   .filter(post => post.slug === 'events-intro')
                   .map(post =>
                     <div
+                      key={post.id}
                       className='col s12 flow-text'
                       dangerouslySetInnerHTML={{
                         __html: post.content.rendered
                       }}
-                      key={post.id}
                     />
                   )}
 
               </div>
             </div>
           </div>
+          {this.props.data
+            .filter(post => post.type === 'major-event')
+            .map((post, i) =>
+              <EventSection
+                index={i}
+                title={post.title.rendered}
+                content={post.content.rendered}
+                key={post.id}
+                img={
+                  post.featured_media !== 0
+                    ? post.better_featured_image.source_url
+                    : ''
+                }
+                imgAlt={
+                  post.featured_media !== 0
+                    ? post.better_featured_image.alt_text
+                    : ''
+                }
+                imgTitle={post.featured_media !== 0 ? post.title.rendered : ''}
+                registrationLink={post.acf.registration_link}
+              />
+            )}
           <div className='section white-background-flourish'>
             <div className='container wide-container'>
               <h2 className='light center' style={{ marginBottom: '0px' }}>
