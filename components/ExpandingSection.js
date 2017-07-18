@@ -4,7 +4,7 @@ import ClickHeading from '../components/ClickHeading'
 
 class ExpandingSection extends Component {
   state = {
-    displayContent: false
+    displayContent: this.props.expanded
   }
 
   clickHandler = () => {

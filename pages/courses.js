@@ -183,6 +183,7 @@ export default class extends React.Component {
                 .map((post, i) =>
                   <ExpandingSection
                     index={i}
+                    expanded={post.acf.expanded}
                     title={post.title.rendered}
                     content={post.content.rendered}
                     key={post.id}
