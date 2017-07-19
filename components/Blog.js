@@ -3,9 +3,17 @@ import React from 'react'
 const Blog = props =>
   <div className='row' key={props.i}>
     <div className='col s12'>
-      <a href={`/news/${props.slug}`}>
-        <h3 style={{ marginBottom: '0', color: '#8e1b21' }}>{props.title}</h3>
-      </a>
+      {props.homepageOnly
+        ? <a href={props.url}>
+          <h3 style={{ marginBottom: '0', color: '#8e1b21' }}>
+            {props.title}
+          </h3>
+        </a>
+        : <a href={`/news/${props.slug}`}>
+          <h3 style={{ marginBottom: '0', color: '#8e1b21' }}>
+            {props.title}
+          </h3>
+        </a>}
       <span>{`${props.date.getMonth() +
         1}/${props.date.getDate()}/${props.date.getFullYear()}`}</span>
       <div
@@ -15,7 +23,11 @@ const Blog = props =>
         }}
       />
     </div>
-    <a href={`/news/${props.slug}`}><span class='more-link'>Read More</span></a>
+    {!props.homepageOnly &&
+      <a href={`/news/${props.slug}`}>
+        <span class='more-link'>Read More</span>
+      </a>}
+
     <style jsx>
       {`
         span {

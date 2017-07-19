@@ -43,43 +43,48 @@ export default class extends React.Component {
                     content={post.content.rendered}
                     excerpt={post.acf.excerpt}
                     date={new Date(post.date)}
+                    homepageOnly={post.acf.homepage_only}
+                    url={post.acf.url}
                     key={i}
                   />
                 )
               })}
             </div>
           </div>
-          <div className='section' style={{ backgroundColor: '#000' }}>
-            <div className='container'>
-              <div className='row white-text'>
-                <div className='col s12 m4'>
-                  <h5>Categories</h5>
-                  <ul>
-                    <li>Category</li>
-                    <li>Category</li>
-                    <li>Category</li>
-                  </ul>
-                </div>
-                <div className='col s12 m4'>
-                  <h5>Tags</h5>
-                  <ul>
-                    <li>Tag</li>
-                    <li>Tag</li>
-                    <li>Tag</li>
-                  </ul>
-                </div>
-                <div className='col s12 m4'>
-                  <h5>Archives</h5>
-                  <ul>
-                    <li>May</li>
-                    <li>April</li>
-                    <li>March</li>
-                  </ul>
-                </div>
-              </div>
+          {/* Finish this when there is enough content to justify it.
+            <div className='section' style={{ backgroundColor: '#000' }}>
+              <div className='container'>
+            <div className='row white-text'>
+            <div className='col s12 m4'>
+            <h5>Categories</h5>
+            <ul>
+            <li>Category</li>
+            <li>Category</li>
+            <li>Category</li>
+            </ul>
             </div>
+            <div className='col s12 m4'>
+            <h5>Tags</h5>
+            <ul>
+            <li>Tag</li>
+            <li>Tag</li>
+            <li>Tag</li>
+            </ul>
+            </div>
+            <div className='col s12 m4'>
+            <h5>Archives</h5>
+            <ul>
+            <li>May</li>
+            <li>April</li>
+            <li>March</li>
+            </ul>
+            </div>
+            </div>
+              </div>
 
-          </div>
+            </div>
+          */}
+
         </main>
       </Layout>
     )

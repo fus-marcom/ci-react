@@ -26,7 +26,11 @@ class StickyNav extends Component {
               <a>Resources</a>
             </Link>
           </li>
-          <li><a href='/#news' title='News'>News</a></li>
+          <li>
+            <Link prefetch href='/news' title='News'>
+              <a>News</a>
+            </Link>
+          </li>
         </ul>
         <style jsx>
           {`

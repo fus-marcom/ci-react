@@ -69,7 +69,7 @@ class Nav extends Component {
           <li>
             {' '}<Link prefetch href='/resources'><a>Resources</a></Link>{' '}
           </li>
-          <li><a href='/#news' title='News'>News</a></li>
+          <li><Link prefetch href='/news' title='News'><a>News</a></Link></li>
         </ul>
         <style jsx>{`
           @media screen and (max-width: 992px) {
