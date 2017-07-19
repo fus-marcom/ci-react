@@ -2,104 +2,130 @@ import React, { Component } from 'react'
 
 class EventSection extends Component {
   isEven = () => this.props.index % 2 === 0
-  render () {
+
+  TitleSection = ({ title, registrationLink, flyerLink, eventDate }) => {
     return (
-      <div className='section white-background-flourish'>
-        <div className='container wide-container'>
-          <h2 className='light center' style={{ marginBottom: '0px' }}>
-            St. John Bosco Conference
-          </h2>
-          <span className='sub-heading center'>July 17-20, 2017</span>
-          <div className='center' style={{ marginBottom: '16px' }}>
+      <div>
+        <h2
+          className='light center'
+          style={{ marginBottom: '0px' }}
+          dangerouslySetInnerHTML={{ __html: title }}
+        />
+
+        <span
+          className='sub-heading center'
+          dangerouslySetInnerHTML={{ __html: eventDate }}
+        />
+        <div className='center' style={{ marginBottom: '16px' }}>
+          {registrationLink &&
             <a
-              href='https://www.cvent.com/events/st-john-bosco-conference-july-17-20-2017/registration-fd101066745c42f099a1fade8be9ed1c.aspx?fqp=true%C2%A0'
-              title='Register for the St. John Bosco Conference'
+              href={registrationLink}
+              title={`Register for the ${title}`}
               target='_blank'
             >
               <button className='btn waves-effect waves-light'>
                 Register
               </button>
-            </a>
-            <a
-              href='https://steubenvilleconferences.com/wp-content/uploads/2016/11/FNL_2017_Conf_Media_inserts_11_Bosco2.pdf'
-              title='St. John Bosco Conference Flyer PDF'
-              target='_blank'
-            >
+            </a>}
+          {flyerLink &&
+            <a href={flyerLink} title={`${title} Flyer PDF`} target='_blank'>
               <button
                 className='btn waves-effect waves-light'
                 style={{ marginLeft: '8px' }}
               >
                 Flyer
               </button>
-            </a>
-          </div>
+            </a>}
+
+        </div>
+      </div>
+    )
+  }
+
+  ImageSection = ({ img, imgAlt, imgTitle, embed }) => {
+    return (
+      <div className='col s12 m6 order-1'>
+        <img
+          className='responsive-img'
+          src={img}
+          alt={imgAlt}
+          title={imgTitle}
+        />
+        {embed &&
+          <div className='video-container' style={{ marginTop: '24px' }}>
+            <iframe
+              width='1092'
+              height='665'
+              src={`https://www.youtube.com/embed/${embed}`}
+              frameBorder='0'
+              allowFullScreen
+            />
+          </div>}
+
+      </div>
+    )
+  }
+
+  TextSection = ({
+    extraClasses,
+    registrationLink,
+    title,
+    content,
+    flyerLink
+  }) => {
+    return (
+      <div className='col s12 m6 valign flow-text order-2'>
+        <span
+          class='content-section'
+          dangerouslySetInnerHTML={{ __html: content }}
+        />
+        {registrationLink &&
+          <a
+            href={registrationLink}
+            title={`Register for the ${title}`}
+            target='_blank'
+          >
+            <button className='btn waves-effect waves-light'>
+              Register
+            </button>
+          </a>}
+
+        {flyerLink &&
+          <a href={flyerLink} title={`${title} Flyer PDF`} target='_blank'>
+            <button
+              className='btn waves-effect waves-light'
+              style={{ marginLeft: '8px' }}
+            >
+              Flyer
+            </button>
+          </a>}
+
+      </div>
+    )
+  }
+
+  render () {
+    const ImageSection = this.ImageSection
+    const TextSection = this.TextSection
+    const TitleSection = this.TitleSection
+    const hasImage = !!this.props.img // !! is boolean coercion
+    const moreClasses = !hasImage ? 'valign order-2' : '' // text only section gets these
+    const bgClass = this.isEven()
+      ? 'white-background-flourish'
+      : 'red-background-flourish white-text'
+    return (
+      <div className={`section ${bgClass}`}>
+        <div className='container wide-container'>
+          <TitleSection {...this.props} />
 
           <div className='row valign-wrapper'>
-            <div className='col s12 m6 order-1'>
-              <img
-                className='responsive-img'
-                src='/static/img/st._john_bosco.jpg'
-                alt='Picture of Saint John Bosco.'
-                title='Saint John Bosco'
-              />
-              <div className='video-container' style={{ marginTop: '24px' }}>
-                <iframe
-                  width='1092'
-                  height='665'
-                  src='https://www.youtube.com/embed/GZvZ8brOYQM'
-                  frameBorder='0'
-                  allowFullScreen
-                />
-              </div>
-            </div>
+            {hasImage && this.isEven() && <ImageSection {...this.props} />}
+            <TextSection extraClasses={moreClasses} {...this.props} />
+            {hasImage && !this.isEven() && <ImageSection {...this.props} />}
 
-            <div className='col s12 m6 valign order-2'>
-              <p className='flow-text'>
-                Founded over 20 years ago, this amazing gathering has
-                evolved to serve all aspects of the evangelizing and
-                catechizing mission of the Church, with an annual array of
-                relevant, inspiring, and practical workshops on parenting
-                and priestly excellence, children, youth, and adult
-                ministry, multicultural, ecumenical, and special needs
-                service, and a host of tracks offering certification for
-                school teachers and parish catechists, campus and youth
-                ministers, catechetical leaders, RCIA teams, and much more.
-                It is a place for people to share their favorite resources,
-                discuss particular challenges facing their ministry, learn
-                from and be mentored by some of the finest professionals in
-                the field, and open themselves to the Holy Spirit through
-                confession, adoration, and Mass. Many participants think of
-                the conference as an annual re-charge of their spiritual
-                batteries, and a true retreat for the soul. Come to the St.
-                John Bosco Conference and be renewed in your hope as you
-                spend four days being blessed by an amazing ministry team,
-                dynamic presenters, and fellowship with those that share
-                your passion for Christ and the Church!
-              </p>
-              <a
-                href='https://www.cvent.com/events/st-john-bosco-conference-july-17-20-2017/registration-fd101066745c42f099a1fade8be9ed1c.aspx?fqp=true%C2%A0'
-                title='Register for the St. John Bosco Conference'
-                target='_blank'
-              >
-                <button className='btn waves-effect waves-light'>
-                  Register
-                </button>
-              </a>
-              <a
-                href='https://steubenvilleconferences.com/wp-content/uploads/2016/11/FNL_2017_Conf_Media_inserts_11_Bosco2.pdf'
-                title='St. John Bosco Conference Flyer PDF'
-                target='_blank'
-              >
-                <button
-                  className='btn waves-effect waves-light'
-                  style={{ marginLeft: '8px' }}
-                >
-                  Flyer
-                </button>
-              </a>
-            </div>
           </div>
         </div>
+
       </div>
     )
   }

@@ -551,3 +551,8 @@ ul li {
 [type="checkbox"] + label:before, [type="checkbox"]:not(.filled-in) + label:after {
   border: 2px solid #fff;
 }
+
+.content-section a {
+  color: #fff;
+  font-weight: 500;
+}
