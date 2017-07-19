@@ -560,3 +560,18 @@ ul li {
 .card-reveal p {
   margin: 8px 0;
 }
+
+/* JWPlayer styles */
+#A9Xg4ve3 {
+  width: 100% !important;
+  height: auto !important;
+}
+
+#A9Xg4ve3.jwplayer .jw-aspect {
+  display: block;
+  padding-top: 56.25%;
+}
+
+#A9Xg4ve3.jwplayer .jw-title {
+  display: none;
+}

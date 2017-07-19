@@ -7,6 +7,7 @@ import TextRevealImageCard from '../components/TextRevealImageCard'
 import TextCard from '../components/TextCard'
 import 'isomorphic-fetch'
 import { logPageView } from '../utils/analytics'
+import ReactJWPlayer from 'react-jw-player'
 
 export default class extends React.Component {
   static async getInitialProps () {
@@ -44,8 +45,13 @@ export default class extends React.Component {
                 paddingBottom: '56.25%'
               }}
             >
+              <ReactJWPlayer
+                playerId='A9Xg4ve3'
+                playerScript='https://content.jwplatform.com/players/7PVky4jv-A9Xg4ve3.js'
+                playlist='//content.jwplatform.com/feeds/7PVky4jv.json'
+                licenseKey='Gdr5EjSs86oXC8NxamXQfJPa6Vp2G/cJ7V3WYfGEaX4TBP8/4f9WNZtgi61slmIF'
+              />
 
-              <script src='//content.jwplatform.com/players/7PVky4jv-A9Xg4ve3.js' />
             </div>
           </div>
           <div
