@@ -15,11 +15,14 @@ class TextRevealImageCard extends Component {
             Formation {this.props.cardTitle}
             <i className='material-icons right'>close</i>
           </span>
-          <p>
-            {this.props.cardContent}
-          </p>
+
+          <span dangerouslySetInnerHTML={{ __html: this.props.cardContent }} />
           <div>
-            <Link prefetch href={this.props.url} title={this.props.cardTitle}>
+            <Link
+              prefetch
+              href={`/${this.props.url}`}
+              title={this.props.cardTitle}
+            >
               <a>More</a>
             </Link>
 
@@ -41,6 +44,7 @@ class TextRevealImageCard extends Component {
           .card-title {
             font-family: 'Cinzel', serif;
             padding-bottom: 0;
+            font-size: 28px;
           }
           .card-reveal p {
             margin: 8px 0;

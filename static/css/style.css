@@ -556,3 +556,7 @@ ul li {
   color: #fff;
   font-weight: 500;
 }
+
+.card-reveal p {
+  margin: 8px 0;
+}
