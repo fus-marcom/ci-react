@@ -3592,13 +3592,20 @@ react-hot-loader@3.0.0-beta.7:
     redbox-react "^1.3.6"
     source-map "^0.4.4"
 
+react-jw-player@^1.8.1:
+  version "1.8.1"
+  resolved "https://registry.yarnpkg.com/react-jw-player/-/react-jw-player-1.8.1.tgz#7661e914b2e55937e6069634bb049b8fb2861f54"
+  dependencies:
+    prop-types "^15.5.10"
+    react "^15.4.1"
+
 react-proxy@^3.0.0-alpha.0:
   version "3.0.0-alpha.1"
   resolved "https://registry.yarnpkg.com/react-proxy/-/react-proxy-3.0.0-alpha.1.tgz#4400426bcfa80caa6724c7755695315209fa4b07"
   dependencies:
     lodash "^4.6.1"
 
-react@^15.5.4:
+react@^15.4.1, react@^15.5.4:
   version "15.5.4"
   resolved "https://registry.yarnpkg.com/react/-/react-15.5.4.tgz#fa83eb01506ab237cdc1c8c3b1cea8de012bf047"
   dependencies:
