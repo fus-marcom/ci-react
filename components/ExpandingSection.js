@@ -34,7 +34,12 @@ class ExpandingSection extends Component {
         <span dangerouslySetInnerHTML={{ __html: content }} />
         {url &&
           <OutLink to={url} title={title} label={`linkTo${url}`}>
-            <button className='btn waves-effect waves-light'>Learn More</button>
+            <button
+              className='btn waves-effect waves-light'
+              style={{ marginBottom: '16px' }}
+            >
+              Learn More
+            </button>
           </OutLink>}
       </div>
     )
