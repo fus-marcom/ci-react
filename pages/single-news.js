@@ -1,7 +1,6 @@
 import React from 'react'
 import Layout from '../components/Layout'
 import StickyNav from '../components/StickyNav'
-import Title from '../components/Title'
 import Error404 from '../components/Error404'
 import 'isomorphic-fetch'
 import { logPageView } from '../utils/analytics'
@@ -45,25 +44,13 @@ export default class extends React.Component {
           ? <Error404 />
           : <main className='single-post'>
             <StickyNav />
-            {this.props.data[0].better_featured_image !== null &&
-                this.props.data[0].better_featured_image.media_details.sizes.hasOwnProperty(
-                  'large'
-                )
-                ? <Title
-                  title={this.props.data[0].title.rendered}
-                  imgPath={
-                      this.props.data[0].better_featured_image.media_details
-                        .sizes.large.source_url
-                    }
-                  posY='-44vh'
-                  />
-                : <Title
-                  title={this.props.data[0].title.rendered}
-                  imgPath='/static/img/campus-7.jpg'
-                  posY='-44vh'
-                  />}
 
             <div className='container'>
+              <h1
+                dangerouslySetInnerHTML={{
+                  __html: this.props.data[0].title.rendered
+                }}
+                />
               <div className='row'>
                 <div
                   className='col s12 flow-text'
