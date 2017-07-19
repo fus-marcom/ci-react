@@ -26,7 +26,7 @@ export default class extends React.Component {
         title='News | Catechetical Institute at Franciscan University'
         description='The latest news and announcements from the Catechetical Institute at Franciscan University of Steubenville.'
       >
-        <main>
+        <main id='news'>
           <StickyNav />
           <Title
             title='News'

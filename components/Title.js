@@ -63,7 +63,7 @@ class Title extends Component {
                 background-position-y: 0;
               }
               #news .interior-page-title {
-                background-image: url(/static/img/new/campus-11.jpg);
+                background-image: url(/static/img/news-title.jpg);
               }
               #resources .interior-page-title {
                 background-image: url(/static/img/new/resources-title.jpg);
