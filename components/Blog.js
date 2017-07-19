@@ -11,10 +11,25 @@ const Blog = props =>
       <div
         className='flow-text'
         dangerouslySetInnerHTML={{
-          __html: props.content
+          __html: props.excerpt
         }}
       />
     </div>
+    <a href={`/news/${props.slug}`}><span class='more-link'>Read More</span></a>
+    <style jsx>
+      {`
+        span {
+          color: #998643;
+          padding-left: 6px;
+          margin-bottom: 8px;
+          display: block;
+        }
+        span.more-link {
+          padding-left: 16px;
+        }
+      `}
+
+    </style>
   </div>
 
 export default Blog

@@ -41,6 +41,7 @@ export default class extends React.Component {
                     slug={post.slug}
                     title={post.title.rendered}
                     content={post.content.rendered}
+                    excerpt={post.acf.excerpt}
                     date={new Date(post.date)}
                     key={i}
                   />
