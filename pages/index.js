@@ -49,7 +49,7 @@ export default class extends React.Component {
                 playerId='A9Xg4ve3'
                 playerScript='https://content.jwplatform.com/players/7PVky4jv-A9Xg4ve3.js'
                 playlist='//content.jwplatform.com/feeds/7PVky4jv.json'
-                licenseKey='Gdr5EjSs86oXC8NxamXQfJPa6Vp2G/cJ7V3WYfGEaX4TBP8/4f9WNZtgi61slmIF'
+                licenseKey='m7z3Pn9cefVunB8BzPzXMK4w8lgrmoG1exRo4oE5mcXTAujMDIG+Fe3+eBdT7BBY'
               />
 
             </div>
