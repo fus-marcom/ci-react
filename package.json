@@ -13,8 +13,7 @@
     "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "react-ga": "^2.2.0",
-    "react-jw-player": "^1.8.1"
+    "react-ga": "^2.2.0"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",

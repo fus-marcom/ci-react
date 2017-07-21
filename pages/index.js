@@ -5,9 +5,9 @@ import Hero from '../components/Hero'
 import StickyNav from '../components/StickyNav'
 import TextRevealImageCard from '../components/TextRevealImageCard'
 import TextCard from '../components/TextCard'
+import JWPlayerVideo from '../components/JWPlayerVideo'
 import 'isomorphic-fetch'
 import { logPageView } from '../utils/analytics'
-import ReactJWPlayer from 'react-jw-player'
 
 export default class extends React.Component {
   static async getInitialProps () {
@@ -37,23 +37,11 @@ export default class extends React.Component {
             className='section'
             style={{ padding: '0', backgroundColor: '#a61f26' }}
           >
-            <div
-              style={{
-                position: 'relative',
-                height: '0',
-                overflow: 'hidden',
-                paddingBottom: '56.25%'
-              }}
-            >
-              <ReactJWPlayer
-                playerId='A9Xg4ve3'
-                playerScript='https://content.jwplatform.com/players/7PVky4jv-A9Xg4ve3.js'
-                playlist='//content.jwplatform.com/feeds/7PVky4jv.json'
-                licenseKey='4qGyvA3ZcQbTXpSugnkcmvIe5oTz/tUNjieLkGntpAS5yWh6BZN95qCX7N2Rt+6I'
-              />
 
-            </div>
+            <JWPlayerVideo videoId='7PVky4jv-A9Xg4ve3' />
+
           </div>
+
           <div
             className='section banner valign-wrapper red-background-flourish'
             id='banner'

@@ -22,11 +22,12 @@ class Nav extends Component {
               >
                 Franciscan University of Steubenville
               </OutLink>
-              <Link prefetch href='/'>
-                <a className='brand-logo'>
-                  <img src='/static/img/ci-logo.png' />
-                </a>
-              </Link>
+
+              <a href='/' className='brand-logo'>
+
+                <img src='/static/img/ci-logo.png' />
+              </a>
+
               <a
                 href='#'
                 data-activates='mobile-demo'
@@ -48,11 +49,11 @@ class Nav extends Component {
         </div>
         <ul className='side-nav' id='mobile-demo' style={{ width: '300px' }}>
           <li className='logo'>
-            <Link prefetch href='/'>
-              <a className='brand-logo'>
-                <img src='/static/img/ci-logo.png' />
-              </a>
-            </Link>
+            <a href='/' className='brand-logo'>
+
+              <img src='/static/img/ci-logo.png' />
+            </a>
+
           </li>
           <li>
             {' '}<Link prefetch href='/about'><a>About</a></Link>{' '}
