@@ -26,7 +26,12 @@ export default class extends React.Component {
     const params =
       'multiple-post-type?per_page=100&type[]=resource&fields=title,acf,better_featured_image,date,resource-category,type,content,slug,id&type[]=page'
     const res = await fetch(apiUrl + params)
-    const data = await res.json()
+    const data = await res.json().then(data => {
+      let stringified = JSON.stringify(data)
+      stringified = stringified.replace(/&amp;/gm, '&')
+      data = JSON.parse(stringified)
+      return data
+    })
     return { data }
   }
 
