@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { decode } from '../utils/decode'
 
 class ResourceRow extends Component {
   state = {
@@ -31,7 +30,7 @@ class ResourceRow extends Component {
           </span>
           <h4 style={{ marginBottom: '4px', marginTop: '0px' }}>
             <a
-              href={decode(this.props.url)}
+              href={this.props.url}
               title={this.props.title}
               style={{ color: '#8e1b21' }}
               target='_blank'
