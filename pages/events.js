@@ -6,11 +6,11 @@ import Title from '../components/Title'
 import EventSection from '../components/EventSection'
 import 'isomorphic-fetch'
 import { logPageView } from '../utils/analytics'
-import { getJSON } from '../utils/fetch'
 
 export default class extends React.Component {
   state = {
     data: [],
+    dateSort: 'asc',
     dateAsc: null,
     dateDesc: null,
     dateIsAsc: true,
@@ -32,6 +32,7 @@ export default class extends React.Component {
       data: this.props.data
         .filter(post => post.type === 'nearby-event')
         .filter(post => post.acf.date >= this.getTodaysDate())
+        .sort((a, b) => a.acf.date - b.acf.date)
     })
     hScroller()
     logPageView()
@@ -77,19 +78,31 @@ export default class extends React.Component {
   }
 
   sortDate = () => {
-    if (this.state.dateIsAsc) {
-      if (this.state.dateDesc === null) {
-        const apiUrl = 'https://wp.catechetics.com/wp-json/wp/v2/'
-        const params = `nearby-event?per_page=100&filter[orderby]=acf.date&filter[order]=DESC&fields=title,acf`
-        this.setState({ dateAsc: this.state.data })
-        getJSON(apiUrl + params).then(data => this.setState({ data }))
-      } else {
-        this.setState({ data: this.state.dateDesc })
-      }
-    } else {
-      this.setState({ dateDesc: this.state.data, data: this.state.dateAsc })
+    const newData = this.state.data.sort(
+      (a, b) =>
+        this.state.dateSort === 'desc'
+          ? a.acf.date - b.acf.date
+          : b.acf.date - a.acf.date
+    )
+    this.setState({
+      data: newData,
+      dateSort: this.state.dateSort === 'asc' ? 'desc' : 'asc'
+    })
+  }
+
+  handleSort = sortBy => {
+    switch (sortBy) {
+      case 'date':
+        this.sortDate()
+        break
+
+      case 'location':
+        this.getLocation()
+        break
+
+      default:
+        this.sortDate()
     }
-    this.setState({ dateIsAsc: !this.state.dateIsAsc })
   }
 
   makeTwoDigits (n) {
@@ -164,7 +177,7 @@ export default class extends React.Component {
                 <table className='highlight responsive-table'>
                   <thead>
                     <tr>
-                      <th onClick={this.sortDate}>Date</th>
+                      <th onClick={() => this.handleSort('date')}>Date</th>
                       <th>Presenter</th>
                       <th>Event/Title</th>
                       <th onClick={this.getLocation}>Location</th>
