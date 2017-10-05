@@ -91,12 +91,16 @@ class EventSection extends Component {
           </a>}
 
         {flyerLink &&
-          <a href={flyerLink} title={`${title} Flyer PDF`} target='_blank'>
+          <a
+            href={flyerLink}
+            title={`${title} ${!this.isEven() ? 'Schedule PDF' : 'Flyer PDF'}`}
+            target='_blank'
+          >
             <button
               className='btn waves-effect waves-light'
               style={{ marginLeft: '8px' }}
             >
-              Flyer
+              {!this.isEven() ? 'Schedule' : 'Flyer'}
             </button>
           </a>}
 
