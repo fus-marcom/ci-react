@@ -8,7 +8,8 @@ import { logPageView } from '../utils/analytics'
 export default class extends React.Component {
   static async getInitialProps () {
     const apiUrl = 'https://wp.catechetics.com/wp-json/wp/v2/'
-    const params = 'multiple-post-type?per_page=100&type[]=pdf-page&type[]=page'
+    const params =
+      'multiple-post-type?per_page=100&type[]=pdf-page&type[]=page&type[]=collaborator&type[]=prayer-intercessor'
     const res = await fetch(apiUrl + params)
     const data = await res.json()
     return { data }
@@ -276,112 +277,60 @@ export default class extends React.Component {
                 </div>
               </div>
               <div className='row light flow-text'>
-                <div className='col s6 m3'>
-                  <div className='card hoverable' style={{ cursor: 'pointer' }}>
-                    <div className='card-image'>
-                      <a
-                        href='https://steubenvilleconferences.com/'
-                        title='Steubenville Conferences'
-                        target='_blank'
+                {this.props.data
+                  .filter(post => post.type === 'collaborator')
+                  .map(post =>
+                    <div className='col s6 m3' key={post.id}>
+                      <div
+                        className='card hoverable'
+                        style={{ cursor: 'pointer' }}
                       >
-                        <img src='/static/img/fc-logo.jpg' />
-                      </a>
+                        <div className='card-image'>
+                          <a
+                            href={post.acf.url}
+                            title={post.title.rendered}
+                            target='_blank'
+                          >
+                            <img
+                              src={
+                                post.better_featured_image &&
+                                post.better_featured_image.source_url &&
+                                post.better_featured_image.source_url
+                              }
+                            />
+                          </a>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-                <div className='col s6 m3'>
-                  <div className='card hoverable' style={{ cursor: 'pointer' }}>
-                    <div className='card-image'>
-                      <a
-                        href='https://lciaustria.org/'
-                        title='Language and Catechetical Institute'
-                        target='_blank'
-                      >
-                        <img src='/static/img/lci-logo.png' />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div className='col s6 m3'>
-                  <div className='card hoverable' style={{ cursor: 'pointer' }}>
-                    <div className='card-image'>
-                      <a
-                        href='http://lifeteen.com/'
-                        title='Life Teen'
-                        target='_blank'
-                      >
-                        <img src='/static/img/lt-logo.jpg' />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div className='col s6 m3'>
-                  <div className='card hoverable' style={{ cursor: 'pointer' }}>
-                    <div className='card-image'>
-                      <a
-                        href='https://stpaulcenter.com/'
-                        title='St. Paul Center for Biblical Theology'
-                        target='_blank'
-                      >
-                        <img src='/static/img/spc-logo.png' />
-                      </a>
-                    </div>
-                  </div>
+                  )}
+
+              </div>
+              <div className='row center'>
+                <div class='col s12'>
+                  <h2
+                    className='light flourish-white'
+                    style={{ fontSize: '38px' }}
+                  >
+                    Prayer Intercessors
+                  </h2>
                 </div>
               </div>
               <div className='row light flow-text'>
-                <div className='col s6 m3'>
-                  <div className='card hoverable' style={{ cursor: 'pointer' }}>
-                    <div className='card-image'>
-                      <a
-                        href='https://www.inscapevocations.com/'
-                        title='Inscape'
-                        target='_blank'
-                      >
-                        <img src='/static/img/inscape-logo.jpg' />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div className='col s6 m3'>
-                  <div className='card hoverable' style={{ cursor: 'pointer' }}>
-                    <div className='card-image'>
-                      <a
-                        href='https://www.osv.com/default.aspx'
-                        title='Our Sunday Visitor'
-                        target='_blank'
-                      >
-                        <img src='/static/img/osv-logo.png' />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div className='col s6 m3'>
-                  <div className='card hoverable' style={{ cursor: 'pointer' }}>
-                    <div className='card-image'>
-                      <a
-                        href='https://homeschoolconnectionsonline.com/'
-                        title='Homeschool Connections'
-                        target='_blank'
-                      >
-                        <img src='/static/img/hsc-logo.png' />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div className='col s6 m3'>
-                  <div className='card hoverable' style={{ cursor: 'pointer' }}>
-                    <div className='card-image'>
-                      <a
-                        href='https://acmrcia.org/'
-                        title='The Association for Catechumenal Ministry'
-                        target='_blank'
-                      >
-                        <img src='/static/img/acm-logo.jpg' />
-                      </a>
-                    </div>
-                  </div>
-                </div>
+                <ul>
+                  {this.props.data
+                    .filter(post => post.type === 'prayer-intercessor')
+                    .map(post =>
+                      <li key={post.id}>
+                        <a
+                          style={{ color: 'rgb(142, 27, 33)' }}
+                          href={post.acf.url}
+                          dangerouslySetInnerHTML={{
+                            __html: post.title.rendered
+                          }}
+                        />
+                      </li>
+                    )}
+                </ul>
               </div>
             </div>
           </div>
