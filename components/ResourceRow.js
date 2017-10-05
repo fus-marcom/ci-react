@@ -88,8 +88,10 @@ class ResourceRow extends Component {
 
         </div>
         <div class='col s12 m3'>
-          <img src={this.props.img} style={{ maxHeight: '200px' }} />
-
+          {this.props.img &&
+            <a href={this.props.url} title={this.props.title} target='_blank'>
+              <img src={this.props.img} style={{ maxHeight: '200px' }} />
+            </a>}
         </div>
       </div>
     )
