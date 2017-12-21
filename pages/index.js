@@ -37,9 +37,7 @@ export default class extends React.Component {
             className='section'
             style={{ padding: '0', backgroundColor: '#a61f26' }}
           >
-
             <JWPlayerVideo videoId='7PVky4jv-A9Xg4ve3' />
-
           </div>
 
           <div
@@ -69,8 +67,8 @@ export default class extends React.Component {
               <div className='row light'>
                 {this.props.data
                   .filter(post => post.type === 'formation-card')
-                  .map(post =>
-                    <div className='col s12 m6'>
+                  .map(post => (
+                    <div className='col s12 m6' key={post.id}>
                       <TextRevealImageCard
                         cardTitle={post.title.rendered}
                         cardImg={
@@ -82,8 +80,7 @@ export default class extends React.Component {
                         url={post.acf.link}
                       />
                     </div>
-                  )}
-
+                  ))}
               </div>
             </div>
           </div>
@@ -98,7 +95,7 @@ export default class extends React.Component {
                 <div className='col s12 l6'>
                   {this.props.data
                     .filter(post => post.slug === 'home-black-banner')
-                    .map(post =>
+                    .map(post => (
                       <blockquote
                         className='flow-text'
                         style={{ borderLeft: '5px solid #a61f26' }}
@@ -107,8 +104,7 @@ export default class extends React.Component {
                         }}
                         key={post.id}
                       />
-                    )}
-
+                    ))}
                 </div>
               </div>
             </div>
@@ -140,7 +136,7 @@ export default class extends React.Component {
                 {this.props.data
                   .filter(post => post.type === 'post')
                   .filter(post => post.acf.type === 'announcement')
-                  .map(post =>
+                  .map(post => (
                     <div className='col s12 m6 l4 xl3' key={post.id}>
                       <TextCard
                         title={post.title.rendered}
@@ -152,14 +148,13 @@ export default class extends React.Component {
                         }
                       />
                     </div>
-                  )}
-
+                  ))}
               </div>
               <div className='row' id='news-tab'>
                 {this.props.data
                   .filter(post => post.type === 'post')
                   .filter(post => post.acf.type === 'news')
-                  .map(post =>
+                  .map(post => (
                     <div className='col s12 m6 l4 xl3' key={post.id}>
                       <TextCard
                         title={post.title.rendered}
@@ -171,8 +166,7 @@ export default class extends React.Component {
                         }
                       />
                     </div>
-                  )}
-
+                  ))}
               </div>
             </div>
           </div>

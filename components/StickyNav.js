@@ -12,23 +12,33 @@ class StickyNav extends Component {
       <div className='section bottom-nav'>
         <ul className='hide-on-med-and-down'>
           <li>
-            <Link prefetch href='/about' title='About'><a>About</a></Link>
-          </li>
-          <li><Link prefetch href='/team' title='Team'><a>Team</a></Link></li>
-          <li>
-            <Link prefetch href='/courses' title='Courses'><a>Courses</a></Link>
-          </li>
-          <li>
-            <Link prefetch href='/events' title='Events'><a>Events</a></Link>
-          </li>
-          <li>
-            <Link prefetch href='/resources' title='Resources'>
-              <a>Resources</a>
+            <Link prefetch href='/about'>
+              <a title='About'>About</a>
             </Link>
           </li>
           <li>
-            <Link prefetch href='/news' title='News'>
-              <a>News</a>
+            <Link prefetch href='/team'>
+              <a title='Team'>Team</a>
+            </Link>
+          </li>
+          <li>
+            <Link prefetch href='/courses'>
+              <a title='Courses'>Courses</a>
+            </Link>
+          </li>
+          <li>
+            <Link prefetch href='/events'>
+              <a title='Events'>Events</a>
+            </Link>
+          </li>
+          <li>
+            <Link prefetch href='/resources'>
+              <a title='Resources'>Resources</a>
+            </Link>
+          </li>
+          <li>
+            <Link prefetch href='/news'>
+              <a title='News'>News</a>
             </Link>
           </li>
         </ul>
@@ -47,7 +57,7 @@ class StickyNav extends Component {
               cursor: pointer;
               padding: 6px 12px 7px 12px;
               line-height: 19px;
-              transition: .3s ease-in-out;
+              transition: 0.3s ease-in-out;
               font-weight: 600;
             }
             .bottom-nav ul li a:hover {

@@ -18,14 +18,9 @@ class TextRevealImageCard extends Component {
 
           <span dangerouslySetInnerHTML={{ __html: this.props.cardContent }} />
           <div>
-            <Link
-              prefetch
-              href={`/${this.props.url}`}
-              title={this.props.cardTitle}
-            >
-              <a>More</a>
+            <Link prefetch href={`/${this.props.url}`}>
+              <a title={this.props.cardTitle}>More</a>
             </Link>
-
           </div>
         </div>
         <style jsx>{`

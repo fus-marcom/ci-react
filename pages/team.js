@@ -38,14 +38,15 @@ export default class extends React.Component {
               <div className='row valign-wrapper'>
                 {this.props.data
                   .filter(post => post.slug === 'team-intro')
-                  .map(post =>
+                  .map(post => (
                     <div
+                      key={post.id}
                       className='col s12 valign flow-text'
                       dangerouslySetInnerHTML={{
                         __html: post.content.rendered
                       }}
                     />
-                  )}
+                  ))}
               </div>
             </div>
           </div>
@@ -71,7 +72,7 @@ export default class extends React.Component {
                 {this.props.data
                   .filter(post => post.type === 'team-member')
                   .filter(post => post.acf.category[0] === 'fus-staff')
-                  .map(post =>
+                  .map(post => (
                     <div className='col s12 l6' key={post.id}>
                       <TeamCard
                         name={post.acf.name}
@@ -87,8 +88,7 @@ export default class extends React.Component {
                         slug={post.slug}
                       />
                     </div>
-                  )}
-
+                  ))}
               </div>
             </div>
 
@@ -114,7 +114,7 @@ export default class extends React.Component {
                 {this.props.data
                   .filter(post => post.type === 'team-member')
                   .filter(post => post.acf.category[0] === 'conf-staff')
-                  .map(post =>
+                  .map(post => (
                     <div className='col s12 l6' key={post.id}>
                       <TeamCard
                         name={post.acf.name}
@@ -130,7 +130,7 @@ export default class extends React.Component {
                         slug={post.slug}
                       />
                     </div>
-                  )}
+                  ))}
               </div>
             </div>
 
@@ -155,7 +155,7 @@ export default class extends React.Component {
                 {this.props.data
                   .filter(post => post.type === 'team-member')
                   .filter(post => post.acf.category[0] === 'ci-staff')
-                  .map(post =>
+                  .map(post => (
                     <div className='col s12 l6' key={post.id}>
                       <TeamCard
                         name={post.acf.name}
@@ -171,13 +171,11 @@ export default class extends React.Component {
                         slug={post.slug}
                       />
                     </div>
-                  )}
-
+                  ))}
               </div>
             </div>
 
             <div className='section black-text'>
-
               <div className='row light flow-text title-row'>
                 <div className='col s12'>
                   <h2 className='light'>
@@ -198,7 +196,7 @@ export default class extends React.Component {
                 {this.props.data
                   .filter(post => post.type === 'team-member')
                   .filter(post => post.acf.category[0] === 'ci-mentors')
-                  .map(post =>
+                  .map(post => (
                     <div className='col s12 l6' key={post.id}>
                       <TeamCard
                         name={post.acf.name}
@@ -214,8 +212,7 @@ export default class extends React.Component {
                         slug={post.slug}
                       />
                     </div>
-                  )}
-
+                  ))}
               </div>
             </div>
           </div>

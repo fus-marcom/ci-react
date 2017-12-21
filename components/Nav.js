@@ -24,7 +24,6 @@ class Nav extends Component {
               </OutLink>
 
               <a href='/' className='brand-logo'>
-
                 <img src='/static/img/ci-logo.png' />
               </a>
 
@@ -50,27 +49,44 @@ class Nav extends Component {
         <ul className='side-nav' id='mobile-demo' style={{ width: '300px' }}>
           <li className='logo'>
             <a href='/' className='brand-logo'>
-
               <img src='/static/img/ci-logo.png' />
             </a>
-
           </li>
           <li>
-            {' '}<Link prefetch href='/about'><a>About</a></Link>{' '}
+            {' '}
+            <Link prefetch href='/about'>
+              <a>About</a>
+            </Link>{' '}
           </li>
           <li>
-            {' '}<Link prefetch href='/team'><a>Team</a></Link>{' '}
+            {' '}
+            <Link prefetch href='/team'>
+              <a>Team</a>
+            </Link>{' '}
           </li>
           <li>
-            {' '}<Link prefetch href='/courses'><a>Courses</a></Link>{' '}
+            {' '}
+            <Link prefetch href='/courses'>
+              <a>Courses</a>
+            </Link>{' '}
           </li>
           <li>
-            {' '}<Link prefetch href='/events'><a>Events</a></Link>{' '}
+            {' '}
+            <Link prefetch href='/events'>
+              <a>Events</a>
+            </Link>{' '}
           </li>
           <li>
-            {' '}<Link prefetch href='/resources'><a>Resources</a></Link>{' '}
+            {' '}
+            <Link prefetch href='/resources'>
+              <a>Resources</a>
+            </Link>{' '}
           </li>
-          <li><Link prefetch href='/news' title='News'><a>News</a></Link></li>
+          <li>
+            <Link prefetch href='/news'>
+              <a title='News'>News</a>
+            </Link>
+          </li>
         </ul>
         <style jsx>{`
           @media screen and (max-width: 992px) {

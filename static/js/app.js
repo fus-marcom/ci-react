@@ -4,7 +4,10 @@
 function initCourseSections() {
   // Course Section Click Handler
   $('.sub-section h3').click(function() {
-    $(this).parent().toggleClass('open').fadeIn(100)
+    $(this)
+      .parent()
+      .toggleClass('open')
+      .fadeIn(100)
   })
 }
 
@@ -15,7 +18,10 @@ function initSelect() {
 function initTeamCardSections() {
   // Team Card Click Handler
   $('.title-row').click(function() {
-    $(this).parent().toggleClass('open').fadeIn(100)
+    $(this)
+      .parent()
+      .toggleClass('open')
+      .fadeIn(100)
   })
 }
 
@@ -35,17 +41,17 @@ function initTabs() {
 // Team Card click handler
 function teamModalInit() {
   $('.modal').modal()
-  $('.team-card').not('.modal').click(function() {
-    console.log('click')
-    var thisCard = this
-    var cardSlug = $(thisCard).attr('data-slug')
-    console.log(cardSlug)
-    $('#' + cardSlug).modal('open')
-    // Modal close btn is buggy, fix later
-    // $('.team-card .modal-footer a').click(function() {
-    //   $(`#${cardSlug}`).modal('close');
-    // });
-  })
+  $('.team-card')
+    .not('.modal')
+    .click(function() {
+      var thisCard = this
+      var cardSlug = $(thisCard).attr('data-slug')
+      $('#' + cardSlug).modal('open')
+      // Modal close btn is buggy, fix later
+      // $('.team-card .modal-footer a').click(function() {
+      //   $(`#${cardSlug}`).modal('close');
+      // });
+    })
 }
 
 function stickyNav() {
@@ -165,17 +171,25 @@ $(function () {
   })
 
   if ($(window).scrollTop() > 1500) {
-    $('.scroll-to-top').removeClass('slide-out').addClass('slide-in')
+    $('.scroll-to-top')
+      .removeClass('slide-out')
+      .addClass('slide-in')
   } else {
-    $('.scroll-to-top').removeClass('slide-in').addClass('slide-out')
+    $('.scroll-to-top')
+      .removeClass('slide-in')
+      .addClass('slide-out')
   }
 
   function scrollToTop () {
     $(window).scroll(function () {
       if ($(window).scrollTop() > 1500) {
-        $('.scroll-to-top').removeClass('slide-out').addClass('slide-in')
+        $('.scroll-to-top')
+          .removeClass('slide-out')
+          .addClass('slide-in')
       } else {
-        $('.scroll-to-top').removeClass('slide-in').addClass('slide-out')
+        $('.scroll-to-top')
+          .removeClass('slide-in')
+          .addClass('slide-out')
       }
     })
   }
