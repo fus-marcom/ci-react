@@ -5,7 +5,6 @@ import Hero from '../components/Hero'
 import StickyNav from '../components/StickyNav'
 import TextRevealImageCard from '../components/TextRevealImageCard'
 import TextCard from '../components/TextCard'
-import JWPlayerVideo from '../components/JWPlayerVideo'
 import 'isomorphic-fetch'
 import { logPageView } from '../utils/analytics'
 
@@ -37,7 +36,27 @@ export default class extends React.Component {
             className='section'
             style={{ padding: '0', backgroundColor: '#a61f26' }}
           >
-            <JWPlayerVideo videoId='7PVky4jv-A9Xg4ve3' />
+            <div
+              style={{
+                position: 'relative',
+                height: '0',
+                overflow: 'hidden',
+                paddingBottom: '56.25%'
+              }}
+            >
+              <iframe
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  position: 'absolute',
+                  top: '0',
+                  left: '0'
+                }}
+                src='https://www.youtube.com/embed/MfHhqMMQVBQ?&modestbranding=1&rel=0&loop=1'
+                frameBorder='0'
+                allowFullScreen
+              />
+            </div>
           </div>
 
           <div
