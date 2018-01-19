@@ -6,6 +6,7 @@ import Title from '../components/Title'
 import EventSection from '../components/EventSection'
 import 'isomorphic-fetch'
 import { logPageView } from '../utils/analytics'
+import Link from 'next/link'
 
 export default class extends React.Component {
   state = {
@@ -67,8 +68,8 @@ export default class extends React.Component {
           'location_map'
         )
           ? this.state.userLat -
-              eventCloned.acf.location_map.lat +
-              (this.state.userLong - eventCloned.acf.location_map.lng)
+            eventCloned.acf.location_map.lat +
+            (this.state.userLong - eventCloned.acf.location_map.lng)
           : Infinity
         return eventCloned
       })
@@ -123,13 +124,46 @@ export default class extends React.Component {
             imgPath='/static/img/campus-7.jpg'
             posY='-44vh'
           />
+          <div className='section secondary-nav'>
+            <ul className='hide-on-med-and-down'>
+              <li>
+                <Link prefetch href='/about'>
+                  <a title='About'>About</a>
+                </Link>
+              </li>
+              <li>
+                <Link prefetch href='/team'>
+                  <a title='Team'>Team</a>
+                </Link>
+              </li>
+              <li>
+                <Link prefetch href='/courses'>
+                  <a title='Courses'>Courses</a>
+                </Link>
+              </li>
+              <li>
+                <Link prefetch href='/events'>
+                  <a title='Events'>Events</a>
+                </Link>
+              </li>
+              <li>
+                <Link prefetch href='/resources'>
+                  <a title='Resources'>Resources</a>
+                </Link>
+              </li>
+              <li>
+                <Link prefetch href='/news'>
+                  <a title='News'>News</a>
+                </Link>
+              </li>
+            </ul>
+          </div>
           <div className='section white-background-flourish'>
             <div className='container'>
               <div className='row'>
-
                 {this.props.data
                   .filter(post => post.slug === 'events-intro')
-                  .map(post =>
+                  .map(post => (
                     <div
                       key={post.id}
                       className='col s12 flow-text'
@@ -137,14 +171,13 @@ export default class extends React.Component {
                         __html: post.content.rendered
                       }}
                     />
-                  )}
-
+                  ))}
               </div>
             </div>
           </div>
           {this.props.data
             .filter(post => post.type === 'major-event')
-            .map((post, i) =>
+            .map((post, i) => (
               <EventSection
                 index={i}
                 title={post.title.rendered}
@@ -166,7 +199,7 @@ export default class extends React.Component {
                 embed={post.acf.youtube_embed}
                 eventDate={post.acf.event_date}
               />
-            )}
+            ))}
 
           <div className='section valign-wrapper black-text white-background-flourish'>
             <div className='valign container wide-container'>
@@ -247,7 +280,6 @@ export default class extends React.Component {
                     <path d='M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z' />
                     <path d='M0 0h24v24H0z' fill='none' />
                   </svg>
-
                 </div>
               </div>
             </div>
@@ -267,24 +299,45 @@ export default class extends React.Component {
                   max-width: 103px;
                 }
 
-                .responsive-table .event-email-td, .responsive-table .presenter-email-td {
+                .responsive-table .event-email-td,
+                .responsive-table .presenter-email-td {
                   min-height: 84px;
                 }
               }
-                .responsive-table td, .responsive-table th {
-                  min-height: 66px;
-                }
+              .responsive-table td,
+              .responsive-table th {
+                min-height: 66px;
+              }
 
-                .scroller {
-                  margin-bottom: -28px;
-                }
+              .scroller {
+                margin-bottom: -28px;
+              }
 
-                .scroller svg {
-                  width: 65px;
-                  height: 60px;
-                  cursor: pointer;
-              `}
-
+              .scroller svg {
+                width: 65px;
+                height: 60px;
+                cursor: pointer;
+              }
+              ul li {
+                float: left;
+                line-height: 8px;
+                padding: 6px 0 0 0;
+              }
+              ul li a {
+                color: #fff;
+                text-transform: uppercase;
+                font-size: 22px;
+                font-family: 'Cinzel', serif;
+                cursor: pointer;
+                padding: 6px 12px 7px 12px;
+                line-height: 19px;
+                transition: 0.3s ease-in-out;
+                font-weight: 600;
+              }
+              .secondary-nav ul li a:hover {
+                background-color: hsla(357, 68%, 28%, 1);
+              }
+            `}
           </style>
         </main>
       </Layout>
