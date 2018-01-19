@@ -11,8 +11,8 @@ class Title extends Component {
             background-repeat: no-repeat;
             background-position: 50% 69px;
             margin: 0 auto;
-            font-size: 50px;
-            padding: 16px 0 19px 0;
+            font-size: 38px;
+            padding: 16px 0 25px 0;
           }
           @media screen and (max-width: 799px) {
             h1 {
