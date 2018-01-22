@@ -127,38 +127,23 @@ export default class extends React.Component {
           <div className='section secondary-nav'>
             <ul className='hide-on-med-and-down'>
               <li>
-                <Link prefetch href='/about'>
-                  <a title='About'>About</a>
+                <Link prefetch href='#conferences'>
+                  <a title='Conferences'>Conferences</a>
                 </Link>
               </li>
               <li>
-                <Link prefetch href='/team'>
-                  <a title='Team'>Team</a>
+                <Link prefetch href='/mentor-training'>
+                  <a title='Mentors'>Mentors</a>
                 </Link>
               </li>
               <li>
-                <Link prefetch href='/courses'>
-                  <a title='Courses'>Courses</a>
-                </Link>
-              </li>
-              <li>
-                <Link prefetch href='/events'>
-                  <a title='Events'>Events</a>
-                </Link>
-              </li>
-              <li>
-                <Link prefetch href='/resources'>
-                  <a title='Resources'>Resources</a>
-                </Link>
-              </li>
-              <li>
-                <Link prefetch href='/news'>
-                  <a title='News'>News</a>
+                <Link prefetch href='#nearby-events'>
+                  <a title='Nearby Events'>Nearby Events</a>
                 </Link>
               </li>
             </ul>
           </div>
-          <div className='section white-background-flourish'>
+          <div className='section white-background-flourish' id='conferences'>
             <div className='container'>
               <div className='row'>
                 {this.props.data
@@ -201,7 +186,10 @@ export default class extends React.Component {
               />
             ))}
 
-          <div className='section valign-wrapper black-text white-background-flourish'>
+          <div
+            className='section valign-wrapper black-text white-background-flourish'
+            id='nearby-events'
+          >
             <div className='valign container wide-container'>
               <h2 className='light center' style={{ marginBottom: '0px' }}>
                 Find a Nearby Event
