@@ -18,9 +18,23 @@ export default class extends React.Component {
     return { data }
   }
 
+  state = {
+    returnUser: false
+  }
+
   componentDidMount () {
     initTabs()
     logPageView()
+    this.checkUserStatus()
+  }
+
+  checkUserStatus = () => {
+    // Check local storage for user
+    if (window.localStorage.getItem('returnUser')) {
+      this.setState({ returnUser: true })
+    } else {
+      window.localStorage.setItem('returnUser', 'true')
+    }
   }
 
   render () {
@@ -32,6 +46,69 @@ export default class extends React.Component {
         <main>
           <Hero />
           <StickyNav />
+          {this.state.returnUser && (
+            <div
+              className='section valign-wrapper black-text white-background-flourish'
+              id='news'
+            >
+              <div className='valign container'>
+                <div className='row'>
+                  <div className='col s12'>
+                    <ul
+                      className='tabs'
+                      style={{ backgroundColor: 'transparent' }}
+                    >
+                      <li className='tab col s6'>
+                        <a href='#announcements' className='active'>
+                          Announcements
+                        </a>
+                      </li>
+                      <li className='tab col s6'>
+                        <a href='#news-tab'>Newest Additions</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div className='row' id='announcements'>
+                  {this.props.data
+                    .filter(post => post.type === 'post')
+                    .filter(post => post.acf.type === 'announcement')
+                    .map(post => (
+                      <div className='col s12 m6 l4 xl3' key={post.id}>
+                        <TextCard
+                          title={post.title.rendered}
+                          content={post.acf.excerpt}
+                          url={
+                            post.acf.hasOwnProperty('url')
+                              ? post.acf.url
+                              : `/news/${post.slug}`
+                          }
+                        />
+                      </div>
+                    ))}
+                </div>
+                <div className='row' id='news-tab'>
+                  {this.props.data
+                    .filter(post => post.type === 'post')
+                    .filter(post => post.acf.type === 'news')
+                    .map(post => (
+                      <div className='col s12 m6 l4 xl3' key={post.id}>
+                        <TextCard
+                          title={post.title.rendered}
+                          content={post.acf.excerpt}
+                          url={
+                            post.acf.hasOwnProperty('url')
+                              ? post.acf.url
+                              : `/news/${post.slug}`
+                          }
+                        />
+                      </div>
+                    ))}
+                </div>
+              </div>
+            </div>
+          )}
+
           <div
             className='section'
             style={{ padding: '0', backgroundColor: '#a61f26' }}
@@ -129,66 +206,69 @@ export default class extends React.Component {
             </div>
           </div>
 
-          <div
-            className='section valign-wrapper black-text white-background-flourish'
-            id='news'
-          >
-            <div className='valign container'>
-              <div className='row'>
-                <div className='col s12'>
-                  <ul
-                    className='tabs'
-                    style={{ backgroundColor: 'transparent' }}
-                  >
-                    <li className='tab col s6'>
-                      <a href='#announcements' className='active'>
-                        Announcements
-                      </a>
-                    </li>
-                    <li className='tab col s6'>
-                      <a href='#news-tab'>Newest Additions</a>
-                    </li>
-                  </ul>
+          {!this.state.returnUser && (
+            <div
+              className='section valign-wrapper black-text white-background-flourish'
+              id='news'
+            >
+              <div className='valign container'>
+                <div className='row'>
+                  <div className='col s12'>
+                    <ul
+                      className='tabs'
+                      style={{ backgroundColor: 'transparent' }}
+                    >
+                      <li className='tab col s6'>
+                        <a href='#announcements' className='active'>
+                          Announcements
+                        </a>
+                      </li>
+                      <li className='tab col s6'>
+                        <a href='#news-tab'>Newest Additions</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div className='row' id='announcements'>
+                  {this.props.data
+                    .filter(post => post.type === 'post')
+                    .filter(post => post.acf.type === 'announcement')
+                    .map(post => (
+                      <div className='col s12 m6 l4 xl3' key={post.id}>
+                        <TextCard
+                          title={post.title.rendered}
+                          content={post.acf.excerpt}
+                          url={
+                            post.acf.hasOwnProperty('url')
+                              ? post.acf.url
+                              : `/news/${post.slug}`
+                          }
+                        />
+                      </div>
+                    ))}
+                </div>
+                <div className='row' id='news-tab'>
+                  {this.props.data
+                    .filter(post => post.type === 'post')
+                    .filter(post => post.acf.type === 'news')
+                    .map(post => (
+                      <div className='col s12 m6 l4 xl3' key={post.id}>
+                        <TextCard
+                          title={post.title.rendered}
+                          content={post.acf.excerpt}
+                          url={
+                            post.acf.hasOwnProperty('url')
+                              ? post.acf.url
+                              : `/news/${post.slug}`
+                          }
+                        />
+                      </div>
+                    ))}
                 </div>
               </div>
-              <div className='row' id='announcements'>
-                {this.props.data
-                  .filter(post => post.type === 'post')
-                  .filter(post => post.acf.type === 'announcement')
-                  .map(post => (
-                    <div className='col s12 m6 l4 xl3' key={post.id}>
-                      <TextCard
-                        title={post.title.rendered}
-                        content={post.acf.excerpt}
-                        url={
-                          post.acf.hasOwnProperty('url')
-                            ? post.acf.url
-                            : `/news/${post.slug}`
-                        }
-                      />
-                    </div>
-                  ))}
-              </div>
-              <div className='row' id='news-tab'>
-                {this.props.data
-                  .filter(post => post.type === 'post')
-                  .filter(post => post.acf.type === 'news')
-                  .map(post => (
-                    <div className='col s12 m6 l4 xl3' key={post.id}>
-                      <TextCard
-                        title={post.title.rendered}
-                        content={post.acf.excerpt}
-                        url={
-                          post.acf.hasOwnProperty('url')
-                            ? post.acf.url
-                            : `/news/${post.slug}`
-                        }
-                      />
-                    </div>
-                  ))}
-              </div>
             </div>
-          </div>
+          )}
+
           <style jsx>{`
             @media screen and (max-width: 500px) {
               h2 img {
