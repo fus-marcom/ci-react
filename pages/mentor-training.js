@@ -222,6 +222,30 @@ export default class extends React.Component {
               </div>
             </div>
           </div>
+          <div className='section valign-wrapper black-text white-background-flourish'>
+            <div className='valign container wide-container'>
+              <h4 className='light center' style={{ marginBottom: '8px' }}>
+                Request a Mentor Training
+              </h4>
+              <div className='row'>
+                <div class='input-field col s12'>
+                  <i class='material-icons prefix'>mode_edit</i>
+                  <input id='email' type='email' />
+                  <label for='email'>Email</label>
+                </div>
+                <div class='input-field col s12'>
+                  <i class='material-icons prefix'>mode_edit</i>
+                  <textarea id='request' class='materialize-textarea' />
+                  <label for='request'>Request</label>
+                  <div class='center'>
+                    <div class='btn' id='announcement-submit'>
+                      Submit
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           <style jsx>
             {`
               .responsive-table {

@@ -48,7 +48,7 @@ app.prepare().then(() => {
   })
 
   // Handle mentor form submissions
-  app.post('/mentor-form', function (req, res) {
+  server.post('/mentor-form', function (req, res) {
     const form = new formidable.IncomingForm()
     // In any case send the cors headers (even on error)
     res.header('Access-Control-Allow-Origin', CORS)
