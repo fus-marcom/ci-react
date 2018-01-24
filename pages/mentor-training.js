@@ -14,7 +14,8 @@ export default class extends React.Component {
     dateDesc: null,
     dateIsAsc: true,
     userLat: null,
-    userLong: null
+    userLong: null,
+    btnText: 'SUBMIT'
   }
 
   static async getInitialProps () {
@@ -227,22 +228,36 @@ export default class extends React.Component {
               <h4 className='light center' style={{ marginBottom: '8px' }}>
                 Request a Mentor Training
               </h4>
-              <div className='row'>
-                <div class='input-field col s12'>
-                  <i class='material-icons prefix'>mode_edit</i>
-                  <input id='email' type='email' />
-                  <label for='email'>Email</label>
-                </div>
-                <div class='input-field col s12'>
-                  <i class='material-icons prefix'>mode_edit</i>
-                  <textarea id='request' class='materialize-textarea' />
-                  <label for='request'>Request</label>
-                  <div class='center'>
-                    <div class='btn' id='announcement-submit'>
-                      Submit
+              <div className='row mentor-form'>
+                <form onSubmit={this.handleSubmit}>
+                  <div class='input-field col s12'>
+                    <input
+                      id='email'
+                      type='email'
+                      name='email'
+                      onChange={this.handleChange}
+                    />
+                    <label for='email'>Email</label>
+                  </div>
+                  <div class='input-field col s12'>
+                    <textarea
+                      id='request'
+                      class='materialize-textarea'
+                      name='request'
+                      onChange={this.handleChange}
+                    />
+                    <label for='request'>Request</label>
+                    <div class='center'>
+                      <button
+                        type='submit'
+                        class='btn'
+                        id='announcement-submit'
+                      >
+                        {this.state.btnText}
+                      </button>
                     </div>
                   </div>
-                </div>
+                </form>
               </div>
             </div>
           </div>
@@ -282,5 +297,51 @@ export default class extends React.Component {
         </main>
       </Layout>
     )
+  }
+  handleSubmit = e => {
+    this.setState({
+      btnText: 'SUBMITTING...'
+    })
+    e.preventDefault()
+    const { email, request } = this.state
+    if (!email || !request) {
+      this.setState({
+        btnText: 'Please Fill in All Fields'
+      })
+      return
+    }
+    // eslint-disable-next-line
+    let formData = new FormData()
+    formData.append('email', email)
+    formData.append('request', request)
+    // eslint-disable-next-line
+    fetch('/mentor-form', {
+      method: 'POST',
+      body: formData
+    })
+      .then(res => res.json())
+      .then(res => {
+        if (res.success) {
+          this.setState({
+            btnText: 'SUBMITTED'
+          })
+        } else {
+          console.log(res)
+          this.setState({
+            btnText: 'Oops! Try again'
+          })
+        }
+      })
+      .catch(er => {
+        this.setState({
+          btnText: 'Oops! Try again'
+        })
+      })
+  }
+
+  handleChange = e => {
+    this.setState({
+      [e.target.name]: e.target.value
+    })
   }
 }

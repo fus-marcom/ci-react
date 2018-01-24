@@ -578,3 +578,18 @@ ul li {
 #A9Xg4ve3.jwplayer .jw-title {
   display: none;
 }*/
+
+/* Mentor Training Page Styles  */
+
+.mentor-form .input-field label {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.mentor-form input:not([type]):focus:not([readonly]), .mentor-form input[type=text]:focus:not([readonly]), .mentor-form input[type=password]:focus:not([readonly]), .mentor-form input[type=email]:focus:not([readonly]), .mentor-form input[type=url]:focus:not([readonly]), .mentor-form input[type=time]:focus:not([readonly]), .mentor-form input[type=date]:focus:not([readonly]), .mentor-form input[type=datetime]:focus:not([readonly]), .mentor-form input[type=datetime-local]:focus:not([readonly]), .mentor-form input[type=tel]:focus:not([readonly]), .mentor-form input[type=number]:focus:not([readonly]), .mentor-form input[type=search]:focus:not([readonly]), .mentor-form textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid #8e1b21;
+  box-shadow: 0 1px 0 0 #8e1b21;
+}
+
+.mentor-form input:not([type]):focus:not([readonly]) + label, .mentor-form input[type=text]:focus:not([readonly]) + label, .mentor-form input[type=password]:focus:not([readonly]) + label,.mentor-form  input[type=email]:focus:not([readonly]) + label, .mentor-form input[type=url]:focus:not([readonly]) + label, .mentor-form input[type=time]:focus:not([readonly]) + label, .mentor-form input[type=date]:focus:not([readonly]) + label, .mentor-form input[type=datetime]:focus:not([readonly]) + label,.mentor-form  input[type=datetime-local]:focus:not([readonly]) + label, .mentor-form input[type=tel]:focus:not([readonly]) + label, .mentor-form input[type=number]:focus:not([readonly]) + label,.mentor-form  input[type=search]:focus:not([readonly]) + label, .mentor-form textarea.materialize-textarea:focus:not([readonly]) + label {
+  color: rgba(0, 0, 0, 0.54);
+}
