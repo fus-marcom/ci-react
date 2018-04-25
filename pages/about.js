@@ -4,6 +4,7 @@ import StickyNav from '../components/StickyNav'
 import Title from '../components/Title'
 import 'isomorphic-fetch'
 import { logPageView } from '../utils/analytics'
+import TeamCard from '../components/TeamCard'
 
 export default class extends React.Component {
   static async getInitialProps () {
@@ -38,7 +39,7 @@ export default class extends React.Component {
               <div className='row valign-wrapper'>
                 {this.props.data
                   .filter(post => post.slug === 'about-intro')
-                  .map(post =>
+                  .map(post => (
                     <div
                       key={post.id}
                       className='col s12 valign flow-text'
@@ -46,8 +47,7 @@ export default class extends React.Component {
                         __html: post.content.rendered
                       }}
                     />
-                  )}
-
+                  ))}
               </div>
             </div>
           </div>
@@ -56,15 +56,15 @@ export default class extends React.Component {
               <div className='row valign-wrapper'>
                 {this.props.data
                   .filter(post => post.slug === 'about-section-2')
-                  .map(post =>
+                  .map(post => (
                     <div
+                      key={post.slug}
                       className='col s12 flow-text'
                       dangerouslySetInnerHTML={{
                         __html: post.content.rendered
                       }}
                     />
-                  )}
-
+                  ))}
               </div>
             </div>
           </div>
@@ -86,15 +86,15 @@ export default class extends React.Component {
                 </div>
                 {this.props.data
                   .filter(post => post.slug === 'about-section-3')
-                  .map(post =>
+                  .map(post => (
                     <div
+                      key={post.slug}
                       className='col s12 m6 valign order-2 flow-text'
                       dangerouslySetInnerHTML={{
                         __html: post.content.rendered
                       }}
                     />
-                  )}
-
+                  ))}
               </div>
             </div>
           </div>
@@ -107,16 +107,16 @@ export default class extends React.Component {
                 <div className='col s12 m6 valign order-2'>
                   {this.props.data
                     .filter(post => post.slug === 'about-quote-banner')
-                    .map(post =>
+                    .map(post => (
                       <blockquote
+                        key={post.slug}
                         className='flow-text'
                         style={{ borderLeft: '5px solid #a61f26' }}
                         dangerouslySetInnerHTML={{
                           __html: post.content.rendered
                         }}
                       />
-                    )}
-
+                    ))}
                 </div>
               </div>
             </div>
@@ -212,57 +212,58 @@ export default class extends React.Component {
             </div>
           </div>
 
-          {this.props.data.some(post => post.type === 'pdf-page')
-            ? <div className='section pdf-links red-background-flourish white-text'>
+          {this.props.data.some(post => post.type === 'pdf-page') ? (
+            <div className='section pdf-links red-background-flourish white-text'>
               <div className='container wide-container'>
                 <div className='row center' style={{ marginBottom: '0' }}>
                   <h2
                     className='light flourish-white'
                     style={{ marginBottom: '0' }}
-                    >
-                      Information
-                    </h2>
+                  >
+                    Information
+                  </h2>
                 </div>
                 <div className='row valign-wrapper center'>
                   <div className='col s12 m6'>
                     <ul>
                       {this.props.data
-                          .filter(post => post.type === 'pdf-page')
-                          .filter((post, i) => i % 2 === 0)
-                          .map(post =>
-                            <li key={post.id}>
-                              <a
-                                href={`/i/${post.slug}`}
-                                dangerouslySetInnerHTML={{
-                                  __html: post.title.rendered
-                                }}
-                              />
-                            </li>
-                          )}
-
+                        .filter(post => post.type === 'pdf-page')
+                        .filter((post, i) => i % 2 === 0)
+                        .map(post => (
+                          <li key={post.id}>
+                            <a
+                              href={`/i/${post.slug}`}
+                              dangerouslySetInnerHTML={{
+                                __html: post.title.rendered
+                              }}
+                            />
+                          </li>
+                        ))}
                     </ul>
                   </div>
                   <div className='col s12 m6'>
                     <ul>
                       {this.props.data
-                          .filter(post => post.type === 'pdf-page')
-                          .filter((post, i) => i % 2 === 1)
-                          .map(post =>
-                            <li key={post.id}>
-                              <a
-                                href={`/i/${post.slug}`}
-                                dangerouslySetInnerHTML={{
-                                  __html: post.title.rendered
-                                }}
-                              />
-                            </li>
-                          )}
+                        .filter(post => post.type === 'pdf-page')
+                        .filter((post, i) => i % 2 === 1)
+                        .map(post => (
+                          <li key={post.id}>
+                            <a
+                              href={`/i/${post.slug}`}
+                              dangerouslySetInnerHTML={{
+                                __html: post.title.rendered
+                              }}
+                            />
+                          </li>
+                        ))}
                     </ul>
                   </div>
                 </div>
               </div>
             </div>
-            : ''}
+          ) : (
+            ''
+          )}
 
           <div className='section valign-wrapper black-text white-background-flourish'>
             <div className='valign container'>
@@ -279,7 +280,7 @@ export default class extends React.Component {
               <div className='row light flow-text'>
                 {this.props.data
                   .filter(post => post.type === 'collaborator')
-                  .map(post =>
+                  .map(post => (
                     <div className='col s6 m3' key={post.id}>
                       <div
                         className='card hoverable'
@@ -302,8 +303,7 @@ export default class extends React.Component {
                         </div>
                       </div>
                     </div>
-                  )}
-
+                  ))}
               </div>
               <div className='row center'>
                 <div class='col s12'>
@@ -319,7 +319,7 @@ export default class extends React.Component {
                 <ul>
                   {this.props.data
                     .filter(post => post.type === 'prayer-intercessor')
-                    .map(post =>
+                    .map(post => (
                       <li key={post.id}>
                         <a
                           style={{ color: 'rgb(142, 27, 33)' }}
@@ -329,8 +329,64 @@ export default class extends React.Component {
                           }}
                         />
                       </li>
-                    )}
+                    ))}
                 </ul>
+              </div>
+              <div className='row center'>
+                <div class='col s12'>
+                  <h2
+                    className='light flourish-white'
+                    style={{ fontSize: '38px' }}
+                  >
+                    Partner Doiceses
+                  </h2>
+                </div>
+              </div>
+              <div className='row light flow-text'>
+                <div className='col s12 l6'>
+                  <TeamCard
+                    name='Steubenville'
+                    title='Test'
+                    org='test org'
+                    cat='test cat'
+                    imgUrl='https://picsum.photos/200/200/?random'
+                    content='test test tset'
+                    slug='test slug'
+                  />
+                </div>
+                <div className='col s12 l6'>
+                  <TeamCard
+                    name='Steubenville'
+                    title='Test'
+                    org='test org'
+                    cat='test cat'
+                    imgUrl='https://picsum.photos/200/200/?random'
+                    content='test test tset'
+                    slug='test slug'
+                  />
+                </div>
+                <div className='col s12 l6'>
+                  <TeamCard
+                    name='Steubenville'
+                    title='Test'
+                    org='test org'
+                    cat='test cat'
+                    imgUrl='https://picsum.photos/200/200/?random'
+                    content='test test tset'
+                    slug='test slug'
+                  />
+                </div>
+                <div className='col s12 l6'>
+                  <TeamCard
+                    name='Steubenville'
+                    title='Test'
+                    org='test org'
+                    cat='test cat'
+                    imgUrl='https://picsum.photos/200/200/?random'
+                    content='test test tset'
+                    slug='test slug'
+                  />
+                </div>
               </div>
             </div>
           </div>

@@ -44,7 +44,7 @@
     ]
   },
   "standard": {
-    "globals": ["fetch", "$", "state"],
+    "globals": ["fetch", "$", "state", "componentDidMount"],
     "parser": "babel-eslint"
   }
 }
