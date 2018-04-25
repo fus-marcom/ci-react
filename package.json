@@ -32,7 +32,8 @@
     "dev": "node server.js",
     "build": "next build && git rev-parse HEAD > .next/BUILD_ID",
     "start": "NODE_ENV=production node server.js",
-    "lint": "prettier 'utils/**/*.js' 'static/js/**/*.js' 'components/**/*.js' 'pages/**/*.js' '*.js' --write --single-quote --no-semi && standard --fix",
+    "lint":
+      "prettier 'utils/**/*.js' 'static/js/**/*.js' 'components/**/*.js' 'pages/**/*.js' '*.js' --write --single-quote --no-semi && standard --fix",
     "precommit": "lint-staged"
   },
   "lint-staged": {
@@ -43,10 +44,7 @@
     ]
   },
   "standard": {
-    "globals": [
-      "fetch",
-      "$"
-    ],
+    "globals": ["fetch", "$", "state"],
     "parser": "babel-eslint"
   }
 }

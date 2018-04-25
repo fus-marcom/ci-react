@@ -1,4 +1,4 @@
-/* global initTabs */
+/* global initTabs checkUserStatus */
 import React from 'react'
 import Layout from '../components/Layout'
 import Hero from '../components/Hero'
@@ -109,32 +109,34 @@ export default class extends React.Component {
             </div>
           )}
 
-          <div
-            className='section'
-            style={{ padding: '0', backgroundColor: '#a61f26' }}
-          >
+          {!this.state.returnUser && (
             <div
-              style={{
-                position: 'relative',
-                height: '0',
-                overflow: 'hidden',
-                paddingBottom: '56.25%'
-              }}
+              className='section'
+              style={{ padding: '0', backgroundColor: '#a61f26' }}
             >
-              <iframe
+              <div
                 style={{
-                  width: '100%',
-                  height: '100%',
-                  position: 'absolute',
-                  top: '0',
-                  left: '0'
+                  position: 'relative',
+                  height: '0',
+                  overflow: 'hidden',
+                  paddingBottom: '56.25%'
                 }}
-                src='https://www.youtube.com/embed/MfHhqMMQVBQ?&modestbranding=1&rel=0&loop=1'
-                frameBorder='0'
-                allowFullScreen
-              />
+              >
+                <iframe
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    position: 'absolute',
+                    top: '0',
+                    left: '0'
+                  }}
+                  src='https://www.youtube.com/embed/MfHhqMMQVBQ?&modestbranding=1&rel=0&loop=1'
+                  frameBorder='0'
+                  allowFullScreen
+                />
+              </div>
             </div>
-          </div>
+          )}
 
           <div
             className='section banner valign-wrapper red-background-flourish'
@@ -265,6 +267,35 @@ export default class extends React.Component {
                       </div>
                     ))}
                 </div>
+              </div>
+            </div>
+          )}
+
+          {this.state.returnUser && (
+            <div
+              className='section'
+              style={{ padding: '0', backgroundColor: '#a61f26' }}
+            >
+              <div
+                style={{
+                  position: 'relative',
+                  height: '0',
+                  overflow: 'hidden',
+                  paddingBottom: '56.25%'
+                }}
+              >
+                <iframe
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    position: 'absolute',
+                    top: '0',
+                    left: '0'
+                  }}
+                  src='https://www.youtube.com/embed/MfHhqMMQVBQ?&modestbranding=1&rel=0&loop=1'
+                  frameBorder='0'
+                  allowFullScreen
+                />
               </div>
             </div>
           )}
