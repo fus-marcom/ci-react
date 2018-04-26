@@ -338,11 +338,11 @@ export default class extends React.Component {
                     className='light flourish-white'
                     style={{ fontSize: '38px' }}
                   >
-                    Partner Doiceses
+                    Partner Dioceses
                   </h2>
                 </div>
               </div>
-              <div className='row light flow-text'>
+              <div className='row light'>
                 <div className='col s12 l6'>
                   <TeamCard
                     name='Steubenville'
@@ -380,10 +380,7 @@ export default class extends React.Component {
                   <TeamCard
                     name='Steubenville'
                     title='Test'
-                    org='test org'
-                    cat='test cat'
                     imgUrl='https://picsum.photos/200/200/?random'
-                    content='test test tset'
                     slug='test slug'
                   />
                 </div>
