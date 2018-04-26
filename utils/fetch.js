@@ -1,4 +1,4 @@
-import 'isomorphic-fetch'
+require('isomorphic-fetch')
 
 const get = url => {
   return fetch(url, {
