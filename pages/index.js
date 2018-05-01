@@ -27,6 +27,9 @@ export default class extends React.Component {
     logPageView()
     this.checkUserStatus()
   }
+  componentDidUpdate () {
+    initTabs()
+  }
 
   checkUserStatus = () => {
     // Check local storage for user
