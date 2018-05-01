@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "now": {
+    "alias": "dev.catechetics.com"
+  },
   "dependencies": {
     "@sendgrid/mail": "^6.2.1",
     "babel-plugin-react-html-attrs": "^2.1.0",
