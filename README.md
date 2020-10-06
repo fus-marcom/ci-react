@@ -1,4 +1,4 @@
-# CI React Site
+# CI React Site - This an amazing Website
 
 This site uses React and Next.js with data coming from WordPress via the WordPress API.
 
