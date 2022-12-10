@@ -6,7 +6,7 @@
   "dependencies": {
     "babel-plugin-react-html-attrs": "^2.0.0",
     "babel-preset-stage-0": "^6.24.1",
-    "express": "^4.15.3",
+    "express": "^4.17.3",
     "lodash.debounce": "^4.0.8",
     "lru-cache": "^4.0.2",
     "next": "^2.4.3",
